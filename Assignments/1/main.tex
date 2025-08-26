@@ -1,0 +1,367 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 502 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 1}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: 6 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\rightmark}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section{Exercise 1}% 9.30
+The general second degree real polynomial is of the form:
+\begin{align}
+  P(x)=Ax^2+Bx+C.
+\end{align}
+The coefficients are related each other if a binomial is desired to construct:
+\begin{align*}
+  (Dx+E)^2=D^2x^2+2DEx+E^2.
+\end{align*}
+
+The argument must be completed by summing 
+
+
+\section{Exercise 2}
+In the equation above, the exponential has no units as well as the term $\sqrt{2\pi}$. 
+
+\section{Exercise 3}
+
+
+\section{Exercise 4}
+
+\section{Exercise 5}
+
+\section{Exercise 6 (done)}
+Eulers formula, in a general manner, states that:
+\begin{align}
+  e^{a\pm i\theta}=e^{a}(\cos\theta\pm i\sin\theta).
+\end{align}
+The sine and cosine functions can be defined in terms of the exponential function by setting $a=0$ and using the taylor expansion.
+Without prove the equivalences are the following:
+\begin{align*}
+  \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i},\quad\text{and}\quad\cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}.
+\end{align*}
+For the first identity, replacing the above definitions yields:
+\begin{align*}
+  \sin(2\theta)&=2\sin(\theta)\cos(\theta)\\
+  \frac{e^{i2\theta}-e^{-i2\theta}}{2i}&=\cancel{2}\left(\frac{e^{i\theta}-e^{-i\theta}}{2i}\right)\left(\frac{e^{i\theta}+e^{-i\theta}}{\cancel{2}}\right)\\
+  &=\frac{e^{i2\theta}+\cancel{e^0}-\cancel{e^{0}}-e^{-i2\theta}}{2i}\\
+  \frac{e^{i2\theta}-e^{-i2\theta}}{2i}&=\frac{e^{i2\theta}-e^{-i2\theta}}{2i}.
+\end{align*}
+Similarly, for the second identity:
+\begin{align*}
+  \cos^2(\theta)&=\frac{1}{2}[1+\cos(2\theta)]\\
+  \left(\frac{e^{i\theta}+e^{-i\theta}}{2}\right)^2&=\frac{1}{2}\left[1+\frac{e^{i2\theta}+e^{-i2\theta}}{2}\right]\\
+  \frac{e^{i2\theta}+2e^{0}+e^{-i2\theta}}{4}&=\frac{1}{2}\left[\frac{2+e^{i2\theta}+e^{-i2\theta}}{2}\right]\\
+  \frac{e^{i2\theta}+2+e^{-i2\theta}}{4}&=\frac{e^{i2\theta}+2+e^{-i2\theta}}{4}.
+\end{align*}
+%%
+\section{Exercise 7}
+
+\section{Exercise 8}
+
+\section{Exercise 9 (Done)}
+Given the $\bm{M}$ matrix, the eigenvalue problem is the following:
+\begin{align}
+  \bm{M}\bm{v}=\lambda\bm{v},
+\end{align}
+where $\lambda$ are the eigenvalues to be obtained and $\bm{v}$ are the eigenvectors associated.
+In order to get the eigenvalues, the following equation must be solved:
+\begin{align}
+  |\bm{M}-\lambda\bm{I}|=0,
+\end{align}
+where $\bm{I}$ is the identity matrix. Substituting $\bm{M}$ and $\bm{I}$,
+\begin{align*}
+  \left|\begin{pmatrix}
+    3&0&0\\0&4&0\\0&0&2
+  \end{pmatrix}-\begin{pmatrix}
+    \lambda&0&0\\0&\lambda&0\\0&0&\lambda
+  \end{pmatrix}\right|=\begin{vmatrix}
+    3-\lambda&0&0\\0&4-\lambda&0\\0&0&2-\lambda
+  \end{vmatrix}=0.
+\end{align*}
+The above results is easy to solve, as the determinant of a diagonal matrix is the product of its diagonal elements:
+\begin{align}
+  (3-\lambda)(4-\lambda)(2-\lambda)=0\Longrightarrow\lambda\in\{2,3,4\}.
+\end{align}
+Because the polinomial is expressed a a productory of its roots, the eigenvalues are the roots of the equation.
+%%
+\section{Exercise 10 (Done)}
+Given the $\bm{M}$ matrix, the eigenvalue problem is similar to previous exercise. In this case, we have:
+\begin{align*}
+  \left|\bm{M}-\lambda\bm{I}\right|=
+  \left|\begin{pmatrix}
+    0&-i\\i&0
+  \end{pmatrix}-\begin{pmatrix}
+    \lambda&0\\0&\lambda
+  \end{pmatrix}\right|=\left|\begin{pmatrix}
+    -\lambda&-i\\i&-\lambda
+  \end{pmatrix}\right|=\lambda^2-1=0\Longrightarrow\lambda\in\{-1,1\}\in\mathbb{R}.
+\end{align*}
+The eigenvalues are real numbers, as expected from a Hermitian matrix: $\bm{M}=\bm{M}^\dagger$.
+The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenvalue problem.
+\begin{itemize}
+  \item For $\lambda_1=-1$, we have
+  \begin{align*}
+    (\bm{M}-\lambda_1\bm{I})\bm{v}_1&=\bm{0}\\
+    (\bm{M}+\bm{I})\bm{v}_1&=\\
+    \left(\begin{pmatrix}
+      0&-i\\i&0
+    \end{pmatrix}+\begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}\right)\bm{v}_1&=\\
+    \begin{pmatrix}
+      1&-i\\i&1
+    \end{pmatrix}\begin{pmatrix}
+    v_1^{(1)}\\v_1^{(2)}
+    \end{pmatrix}&=\\
+    \begin{pmatrix}
+      1v_1^{(1)}-iv_1^{(2)}\\
+      iv_1^{(1)}+1v_1^{(2)}
+    \end{pmatrix}&=\begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+  \end{align*}
+  Solving each row provides the same answer, namely, $v_1^{(2)}=-iv_1^{(1)}$. That implies that replacing this results gives:
+  \begin{align}
+    \bm{v}_1=\begin{pmatrix}
+    v_1^{(1)}\\v_1^{(2)}
+    \end{pmatrix}=\begin{pmatrix}
+      v_1^{(1)}\\-iv_1^{(1)}
+    \end{pmatrix}=v_1^{(1)}\begin{pmatrix}
+      1\\-i
+    \end{pmatrix}\Longrightarrow\bm{v}_1=\begin{pmatrix}
+      1\\-i
+    \end{pmatrix}.
+  \end{align}
+  %
+  \item For $\lambda_2=1$, we have
+  \begin{align*}
+    (\bm{M}-\lambda_2\bm{I})\bm{v}_2&=\bm{0}\\
+    (\bm{M}-\bm{I})\bm{v}_2&=\\
+    \left(\begin{pmatrix}
+      0&-i\\i&0
+    \end{pmatrix}-\begin{pmatrix}
+      1&0\\0&1
+    \end{pmatrix}\right)\bm{v}_2&=\\
+    \begin{pmatrix}
+      -1&-i\\i&-1
+    \end{pmatrix}\begin{pmatrix}
+    v_2^{(1)}\\v_2^{(2)}
+    \end{pmatrix}&=\\
+    \begin{pmatrix}
+      -1v_2^{(1)}-iv_2^{(2)}\\
+      iv_2^{(1)}-1v_2^{(2)}
+    \end{pmatrix}&=\begin{pmatrix}
+      0\\0
+    \end{pmatrix}
+  \end{align*}
+  Solving each row yields $v_2^{(2)}=iv_2^{(1)}$. In this case, the eigenvector is:
+  \begin{align}
+    \bm{v}_2=\begin{pmatrix}
+    v_2^{(1)}\\v_2^{(2)}
+    \end{pmatrix}=\begin{pmatrix}
+      v_2^{(1)}\\iv_2^{(1)}
+    \end{pmatrix}=v_2^{(2)}\begin{pmatrix}
+      1\\i
+    \end{pmatrix}\Longrightarrow\bm{v}_2=\begin{pmatrix}
+      1\\i
+    \end{pmatrix}.
+  \end{align}
+\end{itemize}
+To give unitary normalized eigenvectors, we compute the square root of their inner product with themselves:
+\begin{align*}
+  [\bm{v}_1^\dagger\cdot\bm{v}_1]^{1/2}=\left[\begin{pmatrix}
+    1&i
+  \end{pmatrix}\cdot\begin{pmatrix}
+    1\\-i
+  \end{pmatrix}\right]^{1/2}=\sqrt{2},\quad\text{and}\quad
+  [\bm{v}_2^\dagger\cdot\bm{v}_2]^{1/2}=\left[\begin{pmatrix}
+    1&-i
+  \end{pmatrix}\cdot\begin{pmatrix}
+    1\\i
+  \end{pmatrix}\right]^{1/2}=\sqrt{2}.
+\end{align*}
+We thus use each normalization factor to divide the respective eigenvector, so that we finally have:
+\begin{align*}
+  \bm{v}\in\{\bm{v}_1,\bm{v}_2\}=\left\{\frac{1}{\sqrt{2}}\begin{pmatrix}
+  1\\-i\end{pmatrix},\frac{1}{\sqrt{2}}\begin{pmatrix}
+  1\\i\end{pmatrix}\right\}.
+\end{align*}
+
+\section{Exercise 11 (Done)} 
+The norm of the given complex matrix is obtained as the square root of the inner product of the complex conjugate of the matrix times its
+original form, as follows
+\begin{align*}
+  \|\bm{v}\|=[\bm{v}^\dagger\cdot\bm{v}]^{1/2}=\left[
+    \begin{pmatrix}
+      -3&-4i
+    \end{pmatrix}\cdot\begin{pmatrix}
+      -3\\4i
+    \end{pmatrix}
+  \right]^{1/2}=[(-3)(-3)-(4i)(4i)]^{1/2}=[9+16]^{1/2}=\sqrt{25}=5.
+\end{align*}
+
+
+
+\section{Exercise 12}
+
+\section{Exercise 13}
+
+\section{Exercise 14 (Done)}
+The sketch of the function $f(t)=\sin^2(\frac{\Omega t}{2})$ is shown in Figure \ref{fig:plotex14}.
+\begin{figure}[htbp]
+  \centering
+  \begin{circuitikz}[scale=.8,xscale=0.5]
+    \def\Om{1}
+    \draw[arrow](0,0)--({8*pi/\Om+1},0)node[below]{$t$};
+    \draw[arrow](0,0)--(0,2)node[right]{$f(t)$};
+    \draw[very thick,NavyBlue,domain=0:{8*pi/\Om},samples=100] plot(\x,{ (sin(deg(\Om*\x/2)) )^2 });
+    \draw[very thick,dashed,NavyBlue,domain=-{pi/\Om}:0,samples=10] plot(\x,{ (sin(deg(\Om*\x/2)) )^2 });
+    \draw(0,.1)--(0,-.1)node[below]{0}({2*pi/\Om},.1)--({2*pi/\Om},-.1)node[below]{$\frac{2\pi}{\Omega}$}
+    ({4*pi/\Om},.1)--({4*pi/\Om},-.1)node[below]{$\frac{4\pi}{\Omega}$}
+    ({6*pi/\Om},.1)--({6*pi/\Om},-.1)node[below]{$\frac{6\pi}{\Omega}$}(.1,1)--(-.1,1)node[left]{$1$};
+  \end{circuitikz}
+  \caption{Plot of the function $f(t)=\sin^2(\frac{\Omega t}{2})$.}
+  \label{fig:plotex14}
+\end{figure}
+
+The behavior is oscilatory as a simple sinusoidal function. The period of $f(t)$ is  
+\begin{align*}
+  \frac{2\pi}{T}t=\frac{\Omega}{2}t\longrightarrow T=\frac{4\pi}{\Omega}.
+\end{align*}
+The ceros of the function are the same of its unsquared version $\sin(\frac{\Omega t}{2})$, which are obtained through
+\begin{align*}
+  \sin\left(\frac{\Omega t}{2}\right)&=0/\sin^{-1}(\cdot)\\
+  \frac{\Omega t_k}{2}&=k\pi,\quad k\in\mathbb{Z}\\
+  t_k&=\frac{2k\pi}{\Omega},\quad k\in\mathbb{Z}.
+\end{align*} 
+This can also be obtained by using trigonometric identities.
+With respect to the output values, the function oscilates in the range $f(t)\in[0,1]$. This clapped
+range is due to the square $(\cdot)^2$ that mirrors the sinusoidal where it is negative to a positive value.
+In fact, 
+\begin{align*}
+  -1<\sin(\cdot)<1\Longrightarrow \begin{array}{rl}
+    (-1)^2<&\sin^2(\cdot)<1^2/(\cdot)^2\\
+    0<&\sin^2(\cdot)<1
+  \end{array}.
+\end{align*}
+
+%%
+\section{Exercise 15}
+
+%%
+\section{Exercise 16}
+
+%%
+\section{Exercise 17 (Done)}
+Let be $\omega\in\mathbb{C}$, obtaining the cube-root of $1$ is the same as solving the equation $\omega^3=1$.
+If $\omega$ is expressed in polar form, we have
+\begin{align*}
+  \omega^2\equiv\rho^2 e^{i3\theta}\equiv\rho^2(\cos3\theta+i\sin3\theta)=1.
+\end{align*}
+The radius $\rho$ is easy to acquire if the second equality with the last one are compared. Therefore,
+\begin{align*}
+  \rho^3e^{i3\theta}=1e^{i0}\Longrightarrow\rho=1.
+\end{align*}
+In doing the same with the third and last equations we have the following relations
+\begin{align*}
+  \rho^3\cos3\theta=1\quad\text{and}\quad\rho^3\sin3\theta=0.
+\end{align*}
+From the sine equation, we can formulate the $\theta$ values:
+\begin{align*}
+  \sin3\theta=0/\sin^{-1}(\cdot)\Longrightarrow \theta_k=\frac{k\pi}{3},\quad k\in\{0,1,2\}.
+\end{align*}
+The $k$ has been restricted to the first three roots desired.
+Using $\rho$ and $\theta$ obtained allows to express the three cube-roots of $1$ as
+\begin{align}
+  \begin{array}{rl}
+    \omega_0&=1\left(\cos\frac{2\cdot0\cdot\pi}{3}+i\sin\frac{2\cdot0\cdot\pi}{3}\right)=1+i0\\
+    \omega_1&=1\left(\cos\frac{2\cdot1\cdot\pi}{3}+i\sin\frac{2\cdot1\cdot\pi}{3}\right)=-\frac{1}{2}+i\frac{\sqrt{3}}{2}\\
+    \omega_2&=1\left(\cos\frac{2\cdot2\cdot\pi}{3}+i\sin\frac{2\cdot2\cdot\pi}{3}\right)=-\frac{1}{2}-i\frac{\sqrt{3}}{2}\\
+  \end{array}
+\end{align}
+
+The principal three cube-roots obtained above are ploted in the complex plane as shown in figure \ref{fig:ex17}.
+\begin{figure}[htbp]
+    \centering
+    \begin{circuitikz}[scale=1]
+    \draw[arrow](-2,0)--(2,0)node[below]{$\text{Re}(z)$};
+    \draw[arrow](0,-2)--(0,2)node[right]{$\text{Im}(z)$};
+    \draw[arrow,very thick,NavyBlue](0:0)--(0:1)node[above right]{$\omega_0$};
+    \draw[arrow,very thick,NavyBlue](0:0)--(120:1)node[above left]{$\omega_1$};
+    \draw[arrow,very thick,NavyBlue](0:0)--(240:1)node[below left]{$\omega_2$};
+    \draw[black](0,0)+(0:1)arc[start angle=0,end angle=360,radius=1](1,1)node[above right]{$\rho=1$}; 
+    \end{circuitikz}
+    \caption{First three cube-roots of $1$ in the complex plane.}
+    \label{fig:ex17}
+\end{figure}
+
+
+
+
+
+\nocite{*}
+\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+\bibliography{refs}
+
+\end{document}
