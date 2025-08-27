@@ -45,12 +45,12 @@
 %
 \newcommand{\institution}{University of Arizona}
 \newcommand{\autor}{Nicolás Hernández Alegría}
-\newcommand{\course}{OPTI 502 Quantum Mechanics}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
 \newcommand{\assignment}{Assignment 1}
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 6 hours}
+\date{\today\\Total time: 12 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -418,13 +418,13 @@ The sketch of the function $f(t)=\sin^2(\frac{\Omega t}{2})$ is shown in Figure 
   \centering
   \begin{circuitikz}[scale=1,xscale=0.5]
     \def\Om{1}
-    \draw[arrow](0,0)--({8*pi/\Om+1},0)node[below]{$t$};
+    \draw[arrow](0,0)--({6*pi/\Om+1},0)node[below]{$t$};
     \draw[arrow](0,0)--(0,2)node[right]{$f(t)$};
-    \draw[very thick,NavyBlue,domain=0:{8*pi/\Om},samples=100] plot(\x,{ (sin(deg(\Om*\x/2)) )^2 });
+    \draw[very thick,NavyBlue,domain=0:{6*pi/\Om},samples=100] plot(\x,{ (sin(deg(\Om*\x/2)) )^2 });
     \draw[very thick,dashed,NavyBlue,domain=-{pi/\Om}:0,samples=10] plot(\x,{ (sin(deg(\Om*\x/2)) )^2 });
     \draw(0,.1)--(0,-.1)node[below]{0}({2*pi/\Om},.1)--({2*pi/\Om},-.1)node[below]{$\frac{2\pi}{\Omega}$}
     ({4*pi/\Om},.1)--({4*pi/\Om},-.1)node[below]{$\frac{4\pi}{\Omega}$}
-    ({6*pi/\Om},.1)--({6*pi/\Om},-.1)node[below]{$\frac{6\pi}{\Omega}$}(.1,1)--(-.1,1)node[left]{$1$};
+    (.1,1)--(-.1,1)node[left]{$1$};
   \end{circuitikz}
   \caption{Plot of the function $f(t)=\sin^2(\frac{\Omega t}{2})$.}
   \label{fig:plotex14}
@@ -441,14 +441,15 @@ The ceros of the function are the same of its unsquared version $\sin(\frac{\Ome
   t_k&=\frac{2k\pi}{\Omega},\quad k\in\mathbb{Z}.
 \end{align*} 
 This can also be obtained by using trigonometric identities.
-With respect to the output values, the function oscilates in the range $f(t)\in[0,1]$. This clapped
+With respect to the output values, the function oscilates in the range $f(t)\in[0,1]$. The clapped
 range is due to the square $(\cdot)^2$ that mirrors the sinusoidal where it is negative to a positive value.
 In fact, 
 \begin{align*}
-  -1<\sin(\cdot)<1\Longrightarrow \begin{array}{rl}
-    (-1)^2<&\sin^2(\cdot)<1^2/(\cdot)^2\\
-    0<&\sin^2(\cdot)<1
-  \end{array}.
+  -1\leq&\sin(\cdot)\leq1\\
+  -1\leq\sin(\cdot)\leq0&\cup0\leq\sin(\cdot)\leq1\bigr/(\cdot)^2\\
+  (-1)^2\leq\sin^2(\cdot)\leq0^2&\cup0^2\leq\sin^2(\cdot)\leq1^2\\
+  0\leq\sin^2(\cdot)\leq1&\cup0\leq\sin^2(\cdot)\leq1^2\\
+  0\leq&\sin^2(\cdot)\leq1.
 \end{align*}
 
 %%
