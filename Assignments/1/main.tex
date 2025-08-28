@@ -50,7 +50,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 12 hours}
+\date{\today\\Total time: 13 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -68,7 +68,7 @@
 \pagestyle{mainstyle}
 \maketitle
 %%
-\section{Exercise 1 (Done)}% 9.30
+\section{Exercise 1}% 9.30
 The problem asks to verify the statement by completing the square in the argument of the exponent. The term $b$ cannot be simply separated as two
 exponential will have to be integraed, which is more difficult. Instead, what is asked is to obtain a perfect binomial of the form $(x-\square)^2$.
 The right hand of the equation seems to be the result of the integration of a gaussian distribution, so that the argument must be of the form $\frac{(x-\square)^2}{2a^2}$.
@@ -76,50 +76,51 @@ We are going to work with the argument alone. First, we add $b$ into the fractio
 \begin{align*}
   -\left[\frac{x^2-2a^2bx}{2a^2}\right].
 \end{align*}
-If we want a perfect binomial in the numerator, then we compare the numerator with the general binomial terms:
-\begin{align}
+Wwe compare the numerator with the general binomial terms:
+\begin{align*}
   x^2-2a^2bx = x^2-2\square x+\square^2.
-\end{align}
-By comparison, $\square=a^2b$ and therefore the term $(a^2b)^2$ must be added and substracted
+\end{align*}
+To obtain the equality, we must have $\square=a^2b$ and therefore the term $(a^2b)^2$ must be added and substracted:
 \begin{align*}
   -\left[\frac{x^2-2a^2bx+(a^2b)^2-(a^2b)^2}{2a^2}\right]=-\left[\frac{(x-a^2b)^2}{2a^2}-\frac{(a^2b)^2}{2a^2}\right]=-\frac{(x-a^2b)^2}{2a^2}+\frac{a^2b^2}{2}.
 \end{align*}
 Replacing the new argument into the integral yields
 \begin{align*}
-  \int_{-\infty}^\infty C\exp\left\{-\frac{(x-a^2b)^2}{2a^2}+\frac{a^2b^2}{2}\right\}\;dx=C\exp\{a^2b^2/2\}\int_{-\infty}^\infty\exp\left\{-\frac{(x-a^2b)^2}{2a^2}\right\}\;dx
+  \int_{-\infty}^\infty C\exp\left\{-\frac{(x-a^2b)^2}{2a^2}+\frac{a^2b^2}{2}\right\}\;dx=C\exp\left\{\frac{a^2b^2}{2}\right\}\int_{-\infty}^\infty\exp\left\{-\frac{(x-a^2b)^2}{2a^2}\right\}\;dx
 \end{align*}
-The integral needs a change of variable or standarization to be identified as a standard integral. If we set $u=(x-a^2b)/a$, then $du=dx/a$. Thus,
+Now the integral has the form of a Normal distribution. Using the change of variable $u=(x-a^2b)/2$ with $du=dx/a$ allows to simplify the argument of the exponent. 
 \begin{align*}
-  C\exp\{a^2b^2/2\}\int_{-\infty}^\infty e^{-u^2/2}\;\left(a\;du\right)=aC\exp\{a^2b^2/2\}\int_{-\infty}^\infty e^{-u^2/2}\;du=\sqrt{2\pi}aC\exp\{a^2b^2/2\}.
+  C\exp\left\{\frac{a^2b^2}{2}\right\}\int_{-\infty}^\infty e^{-u^2/2}\;\left(a\;du\right)=aC\exp\left\{\frac{a^2b^2}{2}\right\}\int_{-\infty}^\infty e^{-u^2/2}\;du\stackrel{(a)}{=}\sqrt{2\pi}aC\exp\left\{\frac{a^2b^2}{2}\right\}.
 \end{align*}
-The last integral is well-known and results to be $\sqrt{2\pi}$. Finally, we conclude that 
+In $(a)$ we have used well-known result of this kind of integral. If one finds for normal gaussian distribution and compare with out integral will find that the integration through the whole space is $\sqrt{2\pi}$.
+After proving the requiried equality, we finally conclude that
 \begin{align}
-  \int_{-\infty}^\infty dx\;C\exp\left\{-\frac{x^2}{2a^2}+bx\right\}=\sqrt{2\pi}a\exp\{a^2b^2/2\}.
+  \int_{-\infty}^\infty dx\;C\exp\left\{-\frac{x^2}{2a^2}+bx\right\}=\sqrt{2\pi}a\exp\left\{\frac{a^2b^2}{2}\right\}.
+  \label{eq:resultexercise1}
 \end{align}
-
-\section{Exercise 2 (Done)}
-If $x$ has dimensions os length $[L]$, then the dimension of $a$ must be also $[L]$ in order to maintain the argument of the exponential adimensional.
-For the same reason, $b$ must have dimensions of $[L^{-1}]$. Due to the integration in $x$, the integral provides a $[L]$ dimension to the result. Therefore,
-is a dimensionless results is desired, $C$ must have dimensions of $[L^{-1}]$.
-
-\section{Exercise 3 (Done)}
-The integral to compute is along the real line $(-\infty,\infty)$, so that negative and positive values of $x$ are considered.
+%%
+\section{Exercise 2}
+In the previous problem, if $x$ has dimensions of length $[L]$, then the dimension of $a$ must be also $[L]$ in order to maintain the argument of the exponential adimensional.
+Using the same argument, $b$ must have dimensions of $[L^{-1}]$. Due to the integration in $x$, the integral provides a $[L]$ dimension to the result. Therefore,
+if a dimensionless results is desired, $C$ must have dimensions of $[L^{-1}]$.
+%%
+\section{Exercise 3}
+The integral to compute is along the real line $x\in(-\infty,\infty)$, so that negative and positive values of $x$ are considered.
 The integrand
-\begin{align}
-  f(x)=x^{11}e^{-\frac{x^2}{2a}},
-\end{align}
-is an odd functions due to the term $x^{11}$. This implies that if negative $x$ are evaluated, we have
 \begin{align*}
-  f(-x)=(-x)^{11}e^{-\frac{(-x)^2}{2a}}=-x^{11}e^{-\frac{x^2}{2a}}=-f(x)\Longrightarrow f(-x)=-f(x).
+  f(x)=x^{11}\exp\left\{-\frac{x^2}{2a}\right\},
 \end{align*}
-Using this property, the integral can be split in two parts one for the range $(-\infty,0]$ and other for $[0,\infty)$.
-It turns out that both integrals will cancel each other giving a net result of zero.
-
-
+is an odd functions due to the term $x^{11}$. This implies that if any $x$ in the range $x\in(-\infty,0)$ is evaluated, we will obtain
+\begin{align*}
+  f(-x)=(-x)^{11}\exp\left\{-\frac{(-x)^2}{2a}\right\}=-x^{11}\exp\left\{-\frac{x^2}{2a}\right\}=-f(x)\Longrightarrow f(-x)=-f(x).
+\end{align*}
+Using this property, the integral can be split in two parts: one for the range $(-\infty,0)$ and other for $[0,\infty)$.
+It turns out that both integrals will cancel each other due to the previous result, giving a net result of zero.
+%%
 \section{Exercise 4}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
   \item The dimensional units of $x$ is $[L]$, while for the momentum is $[MLT^{-1}]$. The imaginary units does not provide any dimensional information, and the final
-  unit of the argument of the exponent must be adimensional. Therefore, the dimension of $\hbar$ must be 
+  unit of the argument of the exponent must be adimensional. Therefore,
   \begin{align*}
     [MLT^{-1}][L]/[\hbar]&=[-]\\
     [\hbar]&=[ML^2T^{-1}].
@@ -137,20 +138,19 @@ It turns out that both integrals will cancel each other giving a net result of z
   \end{align} 
   which is the inverse square root of the momentum dimension $[MLT^{-1}]$.
 \end{enumerate}
-
-\section{Exercise 5 (Done)}
-The Fourier transform of $\psi(x)=A\exp\{-\frac{x^2}{2a^2}\}$ is 
-\begin{align}
+%%
+\section{Exercise 5}
+The Fourier transform of $\psi(x)=A\exp\left\{-\frac{x^2}{2a^2}\right\}$ is 
+\begin{align*}
   \tilde{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty A\exp\left\{-\frac{x^2}{2a^2}\right\}\exp\left\{-\frac{ip}{\hbar}x\right\}\;dx=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty A\exp\left\{-\frac{x^2}{2a^2}-\frac{ip}{\hbar}x\right\}\;dx.
-\end{align}
-Using the result from exercise 1 with $b=-ip/\hbar$ gives
-\begin{align}
+\end{align*}
+Using the result \eqref{eq:resultexercise1} from exercise 1 with $b=-ip/\hbar$ gives
+\begin{align*}
   \tilde{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}\cdot \sqrt{2\pi}aA\exp\left\{-\frac{a^2p^2}{2\hbar^2}\right\}=\frac{aA}{\sqrt{\hbar}}\exp\left\{-\frac{a^2p^2}{2\hbar^2}\right\}.
-\end{align}
-
-
-\section{Exercise 6 (done)}
-Eulers formula, in a general manner, states that:
+\end{align*}
+%%
+\section{Exercise 6}
+Eulers formula, in its general form, states that:
 \begin{align}
   e^{a\pm i\theta}=e^{a}(\cos\theta\pm i\sin\theta).
 \end{align}
@@ -174,8 +174,8 @@ Similarly, for the second identity:
   \frac{e^{i2\theta}+2+e^{-i2\theta}}{4}&=\frac{e^{i2\theta}+2+e^{-i2\theta}}{4}.
 \end{align*}
 %%
-\section{Exercise 7 (Done)}
-In general this Differential equation has an exponential solution. One possible is to consider $y(x)=2e^{mx}$. To verify that is a solution we 
+\section{Exercise 7}
+The general solution of this differential equation ahs the form of an exponential. One possible $y(x)$ is consider $y(x)=2e^{mx}$. To verify that is a solution we 
 substitute it into the ODE:
 \begin{align*}
   \frac{\partial}{\partial x}y(x)&=my(x)\\
@@ -183,10 +183,10 @@ substitute it into the ODE:
   2me^{mx}&=2me^{mx},
 \end{align*}
 where the last equality confirms that the proposed solution is correct.
-
-\section{Exercise 8 (Done)}
-In this case, a possible solution belongs from the complex exponential family. Therefore, we select $y(x)=\cos mx$ as the proposed solution. 
-Substituting into the ODE gives
+%%
+\section{Exercise 8}
+In this case, a possible solution belongs from the complex exponential family. Therefore, we select $y(x)=\cos mx$ as our proposal. 
+Substituting it into the ODE gives
 \begin{align*}
   \frac{\partial^2}{\partial x^2}y(x)&=-m^2y(x)\\
   \frac{\partial^2}{\partial x^2}(\cos mx)&=-m^2(\cos mx)\\
@@ -194,17 +194,17 @@ Substituting into the ODE gives
   -m^2\cos mx&=-m^2\cos mx,
 \end{align*}
 confirming our choice.
-
-\section{Exercise 9 (Done)}
+%%
+\section{Exercise 9}
 Given the $\bm{M}$ matrix, the eigenvalue problem is the following:
-\begin{align}
+\begin{align*}
   \bm{M}\bm{v}=\lambda\bm{v},
-\end{align}
+\end{align*}
 where $\lambda$ are the eigenvalues to be obtained and $\bm{v}$ are the eigenvectors associated.
 In order to get the eigenvalues, the following equation must be solved:
-\begin{align}
+\begin{align*}
   |\bm{M}-\lambda\bm{I}|=0,
-\end{align}
+\end{align*}
 where $\bm{I}$ is the identity matrix. Substituting $\bm{M}$ and $\bm{I}$,
 \begin{align*}
   \left|\begin{pmatrix}
@@ -221,8 +221,8 @@ The above results is easy to solve, as the determinant of a diagonal matrix is t
 \end{align}
 Because the polinomial is expressed a a productory of its roots, the eigenvalues are the roots of the equation.
 %%
-\section{Exercise 10 (Done)}
-Given the $\bm{M}$ matrix, the eigenvalue problem is similar to previous exercise. In this case, we have:
+\section{Exercise 10}
+Given the $\bm{M}$ matrix, the eigenvalue problem is similar to the previous exercise. In this case, we have:
 \begin{align*}
   \left|\bm{M}-\lambda\bm{I}\right|=
   \left|\begin{pmatrix}
@@ -234,9 +234,9 @@ Given the $\bm{M}$ matrix, the eigenvalue problem is similar to previous exercis
   \end{pmatrix}\right|=\lambda^2-1=0\Longrightarrow\lambda\in\{-1,1\}\in\mathbb{R}.
 \end{align*}
 The eigenvalues are real numbers, as expected from a Hermitian matrix: $\bm{M}=\bm{M}^\dagger$.
-The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenvalue problem.
+On the other hand, the eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenvalue problem.
 \begin{itemize}
-  \item For $\lambda_1=-1$, we have
+  \item For $\lambda_1=-1$,
   \begin{align*}
     (\bm{M}-\lambda_1\bm{I})\bm{v}_1&=\bm{0}\\
     (\bm{M}+\bm{I})\bm{v}_1&=\\
@@ -258,7 +258,7 @@ The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenva
     \end{pmatrix}
   \end{align*}
   Solving each row provides the same answer, namely, $v_1^{(2)}=-iv_1^{(1)}$. That implies that replacing this results gives:
-  \begin{align}
+  \begin{align*}
     \bm{v}_1=\begin{pmatrix}
     v_1^{(1)}\\v_1^{(2)}
     \end{pmatrix}=\begin{pmatrix}
@@ -268,9 +268,9 @@ The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenva
     \end{pmatrix}\Longrightarrow\bm{v}_1=\begin{pmatrix}
       1\\-i
     \end{pmatrix}.
-  \end{align}
+  \end{align*}
   %
-  \item For $\lambda_2=1$, we have
+  \item For $\lambda_2=1$,
   \begin{align*}
     (\bm{M}-\lambda_2\bm{I})\bm{v}_2&=\bm{0}\\
     (\bm{M}-\bm{I})\bm{v}_2&=\\
@@ -292,7 +292,7 @@ The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenva
     \end{pmatrix}
   \end{align*}
   Solving each row yields $v_2^{(2)}=iv_2^{(1)}$. In this case, the eigenvector is:
-  \begin{align}
+  \begin{align*}
     \bm{v}_2=\begin{pmatrix}
     v_2^{(1)}\\v_2^{(2)}
     \end{pmatrix}=\begin{pmatrix}
@@ -302,9 +302,9 @@ The eigenvectors are obtained replacing each $\lambda$ in the rearranged eigenva
     \end{pmatrix}\Longrightarrow\bm{v}_2=\begin{pmatrix}
       1\\i
     \end{pmatrix}.
-  \end{align}
+  \end{align*}
 \end{itemize}
-To give unitary normalized eigenvectors, we compute the square root of their inner product with themselves:
+To provide unitary normalized eigenvectors, we compute the square root of their inner product with themselves:
 \begin{align*}
   [\bm{v}_1^\dagger\cdot\bm{v}_1]^{1/2}=\left[\begin{pmatrix}
     1&i
@@ -323,12 +323,12 @@ We thus use each normalization factor to divide the respective eigenvector, so t
   1\\-i\end{pmatrix},\frac{1}{\sqrt{2}}\begin{pmatrix}
   1\\i\end{pmatrix}\right\}.
 \end{align*}
-
-\section{Exercise 11 (Done)} 
-The norm of the given complex matrix is obtained as the square root of the inner product of the complex conjugate of the matrix times its
+%%
+\section{Exercise 11} 
+The norm of the given complex vector is obtained as the square root of the inner product of the complex conjugate of the matrix times its
 original form, as follows
 \begin{align*}
-  \|\bm{v}\|=[\bm{v}^\dagger\cdot\bm{v}]^{1/2}=\left[
+  \|\bm{v}\|_2=[\bm{v}^\dagger\cdot\bm{v}]^{1/2}=\left[
     \begin{pmatrix}
       -3&-4i
     \end{pmatrix}\cdot\begin{pmatrix}
@@ -336,10 +336,8 @@ original form, as follows
     \end{pmatrix}
   \right]^{1/2}=[(-3)(-3)-(4i)(4i)]^{1/2}=[9+16]^{1/2}=\sqrt{25}=5.
 \end{align*}
-
-
-
-\section{Exercise 12 (Done)}
+%%
+\section{Exercise 12}
 Given $\bm{M}$ and $\bm{v}$, the product $\bm{M}\bm{v}$ is computed as follows:
 \begin{align*}
   \bm{M}\cdot\bm{v}=\begin{pmatrix}
@@ -353,12 +351,9 @@ Given $\bm{M}$ and $\bm{v}$, the product $\bm{M}\bm{v}$ is computed as follows:
   \end{pmatrix}_{\textcolor{blue}{3}\times1}.
 \end{align*}
 The dimension was explicitly indicated to show how the result takes place.
-
-
-
-\section{Exercise 13 (Done)}
-The sketch of the function $y(x)=e^{-x^2/a^2}$ is shown in Figure \ref{fig:plotex13_a} while in figure \ref{fig:plotex13_b} 
-we plot three functions corresponding to $a\in\{1,2,3\}$.
+%%
+\section{Exercise 13}
+The sketch of the function $y(x)=e^{-x^2/a^2}$ is shown in Figure \ref{fig:plotex13_a}.
 \begin{figure}[htbp]
   \centering
   \begin{subfigure}{.45\columnwidth}
@@ -404,16 +399,16 @@ expression is:
   f(x)=\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}},
   \label{eq:gaussianex13}
 \end{align}
-where $\mu$ is the mean value and $\sigma$ the standard deviation. Comparing equation \eqref{eq:gaussianex13} with the 
+where $\mu$ is the mean value and $\sigma^2$ the variance. Comparing equation \eqref{eq:gaussianex13} with the 
 function of the problem allows to identify the parameters $(\mu,\sigma^2)$:
 \begin{align}
   \mu=0,\quad\text{and}\quad\sigma^2=\frac{a^2}{2}.
 \end{align}
-The first parameter fhist horizontally the function, while the second control the dispersion of width of the bell shape. 
+The first parameter shist horizontally the function, while the second control the dispersion or width of the bell shape. 
 Figure \ref{fig:plotex13_b} illustrates this effect as $a$ is increased.
 %%
-\section{Exercise 14 (Done)}
-The sketch of the function $f(t)=\sin^2(\frac{\Omega t}{2})$ is shown in Figure \ref{fig:plotex14}.
+\section{Exercise 14}
+The sketch of the function $f(t)=\sin^2\left(\frac{\Omega t}{2}\right)$ is shown in Figure \ref{fig:plotex14}.
 \begin{figure}[htbp]
   \centering
   \begin{circuitikz}[scale=1,xscale=0.5]
@@ -442,38 +437,36 @@ The ceros of the function are the same of its unsquared version $\sin(\frac{\Ome
 \end{align*} 
 This can also be obtained by using trigonometric identities.
 With respect to the output values, the function oscilates in the range $f(t)\in[0,1]$. The clapped
-range is due to the square $(\cdot)^2$ that mirrors the sinusoidal where it is negative to a positive value.
+range is due to the square $(\cdot)^2$ that mirrors the negative values to the positive range.
 In fact, 
 \begin{align*}
   -1\leq&\sin(\cdot)\leq1\\
-  -1\leq\sin(\cdot)\leq0&\cup0\leq\sin(\cdot)\leq1\bigr/(\cdot)^2\\
+  -1\leq\sin(\cdot)\leq0\bigr/(\cdot)^2&\cup0\leq\sin(\cdot)\leq1\bigr/(\cdot)^2\\
   (-1)^2\leq\sin^2(\cdot)\leq0^2&\cup0^2\leq\sin^2(\cdot)\leq1^2\\
   0\leq\sin^2(\cdot)\leq1&\cup0\leq\sin^2(\cdot)\leq1^2\\
   0\leq&\sin^2(\cdot)\leq1.
 \end{align*}
-
 %%
-\section{Exercise 15 (Done)}
-Given the the integral $\int_{-\infty}^\infty e^{-u^4}\;du=1.81\pm0.01$, we have to transform the asked integral to this form through
-the proper change of variable. It seems that $u=2^{1/4}x/a$ is a suitable substitution, with $dx=adx/2^{1/4}$. Using this 
-the integral becomes:
+\section{Exercise 15}
+Given the integral $\int_{-\infty}^\infty e^{-u^4}\;du=1.81\pm0.01$, we have to transform the asked integral to this form through
+the proper change of variable. It seems that $u=2^{1/4}x/a$ with $du=2^{1/4}dx/a$ is a suitable substitution. The reason is that the argument 
+becomes the same as the one provided and there is no additional variable in the integrand that could affect. Thus,
 \begin{align*}
-  \int^\infty_{-\infty}e^{-2x^4/a^4}\;dx=\int_{-\infty}^\infty e^{-u^4}\left(\frac{a\;dx}{2^{1/4}}\right)=\frac{a}{2^{1/4}}\cancelto{1.81\pm0.01}{\int_{-\infty}^{\infty}e^{-u^4}\;du}=\frac{a}{2^{1/4}}(1.81\pm0.01).
-  \frac{}{}.
+  \int^\infty_{-\infty}e^{-2x^4/a^4}\;dx=\int_{-\infty}^\infty e^{-u^4}\left(\frac{a\;du}{2^{1/4}}\right)=\frac{a}{2^{1/4}}\cancelto{1.81\pm0.01}{\int_{-\infty}^{\infty}e^{-u^4}\;du}=\frac{a}{2^{1/4}}(1.81\pm0.01).
 \end{align*}
-Substituting $a=10^{-6}\;m$ and plug in this result in the following statement
-\begin{align}
+Substituting $a=10^{-6}\;m$ and plug in the result in the following statement
+\begin{align*}
   1=A^2\int^\infty_{-\infty}e^{-2x^4/a^4}\;dx=A^2\frac{10^{-6}}{2^{1/4}}(1.81\pm0.01)
-\end{align}
+\end{align*}
 allow us to solve for $A$:
-\begin{align}
+\begin{align*}
   A=\sqrt{\frac{2^{1/4}}{10^{-6}(1.81\pm0.01)}}\;m^{1/2}.
-\end{align}
-The units of $A$ is $m^{-1/2}$ due to the fact that the final result must be adimensional and the integral has units of meters $m$ given by the differential
+\end{align*}
+The units of $A$ is $m^{-1/2}$ due to the fact that the final result must be adimensional but the integral has units of meters $m$ given by the differential
 element $dx$, so that
-\begin{align}
+\begin{align*}
   [-]=[A^2]\cdot[m]\longrightarrow [A]=[m]^{-1/2}.
-\end{align}
+\end{align*}
 On the other hand, the uncertaintly given by the range can be handled by considering each case, where $+$ will yields the minimum value while $-$ the maximum:
 \begin{align}
   \left.\begin{array}{l}
@@ -481,23 +474,20 @@ On the other hand, the uncertaintly given by the range can be handled by conside
   A_{max}=\sqrt{\cfrac{2^{1/4}}{10^{-6}(1.81-0.01)}}=812.817\;m^{-1/2}
   \end{array}\right\}A\in[808.338,812.817]\;m^{1/2}.
 \end{align} 
-
-
 %%
-\section{Exercise 16 (Done)}
-Given the function $f(x)=x^2/a$, where $x$ and $a$ has units of meters $m$, then the function has units of $m$.
-The area required in integrated along a distance from $0\;m$ to $b=2\;m$. The integration adds the units of the differential
+\section{Exercise 16}
+Given the function $f(x)=x^2/a$, where $x$ and $a$ has units of meters $m$, then the function will have dimensions of $m$.
+The area required is integrated along a distance from $0\;m$ to $b=2\;m$. The integration adds the units of the differential
 which in this case is units of meters $m$. Therefore, the value of the area along with its unit is
-\begin{align}
-  \int_0^2\frac{x^2}{4}dx=\left.\frac{x^3}{12}\right|_0^2=\frac{2}{3}\;m^2.
-\end{align}
+\begin{align*}
+  \int_{0\;m}^{2\;m}\frac{x^2}{4\;m}dx=\left.\frac{x^3}{12\;m}\right|_0^2=\frac{(2\;m)^3}{12\;m}=\frac{2}{3}\;m^2.
+\end{align*}
 The integration is the same as multipling the function by the differential, so dimensionally we have
-\begin{align}
+\begin{align*}
   [m]\cdot[m]=[m^2].
-\end{align}
-
+\end{align*}
 %%
-\section{Exercise 17 (Done)}
+\section{Exercise 17}
 Let be $\omega\in\mathbb{C}$, obtaining the cube-root of $1$ is the same as solving the equation $\omega^3=1$.
 If $\omega$ is expressed in polar form, we have
 \begin{align*}
@@ -505,7 +495,7 @@ If $\omega$ is expressed in polar form, we have
 \end{align*}
 The radius $\rho$ is easy to acquire if the second equality with the last one are compared. Therefore,
 \begin{align*}
-  \rho^3e^{i3\theta}=1e^{i0}\Longrightarrow\rho=1.
+  \rho^3e^{i3\theta}=1e^{i0}\Longrightarrow\rho=1^{1/3}=1.
 \end{align*}
 In doing the same with the third and last equations we have the following relations
 \begin{align*}
@@ -523,21 +513,22 @@ Using $\rho$ and $\theta$ obtained allows to express the three cube-roots of $1$
     \omega_1&=1\left(\cos\frac{2\cdot1\cdot\pi}{3}+i\sin\frac{2\cdot1\cdot\pi}{3}\right)=-\frac{1}{2}+i\frac{\sqrt{3}}{2}\\
     \omega_2&=1\left(\cos\frac{2\cdot2\cdot\pi}{3}+i\sin\frac{2\cdot2\cdot\pi}{3}\right)=-\frac{1}{2}-i\frac{\sqrt{3}}{2}\\
   \end{array}
+  \label{eq:principal3roots}
 \end{align}
 
-The principal three cube-roots obtained above are ploted in the complex plane as shown in figure \ref{fig:ex17}.
+The principal three cube-roots obtained in equation \eqref{eq:principal3roots} are ploted in the complex plane in figure \ref{fig:exercise17}.
 \begin{figure}[htbp]
     \centering
     \begin{circuitikz}[scale=1]
-    \draw[arrow](-2,0)--(2,0)node[below]{$\text{Re}(z)$};
-    \draw[arrow](0,-2)--(0,2)node[right]{$\text{Im}(z)$};
+    \draw[arrow](-2,0)--(2,0)node[below]{$\text{Re}(\omega)$};
+    \draw[arrow](0,-2)--(0,2)node[right]{$\text{Im}(\omega)$};
     \draw[arrow,very thick,NavyBlue](0:0)--(0:1)node[above right]{$\omega_0$};
     \draw[arrow,very thick,NavyBlue](0:0)--(120:1)node[above left]{$\omega_1$};
     \draw[arrow,very thick,NavyBlue](0:0)--(240:1)node[below left]{$\omega_2$};
     \draw[black](0,0)+(0:1)arc[start angle=0,end angle=360,radius=1](1,1)node[above right]{$\rho=1$}; 
     \end{circuitikz}
     \caption{First three cube-roots of $1$ in the complex plane.}
-    \label{fig:ex17}
+    \label{fig:exercise17}
 \end{figure}
 
 
