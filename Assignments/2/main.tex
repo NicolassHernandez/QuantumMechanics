@@ -50,7 +50,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 13 hours}
+\date{\today\\Total time: 8 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -70,9 +70,9 @@
 %%
 \section{Exercise 1}%
 A particle under a delta function potential has the following hamiltonian:
-\begin{align}
+\begin{align*}
   H=-\frac{\hbar}{2m}\frac{d^2}{dx^2}-\alpha\delta(x),
-\end{align}
+\end{align*}
 where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=(\alph*)]
   \item
@@ -89,20 +89,20 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
     where in this infinitesimal region around $x=0$ different things will happen:
     \begin{itemize}
       \item By property of the delta function, we will have
-      \begin{align}
+      \begin{align*}
         \int_{-\infty}^\infty \alpha\delta(x)\varphi(x)\;dx=\alpha\varphi(0).
-      \end{align}
+      \end{align*}
       \item The integration of the second derivative will become a substraction of two first derivatives:
-      \begin{align}
+      \begin{align*}
         \int_{-\epsilon}^\epsilon\left[-\frac{\hbar^2}{2m}\frac{d^2\varphi}{dx^2}(x)\right]\;dx=-\frac{\hbar^2}{2m}\left[\frac{d\varphi}{dx}(\epsilon)
         -\frac{d\varphi}{dx}(-\epsilon)\right].
-      \end{align}
+      \end{align*}
       \item The right-hand term will be zero, as the function cannot change abruptly (to be physically realizable) in an infinitesimal range:
-      \begin{align}
+      \begin{align*}
         \int_{-\epsilon}^\epsilon E\varphi(x)\;dx=0.
-      \end{align}
+      \end{align*}
     \end{itemize}
-    Plug in all in the eigenvalue equation yields
+    Putting all in the eigenvalue equation yields
     \begin{align}
       -\frac{\hbar^2}{2m}\left[\frac{d\varphi}{dx}(\epsilon)
         -\frac{d\varphi}{dx}(-\epsilon)\right]-\alpha\varphi(0)=0,\quad x\in[-\epsilon,\epsilon].
@@ -113,10 +113,10 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
 
     Taking the limit $\epsilon\to0$ in a rearranged version of the equation \eqref{eq:inteigenvalueequation} allow us to construct the difference of the 
     derivative used to prove continuity in the first derivate of $\varphi(x)$:
-    \begin{align}
+    \begin{align*}
       \lim_{\epsilon\to0}\left[\frac{d\varphi}{dx}(\epsilon)
         -\frac{d\varphi}{dx}(-\epsilon)\right]=-\frac{2m\alpha}{\hbar^2}\varphi(0).
-    \end{align}
+    \end{align*}
     We can see that lateral derivatives are not equal, but rather there is a finite jump of $-\frac{2m\alpha}{\hbar^2}\varphi(0)$ at $x=0$. Therefore, we conclude that 
     $\varphi'(x)$ is not continue at that point.
   \end{enumerate}
@@ -124,16 +124,16 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   \item
     \begin{enumerate}[itemsep=0pt,topsep=0pt,label=(b.\arabic*)]
       \item Assuming that $E=\hbar\omega<0$, in order to obtain an expression for $\rho$ we replace the wavefunctions 
-      \begin{align}
+      \begin{align*}
         x<0:&\quad\varphi(x)=A_1e^{\rho x}+A_1'e^{-\rho x}\\
         x>0:&\quad\varphi(x)=A_2e^{\rho x}+A_2'e^{-\rho x}.
-      \end{align}
-      These solutions must be stable, therefore we evaluate them at $-\infty$ and $+\infty$ to see if any term blows up:
+      \end{align*}
+      into the eigenvalue problem. These solutions must be stable, therefore we evaluate them at $-\infty$ and $+\infty$ to see if any term blows up:
       \begin{align*}
         \varphi(-\infty)&=A_1e^{\rho(-\infty)}+\cancelto{\text{blows up}}{A_1'e^{-\rho(-\infty)}},\\
         \varphi(+\infty)&=\cancelto{\text{blows up}}{A_2e^{\rho(\infty)}}+A_2'e^{-\rho(\infty)}.
       \end{align*}
-      Therefore, to keep with stable and normalizable functions we redefine the above to the following:
+      Therefore, to keep with stable and normalizable functions we redefine the above:
       \begin{align*}
         \varphi(x)=\begin{cases}
           A_1e^{\rho x},&x<0\\
@@ -173,12 +173,12 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         \rho&=\frac{m\alpha}{\hbar^2}.
       \end{align*}
       Because the variable $\rho$ must be equal in either region, we conclude that 
-      \begin{align}
+      \begin{align*}
         \rho=\sqrt{-\frac{2mE}{\hbar^2}}=\frac{m\alpha}{\hbar^2}.
-      \end{align}
+      \end{align*}
 
       The dimension of $\alpha$ can now be found easily. We know that $\rho$ must have dimensions of $[L]^{-1}$ in order to have a dimensionless quantity in the argument of the 
-      exponential of the wave $\varphi(x)$. Knowing also that the mass have dimension of $[M]$ and $\hbar^2$ of $[M^2L^4T^{-2}]$, doing dimensional analysis with the last equation above yields
+      exponential of the wave $\varphi(x)$. Knowing also that the mass have dimension of $[M]$ and $\hbar^2$ of $[M^2L^4T^{-2}]$, doing dimensional analysis with the last equation yields
       \begin{align*}
         [L^{-1}]=[M][M^2L^4T^{-2}]^{-1}[\alpha]\longrightarrow[\alpha]=[L]^{-1}[M]^{-1}[M^2L^4T^{-2}]=[ML^3T^{-2}].
       \end{align*}
@@ -190,9 +190,9 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         \sqrt{-\frac{2mE}{\hbar^2}}=\frac{m\alpha}{\hbar^2}\longrightarrow E=-\frac{m\alpha^2}{2\hbar^2}.
       \end{align*}
       The wavefunction must be normalized in order to satisfy the normalization condition and be interpreted as a probability density function:
-      \begin{align}
+      \begin{align*}
         \int_{-\infty}^{\infty}|\varphi(x)|^2\;dx=1.
-      \end{align}
+      \end{align*}
       For that, we will separate the domain in two regions, one for $x<0$ and other for $x>0$ and in each subdomain we will use the respective wavefunction.
       \begin{align*}
         \int_{-\infty}^0|Ae^{\rho x}|^2\;dx+\int_0^\infty|Ae^{-\rho x}|^2&=1\\
@@ -203,14 +203,14 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         A&=\sqrt{\rho}\quad[L]^{-1/2}.
       \end{align*}
       Therefore, the normalized wavefunctions are:
-      \begin{align}
+      \begin{align*}
         \varphi(x)=\sqrt{\rho}e^{-\rho|x|}=\begin{cases}
           \sqrt{\rho}e^{\rho x},&x<0\\
           \sqrt{\rho}e^{-\rho x},&x>0
         \end{cases}.
-      \end{align}
+      \end{align*}
     \end{enumerate}
-  \item The plot of the wavefunction is illustrated below with the respective defined $\Delta x$ we will derive shortly.
+  \item The plot of the wavefunction is illustrated below. We can see that is symmetric with the respect to the $y$ axis.
   \begin{figure}[htbp]
     \centering
     \begin{circuitikz}
@@ -229,7 +229,7 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   \end{figure}
 
   We are going to use the Full Width at Half Maximum to define $\Delta x$. It is defined as the diameter (full width) at which 
-  half of the peak is reached. We will use the $x>0$ function and the value of $x$ obtained will be multiplied bw two because of symmetry.
+  half of the peak is reached. We will use the $x>0$ function and the value of $x$ obtained will be multiplied by two because of symmetry.
   \begin{align*}
     \varphi(x)&=\frac{\varphi_{max}}{2}\\
     \sqrt{\rho}e^{-\rho x}&=\frac{\sqrt{\rho}}{2}\biggr/\ln(\cdot)\\
@@ -237,12 +237,12 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
     x&=\frac{\ln2}{\rho}\longrightarrow \Delta x=\frac{2\ln2}{\rho}.
   \end{align*}
 
-  The order of magnitude of $\Delta x$ would be something proprotional to the inverse of $\rho$ as the other is constant:
+  The order of magnitude of $\Delta x$ would be something proportional to the inverse of $\rho$ as the other terms are constant:
   \begin{align*}
     \Delta x\sim\frac{1}{\rho}.
   \end{align*}
 
-  \item The Fourier transform is applied to ouy wavefunction is:
+  \item The Fourier transform applied to our wavefunction is:
   \begin{align*}
     \tilde{\varphi}(p)&=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty \varphi(x)\exp\left\{-i\frac{p}{\hbar}x\right\}\;dx\\
     &=\frac{\sqrt{\rho}}{\sqrt{2\pi\hbar}}\left[\int_{-\infty}^0\exp\left\{\rho x-i\frac{p}{\hbar}x\right\}\;dx+\int_0^\infty \exp\left\{-\rho x-i\frac{p}{\hbar}x\right\}\;dx\right]\\
@@ -261,7 +261,7 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
     p&=\hbar\rho\longrightarrow\Delta p=2\hbar\rho.
   \end{align*}
 
-  The figure of $\tilde{\varphi}(p)$ as well as $\Delta p$ is illustrated.
+  The figure of $\tilde{\varphi}(p)$ with $\Delta p$ is illustrated. Note that the constant $\hbar$ has been set to one only for visualization.
   \begin{figure}[htbp]
     \centering
     \begin{circuitikz}
@@ -276,24 +276,98 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
       \draw[|-|](-\hwhm,-.7)--(\hwhm,-.7)node[midway,below,align=center]{$\Delta p$};
       \draw(2,1)node[align=center]{$\rho=\rro$\\$\hbar=\hh$};
     \end{circuitikz}
-    \caption{Fourier transform $\tilde{\varphi}(p)$ with a normalized $\hbar=1$ for visualization.}
+    \caption{Fourier transform $\tilde{\varphi}(p)$ with a normalized $\hbar=1$ \textbf{only} for visualization.}
   \end{figure}
 
-  The prduct of the widths is then:
-  \begin{align}
+  The product of the widths is then:
+  \begin{align*}
   \Delta x\Delta p=\frac{2\ln2}{\rho}2\hbar\rho=4\ln2\;\hbar.
-  \end{align}
+  \end{align*}
 
   The order of magnitude of $\Delta p$ and $\Delta x\Delta p$ would be:
   \begin{align*}
-    \Delta p\sim \hbar\rho,\quad\text{and}\Delta x\Delta p\sim\hbar.
+    \Delta p\sim \hbar\rho,\quad\text{and}\quad\Delta x\Delta p\sim\hbar.
   \end{align*}
 \end{enumerate}
 
 
 
 \section{Exercise 2}
-
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item Compute the adjoint of the operator $U(m,n)$ is the same that invert the order of them (transpose) and conjugate them (complex conjugation).
+  That means that a ket will become a bra and viceversa: 
+  \begin{align*}
+    U^\dagger(m,n)=(|\varphi_m\rangle\langle\varphi_n|)^\dagger=|\varphi_n\rangle\langle \varphi_m|.
+  \end{align*}
+  \item This is done by algebra of the operation and the definition above. Lets also
+  recall that $H$ is hermitian so that its eigenvalues $E_n$ are real:
+  \begin{align*}
+    [H,U(m,n)]&=HU(m,n)-U(m,n)H=H|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle\langle\varphi_n|H.
+  \end{align*}
+  The first and last terms corresponds to the eigenvalue problem, where $E_n$ is the respective eigenvalue of the $H$ operator.
+  \begin{align*}
+    [H,U(m,n)]&=E_m\langle\varphi_n|-|\varphi_m\rangle E_n^*\stackrel{(a)}{=}E_n\langle\varphi_n|-E_m|\varphi_m\rangle,
+  \end{align*}
+  where $(a)$ is due that an hermitian operator has real eigenvalue and therefore $E_n=E_n^*$.
+  \item Replacing each projector:
+  \begin{align*}
+    U(m,n)U^\dagger (p,q)=|\varphi_m\rangle\langle\varphi_n|\varphi_q\rangle\langle\varphi_p|=\begin{cases}
+      0,\quad n\neq q\\
+      |\varphi_m\rangle\langle\varphi_p|,\quad n=q
+    \end{cases}
+  \end{align*}
+  When multiplying both operator, there will be created an inner product in the middle: $\langle\varphi_n|\varphi_q\rangle$, which 
+  will return a scalar proportion to the "collinearity" of both state vectors. If we assume the basis is composed of linear independent elements $|\varphi_i\rangle$,
+  then all the inner product for which $n\neq q$ will be zero, and only when both index are equal will return $1$, if the basis is properly normalized.
+  We have put the cases of these two scenarios, but an even compact form would be through the use of the kronecker function $\delta_{ij}$, defined as:
+  \begin{align*}
+    \delta_{ij}=\begin{cases}
+      0,&i\neq j\\
+      1,&i=j
+    \end{cases}.
+  \end{align*}
+  In consequence,
+  \begin{align*}
+    U(m,n)U^\dagger (p,q)=|\varphi_m\rangle\delta_{nq}\langle\varphi_p|=\delta_{nq}|\varphi_m\rangle\langle\varphi_p|=\delta_{nq}U(m,p).
+  \end{align*}
+  \item The trace over an operator $A$ with the discrete orthonormal basis $\{|\varphi_n\rangle\}\in\mathcal{E}$ is the sum of 
+  the diagonal element of $A$:
+  \begin{align*}
+    \text{Tr}(A)=\sum_i\langle \varphi_i|A|\varphi_i\rangle.
+  \end{align*}
+  Applying it into $U(m,n)=|\varphi_m\rangle\langle\varphi_n|$ yields
+  \begin{align*}
+    \text{Tr}[U(m,n)]=\sum_i\langle \varphi_i|\varphi_m\rangle\langle\varphi_n|\varphi_i\rangle=\sum_i\langle\varphi_n|\varphi_i\rangle\langle \varphi_i|\varphi_m\rangle=\langle\varphi_n|\left(\sum_i|\varphi_i\rangle\langle\varphi_i|\right)|\varphi_m\rangle.
+  \end{align*}
+  The term in parenthesis is a property of closure relation for projectors, which is 
+  \begin{align*}
+    \sum_i|\varphi_i\rangle\langle\varphi_i|=\mathbb{I}.
+  \end{align*}
+  Therefore, we have 
+  \begin{align*}
+    \text{Tr}[U(m,n)]=\langle\varphi_n|\mathbb{I}|\varphi_m\rangle=\langle\varphi_n|\varphi_m\rangle=\delta_{nm}.
+  \end{align*}
+  \item If $A$ is an operator with matrix elements $A_{mn}=\langle\varphi_m|A|\varphi_n\rangle$, then
+  \begin{align*}
+    A&=\sum_{m,n}A_{mn}U(m,n)\\
+    &=\sum_{m,n}\langle\varphi_m|A|\varphi_n\rangle |\varphi_m\rangle\langle\varphi_n|\\
+    &=\sum_{m,n}|\varphi_m\rangle\langle\varphi_m|A|\varphi_n\rangle\langle\varphi_n|\\
+    &=\left(\sum_m|\varphi_m\rangle\langle\varphi_m|\right)A\left(\sum_n|\varphi_n\rangle\langle\varphi_n|\right)\\
+    &=\mathbb{I}A\mathbb{I}\\
+    A&=A.
+  \end{align*}
+  Where we have used the closure relation twice
+  \item The matrix element $A_{pq}=\langle\varphi_p|A|\varphi_q\rangle$ is used to compute the trace under the influence of $U^\dagger$:
+  \begin{align*}
+    A_{pq}&=\text{Tr}\{AU^\dagger(p,q)\}\\
+    \langle\varphi_p|A|\varphi_q\rangle&=\sum_i \langle\varphi_i|A|\varphi_q\rangle\langle \varphi_p|\varphi_i\rangle\\
+    &=\sum_i\langle\varphi_p|\varphi_i\rangle\langle\varphi_i|A|\varphi_q\rangle\\
+    &=\langle\varphi_p|\left(\sum_i|\varphi_i\rangle\langle\varphi_i|\right)A|\varphi_q\rangle\\
+    &=\langle\varphi_p|\mathbb{I}A|\varphi_q\rangle\\
+    \langle\varphi_p|A|\varphi_q\rangle&=\langle\varphi_p|A|\varphi_q\rangle.
+  \end{align*}
+  Using again, the closure relation of projector operator.
+\end{enumerate}
 
 
 
