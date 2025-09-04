@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1756945662.60398 "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/2/main.tex" "main.pdf" "main" 1756945668.82976 0
+["pdflatex"] 1756955938.00293 "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/2/main.tex" "main.pdf" "main" 1756955940.45878 0
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756137709 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1095.pk" 1756180023 28976 9aeca79fa7ac83055dfed08e9abf16c6 ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1756171257 40136 7003ba06b6cea7a70224e2f1036a7f49 ""
@@ -288,10 +288,10 @@
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/2/main.tex" 1756945660 18876 9e93fb7de889554006c8f32350025431 ""
-  "main.aux" 1756945667 860 914f07957a6d53c99b567ace45351f7a "pdflatex"
-  "main.out" 1756945667 192 6c9fb1084c6b06d09df10581b3d920e1 "pdflatex"
-  "main.tex" 1756945660 18876 9e93fb7de889554006c8f32350025431 ""
+  "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/2/main.tex" 1756955937 19188 c56f59eee655caf385505febff4706ef ""
+  "main.aux" 1756955940 972 d160bfed47eb708a768018d5ad554e1a "pdflatex"
+  "main.out" 1756955940 192 6c9fb1084c6b06d09df10581b3d920e1 "pdflatex"
+  "main.tex" 1756955937 19188 c56f59eee655caf385505febff4706ef ""
   "refs.bib" 1756396504 305 a8e082f4cca99b72918bc1c2f977372e ""
   (generated)
   "main.aux"

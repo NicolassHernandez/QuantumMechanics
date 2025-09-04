@@ -108,8 +108,8 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         -\frac{d\varphi}{dx}(-\epsilon)\right]-\alpha\varphi(0)=0,\quad x\in[-\epsilon,\epsilon].
         \label{eq:inteigenvalueequation}
     \end{align}
-    \item Recall that continuity of a function $f(x)$ at $x=x_0$ needs that both lateral limits are equal as they approach to the point, 
-    and that the value is equal to the function evaluated at that point: $f(x_0^-)=f(x_0^+)=f(x_0$).
+    \item Recall that continuity of a function $f(x)$ at $x=x_0$ needs that both lateral limits be equal as they approach to the point, 
+    and that the value be equal to the function evaluated at that point: $f(x_0^-)=f(x_0^+)=f(x_0$).
 
     Taking the limit $\epsilon\to0$ in a rearranged version of the equation \eqref{eq:inteigenvalueequation} allow us to construct the difference of the 
     derivative used to prove continuity in the first derivate of $\varphi(x)$:
@@ -123,17 +123,19 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   %%
   \item
     \begin{enumerate}[itemsep=0pt,topsep=0pt,label=(b.\arabic*)]
-      \item Assuming that $E=\hbar\omega<0$, in order to obtain an expression for $\rho$ we replace the wavefunctions 
+      \item We will assume that $E<0$ but we will not replace the minus sign in the derivation to maintain the generalization of the equations.
+      If one wants to put a particular value, then it has to come with the minus sign.
+      That said, to obtain an expression for $\rho$ we replace the wavefunctions 
       \begin{align*}
         x<0:&\quad\varphi(x)=A_1e^{\rho x}+A_1'e^{-\rho x}\\
         x>0:&\quad\varphi(x)=A_2e^{\rho x}+A_2'e^{-\rho x}.
       \end{align*}
-      into the eigenvalue problem. These solutions must be stable, therefore we evaluate them at $-\infty$ and $+\infty$ to see if any term blows up:
+      into the eigenvalue problem. These solutions must be stable, so we evaluate them at $-\infty$ and $+\infty$ to see if any term blows up:
       \begin{align*}
         \varphi(-\infty)&=A_1e^{\rho(-\infty)}+\cancelto{\text{blows up}}{A_1'e^{-\rho(-\infty)}},\\
         \varphi(+\infty)&=\cancelto{\text{blows up}}{A_2e^{\rho(\infty)}}+A_2'e^{-\rho(\infty)}.
       \end{align*}
-      Therefore, to keep with stable and normalizable functions we redefine the above:
+      Therefore, to have a stable and normalizable wavefunction we redefine the above:
       \begin{align*}
         \varphi(x)=\begin{cases}
           A_1e^{\rho x},&x<0\\
@@ -173,9 +175,10 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         \rho&=\frac{m\alpha}{\hbar^2}.
       \end{align*}
       Because the variable $\rho$ must be equal in either region, we conclude that 
-      \begin{align*}
+      \begin{align}
         \rho=\sqrt{-\frac{2mE}{\hbar^2}}=\frac{m\alpha}{\hbar^2}.
-      \end{align*}
+        \label{eq:rho}
+      \end{align}
 
       The dimension of $\alpha$ can now be found easily. We know that $\rho$ must have dimensions of $[L]^{-1}$ in order to have a dimensionless quantity in the argument of the 
       exponential of the wave $\varphi(x)$. Knowing also that the mass have dimension of $[M]$ and $\hbar^2$ of $[M^2L^4T^{-2}]$, doing dimensional analysis with the last equation yields
@@ -183,9 +186,10 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         [L^{-1}]=[M][M^2L^4T^{-2}]^{-1}[\alpha]\longrightarrow[\alpha]=[L]^{-1}[M]^{-1}[M^2L^4T^{-2}]=[ML^3T^{-2}].
       \end{align*}
       \item Above we have already limited the general equation to only terms that dont blow up when $x$ goes to $\pm\infty$, meaning that they are 
-      square-interable over the space. We have also implicitly set continuity in $\varphi(x)$.
+      square-interable over the space. We have also implicitly set continuity in $\varphi(x)$ when assigned the same coefficient $A$ for 
+      both wavefunctions.
 
-      The energy possible upon these constraints is obtained solving for $E$ in the previous equation derived.
+      The energy possible upon these constraints is obtained solving for $E$ in the equation \eqref{eq:rho}
       \begin{align*}
         \sqrt{-\frac{2mE}{\hbar^2}}=\frac{m\alpha}{\hbar^2}\longrightarrow E=-\frac{m\alpha^2}{2\hbar^2}.
       \end{align*}
@@ -210,7 +214,7 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
         \end{cases}.
       \end{align*}
     \end{enumerate}
-  \item The plot of the wavefunction is illustrated below. We can see that is symmetric with the respect to the $y$ axis.
+  \item The plot of the $\varphi(x)$ is illustrated below, where we can see that is symmetric.
   \begin{figure}[htbp]
     \centering
     \begin{circuitikz}
@@ -294,20 +298,21 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
 
 \section{Exercise 2}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
-  \item Compute the adjoint of the operator $U(m,n)$ is the same that invert the order of them (transpose) and conjugate them (complex conjugation).
+  \item Compute the adjoint of the operator $U(m,n)$ is the same that inverting the order (transpose) and conjugate them (complex conjugation).
   That means that a ket will become a bra and viceversa: 
-  \begin{align*}
+  \begin{align}
     U^\dagger(m,n)=(|\varphi_m\rangle\langle\varphi_n|)^\dagger=|\varphi_n\rangle\langle \varphi_m|.
-  \end{align*}
+    \label{eq:udagger}
+  \end{align}
   \item This is done by algebra of the operation and the definition above. Lets also
   recall that $H$ is hermitian so that its eigenvalues $E_n$ are real:
   \begin{align*}
     [H,U(m,n)]&=HU(m,n)-U(m,n)H=H|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle\langle\varphi_n|H.
   \end{align*}
-  The first and last terms corresponds to the eigenvalue problems $H|\varphi_m\rangle=E_m|\varphi_m\rangle$ and $\langle\varphi_n|H^\dagger=\langle\varphi_n|E^*_n$, where 
+  The first and last terms corresponds to the eigenvalue problems $H|\varphi_m\rangle=E_m|\varphi_m\rangle$ and $\langle\varphi_n|H^\dagger=\langle\varphi_n|E^*_n$, but 
   $E_n=E^*_n$ and $H=H^\dagger$ as the operator is Hermitian. Replacing them yields
   \begin{align*}
-    [H,U(m,n)]&=E_m|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle \langle\varphi_ n|E_n=|\varphi_m\rangle \langle\varphi_ n|(E_m-E_n)=U(m,n)(E_m-E_n).
+    [H,U(m,n)]&=E_m|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle \langle\varphi_ n|E_n=(E_m-E_n)|\varphi_m\rangle \langle\varphi_ n|=(E_m-E_n)U(m,n).
   \end{align*}
   \item Replacing each projector:
   \begin{align*}
@@ -319,7 +324,7 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   When multiplying both operator, there will be created an inner product in the middle: $\langle\varphi_n|\varphi_q\rangle$, which 
   will return a scalar proportion to the "collinearity" of both state vectors. If we assume the basis is composed of linear independent elements $|\varphi_i\rangle$,
   then all the inner product for which $n\neq q$ will be zero, and only when both index are equal will return $1$, if the basis is properly normalized.
-  We have put the cases of these two scenarios, but an even compact form would be through the use of the kronecker function $\delta_{ij}$, defined as:
+  We have put the cases of these two scenarios, but a compact form would be through the use of the kronecker function $\delta_{ij}$, defined as:
   \begin{align*}
     \delta_{ij}=\begin{cases}
       0,&i\neq j\\
@@ -330,12 +335,12 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   \begin{align*}
     U(m,n)U^\dagger (p,q)=|\varphi_m\rangle\delta_{nq}\langle\varphi_p|=\delta_{nq}|\varphi_m\rangle\langle\varphi_p|=\delta_{nq}U(m,p).
   \end{align*}
-  \item The trace over an operator $A$ with the discrete orthonormal basis $\{|\varphi_n\rangle\}\in\mathcal{E}$ is the sum of 
+  \item The trace over an operator $A$ with the discrete orthonormal basis $\{|\varphi_n\rangle\}$ is the sum of 
   the diagonal element of $A$:
   \begin{align*}
     \text{Tr}(A)=\sum_i\langle \varphi_i|A|\varphi_i\rangle.
   \end{align*}
-  Applying it into $U(m,n)=|\varphi_m\rangle\langle\varphi_n|$ yields
+  Applying it to $U(m,n)=|\varphi_m\rangle\langle\varphi_n|$ results in
   \begin{align*}
     \text{Tr}[U(m,n)]=\sum_i\langle \varphi_i|\varphi_m\rangle\langle\varphi_n|\varphi_i\rangle=\sum_i\langle\varphi_n|\varphi_i\rangle\langle \varphi_i|\varphi_m\rangle=\langle\varphi_n|\left(\sum_i|\varphi_i\rangle\langle\varphi_i|\right)|\varphi_m\rangle.
   \end{align*}
@@ -357,14 +362,15 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
     A&=A.
   \end{align*}
   Where we have used the closure relation twice
-  \item The matrix element $A_{pq}=\langle\varphi_p|A|\varphi_q\rangle$ is used to compute the trace under the influence of $U^\dagger$:
+  \item Substituting the $U^\dagger(p,q)$ operator obtained in equation \eqref{eq:udagger} with $A$ in the trace operation, and noting that $A_{mn}=\langle\varphi_m|A|\varphi_n\rangle$:
   \begin{align*}
     A_{pq}&=\text{Tr}\{AU^\dagger(p,q)\}\\
     \langle\varphi_p|A|\varphi_q\rangle&=\sum_i \langle\varphi_i|A|\varphi_q\rangle\langle \varphi_p|\varphi_i\rangle\\
     &=\sum_i\langle\varphi_p|\varphi_i\rangle\langle\varphi_i|A|\varphi_q\rangle\\
     &=\langle\varphi_p|\left(\sum_i|\varphi_i\rangle\langle\varphi_i|\right)A|\varphi_q\rangle\\
     &=\langle\varphi_p|\mathbb{I}A|\varphi_q\rangle\\
-    \langle\varphi_p|A|\varphi_q\rangle&=\langle\varphi_p|A|\varphi_q\rangle.
+    \langle\varphi_p|A|\varphi_q\rangle&=\langle\varphi_p|A|\varphi_q\rangle\\
+    A_{pq}&=A_{pq}.
   \end{align*}
   Using again, the closure relation of projector operator.
 \end{enumerate}
