@@ -304,11 +304,11 @@ where $\delta(x)$ is the potential to be analyzed which is centered at $x=0$.
   \begin{align*}
     [H,U(m,n)]&=HU(m,n)-U(m,n)H=H|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle\langle\varphi_n|H.
   \end{align*}
-  The first and last terms corresponds to the eigenvalue problem, where $E_n$ is the respective eigenvalue of the $H$ operator.
+  The first and last terms corresponds to the eigenvalue problems $H|\varphi_m\rangle=E_m|\varphi_m\rangle$ and $\langle\varphi_n|H^\dagger=\langle\varphi_n|E^*_n$, where 
+  $E_n=E^*_n$ and $H=H^\dagger$ as the operator is Hermitian. Replacing them yields
   \begin{align*}
-    [H,U(m,n)]&=E_m\langle\varphi_n|-|\varphi_m\rangle E_n^*\stackrel{(a)}{=}E_n\langle\varphi_n|-E_m|\varphi_m\rangle,
+    [H,U(m,n)]&=E_m|\varphi_m\rangle\langle\varphi_n|-|\varphi_m\rangle \langle\varphi_ n|E_n=|\varphi_m\rangle \langle\varphi_ n|(E_m-E_n).
   \end{align*}
-  where $(a)$ is due that an hermitian operator has real eigenvalue and therefore $E_n=E_n^*$.
   \item Replacing each projector:
   \begin{align*}
     U(m,n)U^\dagger (p,q)=|\varphi_m\rangle\langle\varphi_n|\varphi_q\rangle\langle\varphi_p|=\begin{cases}
