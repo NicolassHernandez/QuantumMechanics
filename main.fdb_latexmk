@@ -1,18 +1,18 @@
 # Fdb version 4
-["biber main"] 1757045789.23489 "main.bcf" "main.bbl" "main" 1757047247.63209 0
+["biber main"] 1757045789.23489 "main.bcf" "main.bbl" "main" 1757048112.17138 0
   "PartOne/ChapterOne/bib_.bib" 1756171177 814 ca0c4b5b986e047b1001d6e5f3140200 ""
-  "main.bcf" 1757047247 108139 eeab2fac862e356875dc41b2bb6442d1 "pdflatex"
+  "main.bcf" 1757048111 108139 eeab2fac862e356875dc41b2bb6442d1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["makeindex main.idx"] 1757045785.23248 "main.idx" "main.ind" "main" 1757047247.63163 0
-  "main.idx" 1757047247 110 af69bcc3ef0efad0bb8f1700f9e61f17 "pdflatex"
+["makeindex main.idx"] 1757047882.31928 "main.idx" "main.ind" "main" 1757048112.17093 0
+  "main.idx" 1757048111 189 35dd84aec16987788085745212cdc6e7 "pdflatex"
   (generated)
   "main.ilg"
   "main.ind"
   (rewritten before read)
-["pdflatex"] 1757047243.73962 "c:/Users/irisp/Documents/python/QuantumMechanics/main.tex" "main.pdf" "main" 1757047247.63267 0
+["pdflatex"] 1757048108.30172 "c:/Users/irisp/Documents/python/QuantumMechanics/main.tex" "main.pdf" "main" 1757048112.17192 0
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1756137709 123019 4e6d54fe28a67ad1b512b0cc9d03c2e8 ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs10.tfm" 1742930834 688 37338d6ab346c2f1466b29e195316aa4 ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/tfm/public/rsfs/rsfs5.tfm" 1756137706 684 3a51bd4fd9600428d5264cf25f04bb9a ""
@@ -661,23 +661,24 @@
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1750428951 2269 2de6c7a5fd634dfef00a960544463a38 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1750428951 20785 198a9cb2e04238d92c320d0d9edbd76a ""
-  "PartOne/ChapterOne/Introduction.tex" 1757047243 18223 2da018abc5458bcf0251fc8829117f61 ""
+  "PartOne/ChapterOne/DiracNotation.tex" 1757048103 966 4534fb878fffbd205687fb27034a6dac ""
+  "PartOne/ChapterOne/Introduction.tex" 1757047353 18223 51bc49e93f393d60bc93b8041a55a7ac ""
   "PartOne/ChapterOne/bibliography.tex" 1756171177 203 ee8175475dc3287bef0a3bc2f223b1cd ""
-  "PartOne/ChapterOne/main.tex" 1757029807 328 a40576d1c43eb0bbfdf6efbdd237d6cc ""
+  "PartOne/ChapterOne/main.tex" 1757047854 372 feaf230320565433dd2092cb17640d93 ""
   "c:/Users/irisp/Documents/python/QuantumMechanics/main.tex" 1757029622 840 fff12fc8cea447e43a737251de19c93e ""
-  "main.aux" 1757047247 4829 c473912126d14fcb284b13dee3818bcd "pdflatex"
+  "main.aux" 1757048111 5434 7571d3e73ac10e5f1f143af971891a02 "pdflatex"
   "main.bbl" 1757045791 9226 6afc9a62d2d5a4cfda0cae0fcc08661d "biber main"
-  "main.ind" 1757045785 167 6490c944a3184e87cb22d5a5f80caabd "makeindex main.idx"
-  "main.lof" 1757047247 131 c07ac6f2f05f2781276c033eef48850d "pdflatex"
-  "main.lol" 1757047246 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.lot" 1757047247 265 77291d48b61c301291a876451e51f45e "pdflatex"
-  "main.mtc" 1757047244 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.mtc0" 1757047244 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.out" 1757047247 349 525df81b22ee094608e1824fdc3914a9 "pdflatex"
-  "main.ptc" 1757047247 1097 73dba0f65468c4a7e5e75a68674c2174 "pdflatex"
-  "main.run.xml" 1757047247 2318 471f701eca3e29696c4e2ff7a8ae79b2 "pdflatex"
+  "main.ind" 1757047882 256 8f2d25af2d7409d91d2ffdf051caa077 "makeindex main.idx"
+  "main.lof" 1757048111 131 c07ac6f2f05f2781276c033eef48850d "pdflatex"
+  "main.lol" 1757048111 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.lot" 1757048111 265 77291d48b61c301291a876451e51f45e "pdflatex"
+  "main.mtc" 1757048109 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.mtc0" 1757048109 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.out" 1757048111 476 513e1ac007dba723ddbf5dbaf6fe2077 "pdflatex"
+  "main.ptc" 1757048111 1451 10129a93f150f231646ba44cb8e59d01 "pdflatex"
+  "main.run.xml" 1757048111 2318 471f701eca3e29696c4e2ff7a8ae79b2 "pdflatex"
   "main.tex" 1757029622 840 fff12fc8cea447e43a737251de19c93e ""
-  "main.toc" 1757047247 1070 1bc60380c65541216443f3c084109ca7 "pdflatex"
+  "main.toc" 1757048111 1424 2cabfde2eb732db30c9a089dfafda3e8 "pdflatex"
   "struct/Frontpage.tex" 1756171177 694 d9fdb487a8bf032879278c8f1e42e602 ""
   "struct/Preface.tex" 1756171177 119 33a77da7ce89f15d2a52b013e322dbd9 ""
   "struct/circuitikz.tex" 1756171177 3621 e55994767a1aa6f3db9e8adbe25c8836 ""

@@ -11,4 +11,8 @@
 \contentsline {subsubsection}{Plane waves}{12}{subsection.1.1.4}%
 \contentsline {subsubsection}{Delta function}{13}{equation.1.1.27}%
 \contentsline {subsubsection}{Continuous orthonormal bases}{14}{equation.1.1.33}%
+\contentsline {section}{\numberline {1.2}Dirac notation}{15}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Ket and Bra vectors}{15}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Linear operators}{15}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Hermitian conjugation (adjoint)}{15}{subsection.1.2.3}%
 \contentsfinish 

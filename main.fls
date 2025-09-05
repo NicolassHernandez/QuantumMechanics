@@ -1277,6 +1277,9 @@ INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
+INPUT .\PartOne\ChapterOne\DiracNotation.tex
+INPUT .\PartOne\ChapterOne\DiracNotation.tex
+INPUT PartOne\ChapterOne\DiracNotation.tex
 INPUT .\PartOne\ChapterOne\bibliography.tex
 INPUT .\PartOne\ChapterOne\bibliography.tex
 INPUT PartOne\ChapterOne\bibliography.tex
