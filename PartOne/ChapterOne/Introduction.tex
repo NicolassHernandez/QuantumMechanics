@@ -1,0 +1,312 @@
+\section{Introduction}
+
+The formalism of quantum mechanics (QM) involves symbols and methods for denoting and determining the time dependent state of a physical system along with 
+a mathematical structure for evaluating the possible outcomes and associated proabailities of measurements.
+
+\begin{definition}[State]
+    A \bfemph{state} is evything knowable about the dynamical aspects of a system at a certain time.
+\end{definition}
+
+A particle has associated a \bfemph{wavefunction} $\psi(\bR,t)$ whose probability interpretation resides on $|\psi(\bR,t)|^2$: it 
+represents the probabilifty density function which serves a a probability finder in space and time. The probability of finding 
+the particle somewhere in space is thus equal to 1:
+\begin{align}
+    \int_{\text{all space}}d^3r\;|\psi(\bR,t)|^2=1.
+\end{align}
+
+Thus, in order that this integral converges, we must deal with a set of square-integrable functions, called $L^2$. We can only 
+retain the functions $\psi(\bR,t)$ which are everywhere defined, continuous, and infinitely differenciable $C^\infty$.
+Also, we confine to wavefunctions that have a bounded domain (we can find the particle in a finite region of space).
+
+We list the formal definition of a vector space which is used to define particular vector spaces.
+\begin{definition}[Vector space]
+    A \bfemph{vector space}\index{Vector space} over a field $F$ (set defined with addition and multiplication) is a non-empty set $V$ together with a \emph{vector addition} and a 
+    \emph{scalar multiplication} that satisfies eight axioms. The elements of $V$ are called vectors and the elements of $F$ are caleld 
+    scalars.
+    \begin{align}
+        \begin{array}{l|l}
+            \text{Commutativity of vector addition}&\bu+\bv=\bv+\bu\\
+            \text{Associativity of vector addition}&(\bu+\bv)+\bw=\bu+(\bv+\bw)\\
+            \text{Identity element of vector addition}&\exists \bO,\bv\in V:\quad\bv+\bO=\bv\\
+            \text{Inverse element of vector addition}&\forall \bv\in V,\;\exists -\bv\in V:\quad\bv+(-\bv)=\bO\\
+            \text{Associativity of scalar multiplication}&\alpha(\beta\bv)=(\alpha\beta)\bv\\
+            \text{Distributivity over vector addition}&\alpha(\bu+\bv)=\alpha\bu+\alpha\bv\\
+            \text{Distributivity over scalar addition}&(\alpha+\beta)\bv=\alpha\bv+\beta\bv\\
+            \text{Identity element of scalar multiplication}&\bm{1}\bv=\bv
+        \end{array}
+    \end{align}
+    When the scalar field is the real numbers, the vector space is called a real vector space, when the scalar field is the complex numbers, then is called a complex vector space.
+\end{definition}
+
+\begin{definition}[Vector space $\F$]
+    The set of wavefunctions $\F\in L^2$ is composed of sufficiently regular functions of $L^2$.
+\end{definition}
+%%
+\subsection{Scalar product}
+With each pair of orderer elements of $\F$, $(\varphi(\bR),\psi(\bR))$, we associate a \emph{complex number}:
+\begin{align}
+    \highlight{(\varphi,\psi)=\int d^3r\;\varphi^*(\bR)\psi(\bR)\in\mathbb{C}}.
+\end{align}
+Its properties are listed below:
+\begin{table}[h!]
+    \begin{tabular}{LLL}
+        \text{Adjoint}&\text{Linear in the second term}&\text{Antilinear in the first term}\\
+        (\varphi,\psi)=(\psi,\varphi)^*&(\varphi,\lambda_1\psi_1+\lambda_2\psi_2)=\lambda_1(\varphi,\psi_1)+\lambda_2(\varphi,\psi_2)&(\lambda_1\varphi_1+\lambda_2\varphi_2,\psi)=\lambda_1^*(\varphi_2,\psi)+\lambda_2^*(\varphi_2,\psi)
+    \end{tabular}
+\end{table}
+
+If $(\varphi,\psi)=0$, then $\varphi(\bR)$ and $\psi(\bR)$ are said to be \bfemph{orthogonal}. In addition, the scalar product of a vector with itself return its \emph{norm squared}:
+\begin{align}
+    \text{Parseval's theorem}\qquad(\varphi,\varphi)=\int d^3r\;|\psi(\bR)|^2\geq0\in\mathbb{R}.
+\end{align}
+We also have the Schwarz inequality defined with the norms:
+\begin{align}
+    |(\psi_1,\psi_2)|\leq\sqrt{(\psi_1,\psi_1)}\sqrt{(\psi_2,\psi_2)}.
+\end{align}
+%%
+\subsection{Linear operators}
+A linear operator $A$ is a mathematical entity which associates with every function $\phi(\bR)\in\F$ another function $\phi'(\bR)$ linearly:
+\begin{align}
+\begin{array}{l}
+    \phi'(\bR)=A\phi(\bR)\\
+    A[\lambda_1\phi_1(\bR)+\lambda_2\phi_2(\bR)]=\lambda_1A\phi_1(\bR)+\lambda_2A\phi_2(\bR)
+\end{array}
+\end{align}
+
+Let $A,B$ be two linear operators, their product $AB$ on a vector corresponds to the application of $B$ first, and then A acts on the new vector $\varphi(\bR)=B\psi(\bR)$:
+\begin{align}
+    (AB)\psi(\bR)=A[B\psi(\bR)].
+\end{align}
+In general, the order of application matter and a way to quantify it is through the \bfemph{commutator}\index{Commutator}:
+\begin{align}
+    \highlight{[A,B]=AB-BA}.
+\end{align}
+%%
+\subsection{Discrete orthonormal bases in $\F:\;\{u_i(\bR)\}$}
+\subsubsection{Definition of discrete orthonormal bases}
+Let be a countable set of function $\{u_1(\bR)\}\in\F$. 
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item This set is orthonormal if only the inner profuct of the same function returns a non-zero value:
+        \begin{align}
+            \text{Orthonormalization relation}\qquad\highlight{(u_i,u_j)=\int d^3r\;u_i^*(\bR)u_j(\bR)=\delta_{ij}},
+            \label{eq:introduction_orthonormalizationrelationdiscreteu}
+        \end{align}
+        where $\delta_{ij}$ is the kronecker function:
+        \begin{align}
+            \delta_{ij}=\begin{cases}
+                1,&i=j\\
+                0,&i\neq j
+            \end{cases}.
+        \end{align}
+    \item It constitutes a \bfemph{basis}\index{Basis} if every function $\psi(\bR)\in\F$ can be expanded in only \textbf{one way} in $\{u_i(\bR)\}$ as a linear combination:
+    \begin{align}
+        \text{Expansion}\qquad\highlight{\psi(\bR)=\sum_ic_iu_i(\bR)}, 
+        \label{eq:introduction_expansionfunction}   
+    \end{align}
+    whose elements of projection $c_i$ are obtained computing the scalar product $(u_j,\psi(x))$:
+    \begin{align*}
+        (u_j,\psi)=\left(u_j,\sum_ic_iu_i(\bR)\right)=\sum_ic_i(u_j,u_i)=\sum_ic_i\delta_{ij}=c_j.
+    \end{align*}
+    Thus,
+    \begin{align}
+        \text{Coefficient expansion}\qquad\highlight{c_i=(u_i,\psi)=\int d^3r\;u_i^*(\bR)\psi(\bR)}.
+        \label{eq:introduction_expansioncoefficients}  
+    \end{align}
+    Once projected in $\{u_i(\bR)\}$ it is equivalent to specify $\psi(\bR)$ or the set of $c_i$, which represent $\psi(\bR)$ in the $\{u_i(\bR)\}$ basis.
+    The 3D generalization is given in A-22-A-24.
+\end{itemize}
+
+The scalar product of two wavefunctions can also be expressed in terms of the coefficients of projection. Let be $\varphi(\bR),\psi(\bR)$,
+\begin{align}
+    (\varphi,\psi)=\left[\sum_ib_iu_i,\sum_jc_ju_j\right]=\sum_{i,j}b_i^*c_j(u_i,u_j)=\sum_{i,j}b_i^*c_j\delta_{ij}.
+\end{align}
+Therefore, the scalar product is:
+\begin{align}
+    \text{Scalar product}\qquad\highlight{(\varphi,\psi)=\sum_ib_i^*c_i}
+\end{align}
+Its generalization for 3D is given in A-28.
+
+%%
+\subsubsection{Closure relation}
+Equation \eqref{eq:introduction_orthonormalizationrelationdiscreteu} is called \emph{orthonormalization relation} over the set $\{u_i(\bR)\}$. There is another 
+condition called \emph{Closure relation}, which express the fact that this set constitutes a basis.
+
+If $\{u_i(\bR)\}\in\F$, the any function $\psi(\bR)\in\F$ is decomposed using equation \eqref{eq:introduction_expansionfunction}:
+\begin{align*}
+    \psi(\bR)=\sum_ic_iu_i(\bR)=\sum_i(u_i,\psi)u_i(\bR)=\sum_i\left[\int d^3r'\;u_i^*(\bR')\psi(\bR')\right]u_i(\bR)=\int d^3r'\;\psi(\bR')\left[\sum_iu_i(\bR)u_i^*(\bR')\right]
+\end{align*}
+This integration with sum will be $\psi(\bR)$ only when $\bR=\bR'$, which is characteristic of a delta function centered at $\bR=\bR'$. Thus, the only way to 
+achieve that is that the sum must be a delta function $\delta(\bR-\bR')$ and we have
+\begin{align}
+    \text{Closure relation}\qquad\highlight{\sum_iu_i(\bR)u_i^*(\bR')=\delta(\bR-\bR')}.
+    \label{eq:introduction_closurerelationdiscreteu}
+\end{align}
+If an orthonormal set $\{u_i(\bR)\}$ satisfies the closure relation then it constitutes a basis. 
+
+%%
+\subsection{Bases not belonging to $\F$}
+The $\{u_i(\bR)\}$ bases are composed of square-integrable functions. It can also be convenient to introduce bases of functions \textbf{not belonging} to $\F$ or $L_2$, 
+but in terms of which any wavefunction $\psi(\bR)$ can nevertheless be expanded. We will discuss two examples: 1D plane wave, and delta functions, after which we will 
+study continuous bases.
+%%
+\subsubsection{Plane waves}
+Consider a plane wave $v_p(x)$ with wave vector $p/\hbar$
+\begin{align}
+    v_p(x)=\frac{1}{\sqrt{2\pi\hbar}}e^{ipx/\hbar}.
+\end{align}
+The integral of $|v_p(x)|^2=\frac{1}{2\pi\hbar}$ over $x\in\mathbb{R}$ diverges, therefore $v_p(x)\notin\F_x$. We shall designate $\{v_o(x)\}$ the set of all plane waves, 
+with the continuous index $p\in(-\infty,\infty)$. The Fourier-pair equations 
+\begin{align*}
+    \psi(x)=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dp\;\bar{\psi}(p)e^{ipx/\hbar},\quad\text{and}\quad\bar{\psi}(p)=\frac{1}{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty dx\;\psi(x)e^{-ipx/\hbar},
+\end{align*}
+can be rewritten with the definition of the plane wave:
+\begin{align}
+    \psi(x)&=\int_{-\infty}^\infty dp\;\bar{\psi}(p)v_p(x),\label{eq:introduction_expansionfunctionplanewaves}\\
+    \bar{\psi}(p)&=(v_p,\psi)=\int_{-\infty}^\infty dx\;v_p^*(x)\psi(x)\label{eq:introduction_expansioncoefficientsplanewaves}.
+\end{align}
+The two formulas can be compared to equations \eqref{eq:introduction_expansionfunction} and \eqref{eq:introduction_expansioncoefficients}. In this case, every function $\psi(x)\in\F_x$ 
+can be expanded in only one way as a continuous linear combination of planes waves, whose components are given by \eqref{eq:introduction_expansioncoefficientsplanewaves}. The set of 
+these components constitutes a function of $p$, $\bar{\psi}(p)$, the Fourier transform of $\psi(x)$.
+
+\begin{emphasizer}
+    $\bar{\psi}(p)$ is analogous to $c_i$, both represent the components of the same function $\psi(x)$ in two different bases: $\{v_p(x)\}$ and $\{u_i(x)\}$.
+\end{emphasizer}
+
+If we calculate the square of the norm of $\psi(x)$ we will get:
+\begin{align}
+    \text{Parseval's theorem}\qquad(\psi,\psi)=\int_{-\infty}^\infty dp\;|\bar{\psi}(p)|^2.
+\end{align}
+
+We can also show that $v_p(x)$ satisfy the closure relation:
+{\small
+\begin{align*}
+    \psi(x)&=\int_{-\infty}^\infty dp\;\bar{\psi}(p)v_p(x)=\int_{-\infty}^\infty dp\;(v_p,\psi)v_p(x)=\int_{-\infty}^\infty dp\;\left[\int_{-\infty}^\infty dx'\;v_p^*(x')\psi(x')\right]v_p(x)\\
+    &=\int_{-\infty}^\infty dx'\;\psi(x')\left[\int_{-\infty}^\infty dp\;v_p(x)v^*_p(x')\right].
+\end{align*}}
+The term inside the brackets corresponds to 
+\begin{align}
+    \text{Closure relation}\qquad\highlight{\int_{-\infty}^\infty dp\;v_p(x)v^*_p(x')=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{dp}{\hbar}e^{i\frac{p}{\hbar}(x-x')}\stackrel{(a)}{=}\delta(x-x')}.
+    \label{eq:introduction_closurerelationplanewaves}
+\end{align}
+In $(a)$ the following relation was used:
+\begin{align*}
+    \frac{1}{2\pi}\int_{-\infty}^\infty dk\;e^{iku}=\delta(u).
+\end{align*}
+Equation \eqref{eq:introduction_closurerelationplanewaves} is analogous to \eqref{eq:introduction_closurerelationdiscreteu}. In the same way, we can derive the orthonormalization relation using $(a)$:
+\begin{align*}
+    (v_p,v_{p'})=\int_{-\infty}^\infty dx\;v_p^*(x)v_{p'}(x)=\frac{1}{2\pi}\int\frac{dx}{\hbar}e^{i\frac{x}{\hbar}(p'-p)}=\delta(p-p').
+\end{align*}
+Therefore,
+\begin{align}
+    \text{Orthonormalization relation}\qquad \highlight{(v_p,v_{p'})=\delta(p-p')}.
+    \label{eq:introduction_orthonormalizationrelationplanewaves}
+\end{align}
+Now instead of a kronecker delta, we have a delta function. If $p=p'$, the scalar product \textbf{diverges}: we see again that $v_p(x)\notin\F_x$. It is also sait that 
+$v_p(x)$ is "orthonormalized in the Dirac sense". The generalization to three dimension is given by
+\begin{align}
+    v_{\bp}(\bR)=\left(\frac{1}{2\pi\hbar}\right)^{3/2}e^{i\cdot\bp/\hbar}.
+\end{align}
+The functions of $\{v_p(\bR)\}$ basis now depend on the thre continuous indices $p_x,p_y,p_z$ condensed in $\bp$. In addition,
+\begin{align}
+    \text{Expansion}&\qquad\psi(\bR)=\int d^3p\;\bar{\psi}(\bp)v_{\bp}(\bR)\\
+    \text{Coefficient expansion}&\qquad\bar{\psi}(\bp)=(v_{\bp},\psi)=\int d^3r\;v^*_{\bp}(\bR)\psi(\bR)\\
+    \text{scalar product}&\qquad(\varphi,\psi)=\int d^3p\;\bar{\varphi}^*(\bp)\bar{\psi}(\bp)\\
+    \text{Closure relation}&\qquad\int d^3p\;v_{\bp}(\bR)v^*_{\bp}(\bR')=\delta(\bR-\bR')\\
+    \text{Orthornormalization relation}&\qquad(v_{\bp},v_{\bp'})=\delta(\bp-\bp')
+\end{align}
+The $v_p(\bR)$ can be considered to constitute a \textbf{continuous} basis.
+%%
+\subsubsection{Delta function}
+We can also consider a set of functions of $\bR$, $\{\xi_{\bR_o}(\bR)\}$, labeled by the continuous index $\bR_0=(x_0,y_0,z_0)$ and defined by
+\begin{align}
+    \xi_{\bR_0}(\bR)=\delta(\bR-\bR_0).
+\end{align}
+Obviously, $\xi_{\bR_0}(\bR)$ is not square-integrable: $\xi_{\bR_0}(\bR)\notin\F$.
+
+Then, we can have the following
+\begin{align}
+    \text{Expansion}&\qquad\psi(\bR)=\int d^3r_0\;\psi(\bR_0)\xi_{\bR_0}(\bR),\quad\text{and}\\
+    \text{Coefficient expansion}&\qquad\psi(\bR_0)=(\xi_{\bR_0},\psi)=\int d^3r\;\xi^*_{\bR_0}(\bR)\psi(\bR).
+\end{align}
+The equations are analogous to equations \eqref{eq:introduction_expansionfunction} and \eqref{eq:introduction_expansioncoefficients}.
+\begin{emphasizer}
+    $\psi(\bR_0)$ is the equivalent of $c_i$, which represent the components of the same function $\psi(\bR)$ in two different bases: $\{\xi_{\bR_0}(\bR)\}$ 
+    and $\{u_i(\bR)\}$.
+\end{emphasizer}
+We also list, the other formulas:
+\begin{align}
+    \text{scalar product}&\qquad(\varphi,\psi)=\int d^3r_0\;\varphi^*(\bR_0)\psi(\bR_0)\\
+    \text{Closure relation}&\qquad\int d^3r_0\;\xi_{\bR_0}(\bR)\xi^*_{\bR_0}(\bR')=\delta(\bR-\bR')\\
+    \text{Orthonormalization relation}&\qquad (\xi_{\bR_0},\xi_{\bR'_0})=\delta(\bR_0-\bR'_0)
+\end{align}
+The $\xi_{\bR_0}(\bR)$ can be considered to constitute a \textbf{continuous} basis.
+
+\begin{emphasizer}
+    A physical state must \textbf{always} correspond to a qaure-integrable wavefunction. In no case $v_p(\bR)$ and $\xi_{\bR_0}(\bR)$ can represent the state of a 
+    particle. They are nothing more than intermediaries, useful for calculations.
+\end{emphasizer}
+%%
+\subsubsection{Continuous orthonormal bases}
+We will denote a continuous orthonormal basis to a set of function of $\bR$, $\{w_\alpha(\bR)\}$, labeled by a continuous index $\alpha$, which satisfy the 
+closure and orthonormalization relations:
+\begin{align}
+    \text{Orthonormalization relation}&\qquad(w_\alpha,w_{\alpha'})=\int d^3r\;w^*_\alpha(\bR)w_{\alpha'}(\bR)=\delta(\alpha-\alpha')\\
+    \text{Closure relation}&\qquad\int d\alpha\;w_\alpha(\bR)w^*_\alpha(\bR')=\delta(\bR-\bR').
+\end{align}
+
+When $\alpha=\alpha'$, $(w_\alpha,w_{\alpha'})$ \textbf{diverges}. Therefore, $\omega_\alpha(\bR)\notin\F$. Recall that this is a generalized continuous basis,
+so it can represent the plane waves and delta functions by setting $\alpha=\bp$ and $\alpha=\bR_0$, respectively.
+
+In the case of mixed (discrete and continuous) basis $\{u_i(\bR),w_\alpha(\bR)\}$, the orthonormalization relations are
+\begin{align}
+    \text{Orthonormalization relation for mixed basis}\qquad
+    \begin{array}{l}
+        (u_i,u_j)=\delta_{ij}\\
+        (w_\alpha,w_{\alpha'})=\delta(\alpha-\alpha')\\
+        (u_i,w_\alpha)=0
+    \end{array}.
+\end{align}
+And the closure relation becomes:
+\begin{align}
+    \text{Closure relation for mixed basis}\qquad\sum_iu_i(\bR)u_i^*(\bR')+\int d\alpha\;w_\alpha(\bR)w^*_\alpha(\bR')=\delta(\bR-\bR').
+\end{align}
+
+We also list the expansion, coefficient of expansion and the scalar product for the continuous basis:
+\begin{align}
+    \text{Expansion}&\qquad\psi(\bR)=\int d\alpha\;c(\alpha)w_\alpha(\bR)\\
+    \text{Coefficient expansion}&\qquad c(\alpha)=(w_\alpha,\psi)=\int d^3r'\;w^*_\alpha(\bR')\psi(\bR')\\
+    \text{scalar product}&\qquad(\varphi,\psi)=\int d\alpha\;b^*(\alpha)c(\alpha)
+\end{align}
+
+The squared norm of the wavefunction with itself is then
+\begin{align}
+    \text{Parseval's theorem}\qquad(\psi,\psi)=\int d\alpha\;|c(\alpha)|^2.
+\end{align}
+
+Finally, all the formulas can thus be generalized from discrete basis of index $i$ and continuous basis with index $\alpha$ (which can consider 
+the plane wave and delta functions) through the following change of variables:
+\begin{align}
+    \text{Transformation $\{u_i(\bR)\}\longleftrightarrow\{w_{\alpha}(\bR)\}$}\qquad
+    \highlight{\begin{array}{l}
+        i\longleftrightarrow\alpha\\
+        \displaystyle\sum_i\longleftrightarrow\int d\alpha\\
+        \delta_{ij}\longleftrightarrow\delta(\alpha-\alpha')
+    \end{array}}
+\end{align}
+
+
+\begin{table}[h!]
+    \caption{Fundamental formulas for discrete and continuous basis.}
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{l|l|l}
+        \text{Property}&\text{Discrete basis $\{u_i(\bR)\}$}&\text{Continuous basis $\{w_\alpha(\bR)\}$}\\
+        \hline
+        \text{scalar product}&$(\varphi,\psi)=\displaystyle\sum_ib^*_ic_i$&$(\varphi,\psi)=\displaystyle\int d\alpha\;b^*(\alpha)c(\alpha)$\\
+        \text{Parseval}&$(\psi,\psi)=\displaystyle\sum_i|c_i|^2$&$(\psi,\psi)=\displaystyle\int d\alpha\;|c(\alpha)|^2$\\
+        \text{Orthonormalization relation}&$(u_i,u_j)=\delta_{ij}$&$(w_\alpha,w_{\alpha'})=\delta(\alpha-\alpha')$\\
+        \text{Closure relation}&$\displaystyle\sum\limits_iu_i(\bR)u_i^*(\bR')=\delta(\bR-\bR')$&$\displaystyle\int d\alpha\;w_\alpha(\bR)w_\alpha^*(\bR')=\delta(\bR-\bR')$\\
+        \text{Expansion}&$\psi(\bR)=\displaystyle\sum_ic_iu_i(\bR)$&$\psi(\bR)=\displaystyle\int d\alpha\;c(\alpha)w_\alpha(\bR)$\\
+        \text{Components}&$c_i=(u_i,\psi)$&$c(\alpha)=(w_\alpha,\psi)$
+    \end{tabular}
+\end{table}
