@@ -1,0 +1,228 @@
+\section{Representations in state space}
+
+Choosing a representation means choosing and orthonormal (discrete or continuous) basis in the state space $\E$.
+Vectors and operators are then represented in this basis by \emph{numbers}: components for the vectors, matrix elements for the operators.
+
+We now translate all properties such as orthonormaliation relation and closure relation to the Dirac notation.
+%%
+\subsection{Relations characteristic of an orthonormal basis}
+\subsubsection{Orthonormalization relation}
+A set of kets, discrete $\{\ket{u_i}\}$ or continuous $\{\ket{w_\alpha}\}$ is said to be orthonotmal if they satisfy the following equation:
+\begin{align}
+    \text{Orthonormalization relation}\qquad\highlight{\begin{array}{l}
+        \langle u_i|u_j\rangle=\delta_{ij}\\
+        \langle w_\alpha|w_{\alpha'}\rangle=\delta(\alpha-\alpha')
+    \end{array}}.
+    \label{eq:orthonormalizationrelationdirac}
+\end{align}
+As can be seen, for a continuous set $\langle w_\alpha|w_\alpha\rangle$ \textbf{does not exists}: the $\ket{w_\alpha}$ have an infinite norm and 
+therefore not belong to $\E$. Nevertheless, the vectors of $\E$ can be expanded on the $\ket{w_\alpha}$. It is useful then to accept $\ket{w_\alpha}$ as 
+\emph{generalized kets}.
+%%
+\subsubsection{Closure relation}
+A discrete or continuous set constitutes a basis if every ket $\ket{\psi}\in\E$ has a \textbf{unique} expansion on $\ket{u_i}$ or $\ket{w_\alpha}$:
+\begin{align}
+    \text{Closure relation}\qquad\highlight{\begin{array}{l}
+        \ket{\psi}=\displaystyle\sum_ic_i\ket{u_i}\\
+        \ket{\psi}=\displaystyle\int d\alpha\;c(\alpha)\ket{w_\alpha}
+    \end{array}},
+    \label{eq:closurerelationdirac}
+\end{align}
+whose components are obtained multiplying $\bra{u_j}$ ($\bra{\omega_{\alpha'}}$) in the closure relation and using equation \eqref{eq:orthonormalizationrelationdirac}:
+\begin{align}
+    \text{Coefficient expansion}\qquad\highlight{\begin{array}{l}
+        \langle u_j|\psi\rangle=c_j\\
+        \langle w_{\alpha'}|\psi\rangle=c(\alpha')
+    \end{array}}.
+    \label{eq:coefficientexpansiondirac}
+\end{align}
+
+We can reexpress the expansion employing the coefficient expansion equations:
+\begin{align*}
+    \ket{\psi}&=\sum_ic_i\ket{u_i}=\sum_i\langle u_i|\psi\rangle\ket{u_i}=\sum_i\ket{u_i}\langle u_i|\psi\rangle=\left[\sum_i\ket{u_i}\bra{u_i}\right]\ket{\psi}=P_{\{u_i\}}\ket{\psi},\\
+    \ket{\psi}&=\int d\alpha\;c(\alpha)\ket{w_\alpha}=\int d\alpha\;\langle w_\alpha|\psi\rangle\ket{w_\alpha}=\int d\alpha\;\ket{w_\alpha}\langle w_\alpha|\psi\rangle=\left[\int d\alpha\;\ket{w_\alpha}\bra{w_\alpha}\right]\ket{\psi}=P_{\{w_\alpha\}}\ket{\psi}.\\
+\end{align*}
+
+We then have the projector onto a discrete and continuous basis:
+\begin{align}
+    \text{Projectors}\qquad\highlight{\begin{array}{l}
+        P_{\{u_i\}}=\displaystyle\sum\limits_i\ket{u_i}\bra{u_i}=\mathds{1}\\
+        P_{\{w_\alpha\}}=\displaystyle\int d\alpha\;\ket{w_\alpha}\bra{w_\alpha}=\mathds{1}
+    \end{array}}\qquad\text{Closure relation},
+\end{align}
+where $\mathds{1}$ denotes the identiy operator in $\E$. These relations express the fact that $\{\ket{u_i}\}$ and $\{\ket{w_\alpha}\}$ constitute bases.
+
+\begin{table}[h!]
+    \centering
+    \caption{Fundamental formulas for calculation in the $\{\ket{u_i}\}$ and $\{\ket{w_\alpha}\}$ representations.}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{l|l}
+        $\{\ket{u_i}\}$ representation&$\{\ket{w_\alpha}\}$ representation\\
+        \hline
+        $\langle u_i|u_j\rangle=\delta_{ij}$&$\langle w_\alpha|w_{\alpha'}\rangle=\delta(\alpha-\alpha')$\\
+        $P_{\{u_i\}}=\displaystyle\sum_i\ket{u_i}\bra{u_i}=\mathds{1}$&$P_{\{w_\alpha\}}=\displaystyle\int d\alpha\;\ket{w_\alpha}\bra{w_\alpha}=\mathds{1}$
+    \end{tabular}
+\end{table}
+%%
+\subsection{Representation of kets and bras}
+In the $\{\ket{u_i}\}$ basis, the ket $\ket{\psi}$ is represented by a set of its components $x_i\langle u_i|psi\rangle$. These numbers are 
+arranged vertically to form a column matrix. On the other hand, for continuous basis $\{\ket{w_\alpha}\}$, the ket $\ket{\psi}$ is represented by a continuous 
+\textbf{infinity} of numbers $c(\alpha)=\langle w_\alpha|\psi\rangle$: a function of $\alpha$. We then draw a vertical axis with the values of $c(\alpha)$:
+\begin{align*}
+    \ket{\psi}_{\{\ket{u_i}\}}&=\mathds{1}\ket{\psi}=P_{\{\ket{u_i}\}}\ket{\psi}=\sum_i\ket{u_i}\braket{u_i|\psi}=\sum_ic_i\ket{u_i},\\
+    \ket{\psi}_{\{\ket{w_\alpha}\}}&=\mathds{1}\ket{\psi}=P_{\{\ket{w_\alpha}\}}\ket{\psi}=\int d\alpha\;\ket{w_\alpha}\braket{w_\alpha|\psi}=\int d\alpha\;c(\alpha)\ket{\psi}.
+\end{align*}
+Then,
+\begin{align}
+    \ket{\psi}_{\{\ket{u_i}\}}=\begin{bmatrix}
+        \braket{u_1|\psi}\\
+        \braket{u_2|\psi}\\
+        \vdots\\
+        \braket{u_i|\psi}\\\vdots
+    \end{bmatrix},\quad\text{and}\quad 
+    \ket{\psi}_{\{\ket{w_\alpha}\}}=
+    \begin{array}{ll}
+    \alpha\downarrow&\begin{bmatrix}
+        \vdots\\\vdots\\\braket{w_\alpha|\psi}\\\vdots\\\vdots
+    \end{bmatrix}
+    \end{array}.
+\end{align}
+
+
+Something similar happens to the respective bras:
+\begin{align*}
+    \bra{\varphi}_{\{\ket{u_i}\}}&=\bra{\varphi}\mathds{1}=\bra{\varphi}P_{\{\ket{u_i}\}}=\sum_i\braket{\varphi|u_i}\bra{u_i}=\sum_ib^*_i\bra{u_i},\\
+    \bra{\varphi}_{\{\ket{w_\alpha}\}}&=\bra{\varphi}\mathds{1}=\bra{\varphi}P_{\{\ket{w_\alpha}\}}=\int d\alpha\;\braket{\varphi|w_\alpha}\bra{w_\alpha}=\int d\alpha\;b^*(\alpha)\bra{\varphi}.
+\end{align*}
+We can see that the components of the bra are the complex conjugates of the components $b_i=\braket{u_i|\varphi}$ and $b(\alpha)=\braket{w_\alpha|\varphi}$ of the ket $\ket{\varphi}$ associated with $\bra{\varphi}$.
+
+Let us then arrange them horizontally, to form a row matrix:
+\begin{align}
+    \bra{\varphi}_{\{\ket{u_i}\}}=&\begin{bmatrix}
+        \braket{\varphi|u_1}&\braket{\varphi|u_2}&
+        \cdots&\braket{\varphi|u_i}&\cdots
+    \end{bmatrix},\quad\text{and}\\
+    \bra{\varphi}_{\{\ket{w_\alpha}\}}=&
+    \begin{array}{c}
+    \alpha\\\rightarrow\\
+    \begin{bmatrix}
+        \cdots&\cdots&\braket{\varphi|w_\alpha}&\cdots&\cdots
+    \end{bmatrix}
+    \end{array}.
+\end{align}
+
+The scalar product is then given by a \textbf{matrix multiplication}:
+\begin{align}
+    \braket{\varphi|\psi}&=\braket{\varphi|\mathds{1}|\psi}=\braket{\varphi|P_{\{u_i\}}|\psi}=\sum_i\braket{\varphi|u_i}\braket{u_i|\varphi}=\sum_ib_i^*c_i\\
+    \braket{\varphi|\psi}&=\braket{\varphi|\mathds{1}|\psi}=\braket{\varphi|P_{\{w_\alpha\}}|\psi}=\int d\alpha\;\braket{\varphi|w_\alpha}\braket{w_\alpha|\psi}=\int d\alpha\;b^*(\alpha)c(\alpha).
+\end{align}
+
+%%
+\subsection{Representation of operators}
+\subsubsection{Representation of $A$ by a square matrix}
+Given a linear operator $A$, we can in $\{\ket{u_i}\}$ or $\{\ket{w_\alpha}\}$ basis, associate with it a series of numbers defined by
+\begin{align}
+    A_{ij}=\braket{u_i|A|u_j},\quad\text{or}\quad A(\alpha,\alpha')=\braket{w_\alpha|A|w_{\alpha'}}.
+\end{align}
+They are arranged into a square matrix, as 
+\begin{align}
+    \begin{bmatrix}
+        A_{11}&A_{12}&\cdots&A_{1j}&\cdots\\
+        A_{21}&A_{22}&\cdots&A_{2j}&\cdots\\
+        \vdots&\vdots&&\vdots&\\
+        A_{i1}&A_{i2}&\cdots&A_{ij}&\cdots\\
+        \vdots&\vdots&&\vdots&
+    \end{bmatrix},\quad\text{or}\quad
+    \begin{array}{cc}
+        &\alpha'\\
+        &\longrightarrow\\
+        \alpha\downarrow&\begin{bmatrix}
+            &&\vdots&\\
+            &&\vdots&\\
+            \cdots&\cdots&A(\alpha,\alpha')&\cdots\\
+            &&\vdots&
+        \end{bmatrix}
+    \end{array}.
+\end{align}
+
+For the case of the matrix representing the operator $AB$ in the $\{\ket{u_i}\}$ basis, we have:
+\begin{align*}
+    \braket{u_i|AB|u_j}=\braket{u_i|A\mathds{1}B|u_j}=\braket{u_i|AP_{\{u_k\}}B|u_j}=\sum_k\braket{u_i|A|u_k}\braket{u_k|B|u_j}=\sum_kA_{ik}B_{kj}.
+\end{align*}
+
+%%
+\subsubsection{Representation of the ket $\ket{\psi'}=A\ket{\psi}$}
+Knowing the componetns of $\ket{\psi}$ and the matrix elements of $A$ in a given representation, how can we calculate the components of $\ket{\psi'}=S\ket{\psi}$ in the 
+same representation?
+
+We know that in the $\{\ket{u_i}\}$ and $\{\ket{w_\alpha}\}$ basis, we have
+\begin{align*}
+    c_i'=\braket{u_i|\psi'}=\braket{u_i|A|\psi},\quad\text{and}\quad c'(\alpha)=\braket{w_\alpha|\psi'}.
+\end{align*}
+Inserting the closure relation between $A$ and $\ket{\psi}$:
+\begin{align*}
+    c_i'&=\braket{u_1|A\mathds{1}|\psi}=\braket{u_i|AP_{\{u_j\}}|\psi}=\sum_j\braket{u_i|A|u_j}\braket{u_j|\psi}=\sum_jA_{ij}c_j\\
+   c'(\alpha)&=\braket{w_\alpha|A\mathds{1}|\psi}=\int d\alpha'\;\braket{w_\alpha|A|w_{\alpha'}}\braket{w_{\alpha'}|\psi}=\int d\alpha'\;A(\alpha,\alpha')c(\alpha').
+\end{align*}
+We see that the column matrix representing $\ket{\psi'}$ is equal to the matrix multiplication of the column matrix $\ket{\psi}$ and the square matrix $A$.
+\subsubsection{Expression for the number $\braket{\varphi|A|\psi}$}
+On the other hand, we can derive an expression for $\braket{\varphi|A|\psi}$ for both basis:
+\begin{align*}
+    \braket{\varphi|A|\psi}=&\braket{\varphi|P_{\{u_i\}}AP_{\{u_j\}}|\psi}=\sum_{i,j}\braket{\varphi|u_i}\braket{u_i|A|u_j}\braket{u_j|\psi}=\sum_{i,j}b_i^*A_{ij}c_j,\\
+    &\braket{\varphi|P_{\{w_\alpha\}}AP_{\{w_{\alpha'}\}}|\psi}=\iint d\alpha\;d\alpha'\;\braket{\varphi|w_\alpha}\braket{w_\alpha|A|w_{\alpha'}}\braket{w_{\alpha'}|\psi}=\iint d\alpha\;d\alpha'\;b^*(\alpha)A(\alpha,\alpha')c(\alpha').
+\end{align*}
+
+Thus, the term $\braket{\varphi|A|\psi}$ which is a number, can be computed as a matrix multiplication of the column vector $\ket{\psi}$ by the matrix $A$, and then by the row vector $\bra{\varphi}$.
+%%
+\subsubsection{Matrix representation of $A^\dagger$}
+The adjoint of $A$ can also be written as:
+\begin{align}
+    \begin{array}{l}
+        (A^\dagger)_{ij}=\braket{u_i|A^\dagger|u_j}=\braket{u_j|A|u_i}^*=A^*_{ji}\\
+        A^\dagger(\alpha,\alpha')=\braket{w_\alpha|A^\dagger|w_{\alpha'}}=\braket{w_{\alpha'}|A|w_\alpha}^*=A^*(\alpha',\alpha).
+    \end{array}
+    \label{eq:adjointoperator}
+\end{align}
+The matrices representing $A$ and $A^\dagger$ are then Hermitian conjugates of each other.
+
+If $A$ is Hermitian, then $A_{ij}=A^*_{ji}$ and $A(\alpha,\alpha')=A^*(\alpha',\alpha)$. A hermitian operator is therefore represented by a Hermitian matrix.
+For $i=j$, $\alpha=\alpha'$ we see that $A_{ii}=A_{ii}^*$, $A(\alpha,\alpha)=A^*(\alpha,\alpha)$. Thus,
+\begin{emphasizer}
+    The diagonal elements of a Hermitian matrix are therefore always real numbers.
+\end{emphasizer}
+%%
+\subsection{Change of representation}
+
+We can representate a ket $\ket{\psi}$ in different bases, similar to representing a point in space by cartesian and spherical coordinates. 
+The relation of these two representation allow us to turn from one to the other easily.
+
+If we assume an old discrete basis $\{\ket{u_i}\}$ to a new one $\{\ket{t_k}\}$, the change of basis is defined by specifying the components $S_{ik}=\braket{u_i|t_k}$ of each 
+kets of the new basis in terms of the kets of the old one. The adjoint is: $(S^\dagger)_{ki}=(S_{ik})^*=\braket{t_k|u_i}$. This transformation matrix is \bfemph{unitary}\index{Unitary}: $S^\dagger S=SS^\dagger=I$.
+
+
+We will derive the transformation for a ket, a bra, and the matrix elements of an operator using the closure relation of each basis as explained in the derivation. 
+\begin{align*}
+    \braket{t_k|\psi}&=\braket{t_k|\mathds{1}|\psi}=\braket{t_k|P_{\{u_i\}}|\psi}=\sum_i\braket{t_k|u_i}\braket{u_i|\psi}=\sum_iS^\dagger_{ki}\braket{u_i|\psi}\\
+    \braket{u_i|\psi}&=\braket{u_i|\mathds{1}|\psi}=\braket{u_i|P_{\{t_k\}}|\psi}=\sum_k\braket{u_i|t_k}\braket{t_k|\psi}=\sum_iS_{ik}\braket{t_k|\psi}\\
+    \braket{\psi|t_k}&=\braket{\psi|\mathds{1}|t_k}=\braket{\psi|P_{\{u_i\}}|t_k}=\sum_i\braket{\psi|u_i}\braket{u_i|t_k}=\sum_i\braket{\psi|u_i}S_{ik}\\
+    \braket{\psi|u_i}&=\braket{\psi|\mathds{1}|u_i}=\braket{\psi|P_{\{t_k\}}|u_i}=\sum_k\braket{\psi|t_k}\braket{t_k|u_i}=\sum_k\braket{\psi|t_k}S^\dagger_{ki}\\
+        A_{kl}&=\braket{t_k|A|t_l}=\braket{t_k|\mathds{1}A\mathds{1}|t_l}=\braket{t_k|P_{\{u_i\}}AP_{\{u_j\}}|t_l}=\sum_{i,j}\braket{t_k|u_i}\braket{u_i|A|u_j}\braket{u_j|t_l}=\sum_{i,j}S^\dagger_{ki}A_{ij}S_{jl}\\
+    A_{ij}&=\braket{u_i|A|u_j}=\braket{u_i|\mathds{1}A\mathds{1}|u_j}=\braket{u_i|P_{\{t_k\}}AP_{\{t_l\}}|u_j}=\sum_{k,l}\braket{u_i|t_k}\braket{t_k|A|t_l}\braket{t_l|u_j}=\sum_{k,l}S_{ik}A_{kl}S^\dagger_{lj}.
+\end{align*}
+
+The final results are shown in table 
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \caption{Transformation of a ket, bra, and matrix elements from one basis to another.}
+    \begin{tabular}{l|l}
+        Transformation&Expression\\
+        \hline
+        Ket components $\{u_i\}\longrightarrow\{t_k\}$ representation&$\braket{t_k|\psi}=\displaystyle\sum_iS^\dagger_{ki}\braket{u_i|\psi}$\\
+        Ket components $\{t_k\}\longrightarrow\{u_i\}$ representation&$\braket{u_i|\psi}=\displaystyle\sum_iS_{ik}\braket{t_k|\psi}$\\
+        Bra components $\{u_i\}\longrightarrow\{t_k\}$ representation&$\braket{\psi|t_k}=\displaystyle\sum_i\braket{\psi|u_i}S_{ik}$\\
+        Bra components $\{t_k\}\longrightarrow\{u_i\}$ representation&$\braket{\psi|u_i}=\displaystyle\sum_k\braket{\psi|t_k}S^\dagger_{ki}$\\
+        Matrix elements $\{u_{i,j}\}\longrightarrow\{t_{k,l}\}$ representation&$A_{kl}=\displaystyle\sum_{i,j}S^\dagger_{ki}A_{ij}S_{jl}$\\
+        Matrix elements $\{t_{k,l}\}\longrightarrow\{u_{i,j}\}$ representation&$A_{ij}=\displaystyle\sum_{k,l}S_{ik}A_{kl}S^\dagger_{lj}$
+    \end{tabular}
+\end{table}

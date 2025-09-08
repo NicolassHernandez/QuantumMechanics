@@ -13,10 +13,193 @@ there exist physical systems whose quantum description cannot be given by a wave
 \end{definition}
 %%
 \subsection{Ket and Bra vectors}
+\subsubsection{Ket vectors}
+Any element or vector of space $\E$ is called a \bfemph{key vector}\index{Ket vector} or ket, and is represented by the 
+symbol $\ket{\cdot}$. We shall define the space $\E_{\bR}$ of the states of a particle by associating with every 
+square-integrable function $|psi(\bR)$ a ket vector $\ket{\psi}$ of $\E_{\bR}$:
+\begin{align}
+    \psi(\bR)\in\F\Longrightarrow\ket{\psi}\in\E_{\bR}.
+\end{align}
+Altough $\F$  and $\E_{\bR}$ are \textbf{isomorphic}, we shal carefully distinguish between them. We see that the $\bR$-dependence no 
+longer appears in $\ket{\psi}$: only appears $\psi$ as an object that is used to extract information. 
+%%
+\subsubsection{Dual space and bra vectors}
+A \bfemph{linear function}\index{Linear functional} $\chi$ is a linear operation which associantes a complex number with every ket $\ket{\psi}$:
+\begin{align}
+    \begin{array}{l}
+        \ket{\psi}\in\E\stackrel{\chi}{\longrightarrow}\chi(\ket{\psi})\in\mathbb{C}\\
+        \chi(\lambda_1\ket{\psi_1}+\lambda_2\ket{\psi_2})=\lambda_1\chi(\ket{\psi_1})+\lambda_2\chi(\ket{\psi_2}).
+    \end{array}
+\end{align}
+\begin{emphasizer}
+    A linear functional is an operator that returns a complex number, while a linear operator returns another ket (vector).
+\end{emphasizer}
 
+The set of linear functionals defined on $\ket{\psi}\in\E$ constitutes a vector space, which is called \bfemph{dual space} of $\E$ and which will 
+be symbolized by $\E^*$.
+
+Any element, or vector of the space $\E^*$ is called a \bfemph{bra vector}\index{Bra vector}, or bra and is denoted by $\bra\cdot$.
+
+The bra acts as a linear operator over the ket, which can be used to define the scalar product to return a complex number:
+\begin{align}
+    \text{Scalar product}\qquad\highlight{\langle\varphi|\psi\rangle=(\ket{\varphi},\ket{\psi})}.
+\end{align}
+We then have similar properties for the scalar product:
+\begin{align}
+    \begin{array}{lll}
+        \text{Adjoint}&\text{Linear to the second vector}&\text{Antilinear to the first vector}\\
+        \langle\varphi|\psi\rangle=\langle\psi|\varphi\rangle^*&\langle\varphi|\lambda_1\psi_1+\lambda_2\psi_2\rangle=\lambda_1\langle\varphi|\psi_1\rangle+\lambda_2\langle\varphi|\psi_2\rangle&\langle\lambda_1\varphi_1+\lambda_2\varphi_2|\psi\rangle=\lambda_1^*\langle\varphi_1|\psi\rangle+\lambda_2^*\langle\varphi_2|\psi\rangle
+    \end{array}
+\end{align}
+
+\subsubsection{Relation bra-ket}
+There is an antilinear relation between a ket and its bra, so that we have the following multiplications by a scalar for the vectors
+\begin{align}
+    \ket{\lambda\psi}=\lambda\ket{\psi}\in\E\Longrightarrow\bra{\lambda\psi}=\lambda^*\bra{\psi}\in\E^*,\quad\lambda\in\mathbb{C}.
+\end{align}
+Although to every ket there corresponds a bra, it is possible to find bras that have no corresponding kets such as delta functions and plane waves spaces.
+This dissymetry of the correspondence bra-ket is related to the existence of continuous basis for $\F_x$. This happens when the norm of the functions blow up 
+making them not belong to $\F_x$, so we cannot associate a ket of $\E_x$ with them. Nervertheless, their scalar pdouct with a function of $\F_x$ is defined,
+and this permits us to assicate with them a linear function of $\E_x$: the bra belonging to $\E_x^*$.
+However, we can define \bfemph{generalized kets}, defined using functions that are not $L^2$, but whose scalar product with every function of $\F_x$ exists.
+
+When working with plane waves and delta functions, we assume the following approximation:
+\begin{align}
+    \ket{\xi_{x_0}}\stackrel{\text{Refers to}}{\longrightarrow}\ket{\xi_{x_0}^{(\epsilon)}},\quad\text{and}\quad\ket{v_{p_0}}\stackrel{\text{Refers to}}{\longrightarrow}\ket{v_{p_0}^{(L)}},
+\end{align}
+where $\epsilon$ is very small and $L$ very large compared to all other lengths of the problem, so we are always working in $\E_x$.
+
+Note that 
+\begin{align}
+    \begin{array}{l}
+        \xi_{x_0}^{(\epsilon)}(x)\in\F_x\Longleftrightarrow\ket{\xi_{x_0}^{(\epsilon)}}\in\E_x\\
+        \lim\limits_{\epsilon\to0}\ket{\xi_{x_0}^{(\epsilon)}}\notin\E_x\\
+        \lim\limits_{\epsilon\to0}\bra{\xi_{x_0}^{(\epsilon)}}=\bra{\xi_{x_0}}\in\E^*_x\\
+        \ket{\psi}\in\E_x\Longrightarrow \langle\xi_{x_0}|\psi\rangle=\psi(x_0)
+    \end{array},\quad\text{and}\quad
+    \begin{array}{l}
+        v_{p_0}^{(L)}(x)\in\F_x\Longleftrightarrow\ket{v_{p_0}^{(L)}}\in\E_x\\
+        \lim\limits_{L\to\infty}\ket{v_{p_0}^{(L)}}\notin\E_x\\
+        \lim\limits_{L\to\infty}\bra{v_{p_0}^{(L)}}=\bra{v_{p_0}}\in\E^*_x\\
+        \ket{\psi}\in\E_x\Longrightarrow \langle v_{p_0}|\psi\rangle=\bar{\psi}(p_0)
+    \end{array}
+\end{align}
+
+\begin{emphasizer}
+    In general, the dual space $\E^*$ and the stae space $\E$ are not isomorphic, exept that $\E$ is finite-dimensional. 
+    Although to each ket there corresponds a bra, the converse is not true. In addition to use vector of $\E$ (whose norm is finite),
+    \bfemph{generalized kets} with infinite norms but whose scalar product with every ket of $\E$ is finite. Thus, to each bra of $\E^*$ there will
+    correpsond a ket. But generalized kets do not represent physical states of the system.
+\end{emphasizer}
 
 %% 
 \subsection{Linear operators}
+A linear operator $A$ associates with every ket $\ket{\psi}\in\E$ another ket $\ket{\psi'}\in\E$ linearly:
+\begin{align}
+    &\ket{\psi'}=A\ket{\psi}\\
+    &A(\lambda_1\ket{\psi_1}+\lambda_2\ket{\psi_2})=\lambda_1A\ket{\psi_1}+\lambda_2A\ket{\psi_2}.
+\end{align} 
+The product of two linear operators $AB$ is defined by first acting $B$ in the ket $\ket{\psi}$, and then $A$:
+\begin{align}
+    (AB)\ket{\psi}=A(B\ket{\psi}).
+\end{align}
+The commutator express the degree of difference between the change of order of operation:
+\begin{align}
+    \highlight{[A,B]=AB-BA}.
+\end{align}
+We call the \bfemph{matrix element}\index{Matrix of element} of $A$ between $\ket{\varphi}$ and $\ket{\psi}$, the scalar product that measure the collinearity 
+between the action of the operator onto $\ket{\varphi}$:
+\begin{align}
+    \highlight{\bra{\varphi}A\ket{\psi}\in\mathbb{C}}.
+\end{align}
+%%
+\subsubsection{Projector}
+Lets assume that $\langle\psi|\psi\rangle=1$ (normalized), we define the \bfemph{projector} as an operator that projects a ket into another ket:
+\begin{align}
+    P_{\psi}=\ket{\psi}\bra{\psi}
+\end{align}
+When it acts into a vector, it first compute the scalar product and the assign the value to the vector from which the product was computed:
+\begin{align*}
+    P_{\psi}\ket{\varphi}=\ket{\psi}\underbrace{\langle\psi|\varphi\rangle}_{\text{number}}.
+\end{align*}
+It is also \emph{idempotent}, which means that 
+\begin{align}
+    P^2_\psi=P_\psi P_\psi=\ket{\psi}\langle\psi|\psi\rangle\bra{\psi}=\ket{\psi}\bra{\psi}=P_\psi.
+\end{align}
 
+The most generalized form is project a ket into a orthonormalized ($\langle\varphi_i|\varphi_j\rangle=\delta_{ij}$) subespace $\{\varphi_q\}\in\E_q\subseteq\E$. Let $P_q$ be then the linear operator
+\begin{align}
+    \highlight{P_q=\sum_{i=1}^q\ket{\varphi_i}\bra{\varphi_i}}.
+\end{align}
+It then takes the ket, and compute the projection to every vector $\ket{\varphi_i}$ and the form a linear combination.
 %% 
 \subsection{Hermitian conjugation (adjoint)}
+There is also possible to define actions of $A$ on bras as $\bra{\chi}A$, whose order is important.
+
+We can also link with every linear operator $A$ another linear operator $A^\dagger$, caled the adjoint operator (or Hermitian conjugate) of $A$.
+The operatoe $A$ associates with it another ket $\ket{\psi'}=A\ket{\psi}\in\E$. The correspondende between kets and bras permits us to define the action of 
+operator $A^\dagger$ on the bras: 
+\begin{align}
+    \ket{\psi}\text{ corresponds to }\bra{\psi}\Longrightarrow\ket{\psi'}=A\ket{\psi}\text{ corresponds to }\bra{\psi'}=\bra{\psi}A^\dagger.
+\end{align}
+The relation $\bra{\psi'}=\bra{\psi}A^\dagger$ is \bfemph{linear}, as 
+\begin{align*}
+    A(\lambda^*_1\ket{\psi_1}+\lambda_2^*\ket{\psi_2})=\lambda_1^*A\ket{\psi_1'}+\lambda_2^*A\ket{\psi'_2}\text{ corresponds to }(\lambda_1\bra{\psi_1}+\lambda_2\bra{\psi_2})A^\dagger=\lambda_2\bra{\psi_1}A^\dagger+\lambda_2\bra{\psi_2}A^\dagger.
+\end{align*} 
+Therefore, $A^\dagger$ is a linear operator defined by 
+\begin{align}
+    \ket{\psi'}=A\ket{\psi}\Longleftrightarrow\bra{\psi'}=\bra{\psi}A^\dagger,
+\end{align}
+which also implies that 
+\begin{align}
+    \langle\psi|A^\dagger|\varphi\rangle=\langle\varphi|A|\psi\rangle^*.
+\end{align}
+\subsubsection{Properties}
+\begin{align*}
+    \begin{array}{l}
+        (A^\dagger)^\dagger=A\\
+        (\lambda A)^\dagger=\lambda^*A^\dagger\\
+        (A+B)^\dagger=A^\dagger+B^\dagger\\
+        (AB)^\dagger=B^\dagger A^\dagger
+    \end{array}
+\end{align*}
+%%
+\subsubsection{Hermitian conjugation in Dirac notation}
+A ket $\ket{\psi}$ and its corresponding bra $\bra{\psi}$ are said to be Hermitian conjugates of each other. In the same manner, $A^\dagger$ is 
+also called Hermitian conjugate operator of $A$.
+
+The operation of Hermitian conjugate is followed by a very simple rule:
+\begin{definition}[Rule of Hermitian conjugate]
+    To obtain the adjoint of any expression composed f constantes, kets, bras, and operators, one must:
+    \begin{align*}
+        \text{Replace}&\qquad\left\{
+            \begin{array}{l}
+                \text{the constants by their complex conjugates}\\
+                \text{the kets by the bras associated}\\
+                \text{the bras by the kets associated}\\
+                \text{the operators by their adjoints}
+            \end{array}
+        \right.\\
+        \text{Reverse the order of the factors}&\qquad\text{Only constants can move around (commute)}
+    \end{align*}
+
+    As an example,
+    \begin{align*}
+        \bigr(\lambda\langle u|A|v\rangle|w\rangle\langle\psi|\bigr)^\dagger=|\psi\rangle\langle w|\langle v|A^\dagger|u\rangle\overbrace{\lambda^*}^{\text{can move around}}
+    \end{align*}
+\end{definition}
+
+%%
+\subsubsection{Hermitian operators}
+An operator $A$ is said to be Hermitian if $A=A^\dagger$, which stasify the following relations:
+\begin{align*}
+    \langle\psi|A|\varphi\rangle=\langle\varphi|A|\psi\rangle^*\quad\text{and}|\quad\langle A\varphi|\psi\rangle=\langle\varphi|A\psi\rangle.
+\end{align*}
+In addition, the projector $P_\psi$ is an Hermitian operator:
+\begin{align}
+    P_\psi^*=|\psi\rangle\langle\psi|=P_\psi.
+\end{align}
+
+\begin{emphasizer}
+    The product of two Hermitian operators $A,B$ is Hermitian only if $[A,B]=0$.
+\end{emphasizer}

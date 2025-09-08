@@ -1,0 +1,532 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 3}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: 8 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Part I}
+\subsection*{Problem 2}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item The operator $\sigma_y$ is Hermitian as 
+  \begin{align*}
+    \sigma_y^\dagger=\left(\begin{bmatrix}
+      0&-i\\i&0
+    \end{bmatrix}^*\right)^T=\begin{bmatrix}
+    0&i\\-i&0
+  \end{bmatrix}^T=\begin{bmatrix}
+    0&-i\\i&0
+  \end{bmatrix}=\sigma_y.
+  \end{align*}
+  Its eigenvalues are then, the roots of the characteristic polynomial
+  \begin{align*}
+    P(\lambda)=\det(\sigma_y-\lambda I)=\lambda^2-1=0,
+  \end{align*}
+  from which we have 
+  \begin{align}
+    \lambda\in\{-1,1\}\in\mathbb{R}.
+  \end{align}
+  The eigenvalues are obtained evaluating each eigenvalue in the eigenvalue problem $(\sigma_y-\lambda)\bm{v}=\bm{0}$.
+  We only list the final results as they were calculated in the assignment 1:
+  \begin{align}
+    \bm{v}\in\{\bm{v}_1,\bm{v}_2\}=\left\{\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1\\-i
+    \end{bmatrix},\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1\\i
+    \end{bmatrix}\right\}=\left\{\frac{1}{\sqrt{2}}(\ket{1}-i\ket{2}),\frac{1}{\sqrt{2}}(\ket{1}+i\ket{2})\right\}.
+  \end{align}
+  \item The projectors is 
+  \begin{align*}
+    P=\sum_{i=1}^2\ket{\bm{v}_i}\bra{\bm{v}_i}=\ket{\bm{v}_1}\bra{\bm{v}_1}+\ket{\bm{v}_2}\bra{\bm{v}_2}.
+  \end{align*}
+  It consists of the sum of two outer products, which we already know:
+  \begin{align*}
+    \ket{\bm{v}_1}\bra{\bm{v}_1}&=\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1\\-i
+    \end{bmatrix}\cdot\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1&i
+    \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
+      1&i\\-i&1
+    \end{bmatrix}\\
+    \ket{\bm{v}_2}\bra{\bm{v}_2}&=\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1\\i
+    \end{bmatrix}\cdot\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1&-i
+    \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
+      1&-i\\i&1
+    \end{bmatrix}
+  \end{align*}
+  The orthonormality relation states that that multiplication of two terms will produces in a zero matrix when they project onto 
+  different eigenvectors:
+  \begin{align*}
+    \ket{\bm{v}_1}\braket{\bm{v}_1|\bm{v}_2}\bra{\bm{v}_2}=\frac{1}{2}\begin{bmatrix}
+      1&i\\-i&1
+    \end{bmatrix}\cdot\frac{1}{2}\begin{bmatrix}
+      1&-i\\i&1
+    \end{bmatrix}=\begin{bmatrix}
+      1-1&-i+i\\-i+i&-1+1
+    \end{bmatrix}=\begin{bmatrix}
+      0&0\\0&0
+    \end{bmatrix}=\bm{0},
+  \end{align*}
+  which would also be stated by simply computing 
+  \begin{align*}
+    \braket{\bm{v}_1|\bm{v}_2}=\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1&i
+    \end{bmatrix}\cdot\frac{1}{\sqrt{2}}\begin{bmatrix}
+    1\\i
+    \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
+      1-1
+    \end{bmatrix}=0.
+  \end{align*}
+
+  The closure relation must sum the identity matrix:
+  \begin{align*}
+    \ket{\bm{v}_1}\bra{\bm{v}_1}+\ket{\bm{v}_2}\bra{\bm{v}_2}=\frac{1}{2}\begin{bmatrix}
+      1&i\\-i&1
+    \end{bmatrix}+\frac{1}{2}\begin{bmatrix}
+      1&-i\\i&1
+    \end{bmatrix}=\begin{bmatrix}
+      1&0\\0&1
+    \end{bmatrix}=\mathds{1}.
+  \end{align*}
+  \item Omitted
+\end{enumerate}
+%%
+\subsection*{Problem 3}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item To verify wether they are normalized, we must compute the norm in each ket and see if it is one. First, we represent each of them into the $\{\ket{u_1},\ket{u_2},\ket{u_3}\}$ basis:
+  \begin{align*}
+    \ket{\psi_0}=\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}\\\cfrac{i}{2}\\\cfrac{1}{2}
+    \end{bmatrix},\quad\text{and}\quad
+    \ket{\psi_1}=\begin{bmatrix}
+      \cfrac{1}{\sqrt{3}}\\0\\\cfrac{i}{\sqrt{3}}
+    \end{bmatrix}.
+  \end{align*} 
+  The, the norm is:
+  \begin{align*}
+    \braket{\psi_0|\psi_0}&=\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}&\cfrac{-i}{2}&\cfrac{1}{2}
+    \end{bmatrix}\cdot\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}\\\cfrac{i}{2}\\\cfrac{1}{2}
+    \end{bmatrix}=\frac{1}{2}+\frac{1}{4}+\frac{1}{4}=1\\
+    \braket{\psi_1|\psi_1}&=\begin{bmatrix}
+      \cfrac{1}{\sqrt{3}}&0&\cfrac{-i}{\sqrt{3}}
+    \end{bmatrix}\cdot\begin{bmatrix}
+      \cfrac{1}{\sqrt{3}}\\0\\\cfrac{i}{\sqrt{3}}
+    \end{bmatrix}=\frac{1}{3}+0+\frac{1}{3}=\frac{2}{3}\neq1.
+  \end{align*}
+  By looking the results, we san say that $\ket{\psi_0}$ is normalized by $\ket{\psi_1}$ does not. If we want to normalize it we must divide the ket by the value we have obtained:
+  \begin{align*}
+    \ket{\psi_1'}=\frac{3}{2}\ket{\psi_1}=\begin{bmatrix}
+      \cfrac{3}{2\sqrt{3}}\\0\\\cfrac{3i}{2\sqrt{3}}
+    \end{bmatrix}.
+  \end{align*}
+  \item The projections operators onto each state $\ket{\psi_0}$ and $|\ket{\psi_1}$ are:
+  \begin{align*}
+    \rho_0&=\ket{\psi_0}\bra{\psi_0}=\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}\\\cfrac{i}{2}\\\cfrac{1}{2}
+    \end{bmatrix}\cdot\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}&\cfrac{-i}{2}&\cfrac{1}{2}
+    \end{bmatrix}=\begin{bmatrix}
+      \cfrac{1}{2}&\cfrac{-i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
+      \cfrac{i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{i}{4}\\
+      \cfrac{1}{2\sqrt{2}}&\cfrac{-i}{4}&\cfrac{1}{4}
+    \end{bmatrix}\\
+    \rho'_1&=\ket{\psi'_1}\bra{\psi'_1}=\begin{bmatrix}
+      \cfrac{3}{2\sqrt{3}}\\0\\\cfrac{3i}{2\sqrt{3}}
+    \end{bmatrix}\cdot \begin{bmatrix}
+      \cfrac{3}{2\sqrt{3}}&0&\cfrac{-3i}{2\sqrt{3}}
+    \end{bmatrix}=\begin{bmatrix}
+      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      0&0&0\\
+      \cfrac{9i}{12}&0&\cfrac{9}{12}
+    \end{bmatrix}.
+  \end{align*}
+  Notice we have used $\ket{\psi_1'}$ instead of $\ket{\psi_1}$. At first glance, both projectors look Hermitian. We can confirm it mathematically:
+  \begin{align*}
+    \rho^\dagger_0&=\left(\begin{bmatrix}
+      \cfrac{1}{2}&\cfrac{-i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
+      \cfrac{i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{i}{4}\\
+      \cfrac{1}{2\sqrt{2}}&\cfrac{-i}{4}&\cfrac{1}{4}
+    \end{bmatrix}^*\right)^T=\left(\begin{bmatrix}
+      \cfrac{1}{2}&\cfrac{i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
+      \cfrac{-i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{-i}{4}\\
+      \cfrac{1}{2\sqrt{2}}&\cfrac{i}{4}&\cfrac{1}{4}
+    \end{bmatrix}\right)^T=\begin{bmatrix}
+      \cfrac{1}{2}&\cfrac{-i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
+      \cfrac{i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{i}{4}\\
+      \cfrac{1}{2\sqrt{2}}&\cfrac{-i}{4}&\cfrac{1}{4}
+    \end{bmatrix}=\rho_0\\
+    \rho'^\dagger_1&=\left(\begin{bmatrix}
+      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      0&0&0\\
+      \cfrac{9i}{12}&0&\cfrac{9}{12}
+    \end{bmatrix}\right)^T=\left(\begin{bmatrix}
+      \cfrac{9}{12}&0&\cfrac{9i}{12}\\
+      0&0&0\\
+      \cfrac{-9i}{12}&0&\cfrac{9}{12}
+    \end{bmatrix}\right)^T=\begin{bmatrix}
+      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      0&0&0\\
+      \cfrac{9i}{12}&0&\cfrac{9}{12}
+    \end{bmatrix}=\rho'_1.
+  \end{align*}
+\end{enumerate}
+%
+\subsection*{Problem 6}
+We can use Taylor expansion to bring fown the matrix:
+\begin{align}
+  e^{A}=\sum_{n=0}^\infty\frac{A^n}{n!}=\mathds{1}+A+\frac{A^2}{2!}+\cdots+\frac{A^n}{n!}+\cdots
+  \label{eq:taylorexpansionexponentialmatrix}
+\end{align}
+
+Then, the matrix $\sigma_x$ is elevated to an increasing power. It is then important to know how it behaves:
+\begin{align*}
+  \sigma_x=\begin{bmatrix}
+    0&1\\1&0
+  \end{bmatrix},\quad\sigma_x^2=\begin{bmatrix}
+    1&0\\0&1
+  \end{bmatrix}=I,\quad\sigma_x^2=\begin{bmatrix}
+    0&1\\1&0
+  \end{bmatrix}=\sigma_x,\quad \sigma_x^4=\begin{bmatrix}
+    1&0\\0&1
+  \end{bmatrix}=\sigma_x^2=I,\quad\cdots
+\end{align*}
+We conclude the following:
+\begin{align*}
+  \sigma^n_x=\begin{cases}
+    \sigma_x,&\text{$n$ odd}\\
+    I_{2\times2},&\text{$n$ even}
+  \end{cases}.
+\end{align*}
+The other part of the term, $i\alpha$, is merely a constant we can take out of the matrix. Now, using the Taylor expression with the results above:
+\begin{align*}
+  e^{i\alpha\sigma_x}&=I_{2\times2}+(i\alpha)\sigma_x+\frac{(i\alpha)^2}{2!}\sigma_x^2+\frac{(i\alpha)^3}{3!}\sigma_x^3+\frac{(i\alpha)^4}{4!}\sigma_x^4\\
+  &=I_{2\times2}+i\alpha\sigma_x-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_x+\frac{\alpha^4}{4!}I_{2\times2}\\
+  &=I_{2\times2}\left[1-\frac{\alpha^2}{2!}+\frac{\alpha^4}{4!}-\cdots\right]+i\sigma_x\left[\alpha-\frac{\alpha^3}{3!}+\cdots\right]\\
+  e^{i\alpha\sigma_x}&\stackrel{(a)}{=}I_{2\times2}\cos\alpha+i\sigma_x\sin\alpha.
+\end{align*}
+In $(a)$ we have used the very well-known series expansion of $\cos\alpha$ and $\sin\alpha$.
+%
+\subsection*{Problem 7}
+The matrix to use is:
+\begin{align*}
+  \sigma_y=\begin{bmatrix}
+    0&-i\\i&0
+  \end{bmatrix}
+\end{align*}
+Taking the first fourth powers of $\sigma_y$:
+\begin{align*}
+\sigma_y=\begin{bmatrix}
+  0&-i\\i&0
+\end{bmatrix},\quad\sigma_y^2=\begin{bmatrix}
+  1&0\\0&1
+\end{bmatrix}=I,\quad\sigma_y^3=\begin{bmatrix}
+  0&-i\\i&0
+\end{bmatrix}=\sigma_y,\quad\sigma_y^4=\begin{bmatrix}
+  1&0\\0&1
+\end{bmatrix}=I
+\end{align*}
+Therefore,
+\begin{align*}
+  \sigma_y^n=\begin{cases}
+    \sigma_y,&\text{$n$ odd}\\
+    I_{2\times2},&\text{$n$ even}
+  \end{cases}
+\end{align*}
+Performing the same expansion as before:
+\begin{align*}
+  e^{i\alpha\sigma_y}&=I_{2\times2}+(i\alpha)\sigma_y+\frac{(i\alpha)^2}{2!}\sigma_y^2+\frac{(i\alpha)^3}{3!}\sigma_y^3+\frac{(i\alpha)^4}{4!}\sigma_y^4\\
+  &=I_{2\times2}+i\alpha\sigma_y-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_y+\frac{\alpha^4}{4!}I_{2\times2}\\
+  &=I_{2\times2}\left[1-\frac{\alpha^2}{2!}+\frac{\alpha^4}{4!}-\cdots\right]+i\sigma_y\left[\alpha-\frac{\alpha^3}{3!}+\cdots\right]\\
+  e^{i\alpha\sigma_y}&=I_{2\times2}\cos\alpha+i\sigma_y\sin\alpha.
+\end{align*}
+
+Now, we consider the general case where $\sigma_u=\lambda\sigma_x+\mu\sigma_y$:
+\begin{align*}
+  e^{i\alpha\sigma_u}=e^{i\alpha(\lambda\sigma_x+\mu\sigma_y)}=\sum_{n=1}^\infty\frac{(i\alpha\lambda\sigma_x+i\alpha\mu\sigma_y)^n}{n!}.
+\end{align*}
+We will verify if $\sigma_x$ and $\sigma_y$ commute in order to simplify the above expresion:
+\begin{align*}
+  [\sigma_x,\sigma_y]=\begin{bmatrix}
+    0&1\\1&0
+  \end{bmatrix}\begin{bmatrix}
+    0&-i\\i&0
+  \end{bmatrix}-\begin{bmatrix}
+    0&-i\\i&0
+  \end{bmatrix}\begin{bmatrix}
+    0&1\\1&0
+  \end{bmatrix}=\begin{bmatrix}
+    i&0\\0&-i
+  \end{bmatrix}-\begin{bmatrix}
+    -i&0\\0&i
+  \end{bmatrix}=\begin{bmatrix}
+    2i&0\\0&2i
+  \end{bmatrix}\neq\begin{bmatrix}
+    0&0\\0&0
+  \end{bmatrix}.
+\end{align*}
+They dont commute, because of a minus sign. However, we now know that $\sigma_x\sigma_y+\sigma_y\sigma_x=0$. We have to 
+develop the $(\lambda\sigma_x+\mu\sigma_y)^n$ to derive something. First, we compute the first four terms:
+{\small
+\begin{align*}
+    \sigma_u^1=(\lambda\sigma_x+\mu\sigma_y)=&\sigma_u\\
+    \sigma_u^2=(\overbrace{\lambda^2+\mu^2}^{1})I_{2\times2}+\lambda\mu(\overbrace{\sigma_x\sigma_y+\sigma_y\sigma_x}^{0})=&I_{2\times2}\\
+    \sigma_u^3=&\sigma_u^2\sigma_u=I_{2\times2}\sigma_u=\sigma_u\\
+    \sigma_u^4=&\sigma_u^2\sigma_u^2=I_{2\times2}\\
+    \vdots&
+\end{align*}}
+We have then,
+\begin{align*}
+  \sigma_u^n=\begin{cases}
+    \sigma_u,&\text{$n$ odd}\\
+    I_{2\times2},&\text{$n$ even}
+  \end{cases}.
+\end{align*}
+Therefore,
+\begin{align*}
+  e^{i\alpha\sigma_u}&=I_{2\times2}+(i\alpha)\sigma_u+\frac{(i\alpha)^2}{2!}\sigma_u^2+\frac{(i\alpha)^3}{3!}\sigma_u^3+\frac{(i\alpha)^4}{4!}\sigma_u^4\\
+  &=I_{2\times2}+i\alpha\sigma_u-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_u+\frac{\alpha^4}{4!}I_{2\times2}\\
+  &=I_{2\times2}\left[1-\frac{\alpha^2}{2!}+\frac{\alpha^4}{4!}-\cdots\right]+i\sigma_u\left[\alpha-\frac{\alpha^3}{3!}+\cdots\right]\\
+  e^{i\alpha\sigma_u}&=I_{2\times2}\cos\alpha+i\sigma_u\sin\alpha.
+\end{align*}
+Obtaining a similar relation as before:
+\begin{align}
+  e^{i\alpha\sigma_u}=I_{2\times2}\cos\alpha+i\sigma_u\sin\alpha,\quad\sigma_u=\lambda\sigma_x+\mu\sigma_y.
+  \label{eq:formula}
+\end{align}
+
+The others exponential required can used the formula we have just obtained. 
+For $e^{2i\sigma_x}$ and $(e^{i\sigma_x})^2$ we have:
+\begin{align*}
+  e^{2i\sigma_x}=I_{2\times2}\cos2+i\sigma_x\sin2,\quad\text{versus}\quad
+  \begin{array}{rl}
+    (e^{i\sigma_x})^2&=(I_{2\times2}\cos1+i\sigma_x\sin1)(I_{2\times2}\cos1+i\sigma_x\sin1)\\
+    &=[\cos^2(1)I_{2\times2}-\sin^2(1)\sigma^2_x]+i[2\cos(1)\sin(1)\sigma_x]\\
+    &=[\cos^2(1)-\sin^2(1)]I_{2\times2}+i[2\cos(1)\sin(1)]\sigma_x\\
+    (e^{i\sigma_x})^2&\stackrel{(a)}{=}[\cos2]I_{2\times2}+i[\sin2]\sigma_x.
+  \end{array}
+\end{align*}
+where in $(a)$ we have used the following trigonometric identities:
+\begin{align*}
+  \cos2\theta=\cos^2\theta-\sin^2\theta,\quad\text{and}\quad\sin2\theta=2\cos\theta\sin\theta
+\end{align*}
+We conclude that:
+\begin{align}
+  e^{2i\sigma_x}=(e^{i\sigma_x})^2=I_{2\times2}\cos2+i\sigma_x\sin2.
+\end{align}
+This is expected, as is the same operator that is being computed.
+
+
+On the other hand, the next test involve both $\sigma_x$ and $\sigma_y$ and because we know they 
+dont commute, the terms $e^{i(\sigma_x+\sigma_y)}$ and $e^{i\sigma_x}e^{i\sigma_y}$ will be different.
+First, lets recall that $\lambda^2+\mu^2=1$ and in this case $\lambda=\mu=1$. We need to normalize the $\sigma$ terms:
+\begin{align*}
+  \sigma'_u=\frac{\sigma_u}{\sqrt{2}}=\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y\Longrightarrow\lambda=\mu=\frac{1}{\sqrt{2}}.
+\end{align*}
+
+Then, the first exponential is ($\alpha=1,\lambda=\mu=1\sqrt{2}$):
+\begin{align*}
+  e^{i(\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y)}=I_{2\times2}\cos1+i\frac{1}{\sqrt{2}}\sigma_u\sin1,
+\end{align*}
+versus ($\alpha=1/\sqrt{2}$):
+\begin{align*}
+  \begin{array}{rl}
+    e^{i\frac{1}{\sqrt{2}}\sigma_x}e^{i\frac{1}{\sqrt{2}}\sigma_y}&=[I_{2\times2}\cos(1/\sqrt{2})+i\sigma_x\sin(1/\sqrt{2})][I_{2\times2}\cos(1/\sqrt{2})+i\sigma_y\sin(1/\sqrt{2})]\\
+    &=\left[\cos^2(1/\sqrt{2})I_{2\times2}-\sin^2(1/\sqrt{2})\sigma_x\sigma_y\right]+i\left[\cos(1/\sqrt{2})\sin(1/\sqrt{2})(\sigma_x+\sigma_y)\right].
+  \end{array}
+\end{align*}
+We see that both are different.
+
+%
+\subsection*{Problem 9}
+
+
+%%
+\section*{Part II}
+%
+\subsection*{II-1}
+  The ket is already defined, we need to find the constant $c$ to make it orthonormal: $\braket{\psi|\psi}=1$.
+  This is achieves by computing its scalar product and equating it to one. First, we interpret the coefficients as the projections of $\psi$ onto the 
+  $\{\ket{u_n}\}$ basis and use it to construct a column matrix:
+  \begin{align*}
+    \ket{\psi}_{\{\ket{u_n}\}}=\begin{bmatrix}
+      \braket{u_1|\psi}\\\braket{u_2|\psi}\\\braket{u_3|\psi}\\\braket{u_4|\psi}
+    \end{bmatrix}=c\begin{bmatrix}
+      2\\-i\sqrt{3}\\-3e^{i\theta}\\3
+    \end{bmatrix}.
+  \end{align*}
+  We now compute the scalar product as a matrix multiplication:
+  \begin{align*}
+    \braket{\psi|\psi}=c^2\begin{bmatrix}
+      2&i\sqrt{3}&-3e^{-i\theta}&3
+    \end{bmatrix}\cdot\begin{bmatrix}
+      2\\-i\sqrt{3}\\-3e^{i\theta}\\3
+    \end{bmatrix}=c^2(4+3+9+9)=25c^2=1\longrightarrow c=1/5.
+  \end{align*}
+  Therefore, the ket in matrix form is:
+  \begin{align}
+    \ket{\psi}_{\{\ket{u_n}\}}=\frac{1}{5}\begin{bmatrix}
+      2\\-i\sqrt{3}\\-3e^{i\theta}\\3
+    \end{bmatrix}.
+  \end{align}
+  %
+  \subsection*{II-2}
+  \begin{enumerate}[itemsep=0pt,topsep=0pt,label=(\alph*)]
+    \item For $\ket{u_2}$, we arrange the representation as a column vector:
+    \begin{align*}
+      \ket{u_2}=\begin{bmatrix}
+          0\\1\\0\\0
+      \end{bmatrix}
+    \end{align*}
+    \item For $\bra{u_3}$ we arrange the representation os a row vector:
+    \begin{align*}
+      \bra{u_3}=\begin{bmatrix}
+          0&0&1&0
+      \end{bmatrix}
+    \end{align*}
+    \item The term $\ket{u_2}\bra{u_3}$ is an operator that project the input vector $\ket{\psi}$ onto $\ket{u_3}$ and then assign it to $\ket{u_2}$. I dont really know
+    how meaningful is this operation; it seems to be like a cross product. Well, the representation will be the outer product (matrix multiplication) of both elements, which 
+    will yields a matrix:
+    \begin{align*}
+      \ket{u_2}\bra{u_3}=\begin{bmatrix}
+          0\\1\\0\\0
+      \end{bmatrix}\cdot\begin{bmatrix}
+          0&0&1&0
+      \end{bmatrix}=\begin{bmatrix}
+        0&0&0&0\\
+        0&0&1&0\\
+        0&0&0&0\\
+        0&0&0&0
+      \end{bmatrix}.
+    \end{align*} 
+    This means that given it will only gives you non-zero vectors for collinear vectors of $\ket{u_3}$.
+    \item The projector onto $\ket{u_2}$ can be described as $P_{u_2}=\ket{u_2}{\bra{u_2}}$. The matrix representation is then the product of 
+    its column vector times the adjoint of the column vector (row vector of complex conjugates elements):
+    \begin{align*}
+      P_{u_2}=\ket{u_2}\bra{u_2}=\begin{bmatrix}
+        0\\1\\0\\0
+      \end{bmatrix}\cdot\begin{bmatrix}
+        0&1&0&0
+      \end{bmatrix}=\begin{bmatrix}
+        0&0&0&0\\
+        0&1&0&0\\
+        0&0&0&0\\
+        0&0&0&0
+      \end{bmatrix}.
+    \end{align*}
+    \item This expression of projects the vector $\ket{\psi}$ onto $\ket{u_n}$ and assign it to $\ket{u_m}$. the summ on $i$ project the input to the nth-element of the basis
+    $\{\ket{u_1},\ket{u_2},\ket{u_3},\ket{u_4}\}$. Then, the other summ assign it to the mth-element of the same basis.
+    With a little of algebra, we can express its matrix representation:
+    \begin{align*}
+      \sum_{m=1}^{m=4}\sum_{n=1}^{m=4}\ket{u_m}\bra{u_n}=\left[\sum_{m=1}^{m=4}\ket{u_m}\right]\cdot\left[\sum_{n=1}^{m=4}\bra{u_n}\right]
+    \end{align*}
+    Each state $\ket{u_m}$ provides a one non-zero element at the mth-position of the column vector. However, summing them all produces a vector full of ones.
+    The same applies to the bra $\bra{u_n}$ and. Consequently, the multiplication is:
+    \begin{align*}
+      \left[\sum_{m=1}^{m=4}\ket{u_m}\right]\cdot\left[\sum_{n=1}^{m=4}\bra{u_n}\right]=\begin{bmatrix}
+        1\\1\\1\\1
+      \end{bmatrix}\cdot\begin{bmatrix}
+        1&1&1&1
+      \end{bmatrix}=\begin{bmatrix}
+        1&1&1&1\\
+        1&1&1&1\\
+        1&1&1&1\\
+        1&1&1&1
+      \end{bmatrix}.
+    \end{align*}
+  \end{enumerate}
+%
+\subsection*{II-3}
+We know the action of the operator $Q$ on each ket of the basis. The result is a different element within the same basis. The basis is orthonormal, meaning that 
+they areall linearly independent each other, which means that every row of the $Q$ representation in $\{\ket{u_n}\}$ will only have one non-zero element, at a different 
+location that all the others rows.
+
+The problems then reduces to find out the elements of the ith-row with the mth-row of the output vector. Doing this with the four equations and constructing from them 
+the operator, we have
+\begin{align*}
+  Q=\begin{bmatrix}
+    0&0&0&-i\\
+    0&0&2&0\\
+    0&2&0&0\\
+    i&0&0&0
+  \end{bmatrix},
+\end{align*}
+which is a Hermitian operator: $Q=Q^\dagger$.
+
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}

@@ -1,18 +1,5 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Preface}{2}{chapter*.1}%
 \contentsline {chapter}{\numberline {1}Mathematical Formalism}{8}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Introduction}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Scalar product}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Linear operators}{10}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Discrete orthonormal bases in $\mathscr {F}:\tmspace +\thickmuskip {.2777em}\{u_i(\bm {r})\}$}{10}{subsection.1.1.3}%
-\contentsline {subsubsection}{Definition of discrete orthonormal bases}{10}{subsection.1.1.3}%
-\contentsline {subsubsection}{Closure relation}{11}{equation.1.1.14}%
-\contentsline {subsection}{\numberline {1.1.4}Bases not belonging to $\mathscr {F}$}{11}{subsection.1.1.4}%
-\contentsline {subsubsection}{Plane waves}{12}{subsection.1.1.4}%
-\contentsline {subsubsection}{Delta function}{13}{equation.1.1.27}%
-\contentsline {subsubsection}{Continuous orthonormal bases}{14}{equation.1.1.33}%
-\contentsline {section}{\numberline {1.2}Dirac notation}{15}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Ket and Bra vectors}{15}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Linear operators}{15}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Hermitian conjugation (adjoint)}{15}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.1}Representation $\{r\}$ and $\{p\}$}{9}{section.1.1}%
 \contentsfinish 

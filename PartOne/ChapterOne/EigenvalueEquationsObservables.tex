@@ -1,0 +1,307 @@
+\section{Eigenvalue equations. Observables}
+
+\subsection{Eigenket and eigenbra equations}
+
+$\ket{\psi}$ is said to be an \bfemph{eigenvector}\index{Eigenvector} (or eigenket) of the linear operator $A$ if
+\begin{align}
+    \text{Eigenket equation of $A$}\qquad\highlight{A\ket{\psi}=\lambda\ket{\psi},\quad\lambda\in\mathbb{C}}.
+    \label{eq:eigenketequation}
+\end{align}
+This eigenketequation possesses solutions only when $\lambda$ takes on certain values, called \bfemph{eigenvalues}\index{Eigenvalues} of $A$.
+The set of the eigenvalues is called \bfemph{spectrum}\index{Spectrum} of $A$.
+\begin{emphasizer}[Collinear of an eigenvector is also an eigenvector]
+    If $\ket{\psi}$ is an eigenvector of $A$ with eigenvalue $\lambda$, then $\alpha\ket{\psi},\;\alpha\in\mathbb{C}$ is also an eigenvector of $A$.
+\end{emphasizer}
+
+The eigenvalue $\lambda$ is called \emph{non-degenerate} (or simple) when its corresponding eigenvector is \textbf{unique} to within a constant factor (collinear).
+On the other hand, if there exists at least two linearly independent eigenkets with the \textbf{same} eigenvalue, the eigenvalue is said to be \emph{degenerate}.
+Its \emph{degree of degeneracy} $g$ is then the number of linearly independent eigenvectors $\ket{\psi^i},\;i=\{1,2,\cdots,g\}$ associated with it.
+
+The set of eigenkets associated with a degenerate eigenvalue constitutes a \emph{g-dimensional vector space} called \bfemph{eigensubspace} of $\lambda$.
+
+Taking the adjoint of the eigeketnequation yields its corresponding form to eigenbraequation
+\begin{align}
+    \text{Eigenbra equation of $A^\dagger$}\qquad\highlight{\bra{\psi}A^\dagger=\lambda^*\bra{\psi}}.
+    \label{eq:eigenbraequation}
+\end{align}
+If $\ket{\psi}$ is an eigenket of $A$ with $\lambda$, it can also be said that $\bra{\psi}$ is an eigenbra of $A^\dagger$ with $\lambda^*$.
+%%
+\subsubsection{Finding the eigenvalues and eigenvector in an operator}
+Assuming the state space is of finite dimension $N$, granting the generalization to an infinite-dimensional state space.
+
+Choosing $\{\ket{u_i}\}$, lets us project the vector \eqref{eq:eigenketequation} onto the various orthonormal basis vectors $\ket{u_i}$:
+\begin{align}
+    \braket{u_i|A|\psi}=\lambda\braket{u_i|\psi}.
+\end{align}
+Inserting the closure relation between $A$ and $\ket{\psi}$:
+\begin{align}
+    \braket{u_i|A\mathds{1}|\psi}=\sum_j\underbrace{\braket{u_i|A|u_j}}_{A_{ij}}\underbrace{\braket{u_j|\psi}}_{c_j}=\lambda\underbrace{\braket{u_i|\psi}}_{c_i}
+    \longrightarrow\highlight{\sum_j[A_{ij}-\lambda\delta_{ij}]c_j=0}.
+    \label{eq:findeigenvalues}
+\end{align}
+Equation \eqref{eq:findeigenvalues} is a system of equations with $N$ equations and $N$ unknowns $c_j$. It has non-trivial solution iff its characteristic equation is zero:
+\begin{align}
+    \text{Characteristic equation of the eigenket equation}\qquad\highlight{P(\lambda)=\det[A-\lambda I]=0}.
+\end{align}
+This expression enable us to determine the spectrum of $A$. The characteristic equation is \textbf{independent} of the representation chosen. Then,
+\begin{emphasizer}
+    The eigenvalues of an operator are the roots $\lambda$ of its $N$th order characteristic equation $P(\lambda)$.
+\end{emphasizer}
+
+%%% important part of eigenvalues degenerates
+\subsubsection{Determination of eigenvectors}
+Given a transformation $T(v)=Mv:\;V\in\mathbb{C^N}\longrightarrow W\in\mathbb{C}^N$, the theorem says:
+\begin{align}
+    \text{dim}(V)=\text{rank}(T)+\text{null}(T),
+\end{align}
+where
+\begin{align*}
+    \text{dim}(V)&=\text{Number of columns of V}\\
+    \text{rank}(T)&=\text{Number of independent equations (non zero rows)}\\
+    \text{null}(T)=\text{dim}[\text{ker}(T)]&=\text{Number of free variables, degree of freedom (dof)}.
+\end{align*}
+In our case, $T(v)=Mv=(A-\lambda I)v$ and $\text{dim}(V)=N$.
+
+
+Based on the nature of the eigenvalue, we can have different eigenvalues but also repeated. Therefore, we define the 
+following useful quantities:
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{Algebraic multiplicity ($AM$)} Number of repetition of the eigenvalue (degree of degeneracy $g$).
+    \item\textbf{Geometric multiplicity ($GM$)} Dimension of the subspace that the eigenvalues generate (how many linearly independent eigenvectors exist
+    for that eigenvalue).
+\end{itemize}
+
+We then can have the following three cases:
+\begin{itemize}
+    %
+    \item\textbf{$AM=GM=1$} Only one eigenvector corresponds to the eigenvalue (within a constant factor).
+    At the moment of substituting an eigenvalue $\lambda_0$ into equation \eqref{eq:findeigenvalues} there will be $\text{rank}(M)=N-1$ 
+    independent equations so one equation is redundant. When this happens, $\text{null}(M)=1$ free variable (or degree of freedom, dof) $c_1$ is available which can
+    be defined arbitrarily and from which all other variables can be expressed.
+
+    If we fix $c_1$, then all $c_j$ are proportional to it:
+    \begin{align}
+        c_j=\alpha^0_jc_1\quad(\alpha^0_1=1).
+    \end{align}
+    the $N-1$ coefficients $\alpha^0_j,\;j\neq1$ are determined from the matrix elements $A_{ij}$ and $\lambda_0$. The eigenvectors associated with $\lambda_0$
+    differ only by the value chosen for $c_1$. They are therefore all given by
+    \begin{align}
+        \ket{\psi_0(c_1)}=\sum_j\alpha^0_jc_1\ket{u_j}=c_1\ket{\psi_0},\quad\text{with}\quad\ket{\psi_0}=\sum_j\alpha^0_j\ket{u_j}.
+    \end{align}
+    \begin{emphasizer}
+        When $\lambda_0$ is simple, only one eigenvector corresponds to it.
+    \end{emphasizer}
+    \begin{example}{Simple eigenvalues}
+        In the matrix 
+        \begin{align*}
+            A=\begin{bmatrix}
+                1&1&0\\0&2&1\\0&0&3
+            \end{bmatrix}
+        \end{align*}
+        the eigenvalues are $\lambda\in\{1,2,3\}$. Lets make $\lambda_0=1$ and replace it into the eigenvalue problem:
+        \begin{align*}
+            (A-\lambda I)v=(A-I)v=\begin{bmatrix}
+                0&1&0\\0&1&1\\0&0&2
+            \end{bmatrix}=0
+        \end{align*}
+        We see that there is no value in the first column, meaning that $x_1$ is free whereas $x_2=x_3=0$. Therefore, the eigenvector is $v_1=(1\;0\;0)$.
+    \end{example}
+    %
+    \item\textbf{$AM=GM>1$} When evaluating $\lambda_0$, the system will have $\text{rank}(M)=N-p$ independent equations ($1<p<q$). To the eigenvalue 
+    $\lambda_0$ there corresponds an eigensubspace of dimension $\text{null}(M)=p$, and $\lambda_0$ is a p-fold degenerate eiganvalue. 
+    
+    Assuming that for $\lambda=\lambda_0$ is composed of $N-2$ linearly independent equations. These equations enable us to calculate the coefficients
+    $c_j$ in terms of any of them, for example $c_1$ and $c_2$: 
+    \begin{align*}
+        c_j=\beta_j^0c_1+\gamma_j^0c_2.
+    \end{align*} 
+    Al the eigenvectors associated with $\lambda_0$ are then of the form
+    \begin{align}
+        \ket{\psi_0(c_1,c_2)}=c_1\ket{\psi_0^1}+c_2\ket{\psi_0^2},\quad\text{with}\quad \ket{\psi_0^1}=\sum_j\beta_j^0\ket{u_j},\quad\ket{\psi_0^2}=\sum_j\gamma_j^0\ket{u_j}.
+    \end{align}
+    The vectors $\ket{\psi_0(c_1,c_2)}$ do indeed constitute a two-dimensional vector space, this beeing characteristic of a two-fold degenerate eigenvalue.
+    %
+    \item\textbf{$AM>GM>1$} In this case, the subspace is less than the degree of degeneracy and therefore not all degenerate eigenvectors are linearly independent. This means that 
+    there is not enough information to create a basis. However, techniques such as Jordan canonical form helps to create generalized eigenvector and to span the whole space.
+\end{itemize}
+\begin{emphasizer}
+    When an operator is Hermitian, it can be shown that the degree of degeneracy $p$ of an eigenvalue $\lambda$ is always equal to the muliplicity of the corresponding root in 
+    the characteristic equations.
+    In a space of finite dimension $N$, a Hermitian operator always has $N$ linearly independent eigenvectors: this operator can therefore be diagonalized.
+\end{emphasizer}
+
+%%
+\subsection{Observables}
+\subsubsection{Properties of the eigenvalues and eigenvectors of a Hermitian operator}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+    \item The eigenvalues of a Hermitian operator are real.
+    \item Two eigenvectors of a Hermitian operator corresponding to two different eigenvalues are orthogonal.
+\end{enumerate}
+%%
+\subsubsection{Definition of a observable}
+Consider a Hermitian operator $A$ with discrete spectrum. The degree of degeneracy of the eigenvalue $a_n$ is denoted by $g_n$. We shall denote
+by $\ket{\psi_n^i}$ $g_n$ linearly independent vectors chosen in the eigensubspace $\E_n$ of $a_n$:
+\begin{align}
+    A\ket{\psi_n^i}=a_n\ket{\psi_n^i},\quad i=1,2,\cdots,g_n.
+\end{align}
+
+Every vector of $\E_n$ is orthogonal to every vector of another subspace $\E_{n'}$: $\braket{\psi_n^i|\psi_{n'}^j}=0,\quad n\neq n'$.
+
+Inside the subspace $\E_n$, the $\ket{\psi_n^i}$ can always be chosen orthonormal, such that
+\begin{align}
+    \braket{\psi_n^i|\psi_n^j}=\delta_{ij}.
+\end{align}
+If such a choise is made, the result is an orthonormal system of eigenvectors of $A$: the $\ket{\psi_n^i}$ satisfying the relations:
+\begin{align}
+    \braket{\psi_n^i|\psi_{n'}^{i'}}=\delta_{nn'}\delta_{ii'}.
+\end{align}
+
+\begin{definition}[Observable]
+    The Hermitian operator $A$ is an \bfemph{observable}\index{Observable} if this orthonormal system of vectors \textbf{form a basis} in the state space:
+    \begin{align}
+        \text{Closure relation of an observable}\qquad\highlight{\sum_{n=1}^\infty\sum_{i=1}^{g_n}\ket{\psi_n^i}\bra{\psi_n^i}=\mathds{1}}.
+        \label{eq:closurerelationobservable}
+    \end{align}
+    The projector onto the subspace $\E_n$ is written as:
+    \begin{align}
+        P_n=\sum_{i=1}^{g_n}\ket{\psi_n^i}\bra{\psi_n^i}.
+    \end{align}
+    The observable $A$ is the ngiven by:
+    \begin{align}
+        \highlight{A=\sum_na_nP_n}.
+    \end{align}
+\end{definition}
+
+Equation \eqref{eq:closurerelationobservable} can be generalized to include cases of continuous spectrum using the previous table of the first section.
+
+If $A$ has a mixed spectrum, then it is an observable if this system form a basis, that is, if
+\begin{align}
+    \sum_{n}\sum_{i=1}^{g_n}\ket{\psi_n^i}\bra{\psi_n^i}+\int_{\nu_1}^{\nu_2}d\nu\;\ket{\psi_\nu}\bra{\psi_\nu}=\mathds{1}.
+\end{align}
+
+\begin{emphasizer}[The projector $P_\psi$ is an observable]
+    The projector $P_\psi=\ket{\psi}\bra{\psi}$ is an observable. We know that it is Hermitian, and that its eigenvalues are 1 and 0, the first one is simple and the other 
+    infinitely degenerate. It can be shown that any ket $\ket{\psi}$ can be expanded on these eigenkets, therefore $P_\psi$ is an observable.
+\end{emphasizer}
+%%
+\subsection{Sets of commuting observables}
+
+\subsubsection{Important theorems}
+\begin{definition}[Theorem I]
+    If two operators $A$ and $B$ commute, and if $\ket{\psi}$ is an eigenvector of $A$, $B\ket{\psi}$ is aso an eigenvectr of $A$, with the same eigenvalue.
+
+    Another form:
+
+    If two operators $A$ and $B$ comute, every eigensubspace of $A$ is globaly invariant under the action of $B$ ($B\ket{\psi}$ belongs to the eigensubspace $\E_a$ of $A$, corresponding to the 
+    eigenvalue $a$).
+\end{definition} 
+
+\begin{definition}[Theorem II (consequence of theorem I)]
+    If two observables $A$ and $B$ commute, and if $\ket{\psi_1}$ and $\ket{\psi_2}$ are two eigenvectors of $A$ with different eigenvalues, the matrix element 
+    $\braket{\psi_1|B|\psi_2}$ is zero. 
+\end{definition}
+
+\begin{definition}[Theorem III]
+    If two observables $A$ and $B$ commute, one can construct an orthonormal basis of the state spce with eigenvectors common to $A$ and $B$.
+\end{definition}
+
+Lets prove the theorem III.
+Consider two commuting observables $A$ and $B$, with discrete spectrum. Since $A$ is observable, there exists at least one orthonormal system of eigenvectors $\ket{u_n^i}$ which forms a 
+basis in the state space:
+\begin{align}
+    A\ket{u_n^i}=a_n\ket{u_n^i},\quad\begin{array}{l}
+        n=1,2,\cdots\\
+        i=1,2,\cdots,g_n
+    \end{array}
+\end{align} 
+
+We also have $\braket{u_n^i|u_{n'}^{i'}}=\delta_{nn'}\delta_{ii'}$. What does the matrix look like which represent $B$ in the $\{\ket{u_n^i}\}$ basis?
+We know that the matrix elements $\braket{u_n^i|B|u_{n'}^{i'}}$ are zero when $n\neq n'$ (theorem II). Let us arrange the basis vectors $\ket{u_n^i}$ in the order:
+\begin{align*}
+    \ket{u_1^1},\ket{u_1^2},\cdots,\ket{u_1^{g_1}};\;\ket{u_2^1},\cdots,\ket{u_2^{g_2}};\;\ket{u_3^1},\cdots
+\end{align*}
+Whe then obtain for $B$ a block-diagonal matrix of the form:
+
+\begin{align}
+    \left[
+        \begin{array}{ccc|ccc|c|cc}
+        &\E_1&&\E_2&&&\E_3&\cdots&\\
+        \E_1&\ddots&\ddots&&0&&0&0&\\
+        &\ddots&\ddots&&&&&&\\
+        \hline
+        \E_2&&&\ddots&\ddots&\ddots&&&\\
+        &0&&\ddots&\ddots&\ddots&0&0&\\
+        &&&\ddots&\ddots&\ddots&&&\\
+        \hline
+        \E_3&0&&&0&&\ddots&0&\\
+        \hline
+        \vdots&0&&&0&&0&\ddots&\ddots\\
+        &&&&&&&\ddots&\ddots
+    \end{array}\right]
+\end{align}
+
+Then the degeneracy of the eigenvalue is 1, then the block reduces to a $1\times1$ matrix. In the column associated with $\ket{u_n}$ all the other matrix 
+elements are zero, this expresses the fact that $\ket{u_n}$ is an eigenvector common to $A$ and $B$.
+When $a_n$ is a $g_n$-degenerate eigenvalue of $A$, the block which represents $B$ in $\E_n$ is not, in general, diagonal: the $\ket{u_n^i}$ are not, in general, eigenvector of $B$.
+The action of $A$ in the $g_n$ eigenvectors $\ket{u_n^i}$ reduces to $a_n\ket{u_n^i}$, the matrix representing the restriction of $A$ wo within $\E_n$ is equal to $a_nI_{g_n\times g_n}$.
+The matrix representing the operator $A$ in $\E_n$ is always diagonal and equal to $a_nI_{g_n\times g_n}$. 
+
+We use this property to obtain a basis of $\E_n$ composed of vectors that are also eigenvectors of $B$. The matrix representing $B$ in $\E_n$ when the basis is chosen is
+\begin{align}
+    \{\ket{u_n^i}\;,\quad i=1,2,\cdots,g_n\},
+\end{align}
+has for its elements:
+\begin{align}
+    \beta_{ij}^{(n)}=\braket{u_n^i|B|u_n^j}.
+\end{align}
+Thi matri is Hermitian, since $B$ is a Hermitian operator. It is therefore diagonizable: one can find a new basis $\{\ket{v_n^i};\;i=1,2,\cdots,g_n\}$ in which $B$ is 
+represented by a diagonal matrix:
+\begin{align}
+    \braket{v_n^i|B|v_n^j}=\beta^{n}_i\delta_{ij}.
+\end{align}
+This means that the new basis vectors in $\E_n$ are eigenvectors of $B$:
+\begin{align}
+    B\ket{v_n^i}=\beta{i^{(n)}}\ket{v_n^i}.
+\end{align}
+These vectors are automatically eigenvectors of $A$ with an eigenvalue $a_n$ since they belong to $\E_n$.
+
+\begin{emphasizer}
+Eigenvectors of $A$ associated with degenerate eigenvalues are not necessarily eigenvectors of $B$. It is always possible to choose, in every eigensubspace of $A$, a basis 
+of eigenvectors common to $A$ and $B$.    
+\end{emphasizer}
+If we perform this operation in all the subsespaces $\E_n$, we obtain a bsis of $\E$, formed by eigenvectors common to $A$ and $B$.
+
+
+We shall denote by $\ket{u_{n,p}^i}$ the eigenvectors common to $A$ an $B$:
+\begin{align}
+    A\ket{u_{n,p}^i}=a_n\ket{u_{n,p}^i},\quad\text{and}\quad B\ket{u_{n,p}^i}=b_p\ket{u_{n,p}^i}.
+\end{align} 
+The index $i$ will be used to distinguish between different basis vectors which correspond to the same eigenvalues $a_n$ and $b_p$.
+
+%%
+\subsubsection{Complete sets of commting observables (C.S.C.O.)}
+Consider an observable $A$ and a basis $\E$ composed of eigenvectors $\ket{u_n^i}$ of $A$.
+
+If none of the eigenvalues of $A$ is degenerate, the various basis vectors of $\E$ can be labelled by the eigenvalue $a_n$ (index $i$ is not necessary). Thefroe,
+specifying the eigenvalue determines in a unique way the corresponding eigenvector. In other words, there exists only one basis of $\E$ formed by 
+the eigenvectors of $A$. It is said that the observable $A$ constitutes, by itself, a C.S.C.O.
+
+On the other hand, if at least one eigenvalue of $A$ is degenerate, specifying $a_n$ is no longer always sufficient to characterize a basis vector:
+the basis of eigenvectors of $A$ is not unique. One can choose any basis inside each of the degenerate eigensubspaces $\E_n$.
+We can choose another observable $B$ which commute with $A$ to construct an orthonormal basis of eigenvectors common to $A$ and $B$.
+$A$ and $B$ form a C.S.C.O. if this basis is unique, that is, if to each of the possible pairs ofeigevalues $\{a_n,b_p\}$ there corresponds only one basis vector.
+For $A$ and $B$ to constitute a C.S.C.O., it is necessary and sufficient that, inside each of tese subspaces, all the $g_n$ eigenvalues of $B$ be distinct.
+We can add indifinitely observables until we reach the C.S.C.O.
+
+\begin{emphasizer}
+    A set of observables $A,B,C,\cdots$ is called a complete set of commuting observables if:
+    \begin{enumerate}[itemsep=0pt,topsep=0pt,label=(\roman*)]
+        \item all the observables commute by pairs.
+        \item specifying the eigenvalue of all the operators determines a unique common eigenvector. The ket then is denoted as $\ket{a_n,b_p,c_r,\cdots}$.
+    \end{enumerate}
+    This means that they are C.S.C.O. if there exists a unique orthonormal basis of common eigenvectors. 
+\end{emphasizer}
+Idenfitication of CSCOs is necessary in order to construct physically meaningful bases for $\E$. Knowing the CSCOs that are available tells the experimenter the possible sets 
+of measurements that can be made to achieve this goal. 
+
+We list some CSCOs for specific problems. (table 31 anerson)
