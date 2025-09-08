@@ -1,0 +1,62 @@
+\section*{Formula sheet}
+%%
+\subsection*{Constants and Conversions}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lll}
+        Unit&Name&Equivalent SI value\\
+        $eV$&electron-volt&$\approx1.602\cdot10^{-19}\;J$\\
+        $G$&Gauss&$10^{-4}\;T$
+    \end{tabular}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lL|lL}
+        Speed of light in vacuum&c=2.998\cdot10^8\;m/s&Reduced Planck's constant&\hbar=1.055\cdot10^{-34}\;J\cdot s\\
+    \end{tabular}
+\end{table}
+
+\subsection{Useful formulas}
+\begin{table}[h!]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{lL|lL}
+        Closure relation (discrete)&\displaystyle\sum_k\sum_{i=1}^{g_k}\ket{v_k^i}\bra{v_k^i}=\mathds{1}&Closure relation (continuous)&\displaystyle\int_{\beta}d\beta\;\ket{\omega_\beta}\bra{\omega_\beta}=\mathds{1}\\
+        Glauber Formula&e^{A+B}=e^{A}e^{B}e^{-\frac{1}{2}[A,B]}&Generalized uncertainty relation&\Delta A\Delta B\geq\frac{1}{2}|\braket{[A,B]}|\\
+        Function of an operator&\displaystyle F(A)=\sum_{n=0}^\infty \frac{(A-a)^n}{n!}F^{(n)}(a)&&\Delta Q=\sqrt{\braket{Q^2}-\braket{Q}^2}\\
+        Transformation $\{u\}\rightarrow\{v\}$&\mathbb{M}_{jk}=\braket{u_j|v_k}&$\ket{\psi}_{\{u\}}=\mathbb{M}\ket{\psi}_{\{v\}}$&\ket{\psi}_{\{v\}}=\mathbb{M}^\dagger\ket{\psi}_{\{u\}}\\
+        &&$A_{\{u\}}=\mathbb{M}A_{\{v\}}\mathbb{M}^\dagger$&A_{\{v\}}=\mathbb{M}^\dagger A_{\{u\}}\mathbb{M}
+    \end{tabular}}
+\end{table}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{L|L|L}
+        \text{Quantity}&\text{Discrete basis (sum over $j,k$)}&\text{Continuous basis (integrate over $\beta,\beta'$)}\\
+        \hline
+        \mathds{1}&=\displaystyle\sum\ket{v_k}\bra{v_k}&=\displaystyle\int d\beta\;\ket{\omega_\beta}\bra{\omega_\beta}\\
+        \ket{\psi}=\mathds{1}\ket{\psi}&=\displaystyle\sum\ket{v_k}\braket{v_k|\psi}&=\displaystyle\int d\beta\;\ket{\omega_\beta}\braket{\omega_\beta|\psi}\\
+        \bra{\varphi}=\bra{\varphi}\mathds{1}&=\displaystyle\sum\braket{\varphi|v_k}\bra{v_k}&=\displaystyle\int d\beta\;\braket{\varphi|\omega_\beta}\bra{\omega_\beta}\\
+        A=\mathds{1}A\mathds{1}&=\displaystyle\sum\sum\ket{v_j}\braket{v_j|A|v_k}\bra{v_k}&=\displaystyle\iint d\beta\;d\beta'\;\ket{\omega_\beta}\braket{\omega_\beta|A|\omega_{\beta'}}\bra{\omega_{\beta'}}
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{L|L|L}
+        \text{Quantity}&\text{$X$ representation}&\text{$P_x$ representation}\\
+        \hline
+        X&x&i\hbar\;\partial/\partial p\\
+        P_x&-i\hbar\;\partial/\partial x&p\\
+        \ket{x'}&\braket{x|x'}=\delta(x-x')&\braket{p|x'}=\frac{1}{\sqrt{2\pi\hbar}}\exp(-ix'p/\hbar)\\
+        \ket{p'}&\braket{x|p'}=\frac{1}{\sqrt{2\pi\hbar}}\exp(ixp'/\hbar)&\braket{p|p'}=\delta(p-p')
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{L|L}
+        \multicolumn{2}{c}{\text{Fourier transforms for 3D wavefunctions}}\\
+        \hline
+        \tilde{\psi}(\bp)=\fourier{\psi(\bR)}=\displaystyle\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bR\;e^{-i\bR\cdot\bp/\hbar}\psi(\bR)&\displaystyle\psi(\bR)=\ifourier{\tilde{\psi}(\bp)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bp\;e^{i\bR\cdot\bp/\hbar}\tilde{\psi}(\bp)
+    \end{tabular}
+\end{table}
