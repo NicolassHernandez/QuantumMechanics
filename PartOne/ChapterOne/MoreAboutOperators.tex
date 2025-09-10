@@ -1,0 +1,106 @@
+\section{More about operators}
+
+\subsection{Trace of an operator}
+The trace of an operator $A$, $\tr{A}$, is the sum of its diagonal matrix elements:
+\begin{align*}
+    \highlight{\tr{A}=\sum_i\braket{u_i|A|u_i}},\quad\text{and}\quad\highlight{\tr{A}=\int d\alpha\;\braket{\omega_\alpha|A|\omega_\alpha}}.
+\end{align*}
+The trace is \bfemph{invariant of the basis}, meaning that a change of representation will not affect the final result.
+
+For a discrete basis, for instance, we have
+\begin{align*}
+    \sum_i\braket{u_i|A|u_i}=\sum_i\bra{u_i}\left[\sum_k\ket{t_k}\bra{t_k}\right]A\ket{u_i}=\sum_{i,j}\braket{t_k|A|u_i}\braket{u_i|t_k}=\sum_k\bra{t_k|A}\mathds{1}\ket{t_k}=\sum_k\braket{t_k|A|t_k}.
+\end{align*}
+\begin{emphasizer}
+    If $A$ is an observable, then $\tr{A}$ can be calculated in a basis of eigenvectors of $A$. The diagonal matrix elements are then the 
+    eigenvalues $a_n$ of $A$ and the trace can be written
+    \begin{align}
+        \highlight{\tr{A}=\sum_ng_na_n,\quad g_n=\text{degree of degeneracy of $a_n$}}.
+    \end{align}
+\end{emphasizer}
+
+We list some properties:
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{L|L}
+        \tr{AB}=\tr{BA}&\tr{ABC}=\tr{BCA}=\tr{CAB}\;(\text{cyclic permutation})
+    \end{tabular}
+\end{table}
+%%
+\subsection{Function of an operator}
+To express a function of an operator $A$, $F(A)$, we use Taylor expansion:
+\begin{align}
+    F(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n=\sum_{n=0}^\infty f_n(x-a)^n\Longrightarrow\highlight{F(A)=\sum_{n=0}^\infty f_n(A-a)^n}.
+\end{align}
+For example, the $e^A$ operator around $a=0$ is:
+\begin{align*}
+    e^A=\sum_{n=0}^\infty\frac{A^n}{n!}=\mathds{1}+A+\frac{A^2}{a!}+\frac{A^3}{3!}+\cdots
+\end{align*}
+Let $\ket{\varphi_k}$ be an eigenvector of $A$ with eigenvalue $\lambda_k$, then (assuming $a=0$):
+\begin{align*}
+    A\ket{\varphi_k}=\lambda_k\ket{\varphi_k}\Longrightarrow F(A)\ket{\varphi_k}=\sum_{n=0}^\infty f_nA^n\lambda\ket{\varphi_k}=\sum_{n=0}^\infty f_n\lambda^n_k\ket{\varphi_k}=F(\lambda_k)\ket{\varphi_k}.  
+\end{align*}
+\begin{emphasizer}
+    If the operator $A$ has an eigenpar $(\lambda_k,\varphi_k)$, then $(F(\lambda_k),\varphi_k)$ is the eigenpar of $F(A)$.
+\end{emphasizer}
+
+%%
+\subsubsection{Potential operator}
+The potential operator is a function $V(\cdot)$ with the position operator $X$ as the argument, $V(X)$. 
+
+The eigenequation associated to this function is
+\begin{align}
+    \highlight{V(\BR)\ket{\bR}=V(\bR)\ket{\bR}}.
+\end{align} 
+The matrix elements in $\{\ket{\bR}\}$ are:
+\begin{align}
+    \highlight{\braket{\bR|V(\BR)|\bR'}=V(\bR)\delta(\bR-\bR')}.
+\end{align}
+Finally, using the eigenequation above and the fact that $V(\BR)$ is Hermitian (the function $V(\bR)$ is real), we obtain:
+\begin{align}
+    \highlight{\braket{\bR|V(\BR)|\psi}=V(\bR)\psi(\bR)}.
+\end{align}
+This shows that the action of $V(\BR)$ is simply multiplication by $V(\bR)$.
+%%
+\subsection{Commutator algebra}
+We have seen that the commutator of two operators is 
+\begin{align}
+    [A,B]=AB-BA.
+\end{align}
+We then present some properties:
+\begin{table}[htbp]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+    \begin{tabular}{l|l}
+        $[A,B]=-[B,A]$&$[A+B,C+D]=[A,C]+[A,D]+[B,C]+[B,D]$\\
+        $[A,B]^\dagger=[B^\dagger,A^\dagger]$&$[A,BC]=[A,B]C+B[A,C]$\\
+        $[F(A),A]=0$&$[A,B]=0\Longrightarrow[F(A),B]=[A,F(B)]=[F(A),F(B)]=0$\\
+        $[A,[B,C]]+[B,[C,A]]+[C,[A,B]]=0$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[A,F(B)]=[A,B]\cfrac{dF(B)}{dB}$\\
+        $e^{A}e^{B}=e^{A+B}e^{\frac{1}{2}[A,B]}\;([A,[A,B]]=[B,[A,B]]=0)$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[F(A),B]=[A,B]\cfrac{dF(A)}{dA}$\\
+        $[X,P]=i\hbar$&
+    \end{tabular}}
+\end{table} 
+%%
+\subsection{Derivative of an operator}
+Let $A(t)$ be a time-dependent operator, whose derivative is $dA/dt$. In a time-independent basis $\{\ket{u_n}\}$, the matrix elements of $A$ and $dA/dt$ are:
+\begin{align}
+    A_{ij}(t)=\braket{u_i|A|u_j},\quad\text{and}\quad\left(\frac{dA}{dt}\right)_{ij}=\braket{u_i|\frac{dA}{dt}|u_j}=\frac{d}{dt}\braket{u_i|A|u_j}=\frac{dA_{ij}}{dt}.
+\end{align}
+The last equation corresponds to the matrix elements of $dA/dt$. We see that,
+\begin{emphasizer}
+    To obtain the mtrix elements of $dA/dt$, we compute the derivative of each element of $A$.
+\end{emphasizer}
+
+Properties of differentiation also apply here. For instance, for product rule we have
+{\small
+\begin{align*}
+    \braket{u_i|FG|u_j}=\sum_k\braket{u_i|F|u_k}\braket{u_k|G|u_j}\Longrightarrow\braket{u_i|\frac{d(FG)}{dt}|u_j}&=\sum_k\left[\braket{u_i|\frac{dF}{dt}|u_k}\braket{u_k|G|u_j}+\braket{u_i|F|u_k}\braket{u_k|\frac{dG}{dt}|u_j}\right]\\
+    &=\braket{u_i|\frac{dF}{dt}G+F\frac{dG}{dt}|u_j}.
+\end{align*}}
+Other two examples are
+\begin{align*}
+    \frac{d(e^{At})}{dt}=Ae^{At}\stackrel{\text{they commute}}{=}e^{At}A,\quad\text{and}\quad\frac{d(e^{At}e^{Bt})}{dt}=Ae^{At}e^{Bt}+e^{At}Be^{Bt}.
+\end{align*}
+
+\subsection{Unitary operators}
+

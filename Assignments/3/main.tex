@@ -59,7 +59,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 8 hours}
+\date{\today\\Total time: 10 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -111,7 +111,7 @@
   \begin{align*}
     P=\sum_{i=1}^2\ket{\bm{v}_i}\bra{\bm{v}_i}=\ket{\bm{v}_1}\bra{\bm{v}_1}+\ket{\bm{v}_2}\bra{\bm{v}_2}.
   \end{align*}
-  It consists of the sum of two outer products, which we already know:
+  It consists of the sum of two outer products, which are
   \begin{align*}
     \ket{\bm{v}_1}\bra{\bm{v}_1}&=\frac{1}{\sqrt{2}}\begin{bmatrix}
     1\\-i
@@ -128,20 +128,19 @@
       1&-i\\i&1
     \end{bmatrix}
   \end{align*}
-  The orthonormality relation states that that multiplication of two terms will produces in a zero matrix when they project onto 
-  different eigenvectors:
+  The orthonormality relation states that that multiplication of the two outerproducts will produces a zero matrix:
   \begin{align*}
-    \ket{\bm{v}_1}\braket{\bm{v}_1|\bm{v}_2}\bra{\bm{v}_2}=\frac{1}{2}\begin{bmatrix}
+    \ket{\bm{v}_1}\braket{\bm{v}_1|\bm{v}_2}\bra{\bm{v}_2}=\frac{1}{\sqrt{2}}\begin{bmatrix}
       1&i\\-i&1
-    \end{bmatrix}\cdot\frac{1}{2}\begin{bmatrix}
+    \end{bmatrix}\cdot\frac{1}{\sqrt{2}}\begin{bmatrix}
       1&-i\\i&1
-    \end{bmatrix}=\begin{bmatrix}
+    \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
       1-1&-i+i\\-i+i&-1+1
-    \end{bmatrix}=\begin{bmatrix}
+    \end{bmatrix}=\frac{1}{2}\begin{bmatrix}
       0&0\\0&0
     \end{bmatrix}=\bm{0},
   \end{align*}
-  which would also be stated by simply computing 
+  which could also be verified by simply computing 
   \begin{align*}
     \braket{\bm{v}_1|\bm{v}_2}=\frac{1}{\sqrt{2}}\begin{bmatrix}
     1&i
@@ -152,7 +151,7 @@
     \end{bmatrix}=0.
   \end{align*}
 
-  The closure relation must sum the identity matrix:
+  On the other hand, the closure relation states that the sum of each outer product must results in the identity matrix:
   \begin{align*}
     \ket{\bm{v}_1}\bra{\bm{v}_1}+\ket{\bm{v}_2}\bra{\bm{v}_2}=\frac{1}{2}\begin{bmatrix}
       1&i\\-i&1
@@ -162,12 +161,12 @@
       1&0\\0&1
     \end{bmatrix}=\mathds{1}.
   \end{align*}
-  \item Omitted
+  \item Omitted.
 \end{enumerate}
 %%
 \subsection*{Problem 3}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
-  \item To verify wether they are normalized, we must compute the norm in each ket and see if it is one. First, we represent each of them into the $\{\ket{u_1},\ket{u_2},\ket{u_3}\}$ basis:
+  \item To verify wether they are normalized, we must compute the norm in each ket and see if it is one. First, we represent them in the $\{\ket{u_1},\ket{u_2},\ket{u_3}\}$ basis:
   \begin{align*}
     \ket{\psi_0}=\begin{bmatrix}
       \cfrac{1}{\sqrt{2}}\\\cfrac{i}{2}\\\cfrac{1}{2}
@@ -176,23 +175,23 @@
       \cfrac{1}{\sqrt{3}}\\0\\\cfrac{i}{\sqrt{3}}
     \end{bmatrix}.
   \end{align*} 
-  The, the norm is:
+  Then, the norm is:
   \begin{align*}
     \braket{\psi_0|\psi_0}&=\begin{bmatrix}
       \cfrac{1}{\sqrt{2}}&\cfrac{-i}{2}&\cfrac{1}{2}
     \end{bmatrix}\cdot\begin{bmatrix}
       \cfrac{1}{\sqrt{2}}\\\cfrac{i}{2}\\\cfrac{1}{2}
-    \end{bmatrix}=\frac{1}{2}+\frac{1}{4}+\frac{1}{4}=1\\
+    \end{bmatrix}=\frac{1}{2}+\frac{1}{4}+\frac{1}{4}=1,\\
     \braket{\psi_1|\psi_1}&=\begin{bmatrix}
       \cfrac{1}{\sqrt{3}}&0&\cfrac{-i}{\sqrt{3}}
     \end{bmatrix}\cdot\begin{bmatrix}
       \cfrac{1}{\sqrt{3}}\\0\\\cfrac{i}{\sqrt{3}}
     \end{bmatrix}=\frac{1}{3}+0+\frac{1}{3}=\frac{2}{3}\neq1.
   \end{align*}
-  By looking the results, we san say that $\ket{\psi_0}$ is normalized by $\ket{\psi_1}$ does not. If we want to normalize it we must divide the ket by the value we have obtained:
+  By looking the results, we can say that $\ket{\psi_0}$ is normalized but $\ket{\psi_1}$ does not. If we want to normalize it we must divide the ket by the root of the value we have obtained:
   \begin{align*}
-    \ket{\psi_1'}=\frac{3}{2}\ket{\psi_1}=\begin{bmatrix}
-      \cfrac{3}{2\sqrt{3}}\\0\\\cfrac{3i}{2\sqrt{3}}
+    \ket{\psi_1'}=\sqrt{\frac{3}{2}}\ket{\psi_1}=\begin{bmatrix}
+      \cfrac{1}{\sqrt{2}}\\0\\\cfrac{i}{\sqrt{2}}
     \end{bmatrix}.
   \end{align*}
   \item The projections operators onto each state $\ket{\psi_0}$ and $|\ket{\psi_1}$ are:
@@ -205,15 +204,15 @@
       \cfrac{1}{2}&\cfrac{-i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
       \cfrac{i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{i}{4}\\
       \cfrac{1}{2\sqrt{2}}&\cfrac{-i}{4}&\cfrac{1}{4}
-    \end{bmatrix}\\
+    \end{bmatrix},\\
     \rho'_1&=\ket{\psi'_1}\bra{\psi'_1}=\begin{bmatrix}
-      \cfrac{3}{2\sqrt{3}}\\0\\\cfrac{3i}{2\sqrt{3}}
+      \cfrac{1}{\sqrt{2}}\\0\\\cfrac{i}{\sqrt{2}}
     \end{bmatrix}\cdot \begin{bmatrix}
-      \cfrac{3}{2\sqrt{3}}&0&\cfrac{-3i}{2\sqrt{3}}
+      \cfrac{1}{\sqrt{2}}&0&\cfrac{-i}{\sqrt{2}}
     \end{bmatrix}=\begin{bmatrix}
-      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      \cfrac{1}{2}&0&\cfrac{-i}{2}\\
       0&0&0\\
-      \cfrac{9i}{12}&0&\cfrac{9}{12}
+      \cfrac{i}{2}&0&\cfrac{1}{2}
     \end{bmatrix}.
   \end{align*}
   Notice we have used $\ket{\psi_1'}$ instead of $\ket{\psi_1}$. At first glance, both projectors look Hermitian. We can confirm it mathematically:
@@ -230,25 +229,25 @@
       \cfrac{1}{2}&\cfrac{-i}{2\sqrt{2}}&\cfrac{1}{2\sqrt{2}}\\
       \cfrac{i}{2\sqrt{2}}&\cfrac{1}{4}&\cfrac{i}{4}\\
       \cfrac{1}{2\sqrt{2}}&\cfrac{-i}{4}&\cfrac{1}{4}
-    \end{bmatrix}=\rho_0\\
+    \end{bmatrix}=\rho_0,\\
     \rho'^\dagger_1&=\left(\begin{bmatrix}
-      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      \cfrac{1}{2}&0&\cfrac{-i}{2}\\
       0&0&0\\
-      \cfrac{9i}{12}&0&\cfrac{9}{12}
-    \end{bmatrix}\right)^T=\left(\begin{bmatrix}
-      \cfrac{9}{12}&0&\cfrac{9i}{12}\\
+      \cfrac{i}{2}&0&\cfrac{1}{2}
+    \end{bmatrix}^*\right)^T=\left(\begin{bmatrix}
+      \cfrac{1}{2}&0&\cfrac{i}{2}\\
       0&0&0\\
-      \cfrac{-9i}{12}&0&\cfrac{9}{12}
+      \cfrac{-i}{2}&0&\cfrac{1}{2}
     \end{bmatrix}\right)^T=\begin{bmatrix}
-      \cfrac{9}{12}&0&\cfrac{-9i}{12}\\
+      \cfrac{1}{2}&0&\cfrac{-i}{2}\\
       0&0&0\\
-      \cfrac{9i}{12}&0&\cfrac{9}{12}
+      \cfrac{i}{2}&0&\cfrac{1}{2}
     \end{bmatrix}=\rho'_1.
   \end{align*}
 \end{enumerate}
 %
 \subsection*{Problem 6}
-We can use Taylor expansion to bring fown the matrix:
+We can use Taylor expansion to bring down the matrix:
 \begin{align}
   e^{A}=\sum_{n=0}^\infty\frac{A^n}{n!}=\mathds{1}+A+\frac{A^2}{2!}+\cdots+\frac{A^n}{n!}+\cdots
   \label{eq:taylorexpansionexponentialmatrix}
@@ -260,11 +259,11 @@ Then, the matrix $\sigma_x$ is elevated to an increasing power. It is then impor
     0&1\\1&0
   \end{bmatrix},\quad\sigma_x^2=\begin{bmatrix}
     1&0\\0&1
-  \end{bmatrix}=I,\quad\sigma_x^2=\begin{bmatrix}
+  \end{bmatrix}=I_{2\times2},\quad\sigma_x^3=\begin{bmatrix}
     0&1\\1&0
   \end{bmatrix}=\sigma_x,\quad \sigma_x^4=\begin{bmatrix}
     1&0\\0&1
-  \end{bmatrix}=\sigma_x^2=I,\quad\cdots
+  \end{bmatrix}=\sigma_x^2=I_{2\times2},\quad\cdots
 \end{align*}
 We conclude the following:
 \begin{align*}
@@ -275,8 +274,8 @@ We conclude the following:
 \end{align*}
 The other part of the term, $i\alpha$, is merely a constant we can take out of the matrix. Now, using the Taylor expression with the results above:
 \begin{align}
-  e^{i\alpha\sigma_x}&=I_{2\times2}+(i\alpha)\sigma_x+\frac{(i\alpha)^2}{2!}\sigma_x^2+\frac{(i\alpha)^3}{3!}\sigma_x^3+\frac{(i\alpha)^4}{4!}\sigma_x^4\notag\\
-  &=I_{2\times2}+i\alpha\sigma_x-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_x+\frac{\alpha^4}{4!}I_{2\times2}\notag\\
+  e^{i\alpha\sigma_x}&=I_{2\times2}+(i\alpha)\sigma_x+\frac{(i\alpha)^2}{2!}\sigma_x^2+\frac{(i\alpha)^3}{3!}\sigma_x^3+\frac{(i\alpha)^4}{4!}\sigma_x^4+\cdots\notag\\
+  &=I_{2\times2}+i\alpha\sigma_x-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_x+\frac{\alpha^4}{4!}I_{2\times2}+\cdots\notag\\
   &=I_{2\times2}\left[1-\frac{\alpha^2}{2!}+\frac{\alpha^4}{4!}-\cdots\right]+i\sigma_x\left[\alpha-\frac{\alpha^3}{3!}+\cdots\right]\notag\\
   e^{i\alpha\sigma_x}&\stackrel{(a)}{=}I_{2\times2}\cos\alpha+i\sigma_x\sin\alpha.
 \end{align}
@@ -289,24 +288,24 @@ The matrix to use is:
     0&-i\\i&0
   \end{bmatrix}
 \end{align*}
-Taking the first fourth powers of $\sigma_y$:
+Taking the first four powers of $\sigma_y$:
 \begin{align*}
 \sigma_y=\begin{bmatrix}
   0&-i\\i&0
 \end{bmatrix},\quad\sigma_y^2=\begin{bmatrix}
   1&0\\0&1
-\end{bmatrix}=I,\quad\sigma_y^3=\begin{bmatrix}
+\end{bmatrix}=I_{2\times2},\quad\sigma_y^3=\begin{bmatrix}
   0&-i\\i&0
 \end{bmatrix}=\sigma_y,\quad\sigma_y^4=\begin{bmatrix}
   1&0\\0&1
-\end{bmatrix}=I
+\end{bmatrix}=I_{2\times2}.
 \end{align*}
 Therefore,
 \begin{align*}
   \sigma_y^n=\begin{cases}
     \sigma_y,&\text{$n$ odd}\\
     I_{2\times2},&\text{$n$ even}
-  \end{cases}
+  \end{cases}.
 \end{align*}
 Performing the same expansion as before:
 \begin{align}
@@ -335,19 +334,19 @@ We will verify if $\sigma_x$ and $\sigma_y$ commute in order to simplify the abo
   \end{bmatrix}-\begin{bmatrix}
     -i&0\\0&i
   \end{bmatrix}=\begin{bmatrix}
-    2i&0\\0&2i
+    2i&0\\0&-2i
   \end{bmatrix}\neq\begin{bmatrix}
     0&0\\0&0
   \end{bmatrix}.
 \end{align*}
-They dont commute, because of a minus sign. However, we now know that $\sigma_x\sigma_y+\sigma_y\sigma_x=0$. We have to 
+They dont commute, so we cannot simplfy further the series expansion. However, we now know that $\sigma_x\sigma_y+\sigma_y\sigma_x=0$. We have to 
 develop the $(\lambda\sigma_x+\mu\sigma_y)^n$ to derive something. First, we compute the first four terms:
 {\small
 \begin{align*}
     \sigma_u^1=(\lambda\sigma_x+\mu\sigma_y)=&\sigma_u\\
     \sigma_u^2=(\overbrace{\lambda^2+\mu^2}^{1})I_{2\times2}+\lambda\mu(\overbrace{\sigma_x\sigma_y+\sigma_y\sigma_x}^{0})=&I_{2\times2}\\
-    \sigma_u^3=&\sigma_u^2\sigma_u=I_{2\times2}\sigma_u=\sigma_u\\
-    \sigma_u^4=&\sigma_u^2\sigma_u^2=I_{2\times2}\\
+    \sigma_u^3=\sigma_u^2\sigma_u=I_{2\times2}\sigma_u=&\sigma_u\\
+    \sigma_u^4=\sigma_u^2\sigma_u^2=&I_{2\times2}\\
     \vdots&
 \end{align*}}
 We have then,
@@ -359,70 +358,68 @@ We have then,
 \end{align*}
 Therefore,
 \begin{align*}
-  e^{i\alpha\sigma_u}&=I_{2\times2}+(i\alpha)\sigma_u+\frac{(i\alpha)^2}{2!}\sigma_u^2+\frac{(i\alpha)^3}{3!}\sigma_u^3+\frac{(i\alpha)^4}{4!}\sigma_u^4\\
-  &=I_{2\times2}+i\alpha\sigma_u-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_u+\frac{\alpha^4}{4!}I_{2\times2}\\
+  e^{i\alpha\sigma_u}&=I_{2\times2}+(i\alpha)\sigma_u+\frac{(i\alpha)^2}{2!}\sigma_u^2+\frac{(i\alpha)^3}{3!}\sigma_u^3+\frac{(i\alpha)^4}{4!}\sigma_u^4+\cdots\\
+  &=I_{2\times2}+i\alpha\sigma_u-\frac{\alpha^2}{2!}I_{2\times2}-i\frac{\alpha^3}{3!}\sigma_u+\frac{\alpha^4}{4!}I_{2\times2}+\cdots\\
   &=I_{2\times2}\left[1-\frac{\alpha^2}{2!}+\frac{\alpha^4}{4!}-\cdots\right]+i\sigma_u\left[\alpha-\frac{\alpha^3}{3!}+\cdots\right]\\
   e^{i\alpha\sigma_u}&=I_{2\times2}\cos\alpha+i\sigma_u\sin\alpha.
 \end{align*}
 Obtaining a similar relation as before:
 \begin{align}
-  e^{i\alpha\sigma_u}=e^{i\alpha(\lambda\sigma_x+\mu\sigma_y)}=I_{2\times2}\cos\alpha+i\sigma_u\sin\alpha,\quad\sigma_u=\lambda\sigma_x+\mu\sigma_y.
+  e^{i\alpha\sigma_u}=e^{i\alpha(\lambda\sigma_x+\mu\sigma_y)}=I_{2\times2}\cos\alpha+i\sigma_u\sin\alpha,\quad\sigma_u=\lambda\sigma_x+\mu\sigma_y,\;\lambda^2+\mu^2=1.
   \label{eq:formula}
 \end{align}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+  \item The others exponential required can used the formula we have just obtained. 
+  For $e^{i2\sigma_x}$ ($\alpha=2$) and $(e^{i\sigma_x})^2$ ($\alpha=1$) we have:
+  \begin{align*}
+    e^{i2\sigma_x}=I_{2\times2}\cos2+i\sigma_x\sin2\quad\text{versus}\quad
+    \begin{array}{rl}
+      (e^{i\sigma_x})^2&=(I_{2\times2}\cos1+i\sigma_x\sin1)(I_{2\times2}\cos1+i\sigma_x\sin1)\\
+      &=[\cos^2(1)I_{2\times2}-\sin^2(1)\sigma^2_x]+i[2\cos(1)\sin(1)\sigma_x]\\
+      &=[\cos^2(1)-\sin^2(1)]I_{2\times2}+i[2\cos(1)\sin(1)]\sigma_x\\
+      (e^{i\sigma_x})^2&\stackrel{(a)}{=}[\cos2]I_{2\times2}+i[\sin2]\sigma_x,
+    \end{array}
+  \end{align*}
+  where in $(a)$ we have used the following trigonometric identities:
+  \begin{align*}
+    \cos2\theta=\cos^2\theta-\sin^2\theta,\quad\text{and}\quad\sin2\theta=2\cos\theta\sin\theta.
+  \end{align*}
+  We conclude that:
+  \begin{align*}
+    e^{2i\sigma_x}=(e^{i\sigma_x})^2=I_{2\times2}\cos2+i\sigma_x\sin2.
+  \end{align*}
+  This is expected, as the same operator can commute with itself.
+  \item On the other hand, the next test involve both $\sigma_x$ and $\sigma_y$ and because we know they 
+  dont commute, the terms $e^{i(\sigma_x+\sigma_y)}$ and $e^{i\sigma_x}e^{i\sigma_y}$ will be different.
+  First, recall that $\lambda^2+\mu^2=1$ and in this case $\lambda=\mu=1$. We need to normalize $\sigma_u$:
+  \begin{align*}
+    \sigma'_u=\frac{\sigma_u}{\sqrt{2}}=\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y\Longrightarrow\lambda=\mu=\frac{1}{\sqrt{2}}.
+  \end{align*}
 
-The others exponential required can used the formula we have just obtained. 
-For $e^{2i\sigma_x}$ and $(e^{i\sigma_x})^2$ we have:
-\begin{align*}
-  e^{2i\sigma_x}=I_{2\times2}\cos2+i\sigma_x\sin2,\quad\text{versus}\quad
-  \begin{array}{rl}
-    (e^{i\sigma_x})^2&=(I_{2\times2}\cos1+i\sigma_x\sin1)(I_{2\times2}\cos1+i\sigma_x\sin1)\\
-    &=[\cos^2(1)I_{2\times2}-\sin^2(1)\sigma^2_x]+i[2\cos(1)\sin(1)\sigma_x]\\
-    &=[\cos^2(1)-\sin^2(1)]I_{2\times2}+i[2\cos(1)\sin(1)]\sigma_x\\
-    (e^{i\sigma_x})^2&\stackrel{(a)}{=}[\cos2]I_{2\times2}+i[\sin2]\sigma_x.
-  \end{array}
-\end{align*}
-where in $(a)$ we have used the following trigonometric identities:
-\begin{align*}
-  \cos2\theta=\cos^2\theta-\sin^2\theta,\quad\text{and}\quad\sin2\theta=2\cos\theta\sin\theta
-\end{align*}
-We conclude that:
-\begin{align*}
-  e^{2i\sigma_x}=(e^{i\sigma_x})^2=I_{2\times2}\cos2+i\sigma_x\sin2.
-\end{align*}
-This is expected, as is the same operator that is being computed.
-
-
-On the other hand, the next test involve both $\sigma_x$ and $\sigma_y$ and because we know they 
-dont commute, the terms $e^{i(\sigma_x+\sigma_y)}$ and $e^{i\sigma_x}e^{i\sigma_y}$ will be different.
-First, lets recall that $\lambda^2+\mu^2=1$ and in this case $\lambda=\mu=1$. We need to normalize the $\sigma$ terms:
-\begin{align*}
-  \sigma'_u=\frac{\sigma_u}{\sqrt{2}}=\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y\Longrightarrow\lambda=\mu=\frac{1}{\sqrt{2}}.
-\end{align*}
-
-Then, the first exponential is ($\alpha=1,\lambda=\mu=1\sqrt{2}$):
-\begin{align*}
-  e^{i(\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y)}=I_{2\times2}\cos1+i\frac{\sigma_x+\sigma_y}{\sqrt{2}}\sin1,
-\end{align*}
-versus ($\alpha=1/\sqrt{2}$):
-\begin{align*}
-  \begin{array}{rl}
-    e^{i\frac{1}{\sqrt{2}}\sigma_x}e^{i\frac{1}{\sqrt{2}}\sigma_y}&=[I_{2\times2}\cos(1/\sqrt{2})+i\sigma_x\sin(1/\sqrt{2})][I_{2\times2}\cos(1/\sqrt{2})+i\sigma_y\sin(1/\sqrt{2})]\\
-    &=\left[\cos^2(1/\sqrt{2})I_{2\times2}-\sin^2(1/\sqrt{2})\sigma_x\sigma_y\right]+i\left[\cos(1/\sqrt{2})\sin(1/\sqrt{2})(\sigma_x+\sigma_y)\right].
-  \end{array}
-\end{align*}
-We see that both are different.
-
+  Then, the first exponential is ($\alpha=1,\lambda=\mu=1\sqrt{2}$):
+  \begin{align*}
+    e^{i(\frac{1}{\sqrt{2}}\sigma_x+\frac{1}{\sqrt{2}}\sigma_y)}=I_{2\times2}\cos1+i\frac{\sigma_x+\sigma_y}{\sqrt{2}}\sin1
+  \end{align*}
+  versus ($\alpha=1/\sqrt{2}$):
+  \begin{align*}
+    \begin{array}{rl}
+      e^{i\frac{1}{\sqrt{2}}\sigma_x}e^{i\frac{1}{\sqrt{2}}\sigma_y}&=[I_{2\times2}\cos(1/\sqrt{2})+i\sigma_x\sin(1/\sqrt{2})][I_{2\times2}\cos(1/\sqrt{2})+i\sigma_y\sin(1/\sqrt{2})]\\
+      &=\left[\cos^2(1/\sqrt{2})I_{2\times2}-\sin^2(1/\sqrt{2})\sigma_x\sigma_y\right]+i\left[\cos(1/\sqrt{2})\sin(1/\sqrt{2})(\sigma_x+\sigma_y)\right].
+    \end{array}
+  \end{align*}
+  We see that both are different.
+\end{itemize}
 %
 \subsection*{Problem 9}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
-  \item For a Hamiltonian operator $H$ with $H\ket{\psi_n}=E_n\ket{\psi_n}$ and an arbitrary operator $A$ with $A\ket{\varphi_n}=a_n\ket{\varphi_n}$, 
+  \item For a Hamiltonian operator $H$ with $H\ket{\psi_n}=E_n\ket{\psi_n}$ and an arbitrary operator $A$, 
   we have:
   \begin{align}
     \braket{\varphi_n|[A,H]|\varphi_n}&=\braket{\varphi_n|(AH-HA)|\varphi_n}\notag\\
     &=\braket{\varphi_n|AH|\varphi_n}-\braket{\varphi_n|HA|\varphi_n}\notag\\
-    &=E_n\braket{\varphi_n|A|\varphi_n}-a_n\braket{\varphi_n|H|\varphi_n}\notag\\
-    &=E_na_n\braket{\varphi_n|\varphi_n}-a_nE_n\braket{\varphi_n|\varphi_n}\notag\\
-    &=\braket{\varphi_n|\varphi_n}(E_na_n-E_na_n)\notag\\
+    &=E_n\braket{\varphi_n|A|\varphi_n}-E^*_n\braket{\varphi_n|A|\varphi_n}\notag\\
+    &=E_n\braket{\varphi_n|A|\varphi_n}-E_n\braket{\varphi_n|A|\varphi_n}\quad(E_n=E_n^*)\notag\\
+    &=E_n\left[\braket{\varphi_n|A|\varphi_n}-\braket{\varphi_n|A|\varphi_n}\right]\notag\\
     \braket{\varphi_n|[A,H]|\varphi_n}&=0,\quad\forall A.\label{eq:commutatormeanvalue}
   \end{align} 
   \item 
@@ -432,9 +429,9 @@ We see that both are different.
     \begin{align*}
       H=\frac{1}{2m}P^2+V(X),
     \end{align*}
-    where $V(X)$ can be thought as a function of an operator and $P$, by comparison with the standard Hamiltonian, is $P=-i\hbar\partial/\partial x$.
+    where $V(X)$ can be thought of as a function of an operator and $P$, by comparison with the standard Hamiltonian, is $P=-i\hbar\partial/\partial x$.
 
-    We will use algebra of commutator, function of an operator and assume that $X$ and $P$ are the position and momentum operators.
+    We will use algebra of commutator, function of an operator and assume that $X$ and $P$ are the position and momentum operators, whose commutation is $[X,P]=i\hbar$.
     \begin{itemize}[itemsep=0pt,topsep=0pt]
       \item The commutator between the Hamiltonian and momentum is:
       \begin{align*}
@@ -450,16 +447,16 @@ We see that both are different.
       \end{align*}
       Then, we apply the property $[F(A),B]=[A,B]F'(A)$:
       \begin{align}
-        [H,P]=[X,P]\frac{\partial V(X)}{\partial x}=i\hbar\frac{\partial V(X)}{\partial X}.
+        [H,P]=i\hbar\frac{dV(X)}{dX}.
         \label{eq:commutatorHP}
       \end{align}
       \item The commutator of the Hamiltonian and the position is
       \begin{align*}
         [H,X]&=\left[\frac{P^2}{2m}+V(X),X\right]\\
         &=\left[\frac{P^2}{2m},X\right]+[V(X),X]\\
-        [H,X]&\stackrel{(a)}{=}\left[\frac{P^2}{2m},X\right]+0\\
+        [H,X]&\stackrel{(a)}{=}\left[\frac{P^2}{2m},X\right]+0.\\
       \end{align*}
-      In $(a)$, any function of $X$ commute with itself. We can demonstrate thi by expressing $V(X)$ as a Taylor expansion and computing the commutator with $X$:
+      In $(a)$, any function of $X$ commute with $X$. We can demonstrate it by expressing $V(X)$ as a Taylor expansion and computing the commutator with $X$:
       \begin{align*}
         V(X)=\sum_{n=0}^\infty a_nX^n\Longrightarrow\left[\sum_{n=0}^\infty a_nX^n,X\right]=\sum_{n=0}^\infty a_n[X^n,X],
       \end{align*}
@@ -481,31 +478,29 @@ We see that both are different.
       \item The commutator of the Haimltonian and the product of the position and momentum is
       \begin{align}
         [H,XP]&=[H,X]P+X[H,P]\notag\\
-        &=\left(-\frac{i\hbar}{m}P\right)P+X\left(i\hbar\frac{\partial V(X)}{\partial x}\right)\notag\\
-        [H,XP]&=-\frac{i\hbar P^2}{m}+i\hbar X\frac{\partial V(X)}{\partial X}.\label{eq:commutatorHXP}
+        &=\left(-\frac{i\hbar}{m}P\right)P+X\left(i\hbar\frac{dV(X)}{dx}\right)\notag\\
+        [H,XP]&=-\frac{i\hbar P^2}{m}+i\hbar X\frac{dV(X)}{dX}.\label{eq:commutatorHXP}
       \end{align}  
       We have used the result of previous commutators in the process.
     \end{itemize}
     \item[$\beta$.]  To prove that $\braket{\varphi_n|P|\varphi_n}=0$, we use equation \eqref{eq:commutatormeanvalue} and \eqref{eq:commutatorHX}:
     \begin{align*}
-      \braket{\varphi_n|[A,H]|\varphi_n}=0,\quad\text{and}\quad[H,X]=-\frac{i\hbar}{m}P.
+      \braket{\varphi_n|[A,H]|\varphi_n}=\braket{\varphi_n|[H,A]|\varphi_n}=0,\quad\text{and}\quad[H,X]=-\frac{i\hbar}{m}P.
     \end{align*}
-    if we solve for $P$ in the second equation and perform $\braket{\varphi_n|\cdot|\varphi_n}$ over $P$ we have:
+    If we solve for $P$ in the second equation and perform $\braket{\varphi_n|\cdot|\varphi_n}$ over $P$ we have:
     \begin{align*}
-      P&=-\frac{m}{i\hbar}[H,X]\bigr/\braket{\varphi_n|\cdot|\varphi_n}\\
-      &=-\frac{m}{i\hbar}\braket{\varphi_n|[H,X]|\varphi_n}\\
+      P&=-\frac{m}{i\hbar}[H,X]\;\bigr/\braket{\varphi_n|\cdot|\varphi_n}\\
+      \braket{\varphi_n|P|\varphi_n}&=-\frac{m}{i\hbar}\braket{\varphi_n|[H,X]|\varphi_n}\\
       \braket{\varphi_n|P|\varphi_n}&=\frac{m}{i\hbar}\braket{\varphi_n|[X,H]|\varphi_n}.
     \end{align*}
     Since we have derivated \eqref{eq:commutatormeanvalue} for an arbitrary operator, we can do $A=X$ and set directly zero:
     \begin{align}
       \braket{\varphi_n|P|\varphi_n}=0.
     \end{align}
-    \item[$\gamma$.] To establish a relation between $\braket{\varphi_n|P^2/2m|\varphi_n}$ and $\braket{\varphi_n|XdV/dX|\varphi_n}$, we will use equation 
-    \eqref{eq:commutatormeanvalue}, \eqref{eq:commutatorHX}, \eqref{eq:commutatorHP}, and \eqref{eq:commutatorHXP}.
-
-    We employ equation \eqref{eq:commutatormeanvalue}
+    \item[$\gamma$.] To establish a relation between $\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}$ and $\braket{\varphi_n|X\frac{dV}{dX}|\varphi_n}$, we will use equation 
+    \eqref{eq:commutatormeanvalue}, and \eqref{eq:commutatorHXP}. We employ equation \eqref{eq:commutatormeanvalue}
     \begin{align*}
-      \braket{\varphi_n|[H,A]|\varphi_n}=0,\quad\forall A
+      \braket{\varphi_n|[H,A]|\varphi_n}=0,\quad\forall A,
     \end{align*}
     to define $A=XP$ and use equation \eqref{eq:commutatorHXP}, which we know is
     \begin{align*}
@@ -513,23 +508,25 @@ We see that both are different.
     \end{align*}
     Then, 
     \begin{align*}
-      \braket{\varphi_n|-\frac{i\hbar P^2}{m}+i\hbar X\frac{dV(X)}{dX}|\varphi_n}&=0\\
-      -\frac{i\hbar}{m}\braket{\varphi_n|P^2|\varphi_n}+i\hbar\braket{\varphi_n|X\frac{dV(X)}{dX}|\varphi_n}&=\\
+      \braket{\varphi_n|[H,XP]|\varphi_n}&=0\\
+      \braket{\varphi_n|-\frac{i\hbar P^2}{m}+i\hbar X\frac{dV(X)}{dX}|\varphi_n}&=\\
+      -i2\hbar\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}+i\hbar\braket{\varphi_n|X\frac{dV(X)}{dX}|\varphi_n}&=0\\
       \braket{\varphi_n|X\frac{dV(X)}{dX}|\varphi_n}&=2\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}=2E_n.
     \end{align*}
     Consequently, both quantities are related by a constant term of $2$.
 
-    For the other relation, we assume that $V_o$ is a constant value and therefore can commute.
-    
-    
-
-
-    Establish relation between the mean value of kinetic energy $E_k=\braket{\varphi_n|\dfrac{P^2}{2m}|\varphi_n}$ and $\braket{\varphi_n|X\dfrac{dV}{dX}|\varphi_n}$.
-    
-    How is related the meand value of the potential energy $\braket{\varphi_n|V(X)|\varphi_n}$ to the mean value of the kinetic energy when $V(X)=V_oX^s,\quad s=2,4,6,\cdots\;V_0>0$ 
-
-
-
+    To now relate $\braket{\varphi_n|V(X)=V_oX^s|\varphi_n}$ with $\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}$, we use 
+    the above result and evaluate $V(X)=V_oX^s$ which after differentiation becomes $V'(X)=V_osX^{s-1}$. Then,
+    \begin{align*}
+      2\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}&=\braket{\varphi_n|X\frac{d(V_oX^s)}{dX}|\varphi_n}\\
+      &=\braket{\varphi_n|V_osXX^{s-1}|\varphi_n}\\
+      &=s\braket{\varphi_n|V_oX^{s}|\varphi_n}\\
+      2\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}&=s\braket{\varphi_n|V(X)|\varphi_n}.
+    \end{align*}
+    Thus, the relation between both quantities is:
+    \begin{align}
+      \braket{\varphi_n|V(X)|\varphi_n}=2s\braket{\varphi_n|\frac{P^2}{2m}|\varphi_n}=2sE_n,\quad s=2,4,6,\cdots,\;V_0>0.
+    \end{align}
   \end{enumerate}
 \end{enumerate}
 
@@ -537,8 +534,7 @@ We see that both are different.
 \section*{Part II}
 %
 \subsection*{II-1}
-  The ket is already defined, we need to find the constant $c$ to make it orthonormal: $\braket{\psi|\psi}=1$.
-  This is achieves by computing its scalar product and equating it to one. First, we interpret the coefficients as the projections of $\psi$ onto the 
+  The ket is already defined, we need to find the constant $c$ to make it orthonormal: $\braket{\psi|\psi}=1$. First, we interpret the coefficients as the projections of $\psi$ onto the 
   $\{\ket{u_n}\}$ basis and use it to construct a column matrix:
   \begin{align*}
     \ket{\psi}_{\{\ket{u_n}\}}=\begin{bmatrix}
@@ -559,7 +555,7 @@ We see that both are different.
   \begin{align}
     \ket{\psi}_{\{\ket{u_n}\}}=\frac{1}{5}\begin{bmatrix}
       2\\-i\sqrt{3}\\-3e^{i\theta}\\3
-    \end{bmatrix}.
+    \end{bmatrix},\quad\forall\theta\in\mathbb{R}.
   \end{align}
   %
   \subsection*{II-2}
@@ -570,15 +566,14 @@ We see that both are different.
           0\\1\\0\\0
       \end{bmatrix}
     \end{align*}
-    \item For $\bra{u_3}$ we arrange the representation os a row vector:
+    \item For $\bra{u_3}$, we arrange the representation os a row vector:
     \begin{align*}
       \bra{u_3}=\begin{bmatrix}
           0&0&1&0
       \end{bmatrix}
     \end{align*}
-    \item The term $\ket{u_2}\bra{u_3}$ is an operator that project the input vector $\ket{\psi}$ onto $\ket{u_3}$ and then assign it to $\ket{u_2}$. I dont really know
-    how meaningful is this operation; it seems to be like a cross product. Well, the representation will be the outer product (matrix multiplication) of both elements, which 
-    will yields a matrix:
+    \item The term $\ket{u_2}\bra{u_3}$ is an operator that project the input vector $\ket{\psi}$ onto $\ket{u_3}$ and then assign it to $\ket{u_2}$. The representation will be the outer product (matrix multiplication) of both elements, which 
+    will yield a matrix:
     \begin{align*}
       \ket{u_2}\bra{u_3}=\begin{bmatrix}
           0\\1\\0\\0
@@ -591,7 +586,7 @@ We see that both are different.
         0&0&0&0
       \end{bmatrix}.
     \end{align*} 
-    This means that given it will only gives you non-zero vectors for collinear vectors of $\ket{u_3}$.
+    This means that it will only gives you non-zero vectors $\ket{u_2}$ for collinear vectors of $\ket{u_3}$.
     \item The projector onto $\ket{u_2}$ can be described as $P_{u_2}=\ket{u_2}{\bra{u_2}}$. The matrix representation is then the product of 
     its column vector times the adjoint of the column vector (row vector of complex conjugates elements):
     \begin{align*}
@@ -606,14 +601,14 @@ We see that both are different.
         0&0&0&0
       \end{bmatrix}.
     \end{align*}
-    \item This expression of projects the vector $\ket{\psi}$ onto $\ket{u_n}$ and assign it to $\ket{u_m}$. the summ on $i$ project the input to the nth-element of the basis
-    $\{\ket{u_1},\ket{u_2},\ket{u_3},\ket{u_4}\}$. Then, the other summ assign it to the mth-element of the same basis.
-    With a little of algebra, we can express its matrix representation:
+    \item This expression projects the vector $\ket{\psi}$ onto $\ket{u_n}$ and assign it to $\ket{u_m}$. the sum on $i$ project the input to the nth-element of the basis
+    $\{\ket{u_1},\ket{u_2},\ket{u_3},\ket{u_4}\}$. Then, the other sum assign it to the mth-element of the same basis.
+    Rearranging the summations:
     \begin{align*}
-      \sum_{m=1}^{m=4}\sum_{n=1}^{m=4}\ket{u_m}\bra{u_n}=\left[\sum_{m=1}^{m=4}\ket{u_m}\right]\cdot\left[\sum_{n=1}^{m=4}\bra{u_n}\right]
+      \sum_{m=1}^{m=4}\sum_{n=1}^{m=4}\ket{u_m}\bra{u_n}=\left[\sum_{m=1}^{m=4}\ket{u_m}\right]\cdot\left[\sum_{n=1}^{m=4}\bra{u_n}\right].
     \end{align*}
     Each state $\ket{u_m}$ provides a one non-zero element at the mth-position of the column vector. However, summing them all produces a vector full of ones.
-    The same applies to the bra $\bra{u_n}$ and. Consequently, the multiplication is:
+    The same applies to the bra $\bra{u_n}$. Consequently, the matrix representation is:
     \begin{align*}
       \left[\sum_{m=1}^{m=4}\ket{u_m}\right]\cdot\left[\sum_{n=1}^{m=4}\bra{u_n}\right]=\begin{bmatrix}
         1\\1\\1\\1
@@ -630,11 +625,11 @@ We see that both are different.
 %
 \subsection*{II-3}
 We know the action of the operator $Q$ on each ket of the basis. The result is a different element within the same basis. The basis is orthonormal, meaning that 
-they areall linearly independent each other, which means that every row of the $Q$ representation in $\{\ket{u_n}\}$ will only have one non-zero element, at a different 
-location that all the others rows.
+they are all linearly independent each other. Because each element $\ket{u_n}$ has one single non-zero element in its matrix representation,
+every column of $Q$ will have a single non-zero element as well.
 
-The problems then reduces to find out the elements of the ith-row with the mth-row of the output vector. Doing this with the four equations and constructing from them 
-the operator, we have
+Given $Q\ket{u_i}=\alpha\ket{u_j},\;\alpha\in\mathbb{C}$, the problem then reduces to find the constant of proportionality $\alpha_{ji}$ in the matrix to provide the equality.
+Doing this with the four equations and constructing the matrix representation results in the following operator:
 \begin{align*}
   Q=\begin{bmatrix}
     0&0&0&-i\\
