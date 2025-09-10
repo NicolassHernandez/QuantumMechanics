@@ -1,1 +1,163 @@
-\section{Representation $\{r\}$ and $\{p\}$}
+\section{Two important examples of representation and observables}
+%%
+\subsection{The $\{\bR\}$ and $\{\bp\}$ representations}
+
+Recall the following bases of $\F$. They are not composed of functions belonging to $\F$:
+\begin{align}
+    \xi_{\bR_0}(\bR)=\delta(\bR-\bR_0)\quad\text{and}\quad v_{\bp_0}(\bR)=(2\pi\hbar)^{-3/2}e^{\frac{i}{\hbar}\bp_0\cdot\bR}
+\end{align}
+Every sufficiently regular equare-integrable function can be expanded in one or the other of these bases.
+The ket associted with $\xi_{\bR_0}(\bR)$ and $v_{\bp_0}(\bR)$ will be denoted as:
+\begin{align}
+    \xi_{\bR_0}(\bR)\Longleftrightarrow\ket{\bR_0}\quad\text{and}\quad v_{\bp_0}(\bR)\Longleftrightarrow\ket{\bp_0}.
+\end{align}
+Using these bases $\{\xi_{\bR_0}(\bR)\}$ and $\{v_{\bp_0}(\bR)\}$ of $\F$ we thus define in $\E_{\bR}$ two representation:
+the $\{\ket{\bR_0}\}$ and the $\{\ket{\bp_0}\}$ representations.
+%
+\subsubsection{Orthonormalization and closure relations}
+If we calculate the scalar product of two kets, we have
+\begin{align*}
+    \braket{\bR_0|\bR_0'}=\int d^3r\;\xi^*_{\bR_0}(\bR)\xi_{\bR'_0}(\bR)=\delta(\bR_0-\bR_0')\quad\text{and}\quad\braket{\bp_0|\bp_0'}=\int d^3r\;v^*_{\bp_0}(\bR)
+    v_{\bp'_0}(\bR)=\delta(\bp_0-\bp_0').
+\end{align*}
+Thus, te baseses are therefore orthonormal in the extended sense. The fact that the set of the $\ket{\bR_0}$ or that of $\ket{\bp_0}$ constitutes a basis in $\E_{\bR}$
+can be expressed by a closure relation in $\E_{\bR}$:
+\begin{align}
+    \text{Orthonormality relation}&\qquad\text{Closure relation}\\
+    \highlight{\begin{array}{l}
+        \braket{\bR_0|\bR_0'}=\delta(\bR_0-\bR_0')\\
+        \braket{\bp_0,\bp_0'}=\delta(\bp_0-\bp_0')
+    \end{array}}&\qquad\highlight{\begin{array}{l}
+        \displaystyle\int d^3r_0\;\ket{\bR_0}\bra{\bR_0}=\mathds{1}\\
+        \displaystyle\int d^3p_0\;\ket{\bp_0}\bra{\bp_0}=\mathds{1}
+    \end{array}}
+\end{align}
+%
+\subsubsection{Components of a ket}
+Consider a ket $\ket{\psi}$ corresponding to $\psi(\bR)$. We can expand it in each representation using the closure relation:
+\begin{align}
+    \ket{\psi}&=\int d^3r_0\;\ket{\bR_0}\braket{\bR_0|\psi},\quad\text{where}\quad\braket{\bR_0|\psi}=\psi(\bR_0)=\int d^3r\;\xi^*_{\bR_0}(\bR)\psi(\bR).\\
+    \ket{\psi}&=\int d^3p_0\;\ket{\bp_0}\braket{\bp_0|\psi},\quad\text{where}\quad\braket{\bp_0|\psi}=\tilde{\psi}(\bp_0)=\int d^3r\;v^*_{\bp_0}(\bR)\psi(\bR).
+\end{align}
+We see that $\tilde{\psi}(\bp_0)$ is the Fourier transform of $\psi(\bR_0)$. Each value corresponds to the components of $\ket{\psi}$ on the 
+basis vector of the respective representation.
+
+%
+Now, we redefine the above bases to just $\ket{\bR}$ and $\ket{\bp}$:
+\begin{align}
+    \highlight{
+    \begin{array}{ll}
+        \braket{\bR|\psi}=\psi(\bR)&\braket{\bp|\psi}=\tilde{\psi}(\bp)\\
+        \braket{\bR|\bR'}=\delta(\bR-\bR')&\braket{\bp,\bp'}=\delta(\bp-\bp')\\
+        \displaystyle\int d^3r\ket{\bR}\bra{\bR}=\mathds{1}&\displaystyle\int d^3p\;\ket{\bp}\bra{\bp}=\mathds{1}
+    \end{array}}
+    \label{eq:propertiesoperatorsRandP}
+\end{align}
+%
+\subsubsection{Changing from $\{\ket{\bR}\}$ to $\{\ket{\bp}\}$ representation}
+Changing from one basis to the other brinds in the numbers:
+\begin{align}
+    \braket{\bR|\bp}=\braket{\bp|\bR}^*=\int d^3r'\;\braket{\bR|\bR'}\braket{\bR'|\bp}=\int d^3r'\;\delta(\bR-\bR')(2\pi\hbar)^{-3/2}e^{\frac{i}{\hbar}\bp\cdot\bR'}=(2\pi\hbar)^{-3/2}e^{\frac{i}{\hbar}\bp\cdot\bR}.
+    \label{eq:transformationmatrix}
+\end{align}
+A given ket $\ket{\psi}$ is represented by $\braket{\bR|\psi}=\psi(\bR)$ in the $\{\ket{\bR}\}$ representation and by $\braket{\bp|\psi}=\tilde{\psi}(\bp)$ in the 
+$\{\ket{\bp}\}$ representation.
+
+Therefore,
+\begin{align}
+    \psi(\bR)&=\braket{\bR|\psi}=\int d^3p\;\braket{\bR|\bp}\braket{\bp|\psi}=(2\pi\hbar)^{-3/2}\int d^3p\;e^{\frac{i}{\hbar}\bp\cdot\bR}\tilde{\psi}(\bp)\\
+    \tilde{\psi}(\bp)&=\braket{\bp|\psi}=\int d^3r\;\braket{\bp|\bR}\braket{\bR|\psi}=(2\pi\hbar)^{-3/2}\int d^3r\;e^{-\frac{i}{\hbar}\bp\cdot\bR}\psi(\bR)\\
+    A(\bp,\bp')&=(2\pi\hbar)^{-3}\int d^3r\;\int d^3r'\;e^{\frac{i}{\hbar}(\bp\cdot\bR-\bp'\cdot\bR')}A(\bR',\bR)
+\end{align}
+%%
+\subsection{The R and P operators}
+We define the $X$, $Y$, $Z$ operators whsoe action, in the $\{\ket{\bR}\}$ representation, is given by:
+\begin{align}
+    \highlight{
+    \begin{array}{l}
+        \braket{\bR|X|\psi}=x\braket{\bR|\psi}\\
+        \braket{\bR|Y|\psi}=y\braket{\bR|\psi}\\
+        \braket{\bR|Z|\psi}=z\braket{\bR|\psi}
+    \end{array}}
+\end{align}
+X, Y, and Z will be considered to be the components of a vector operator $\BR$.
+Similarly, we define the vector operator $\BP$ by its components $P_x$, $P_y$, $P_z$, whose action, in the $\{\ket{\bp}\}$ representation is given by:
+\begin{align}
+    \highlight{
+    \begin{array}{l}
+        \braket{\bp|P_x|\psi}=p_x\braket{\bp|\psi}\\
+        \braket{\bp|P_y|\psi}=p_y\braket{\bp|\psi}\\
+        \braket{\bp|P_z|\psi}=p_z\braket{\bp|\psi}
+    \end{array}}
+\end{align}
+
+How $\BP$ operator acts in the $\{\ket{\bR}\}$ representation?
+We use the closure relation to obtain:
+\begin{align*}
+    \braket{\bR|P_x|\psi}&=\int d^3p\;\braket{\bR|\bp}\braket{\bp|P_x|\psi}\\
+    &\stackrel{(a)}{=}(2\pi\hbar)^{-3/2}\int d^3p\;e^{-\frac{i}{\hbar}\bp\cdot\bR}p_x\tilde{\psi}(\bp)\\
+    \braket{\bR|P_x|\psi}&\stackrel{(b)}{=}\frac{\hbar}{i}\frac{\partial}{\partial x}\psi(\bR).
+\end{align*}
+In $(a)$ we have used the equation \eqref{eq:transformationmatrix} while in $(b)$ we have used the property of the derivative of a Fourier transform.
+Generally, the result is:
+\begin{align}
+    \highlight{\braket{\bR|\BP|\psi}=\frac{\hbar}{i}\nabla\braket{\bR|\psi}=\frac{\hbar}{i}\nabla\psi(\bR)}.
+\end{align}
+In the $\{\ket{bR}\}$ representation, the $\BP$ operator coincides with the differential operator $(\hbar/i)\nabla$ applied to the wave functions.
+
+If we compute the commutator say, $[X,P_x]$, we have
+\begin{align*}
+    \braket{\bR|[X,P_x]|\psi}&=\braket{\bR|(XP_x-P_xX)|\psi}\\
+    &=\braket{\bR|XP_x|\psi}-\braket{\bR|P_xX|\psi}\\
+    &=\int d^3r'\;\braket{\bR|X|\bR'}\braket{\bR'|P_x|\psi}-\int d^3r'\;\braket{\bR|P_x|\bR'}\braket{\bR'|X|\psi}\\
+    &=\int d^3r'\;\left[x'\delta(\bR-\bR')\right]\frac{\hbar}{i}\frac{\partial}{\partial x}\braket{\bR'|\psi}-\int d^3r'\;\left[\frac{\hbar}{i}\frac{\partial}{\partial x}\delta(\bR-\bR')\right]x'\braket{\bR'|\psi}\\
+    &=\frac{\hbar}{i}x\frac{\partial}{\partial x}\braket{\bR|\psi}-\frac{\hbar}{i}\frac{\partial}{\partial x}(x\braket{\bR|\psi})\\
+    &=\frac{\hbar}{i}x\frac{\partial}{\partial x}\braket{\bR|\psi}-\frac{\hbar}{i}\braket{\bR|\psi}-\frac{\hbar}{i}x\frac{\partial}{\partial x}\braket{\bR|\psi}\\
+    \braket{\bR|[X,P_x]|\psi}&=i\hbar\braket{\bR|\psi}.
+\end{align*}
+Thus, one finds $[X,P_x]=i\hbar$. In the same way, we find all the other commutators between the components of $\BR$ and $\BP$:
+
+\begin{align}
+    \text{Canonical commutation relations}\qquad\highlight{[R_i,R_j]=0,\quad[P_i,P_j]=0,\quad[R_i,P_j]=i\hbar\delta_{ij},\quad i,j=1,2,3}.
+\end{align}
+
+
+\begin{emphasizer}[R and P are Hermitian]
+    All the components of $\BR$ and $\BP$ are Hermitian operators.
+\end{emphasizer}
+For example,
+\begin{align*}
+    \braket{\varphi|X|\psi}=\int d^3r\;\varphi^*(\bR)x\psi(\bR)=\left[\int d^3r\;\varphi(\bR)x\psi^*(\bR)\right]^*=\braket{\psi|X|\varphi}^*.
+\end{align*}
+%
+\subsubsection{Eigenvectors of R and P}
+Consider the action of $X$ on the ket $\ket{\bR_0}$:
+\begin{align*}
+    \braket{\bR|X|\bR_0}=x\braket{\bR|\bR_0}=x\delta(\bR-\bR_0)=x_0\delta(\bR-\bR_0)=x_0\braket{\bR|\bR_0}.
+\end{align*}
+The components in $\{\ket{\bR}\}$ representation of the ket $X\ket{\bR_0}$ are equal to those of the ket $\bR_0$ multiplied by $x_0$:
+\begin{align}
+    X\ket{\bR_0}=x_0\ket{\bR_0}.
+\end{align}
+Omitting the index zero, and doing the same for the other components of $\BR$ and $\BP$ in their respective representations yield:
+\begin{align}
+    \highlight{\begin{array}{l}
+        X\ket{\bR}=x\ket{\bR}\\
+        Y\ket{\bR}=y\ket{\bR}\\
+        Z\ket{\bR}=z\ket{\bR}
+    \end{array}},\quad\text{and}\quad\highlight{\begin{array}{l}
+        P_x\ket{\bp}=p_x\ket{\bp}\\
+        P_y\ket{\bp}=p_y\ket{\bp}\\
+        P_z\ket{\bp}=p_z\ket{\bp}
+    \end{array}}
+\end{align}
+%
+\subsubsection{R and P are observables}
+We have already demonstrated the closure relation for each representation $\{\ket{\bR}\}$ and $\{\ket{\bp}\}$ in equation \eqref{eq:propertiesoperatorsRandP}. Therefore,
+$\BR$ and $\BP$ are observables. In a three-dimensional space, is necessary to specify the eigenvalues $x_o,y_o,z_o$ as they uniquely determines the corresponding eigevector $\ket{\bR_0}$.
+
+\begin{emphasizer}
+    The set of the three operators $X,Y,Z$ and the set of the three operators $P_x,P_y,P_z$  constitute a CSCO in $\E_{\bR}$.
+\end{emphasizer}
+Recall that an operator must have eigenvectors that span the whole state vector, so missing one coordinate will degenerate it and therefore is no longer 
+uniquely determined. One can also mix X with P as $\{X,P_y,P_z\}$ to create CSCOs.

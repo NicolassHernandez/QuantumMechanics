@@ -28,6 +28,8 @@
         &&$A_{\{u\}}=\mathbb{M}A_{\{v\}}\mathbb{M}^\dagger$&A_{\{v\}}=\mathbb{M}^\dagger A_{\{u\}}\mathbb{M}
     \end{tabular}}
 \end{table}
+
+\subsection{Basis}
 \begin{table}[h!]
     \centering
     \begin{tabular}{L|L|L}
@@ -58,5 +60,19 @@
         \multicolumn{2}{c}{\text{Fourier transforms for 3D wavefunctions}}\\
         \hline
         \tilde{\psi}(\bp)=\fourier{\psi(\bR)}=\displaystyle\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bR\;e^{-i\bR\cdot\bp/\hbar}\psi(\bR)&\displaystyle\psi(\bR)=\ifourier{\tilde{\psi}(\bp)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bp\;e^{i\bR\cdot\bp/\hbar}\tilde{\psi}(\bp)
+    \end{tabular}
+\end{table}
+\begin{comment}
+\end{comment}
+
+
+\subsection*{Commutators}
+\begin{table}
+    \centering
+    \begin{tabular}{LL}
+        [A,B]=-[B,A]&[A+B,C+D]=[A,C]+[A,D]+[B,C]+[B,D]\\
+        %[A,BC]=[A,B]C+B[A,C]&sah\\
+        %[A,BC]=[A,B]C+B[A,C]&[A,B]^\dagger=[B^\dagger,A^\dagger]\\
+        e^{A+B}=e^Ae^Be^{\frac{1}{2}[A,B]}&
     \end{tabular}
 \end{table}

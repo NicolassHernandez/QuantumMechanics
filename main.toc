@@ -43,6 +43,14 @@
 \contentsline {subsection}{\numberline {1.4.3}Sets of commuting observables}{27}{subsection.1.4.3}%
 \contentsline {subsubsection}{Important theorems}{27}{subsection.1.4.3}%
 \contentsline {subsubsection}{Complete sets of commting observables (C.S.C.O.)}{29}{equation.1.4.96}%
-\contentsline {section}{\numberline {1.5}Representation $\{r\}$ and $\{p\}$}{30}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Useful formulas}{31}{subsection.1.5.1}%
+\contentsline {section}{\numberline {1.5}Two important examples of representation and observables}{30}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}The $\{\bm {r}\}$ and $\{\bm {p}\}$ representations}{30}{subsection.1.5.1}%
+\contentsline {subsubsection}{Orthonormalization and closure relations}{30}{equation.1.5.98}%
+\contentsline {subsubsection}{Components of a ket}{31}{equation.1.5.100}%
+\contentsline {subsubsection}{Changing from $\{|\bm {r}\rangle \}$ to $\{|\bm {p}\rangle \}$ representation}{31}{equation.1.5.103}%
+\contentsline {subsection}{\numberline {1.5.2}The R and P operators}{31}{subsection.1.5.2}%
+\contentsline {subsubsection}{Eigenvectors of R and P}{33}{equation.1.5.111}%
+\contentsline {subsubsection}{R and P are observables}{33}{equation.1.5.113}%
+\contentsline {subsection}{\numberline {1.5.3}Useful formulas}{34}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Basis}{34}{subsection.1.5.4}%
 \contentsfinish 
