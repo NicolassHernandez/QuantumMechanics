@@ -1,0 +1,168 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\usepackage{mathrsfs}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Recitation}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+%\date{\today\\Total time: 10 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Exercise HII-4}
+\begin{enumerate}
+  \item sfaf
+  \begin{align*}
+    K=\ket{\varphi}\bra{\psi}\longrightarrow K^\dagger=(\ket{\varphi}\bra{\psi})^\dagger=\ket{\psi}\bra{\varphi}.
+  \end{align*}
+  This to be Hermitian we must have that $\ket{\varphi}=\ket{\psi}$, the other is implicity stated as well.
+  \item
+  \begin{align*}
+    K^2=\ket{\varphi}\braket{\psi|\varphi}\bra{\psi}=\braket{\psi|\varphi}K,
+  \end{align*}
+  To be a projector, we need that $K^2=K$, therefore $\braket{\psi|\varphi}=1$.
+  \item sgasg
+  \begin{align*}
+    K=\lambda P_1P_2,\quad K=\ket{\varphi}\bra{\psi},\;P_1=\ket{\varphi}\bra{\varphi},\;P_2=\ket{\psi}\bra{\psi}.
+  \end{align*}
+  \begin{align*}
+    P_1P_2=\ket{\varphi}\braket{\varphi|\psi}\bra{\psi}=\braket{\varphi|\psi}\ket{\varphi}\bra{\psi},
+  \end{align*}
+  so 
+  \begin{align*}
+    K=\frac{1}{\braket{\varphi|\psi}}P_1P_2.
+  \end{align*}
+  But this is not going to work because $\braket{\varphi|\psi}=0$ when the vectors are orthonogal.
+  This incise is not possible. We may need to use absurb rule: proove the negation (counterexample).
+\end{enumerate}
+%%
+\section*{HII-5}
+What is necessary to be a projector is the idempotency: $(P_1P_2)^2=P_1P_2$:
+\begin{align*}
+  (P_1P_2)^2=P_1P_2P_1P_2\stackrel{(a)}{=}P_1P_1P_2P_2=P_1^2P_2^2=(P_1P_2)^2
+\end{align*}
+In $(a)$ we have asummed that $[P_1,P_2]=0$.
+
+The subspace they project onto is the intersection of them: $\E_1\cap\E_2$. The only thing that survivies is the 
+same element components of them, all other projections that are orthogonal will die .
+%%
+\section*{HII-8}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item The hint is the following commutator:
+  \begin{align*}
+    [X,H]&=[X,\frac{P^2}{2m}+V(X)]=[X,\frac{P^2}{2m}]+[X,V(X)]\\
+    &=[X,\frac{P^2}{2m}]\\
+    &=\frac{1}{2m}i\hbar(2P)\\
+    [X,H]&=\frac{i\hbar P}{m}.
+  \end{align*}
+  We insert the above expression:
+  \begin{align*}
+    \braket{\varphi_n|P|\varphi_{n'}}&=\frac{m}{i\hbar}\braket{\varphi_n|[X,H]|\varphi_{n'}}\\
+    &=\frac{m}{i\hbar}[\braket{\varphi_n|XH|\varphi_{n'}}-\braket{\varphi_n|HX|\varphi_{n'}}]\\
+    &=\frac{m}{i\hbar}[E_{n'}\braket{\varphi_n|X|\varphi_{n'}}-E_n\braket{\varphi_n|X|\varphi_{n'}}]\\
+    \braket{\varphi_n|P|\varphi_{n'}}&=\frac{m}{i\hbar}(E_{n'}-E_n)\braket{\varphi_n|X|\varphi_{n'}}.
+  \end{align*}
+  \item gasgag
+  \begin{align*}
+    \sum_{n'}(E_n-E_{n'})^2|\braket{\varphi_n|X|\varphi_{n'}}|^2&=\frac{\hbar}{m^2}\braket{\varphi_n|P^2|\varphi_{n'}}\\
+    &=\frac{\hbar^2}{m^2}\braket{\varphi_n|P\left(\sum_k\ket{\varphi_k}\bra{\varphi_k}\right)P|\varphi_{'n}}\\
+    &=\frac{\hbar^2}{m^2}\sum_k\braket{\varphi_n|P|\varphi_k}\braket{\varphi_k|P|\varphi_{n'}}\\
+    &=\frac{\hbar^2}{m^2}\left[\frac{m}{i\hbar}(E_{k}-E_n)\braket{\varphi_n|X|\varphi_{k}}\right]\left[\frac{m}{i\hbar}(E_{n'}-E_k)\braket{\varphi_k|X|\varphi_{n'}}\right]\\
+    \sum_{n'}(E_n-E_{n'})^2|\braket{\varphi_n|X|\varphi_{n'}}|^2&=\sum_{n'}(E_n-E_{n'})^2|\braket{\varphi_n|X|\varphi_{n'}}|^2.
+  \end{align*}
+  Correct this
+\end{enumerate}
+
+\section*{HII-10}
+Inserting closure relation:
+\begin{align*}
+  \braket{x|XP|\varphi}&=\int dx'\; \braket{x|X|x'}\braket{x'|P|\varphi}\\
+  &=\int dx'\;x'\braket{x|x'}\braket{x'|P|\varphi}\\
+  &=\int dx'\; x'\delta(x-x')\braket{x'|P|\varphi}\\
+  \braket{x|XP|\varphi}&=x\braket{x|P|\varphi}\\
+  &=x\int dp\;\braket{x|p}\braket{p|P|\varphi}\\
+  &=x(2\pi\hbar)^{-1/2}\int dp\;e^{ixp/\hbar}\braket{p|P|\varphi}\\
+  &=x(2\pi\hbar)^{-1/2}\int dp\;e^{ixp/\hbar}\braket{p|P|\varphi}\\
+  &=x(2\pi\hbar)^{-1/2}\int dp\;e^{ixp/\hbar}[p\braket{p|\varphi}]\\
+  &=x(2\pi\hbar)^{-1/2}\int dp\;e^{ixp/\hbar}[p\tilde{\psi}(p)]\\
+  &=x\frac{\hbar}{i}(2\pi\hbar)^{-1/2}\int dp\;e^{ixp/\hbar}\left[\frac{ip}{\hbar}\tilde{\psi}(p)\right]\qquad\left(\mathscr{F}[\psi^{(n)}(x)]=\left(\frac{ip}{\hbar}\right)^n\tilde{\psi}(p)\right)\\
+  \braket{x|XP|\varphi}&=-i\hbar x\partial_x\psi(x).
+\end{align*}
+
+
+
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}

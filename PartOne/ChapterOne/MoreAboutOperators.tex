@@ -103,4 +103,92 @@ Other two examples are
 \end{align*}
 
 \subsection{Unitary operators}
+An operator $U$ is unitary if its inverse $U^{-1}$ is equal to its adjoint $U^\dagger$:
+\begin{align}
+    U^\dagger U=UU^\dagger=\mathds{1}.
+\end{align}
 
+The scalar product of $\ket{\tilde{\psi}_1}=U\ket{\psi_1}$ and $\ket{\tilde{\psi}_2}=U\ket{\psi_2}$ is conserved with unitary operators:
+\begin{align*}
+    \braket{\tilde{\psi}_1|\tilde{\psi}_2}=\braket{\psi_1|U^\dagger U|\psi_2}=\braket{\psi_1|\psi_2}(=\delta_{ij}).
+\end{align*}
+
+We show some important things about $U$:
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item If $A$ is a Hermitian operator, the operator $T=e^{iA}$ is unitary:
+    \begin{align*}
+        T^\dagger T=TT^\dagger=(e^{-iA})(e^{iA})=\mathds{1}.
+    \end{align*}
+    \item The product of two unitary operators ($U,V$ for instance) is also unitry:
+    \begin{align*}
+        (UV)^\dagger(UV)=V^\dagger U^\dagger UV=V^\dagger V=\mathds{1}.
+    \end{align*}
+    \begin{emphasizer}
+        When two transformations conserve the scalar product, so does the successive application of these two transformations.
+    \end{emphasizer}
+    \item Unitary operators constitute the generalization of orthogonal operators to complex spaces.
+\end{itemize}
+%%
+\subsubsection{Change of bases}
+
+Lets consider an orthonormal basis $\{\ket{v_i}\}$ and the transformation $\{\ket{\tilde{v}_i}\}$ basis under $U$, which are also orthonormal.
+
+These vectors constitute a basis of $\E$, because 
+\begin{align*}
+    U^\dagger\ket{\psi}=\sum_ic_i\ket{v_i}\;\bigr/U\longrightarrow
+    UU^\dagger\ket{\psi}=\sum_ic_iU\ket{v_i}=\sum_ic_i\ket{\tilde{v}_i}.
+\end{align*}
+Any vector $\ket{\psi}$ can be expanded on the vectors $\ket{\tilde{v}_i}$, which therefore constitues a basis.
+
+
+\begin{emphasizer}[How can one see from the matrix representing $U$ if this operator is unitary?]
+    When a matrix is unitary, the sum of the product of the elements of one column and the comple conjugates of the elements of another column is:
+    \begin{itemize}[itemsep=0pt,topsep=0pt]
+        \item zero if the two columns are different.
+        \item one if they are not.
+    \end{itemize}
+\end{emphasizer}
+
+Given that $U\ket{\psi_u}=u\ket{\psi_u}$, the square of the norm of $U\ket{\psi_u}$ is:
+\begin{align*}
+    \braket{\psi_u|U^\dagger U|\psi_u}=u^*u\braket{\psi_u|\psi_u}=u^*u.
+\end{align*}
+Since the unitary operator conserves the norm, we have $u^*u=1$. The eigenvalues of a unitary operator must therefore be complex numbers of modulus 1.
+%%
+\subsubsection{Unitary transformations of operators}
+A unitary operator $U$ permits the construction, starting from one otrhonormal basis $\{\ket{v_i}\}\in\E$, of another one, $\{\ket{\tilde{v}_i}\}$.
+
+Lets define the transform $\tilde{A}$ of the operator $A$ as the operator which, in the $\{\ket{\tilde{v}_i}\}$ basis, has the same matrix elements as $A$ in $\{\ket{v_i}\}$:
+\begin{align}
+    \braket{\tilde{v}_i|\tilde{A}|\tilde{v}_j}=\braket{v_i|A|v_j}.
+\end{align}
+
+Using $\ket{\tilde{v}}=U\ket{v}$:
+\begin{align*}
+    \braket{v_i|U^\dagger\tilde{A}U|v_j}=\braket{v_i|A|v_j}\Longrightarrow\highlight{\tilde{A}=UAU^\dagger}\quad\text{Definition of $\tilde{A}$}.
+\end{align*}
+This can be taken to be the definition of the transform $\tilde{A}$ of the operator $A$ by the unitary transformation $U$.
+
+How can the eigenvetors of $\tilde{A}$ be obtained from those of $A$?
+\begin{align*}
+    \tilde{A}\ket{\varphi_a}=(UAU^\dagger)U\ket{\varphi_a}=UA(U^\dagger U)\ket{\varphi_a}=UA\ket{\varphi_a}=aU\ket{\varphi_a}=a\ket{\tilde{\varphi}_a}.
+\end{align*}
+\begin{emphasizer}[Eigenpar of the transform $\tilde{A}$]
+    The eigenvectors of the transform $\tilde{A}$ of $A$ are the transforms $\ket{\tilde{\varphi}_a}$ of eigenvectors $\ket{\varphi_a}$ of $A$: the eigenvalues are 
+    \textbf{unchanged}.
+\end{emphasizer}
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The adjoint of the transform $\tilde{A}$ of $A$ by $U$ is the transform of $A^\dagger$ by $U$:
+    \begin{align*}
+        (\tilde{A})^\dagger=(UAU^\dagger)^\dagger=UA^\dagger U^\dagger=\tilde{A}^\dagger.
+    \end{align*}
+    \item Similarly,
+    \begin{align*}
+        (\tilde{A})^2=UAU^\dagger UAU^\dagger=UAAU^\dagger=\tilde{A}^2\Longrightarrow(\tilde{A})^n=\tilde{A}^n.
+    \end{align*}
+    Also,
+    \begin{align*}
+        \tilde{F}(A)=F(\tilde{A}).
+    \end{align*}
+\end{itemize}
