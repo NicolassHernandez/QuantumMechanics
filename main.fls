@@ -1305,9 +1305,9 @@ INPUT PartOne\ChapterOne\MoreAboutOperators.tex
 INPUT .\PartOne\ChapterOne\TwoImportantRepresentation.tex
 INPUT .\PartOne\ChapterOne\TwoImportantRepresentation.tex
 INPUT PartOne\ChapterOne\TwoImportantRepresentation.tex
-INPUT .\PartOne\ChapterOne\Form.tex
-INPUT .\PartOne\ChapterOne\Form.tex
-INPUT PartOne\ChapterOne\Form.tex
+INPUT .\Form.tex
+INPUT .\Form.tex
+INPUT Form.tex
 INPUT .\main.ind
 INPUT .\main.ind
 INPUT main.ind
