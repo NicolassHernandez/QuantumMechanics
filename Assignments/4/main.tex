@@ -1,0 +1,247 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 4}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: - hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+
+\section*{Problem I}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item The sixth postulates of Quantum mechanics states the time evolutions of the state $|ket{\psi}$: 
+  \begin{align}
+    i\hbar\frac{d}{dt}\ket{\psi(t)}=H(t)\ket{\psi(t)}.
+    \label{eq:schrodinger}
+  \end{align}
+  If we multiplty equation \eqref{eq:schrodinger} by $\bra{\phi(t)}$ and use the product rule of differentiation we get 
+  \begin{align*}
+    \frac{d}{dt}\braket{\psi(t)|\phi(t)}&=\left[\frac{d}{dt}\bra{\psi(t)}\right]\ket{\phi(t)}+\bra{\psi(t)}\left[\frac{d}{dt}\ket{\phi(t)}\right].
+  \end{align*}
+  On the one hand, from Schrodinger equation we have 
+  \begin{align*}
+    \frac{d}{dt}\ket{\phi(t)}=\frac{1}{i\hbar}H(t)\ket{\phi(t)}.
+  \end{align*}
+  On the other hand, if we compute the adjoint of the Schrodinger equation for $\ket{\psi(t)}$:
+  \begin{align*}
+    \frac{d}{dt}\bra{\psi(t)}=-\frac{1}{i\hbar}\bra{\psi(t)}H(t).\qquad(H^\dagger(t)=H(t))
+  \end{align*}
+  Replacing both results into the product rule yields:
+  \begin{align}
+    \frac{d}{dt}\braket{\psi(t)|\phi(t)}&=\left[-\frac{1}{i\hbar}\bra{\psi(t)}H(t)\right]\ket{\phi(t)}+\bra{\psi(t)}\left[\frac{1}{i\hbar}H(t)\ket{\phi(t)}\right]\notag\\
+    &=-\frac{1}{i\hbar}\braket{\psi(t)|H(t)|\phi(t)}+\frac{1}{i\hbar}\braket{\psi(t)|H(t)|\phi(t)}\label{eq:interproblem1}\\
+    \frac{d}{dt}\braket{\psi(t)|\phi(t)}&=0.\notag
+  \end{align}
+  %%
+  The evolution of a state $\ket{\psi(t_0)}$ to $\ket{\psi(t)}$ follows a linear fashion. Therefore, the transformation can be represented by a linear evolution operator 
+  $U(t,t_0)$ so that 
+  \begin{align}
+    \ket{\psi(t)}=U(t,t_0)\ket{\psi(t_0)}=U(t,t_1)U(t_1,t_0)\ket{\psi(t_0)}.\label{eq:psievolution}
+  \end{align}
+  The same applies for a state $\ket{\phi(t)}$:
+  \begin{align*}
+    \ket{\phi(t)}=U(t,t_0)\ket{\phi(t_0)}=U(t,t_1)U(t_1,t_0)\ket{\phi(t_0)}.
+  \end{align*} 
+  In each case, we see that $U(t_0,t_0)=\mathds{1}$. If we set $t=t_0$ in equation \eqref{eq:psievolution} we obtain 
+  \begin{align*}
+    \ket{\psi(t)}=U(t,t)\ket{\psi(t)}=U(t,t_1)U(t_1,t)\ket{\psi(t)}=\mathds{1}\ket{\psi(t)}.
+  \end{align*}
+  Comparing the last equation, we can retrieve the operators 
+  \begin{align*}
+    U(t,t_1)U(t_1,t)=U(t,t_1)U^\dagger(t_1,t)=\mathds{1}.
+  \end{align*}
+  The last equation is the definition of the unitary operator, which adjoint is the same as the inverse. Replacing $t_1$ by $t_0$ finally results 
+  \begin{align*}
+    U(t,t_0)U^\dagger(t_0,t)=\mathds{1}.
+  \end{align*}
+  %%
+  \item If $\ket{\psi(t_0)}=\ket{\phi_n^i}$, then the state is fully characterized by a single eigenvector of the Hamiltonian. This corresponds to its expansion
+  \begin{align*}
+    \ket{\psi(t)}=c_n(t)\ket{\phi_n^i},\quad\text{with}\quad c_n(t)=\braket{\phi_n^i|\psi(t)}=1.
+  \end{align*} 
+    We use the coeffficient in the Schrodinger equation:
+    \begin{align*}
+      i\hbar\frac{d}{dt}\braket{\phi_n^i|\psi(t)}=\braket{\phi_n^i|H|\psi(t)}=E_n\braket{\phi_n^i|\psi(t)}.
+    \end{align*}
+    The first and last equation, construct a first-order differential equation in the coefficient $c_n(t)$:
+    \begin{align*}
+      i\hbar\frac{d}{dt}c_n(t)=E_nc_n(t)\longrightarrow c_n(t)=c_n(t_0)e^{-E_n(t-t_0)/\hbar},
+    \end{align*}
+    where $c_n(t_0)$ is the value for $\psi(t_0)$, in this case, $\psi(t_0)=\ket{psi_n^i}$ and $c_n(t_0)=1$. Therefore,
+    \begin{align*}
+      \ket{\psi(t)}=1e^{-iE_n(t-t_0)/\hbar}\ket{\psi(t_0)}.
+    \end{align*}
+  \item In the general case, where the state vector has more than one coefficient of projection, we can do the same with the inclusion of the summation for each coefficient, including 
+  also the degree of degeneracy. We can think of the previous result as just one of the several terms, but all share the same structure.
+  We give a small derivation,
+  \begin{align*}
+    \sum_{n,i}i\hbar\frac{d}{dt}c^i_n(t)=\sum_{n,i}E_nc^i_n(t)\longrightarrow\sum_{n,i}c_{n,i}(t)=\sum_{n,i}c_{n,i}(t_0)e^{-E_n(t-t_0)/\hbar},
+  \end{align*} 
+  The ecuations above are for each eigenvector, which then construct the state vector:
+  \begin{align*}
+    \ket{\psi(t)}=\sum_{n,i}c_n^i(t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\phi_n^i}.
+  \end{align*} 
+  To be a stationary state, there only have to be a global factor common to all the eigenvectors. However, if the state vector is represented by several eigenvectors,
+  each one will have its own phase, that represent the relative phase factor. How behaves this phase factor depends on the argument of the esponential term:
+  $-iE_n(t-t_0)/\hbar$. The only variable we can study is $E_n$ that corresponds to the eigenvalue. In order to remain the phase equal for all the eigenvectors, 
+  we need that $E_n=\text{cte}$, that is, we live in a single eigensubspace of the Hamiltonian, which may have several eigenvectors but all share the same eigenvalue and therefore 
+  the same phase factor. 
+\end{enumerate}
+%%
+\section*{Problem II}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item We need to normalized the wavefunction in the range $x\in(-\infty,\infty)$ so that its norm is unitary.
+  \begin{align*}
+    \int_{-\infty}^\infty dx\;|\psi(x)|^2&=\int_{-\infty}^\infty dx\;\left|N\frac{e^{ip_0x/\hbar}}{\sqrt{x^2+a^2}}\right|^2=N^2\int_{-\infty}^\infty dx\;\frac{1}{x^2+a^2}=N^2\frac{\pi}{a}=1\longrightarrow N=\sqrt{\frac{a}{\pi}}.
+  \end{align*}
+  The integral was computed with the change of variable $x=a\tan\theta$. The wave function is then
+  \begin{align*}
+    \psi(x)=\sqrt{\frac{a}{\pi}}\frac{e^{ip_0x/\hbar}}{\sqrt{x^2+a^2}}.
+  \end{align*}
+  \item To find the probability in the range given, we integrate $|\psi(x)|^2$ in the interval. We also notice that the integrand will be even, so we only integrate one part and multiply it by two:
+  \begin{align*}
+    \sqrt{\frac{a}{\pi}}\int_{-a/\sqrt{3}}^{a/\sqrt{3}}\frac{1}{x^2+a^2}=\sqrt{\frac{2a}{\pi}}\int_{0}^{a/\sqrt{3}}\frac{1}{x^2+a^2}=\frac{\sqrt{\pi}}{3\sqrt{a}}.
+  \end{align*}
+  \item The relation between the wavefunction and its momentum is the Fourier transform. Once obtained $\tilde{\psi}(p)$, we need to compute the mean value for the whole $p$. 
+  We know that $p_x=-i\hbar\partial_x$, so we can use it to construct a single expression for the mean value: 
+  \begin{align*}
+    \tilde{\psi}(p)&=(2\pi\hbar)^{-1/2}\int_{-\infty}^\infty dx\;\psi(x)e^{-ipx/\hbar}\\
+    &=(2\pi\hbar)^{-1/2}\sqrt{\frac{a}{\pi}}\int_{-\infty}^\infty dx\;\frac{e^{ip_0x/\hbar}}{\sqrt{x^2+a^2}}e^{-ipx/\hbar}=
+  \end{align*}
+
+  \begin{align*}
+    \braket{p}&=\int_{-\infty}^\infty dx\;\psi^*(x)(-i\hbar\partial x)\psi(x)\\
+    &=\int_{-\infty}^\infty dx\; 
+  \end{align*} 
+\end{enumerate}
+%%
+\section*{Problem III}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item assagag
+  \item sagasg
+  \item asgasg
+\end{enumerate}
+%%
+\section*{Problem IV}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item assagag
+  \item sagasg
+  \item asgasg
+\end{enumerate}
+%%
+\section*{Problem V}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
+  \item assagag
+  \item sagasg
+  \item asgasg
+\end{enumerate}
+
+
+
+\section*{Optional}
+\subsection*{Part 2.}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item We can show it by using properties of Hermitian operation:
+  \begin{align*}
+      G^\dagger=(iF)^\dagger=-iF^\dagger=-iF=-G\Longrightarrow G^\dagger=-G.
+  \end{align*}
+  \item It can be prooved by looking the eigenvalues of the operator:
+  \begin{align*}
+    G\ket{\psi}=g\ket{\psi}\qquad\text{and}\quad(G\ket{\psi})^\dagger&=(g\ket{\psi})^\dagger\\
+    \bra{\psi}G^\dagger&=g^*\bra{\psi}\\
+    -\bra{\psi}G&=g^*\bra{\psi}\\
+    \bra{\psi}G&=-g^*\bra{\psi}.
+  \end{align*}
+  Therefore, if under an adjoint operator the eigenvalue changes from $g$ to $-g^*$, it means that it is a pure imaginary term. If it would have consisted of also a real part,
+  it will not be possible to extract the minus sign from $g$. The same can be done for the expectation value:
+  \begin{align*}
+    \braket{\psi|G|\psi}^\dagger=\braket{\psi|G^\dagger|\psi}=-\braket{\psi|G|\psi}.
+  \end{align*}
+  The minus sign reveals the same nature on this number.
+  \item The commutator already has a property for the adjoint, we will use it and also the inversion of the arguments with the minus sign included:
+  \begin{align*}
+    ([A,B])^\dagger=[B^\dagger,A^\dagger]=-[A^\dagger,B^\dagger]=-([A,B])^\dagger.
+  \end{align*}
+  The other follows the same idea:
+  \begin{align*}
+    \braket{\psi|[A,B]|\psi}^\dagger=\braket{\psi|[A,B]^\dagger|\psi}=-\braket{\psi|[A,B]|\psi}.
+  \end{align*}
+  We have used the previous results of the commutator directly.
+\end{enumerate}
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}

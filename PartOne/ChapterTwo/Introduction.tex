@@ -1,0 +1,30 @@
+\section{Introduction}
+
+In classical mechanics, the motion of any physical system is determined through the position $\bR=(x,y,z)$ and the velocity 
+$\bv=(\dot{x},\dot{y},\dot{z})$. One usually introduces generalized coordinates $q_i(t)$ whose derivatives with respect to time $\dot{q}_i(t)$.
+are the generalized velocities. With these coordinates, the position and velocity of any point can be calculated.
+Using the Lagrangian $\mathcal{L}(q_i,\dot{q}_i,t)$ one defines the conjugate momentum $p_i$ os each of the 
+generalized cooridnates $q_i$:
+\begin{align*}
+    p_i=\frac{\partial\mathcal{L}}{\partial\dot{q}_i}.
+\end{align*}
+The $q_i(t)$ and $p_i(t)$ are called \bfemph{fundamental dynamical variables}. All the physical quantities associated with the system
+(energy, angular momentum, etc) can be expressed in terms of the fundamental dynamical variables. 
+
+The motion (evolution) of a system can be studied by Lagrange's equations or the Hamilton-Jacobi canonical equation:
+\begin{align*}
+    \text{Hamilton-Jacobi equations}\qquad\frac{dq_i}{dt}=\frac{\partial\mathcal{H}}{\partial p_i},\quad\text{and}\quad\frac{dp_i}{dt}=-\frac{\partial\mathcal{H}}{\partial q_i}.
+\end{align*}
+
+
+
+
+The classical description of a physical system can be summarized as follows:
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The state of the system at time $t_0$ is defined by specifying $N$ generalized coordinates $q_i(t_0)$ and their $N$ conjugate momenta $p_i(t_0)$.
+    \item Knowing the state of the system at $t_0$, allows to predict with certainty the result of any measurement performed at time $t_0$. 
+    \item The time evolution of the state of the system is given by the \bfemph{Hmailton-Jacobi} equations. The state of the system is known for all time if its initial 
+    state is known.
+\end{itemize}
+
+

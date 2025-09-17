@@ -1,0 +1,146 @@
+\section{Statements of the postulates}
+%%
+\subsection{State and measurable physical quantites of a system}
+The quantum state of a particle at a fixed time is characterized by a ket of the space $\E_{\bR}$.
+\begin{definition}[First postulate: Sate of a system]
+    At time $t_0$, the state of an isolated physical system is defined by specifying a ket $\ket{\psi(t_0)}\in\E_{\bR}$. 
+\end{definition}
+Recall that, sinsce $\E$ is a vector space, a linear combination of state vectors is a state vector.
+
+\begin{definition}[Second postulate: Measurable physical quantities]
+    Every measurable physical quantity $\mathcal{A}$ is described by an operator $A$ acting in $\E$: this operator is an \textbf{observable}.
+\end{definition}
+In this sense, a state is represented by a vector, while a physical quantity by an operator.
+
+\begin{definition}[Third postulate: Outcomes of measurements]
+    The only possible result of the measurement of a physical quantity $\mathcal{A}$ is one of the eigenvalues of the corresponding observable $A$.
+\end{definition}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item A measurement of $\mathcal{A}$ gives \textbf{always} a real value, since $A$ is Hermitian by definition.
+    \item If the spectrum of $A$ is discrete, the results that can be obtained by measuring $\mathcal{A}$ are \bfemph{quantized}.
+\end{itemize}
+%%
+\subsection{Principle of spectral decomposition}
+Consider a system whose state is characterized, at a given time, by $\ket{\psi}$, which is assumed normalized. We want to predict the result of the measurement,
+at thi time, of a physical quantity $\mathcal{A}$ associated with the observable $A$.
+%
+\subsubsection{Discrete spectrum}
+If all eigenvalues $a_n$ of $A$ are non-degenerate, there is associated with each of them a \textbf{unique} eigenvector $\ket{u_n}$.
+As $A$ is an observable, the set of $\ket{u_n}$ which we assume normalized, conssitutes a basis in $\E$ and we can expand $\ket{\psi}$:
+\begin{align*}
+    A\ket{u_n}=a_n\ket{u_n}\Longrightarrow \ket{\psi}=\sum_nc_n\ket{u_n}
+\end{align*}
+The probability $P(a_n)$ of finding $a_n$ when $\mathcal{A}$ is measured is therefore:
+\begin{align*}
+    P(a_n)=|c_n|^2=|\braket{u_n|\psi}|^2.
+\end{align*}
+
+If, however, some of the eigenvalues $a_n$ are degenerate, several orthonormalized eigenvectors $\ket{u_n^i}$ corresponds to them and we can still 
+expand $\ket{\psi}$ on the orthonormal basis $\{\ket{u_n^i}\}$:
+\begin{align}
+    A\ket{u_n^i}=a_n\ket{u_n^i},\;i=1,2,\cdots,g_n\Longrightarrow \ket{\psi}=\sum_n\sum_{i=1}^{g_n}c_n^i\ket{u_n^i}.
+    \label{eq:discretedegenerateexpansion}
+\end{align}
+The probability now becomes
+\begin{align*}
+    P(a_n)=\sum_{i=1}^{g_n}|c_n^i|^2=\sum_{i=1}^{g_n}|\braket{u_n^i|\psi}|^2.
+\end{align*}
+
+\begin{definition}[Foruth postulate (discrete case): Result of a measurement]
+    When $\mathcal{A}$ is measured on a system in the normalized state $\ket{\psi}$, the probability $P(a_n)$ of 
+    obtaining the eigenvalue $a_n$ of the observable $A$ is proportional to the projection of $\psi$ onto the eigensubspace $\E_n$:
+    \begin{align*}
+        \highlight{P(a_n)=|P_n\ket{\psi}|^2=\sum_{i=1}^{g_n}|\braket{u^i_n|\psi}|^2},\quad g_n=\text{degree of degeneracy of $a_n$}.
+    \end{align*}
+    $\{\ket{u_n^i}\}$ is a set of orthonormal vectors which forms a basis in the eigensubspace $\E_n$.
+\end{definition}
+%%
+\subsubsection{Continuous case}
+If now the spectrum of $A$ is continuous and non-degenerate, the eigenvectors of $A$ forms a continuous basis in $\E$, in terms of which $\ket{\psi}$ can be expanded: 
+\begin{align*}
+    A\ket{v_\alpha}=\alpha\ket{v_\alpha}\Longrightarrow\ket{\psi}=\int d\alpha\;c(\alpha)\ket{v_\alpha}.
+\end{align*}
+In this case, we cannot define the probability on a single point; we must define a probability density function. The differential probability of obtaining a value 
+included betwen $\alpha$ and $\alpha+d\alpha$ is 
+\begin{align*}
+    dP(\alpha)=\rho(\alpha)d\alpha,\quad\text{with}\quad \rho(\alpha)=|c(\alpha)|^2=|\braket{v_\alpha|\psi}|^2.
+\end{align*}
+
+\begin{definition}[Fourth postulate (continuous case, non-degenerate): Result of a measurement]
+    If $\mathcal{A}$ is measured in the normalized state $\ket{\psi}$, the probability $dP(\alpha)$ of obtaining a result included 
+    betwen $\alpha$ and $\alpha+d\alpha$ is 
+    \begin{align}
+        \highlight{dP(\alpha)=|\braket{v_\alpha|\psi}|^2\;d\alpha}.
+    \end{align}
+\end{definition}
+In cases where the state $\ket{\psi}$ is \textbf{not normalized}, we then use the following expressions:
+\begin{align}
+    \begin{array}{ll}
+    \text{Discrete case}&\text{Continuous case}\\
+    P(a_n)=\displaystyle\frac{1}{\braket{\psi|\psi}}\sum_{i=1}^{g_n}|c^i_n|^2&\rho(\alpha)=\cfrac{1}{\braket{\psi|\psi}}|c(\alpha)|^2.        
+    \end{array}
+\end{align}
+
+On the other hand, two proportional state vectors, $\ket{\psi'}=ae^{i\theta}\ket{\psi}$, represent \textbf{the same} physical state:
+\begin{align*}
+    |\braket{u_n^i|\psi'}|^2=|e^{i\theta}\braket{u_n^i|\psi}|^2=|\braket{u_n^i|\psi}|^2.
+\end{align*}
+$a$ is simplified when dividing by $\braket{\psi'|\psi'}$.
+
+\begin{emphasizer}[Global versus relative phase factor]
+    A global phase factor does not affect the physical preditions, but the relative phases of the coefficients of an expansion are significant.
+\end{emphasizer}
+
+%
+\subsection{Reduction of the wave packet}
+We want to measure at a given point the physical quantity $\mathcal{A}$. If the ket $\ket{\psi}$ before the measurement is knwon, the fourth postulate
+allows us to predict the probability of the various possible outcomes. Immbediately after the measurement, we cannot speak of probability, as we have 
+alreade got the result (collapse).
+
+If the measurement of $\mathcal{A}$ resulted in $a_n$ (assuming discrete spectrum of $A$), the state of the system immediately after this measurement is the eigenvector $\ket{u_n}$ associate with $a_n$:
+\begin{align}
+    \text{State of collapse}\qquad\ket{\psi}\stackrel{(a_n)}{\Longrightarrow}\ket{u_n}.
+\end{align}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item If we perform a second measurement of $\mathcal{A}$ immediately after the first one, we shall always find the same result $a_n$.
+    \item We use just after the measurement to assume the system had not time to evolve, because otherwise the state evolves and we need the sixth postulate to keep track of this motion.
+\end{itemize}
+
+When the eigenvalue $a_n$ is degenerate, then the state just before the measurement is written as (equation \eqref{eq:discretedegenerateexpansion}):
+\begin{align*}
+    \ket{\psi}=\sum_n\sum_{i=1}^{g_n}c_n^i\ket{u_n^i}.
+\end{align*}
+And the state of collapse just after the measurement is 
+\begin{align}
+    \displaystyle\ket{\psi}\stackrel{(a_n)}{\Longrightarrow}\frac{1}{\sqrt{\sum_{i=1}^{g_n}|c_n^i|^2}}\sum_{i=1}^{g_n}c_n^i\ket{u_n^i}.
+\end{align}
+The square root factor is the normalization so that we get a unitary norm of the state. We rewrite the above expression in the following fifth postulate.
+
+\begin{definition}[Firfth postulate: State of collapse]
+    If the measurement of the $\mathcal{A}$ in the state $\ket{\psi}$ gives the result $a_n$, the state of the system immediately after the measurement is the normalized 
+    projection of $\ket{\psi}$ onto the eigensubspace $\E_n$ associated with $a_n$:
+    \begin{align}
+        \highlight{\ket{\psi}\stackrel{(a_n)}{\Longrightarrow}\frac{P_n\ket{\psi}}{\sqrt{\braket{\psi|P_n|\psi}}}}
+    \end{align}
+\end{definition}
+It is not an arbitrary ket of $\E_n$, but the part of $\ket{\psi}$ that belongs to $\E_n$. 
+
+%%
+\subsection{Time evolution of Systems}
+
+\begin{definition}[Sixth postulate: Time evolution of the system]
+    The time evolution of the state vector $\ket{\psi(t)}$ is governed by the Schrodinger equation:
+    \begin{align}
+        \highlight{ih\frac{d}{dt}\ket{\psi(t)}=H(t)\ket{\psi(t)}},
+    \end{align}
+    where $H(t)$ is the \bfemph{Hamiltonian operator} (observable) associated with the total energy of the system.
+\end{definition}
+
+
+%%
+\subsection{Quantization rules}
+We will discuss how to construct, for a physical quantity $\mathcal{A}$ already deffined in classical mechanics, the operator $A$ which rescribes it in quantum mechanics.
+
+
+
+

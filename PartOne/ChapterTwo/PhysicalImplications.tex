@@ -1,0 +1,82 @@
+\section{Physical implications of the Schrodinger equation}
+Recall the Schrodinger equation
+\begin{align}
+    i\hbar\frac{d}{dt}\ket{\psi(t)}=H(t)\ket{\psi}.
+    \label{eq:schrodingerequation2}
+\end{align}
+
+\subsection{General properties of the Schrodinger equation}
+
+The ir no indeterminacy in the time evolution of a quantum system. Indeterminacy appears only when a physical quantity is measured.
+
+\begin{emphasizer}
+    Between two measurements, the state vectors evolves (following Shcrodinger equation) in a perfectly deterministic way.
+\end{emphasizer}
+
+\subsubsection{Supeorposition}
+The equation \eqref{eq:schrodingerequation2} is linear and homogeneous, then their slutions are linearly superposable:
+\begin{align}
+    \ket{\psi(t_0)}=\lambda_1\ket{\psi_1(t_0)}+\lambda_2\ket{\psi_2(t_0)}\Longrightarrow\ket{\psi(t)}=\lambda_1\ket{\psi_1(t)}+\lambda_2\ket{\psi_2(t)}.
+\end{align}
+
+\subsubsection{Conservation of probability}
+Since the Hamiltonian operator $H(t)$ is Hermitian, the square of the norm of the state vector $\braket{\psi(t)|\psi(t)}$ does not depend on time:
+\begin{align*}
+    \frac{d}{dt}\braket{\psi(t)|\psi(t)}&=\left[\frac{d}{dt}\bra{\psi(t)}\right]\ket{\psi(t)}+\bra{\psi(t)}\left[\frac{d}{dt}\ket{\psi(t)}\right]\\
+    &=\left[-\frac{1}{i\hbar}\bra{\psi(t)}H(t)\right]\ket{\psi(t)}+\bra{\psi(t)}\left[\frac{1}{i\hbar}H(t)\ket{\psi(t)}\right]\\
+    &=-\frac{1}{i\hbar}\braket{\psi(t)|H(t)|\psi(t)}+\frac{1}{i\hbar}\braket{\psi(t)|H(t)|\psi(t)}\\
+    \frac{d}{dt}\braket{\psi(t)|\psi(t)}&=0.
+\end{align*}
+
+The property of conservation of the norm which we have derived is expressed by the equation
+\begin{align}
+    \braket{\psi(t)|\psi(t)}=\int d^3r\;|\psi(\bR,t)|^2=\braket{\psi(t_0)|\psi(t_0)}=1.
+\end{align}
+This implies that time evolution does not modify the global probability of finding the particle in all space, which always remains equal to 1.
+
+
+%%
+\subsection{Conservative systems}
+When the Hamiltonian of a physical system \textbf{does not} depend explicitly on time, the system is said to be \bfemph{conservative}.
+It can also be said that the total energy of the system is constant of the motion. 
+%
+\subsubsection{Solution of the Schrodinger equation}
+Lets consider the eigenequation of $H$ (assuming discrete spectrum):
+\begin{align}
+    H\ket{\varphi_{n,\tau}}=E_n\ket{\varphi_{n,\tau}}.
+\end{align}
+$\tau$ is used to denote the set of indices other than $n$ necessary to uniquely characterizes a unique vector $\ket{\varphi_{n,\tau}}$.
+Since $H$ does not depend on time, neither $E_n$ nor $\ket{\varphi_{n,\tau}}$. Because $\ket{\varphi_{n,\tau}}$ form a basis,
+it is always possible to expand the state $\ket{\psi(t)}$:
+\begin{align*}
+    \ket{\psi(t)}=\sum_{n,\tau}c_{n,\tau}(t)\ket{\varphi_{n,\tau}},\quad\text{with}\quad c_{n,\tau}(t)=\braket{\varphi_{n,\tau}|\psi(t)}.
+\end{align*}
+All the time dependence of $\ket{\psi(t)}$ is contained within $c_{n,\tau}(t)$. Let us project the Schrodinger equation onto each 
+of the states $\ket{\varphi_{n,\tau}}$:
+\begin{align*}
+    i\hbar\frac{d}{dt}\braket{\varphi_{n,\tau}|\psi(t)}&=\braket{\varphi_{n,\tau}|H|\psi(t)}\\
+    i\hbar\frac{d}{dt}c_{n,\tau}(t)&=E_nc_{n,\tau}(t).
+\end{align*}
+This equation can be integrated to give
+\begin{align}
+    c_{n,\tau}(t)=c_{n,\tau}(t_0)e^{-E_n(t-t_0)/\hbar}.
+\end{align}
+\begin{emphasizer}[]
+    When $H$ does not depend on time, to find $\ket{\psi(t)}$ given $\ket{\psi(t_0)}$, proceed as follows:
+    \begin{itemize}[itemsep=0pt,topsep=0pt]
+        \item Expand $\ket{\psi(t_0)}$ in terms of the eigenstates of $H$:
+            \begin{align*}
+                \ket{\psi(t_0)}=\sum_n\sum_\tau c_{n,\tau}(t_0)\ket{\varphi_{n,\tau}},\quad\text{with}\quad c_{n,\tau}(t_0)=\braket{\varphi_{n,\tau}|\psi(t_0)}.
+            \end{align*}
+        \item To obtain $\ket{\psi(t)}$, multiply each coefficient $c_{n,\tau}(t_0)$ of the expansion by the term $e^{-iE_n(t-t_0)/\hbar}$:
+        \begin{align*}
+            \ket{\psi(t)}=\sum_n\sum_\tau c_{n,\tau}(t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}.
+        \end{align*}
+        or, in the continuous case,
+        \begin{align*}
+            \ket{\psi(t)}=\sum_\tau\int dE\;c_\tau(E,t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}.
+        \end{align*}
+    \end{itemize}
+\end{emphasizer}
+
+
