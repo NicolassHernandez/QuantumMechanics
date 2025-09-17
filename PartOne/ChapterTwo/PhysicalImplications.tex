@@ -34,6 +34,47 @@ The property of conservation of the norm which we have derived is expressed by t
 \end{align}
 This implies that time evolution does not modify the global probability of finding the particle in all space, which always remains equal to 1.
 
+%%
+\subsubsection{Evolution of the mean value of an observable}
+The mean value of the observable $A$ at the instant $t$ is 
+\begin{align}
+    \braket{A}(t)=\braket{\psi(t)|A|\psi(t)}.
+\end{align}
+The mean value may depends on time by the state $\psi(t)$, but also by the observator itself $A(t)$.
+If we differentiate the above equation with time we have 
+\begin{align*}
+    \frac{d}{dt}\braket{\psi(t)|A(t)|\psi(t)}&=\left[\frac{d}{dt}\bra{\psi(t)}\right]A(t)\ket{\psi(t)}+\bra{\psi(t)}A\left[\frac{d}{dt}\ket{\psi(t)}\right]+
+    \bra{\psi(t)}\frac{\partial A}{\partial t}\ket{\psi(t)}\\
+    &=\frac{1}{i\hbar}\braket{\psi(t)|[A(t)H(t)-H(t)A(t)]|\psi(t)}+\braket{\psi(t)|\frac{\partial A}{\partial t}|\psi(t)}.
+\end{align*}
+Therefore,
+\begin{align}
+    \text{Evolution of the mean value of $A$}\qquad\highlight{\frac{d}{dt}\braket{A}=\frac{1}{i\hbar}\braket{[A,H(t)]}+\braket{\frac{\partial A}{\partial t}}}.
+    \label{eq:evolutionmeanvalue}
+\end{align}
+\begin{emphasizer}
+The mean value $\braket{A}$ is a number whch depends only on time $t$. It is this value that must be compared to the value taken on by the 
+classical uantity $\mathcal{A}(\bR,\bp,t)$.
+\end{emphasizer}
+
+
+We can apply the equation \eqref{eq:evolutionmeanvalue} to the observables $\BR$ and $\BP$, assuming a scalar stationary potential $V(\bR)$:
+\begin{align*}
+    H=\frac{\BP^2}{2m}+V(\BR).
+\end{align*}
+We also have
+\begin{align*}
+    \frac{d}{dt}\braket{\BR}=\frac{1}{i\hbar}\braket{[\BR,H]}=\frac{1}{\hbar}\braket{[\BR,\frac{\BP^2}{2m}]}=\frac{i\hbar}{m}\BP,\quad\text{and}\quad\frac{d}{dt}\braket{\BP}=\frac{1}{i\hbar}\braket{\BP,H}=\frac{1}{i\hbar}\braket{[\BP,V(\BR)]}=-i\hbar\nabla V(\BR).
+\end{align*}
+Therefore, we have the \bfemph{Ehrenfest's theorem}\index{Ehrenfest's theorem}:
+\begin{align}
+    \text{Ehrenfest's theorem}\qquad\highlight{\begin{array}{l}
+        \displaystyle\frac{d}{dt}\braket{\BR}=\frac{1}{m}\braket{\BP}\\
+        \displaystyle\frac{d}{dt}\braket{\BP}=-\braket{\nabla V(\BR)}
+    \end{array}}.
+\end{align}
+
+\subsubsection{classical limits of the Ehrenfest's theorem}
 
 %%
 \subsection{Conservative systems}
@@ -69,14 +110,101 @@ This equation can be integrated to give
                 \ket{\psi(t_0)}=\sum_n\sum_\tau c_{n,\tau}(t_0)\ket{\varphi_{n,\tau}},\quad\text{with}\quad c_{n,\tau}(t_0)=\braket{\varphi_{n,\tau}|\psi(t_0)}.
             \end{align*}
         \item To obtain $\ket{\psi(t)}$, multiply each coefficient $c_{n,\tau}(t_0)$ of the expansion by the term $e^{-iE_n(t-t_0)/\hbar}$:
-        \begin{align*}
+        \begin{align}
             \ket{\psi(t)}=\sum_n\sum_\tau c_{n,\tau}(t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}.
-        \end{align*}
+            \label{eq:discreteconservativesystem}
+        \end{align}
         or, in the continuous case,
-        \begin{align*}
+        \begin{align}
             \ket{\psi(t)}=\sum_\tau\int dE\;c_\tau(E,t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}.
-        \end{align*}
+            \label{eq:continuousconservativesystem}
+        \end{align}
     \end{itemize}
 \end{emphasizer}
+%
+\subsubsection{Stationary states}
+An important special case is that in which $\ket{\psi(t_0)}$  is itself an eigenstate of $H$. Then, the expansion of $\ket{\psi(t_0)}$ involves only 
+eigenvalue of $H$ with the same eigenvalue:
+\begin{align*}
+    \ket{\psi(t_0)}=\sum_\tau c_{n,\tau}(t_0)\ket{\varphi_{n,\tau}}.
+\end{align*}
+We notice there is no summation over $n$, and the passage from $\ket{\psi(t_0)}$ to $\ket{\psi(t)}$ involves only one factor of $e^{-iE_n(t-t_0)/\hbar}$,
+which can be taken outisde the summation over $\tau$:
+\begin{align*}
+    \ket{\psi(t)}=\sum_\tau c_{n,\tau}(t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}=e^{-iE_n(t-t_0)/\hbar}\sum_\tau c_{n,\tau}(t_0)\ket{\varphi_{n,\tau}}=e^{-iE_n(t-t_0)/\hbar}\ket{\psi(t_0)}.
+\end{align*}
+$\ket{\psi(t)}$ and $\ket{\psi(t_0)}$ therefore differe only by a glboal phase factor. Theese two states are physically indistinguishable.
+\begin{emphasizer}
+    All the physical properties of a system which is an eigenstate of $H$ do not vary over time: the eigenstates of $H$ are called \bfemph{stationary states}\index{Stationary states}.
+\end{emphasizer}
+The state of the system will no longer evolver after the first masurement and will always remain an eigenstate of $H$ with eigenvalue of $E_k$.
+A second measurement of the energy at any subsequent time will always yield the same result $E_k$ as the first one.
+%%
+\subsubsection{Constants of the motion}
+A constant of the motion is an observable $A$ which does not depends explicitly on time and which commutes with $H$:
+\begin{align}
+    \text{Constant of the motion $A$}\qquad
+    \highlight{\frac{\partial A}{\partial t}=0\land[A,H]=0}.
+\end{align}
+For a conservative system, $H$ is therefore itself a constant of the motion.
 
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The mean value of $A$ does not evolve over time:
+    \begin{align*}
+        \frac{d}{dt}\braket{A}=\frac{1}{i\hbar}\braket{[A,H(t)]}+\braket{\frac{\partial A}{\partial t}}=0.
+    \end{align*}
+    \item Since $A$ and $H$ are observables which commute, we can always find for them a system of common eigenvectors:
+    \begin{align*}
+        H\ket{\varphi_{n,p,\tau}}&=E_n\ket{\varphi_{n,p,\tau}}\\
+        A\ket{\varphi_{n,p,\tau}}&=a_p\ket{\varphi_{n,p,\tau}}
+    \end{align*}
+    Since the states $\ket{\varphi_{n,p,\tau}}$ are eigenstates of $H$, they are stationary states. But it is also an eigenstate of $A$.
+    \begin{emphasizer}
+        When $A$ is a constant of motion, there exist stationary states of the physical system ($\ket{\varphi_{n,p,\tau}}$) that always remain, for all $t$, eigenstates of $A$ with the same 
+        eigenvalue $a_p$. The eigenvalues of $A$ are called \bfemph{good quantum numbers}\index{Good quantum numbers}.
+    \end{emphasizer}
+    \item The probability of finding the eigenvalue $a_p$, when the constant of motion $A$ is measured, is not time-dependent.
+    \begin{align*}
+        \ket{\psi(t_0)}=\sum_{n,p,\tau}c_{n,p,\tau}(t_0)\ket{\varphi_{n,p,\tau}},\quad\ket{\psi(t)}=\sum_{n,p,\tau}c_{n,p,\tau}(t)\ket{\varphi_{n,p,\tau}},\quad\text{with}\quad
+        c_{n,p,\tau}(t)=c_{n,p,\tau}(t_0)e^{-iE_n(t-t_0)/\hbar}.
+    \end{align*}
+    The probability $P(a_p,t_0)$ of finding $a_p$ when $A$ is measured at $t_0$ on the system of state $\ket{\psi(t_0)}$ is 
+    \begin{align*}
+        P(a_p,t_0)=\sum_{n,\tau}|c_{n,p,\tau}(t_0)|^2.\quad\text{Similarly,}\quad P(a_p,t)=\sum_{n,\tau}|c_{n,p,\tau}(t)|^2.
+    \end{align*}
+    We see from the coefficeint relation equation that $c_{n,p,\tau}(t)$ and $c_{n,p,\tau}(t_0)$ have the same modulus. Therefore,
+    \begin{align}
+        P(a_p,t)=P(a_p,t_0).
+    \end{align}
+\end{itemize}
+
+If all but one of the probabilities $P(a_p,t_0)$ are zero, the physical stystem at $t_0$ is in an eigenstate of $A$ with an eigenvalue of 
+$a_k$. Since the $P(a_p,t)$ do not depend on $t$, the state of the system at time $t$ remains an eigenstate of $A$ with en eigenvalue of $a_k$.
+%%
+\subsubsection{Bohr frequencies of a system}
+Let $B$ be an arbitrary observable of the system. Its time derivative is 
+\begin{align*}
+    \frac{d}{dt}\braket{B}=\frac{1}{i\hbar}\braket{[B,H]}+\braket{\frac{\partial B}{\partial t}}.
+\end{align*}
+For a conservative system, we know how to construct $\ket{\psi(t)}$ \eqref{eq:discreteconservativesystem}. Therefore, we can 
+compute explicitly $\braket{\psi(t)|B|\psi(t)}$ and not only $d\braket{B}/dt$:
+\begin{align*}
+    \braket{B}(t)&=\braket{\psi(t)|B|\psi(t)}\\
+    &=\left[\sum_{n',\tau'}c^*_{n',\tau'}(t_0)e^{iE_{n'}(t-t_0)/\hbar}\bra{\varphi_{n',\tau'}}\right]B\left[\sum_{n,\tau}c_{n,\tau}(t_0)e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}\right]\\
+    &=\sum_{n,\tau}\sum_{n',\tau'}c^*_{n',\tau'}(t_0)c_{n,\tau}(t_0)\braket{\varphi_{n',\tau'}|B|\varphi_{n,\tau}}e^{i(E_{n'}-E_n)(t-t_0)/\hbar}.
+\end{align*}
+If we assume $B$ does not dependt explicity on time, the matrix elements $\braket{\varphi_{n',\tau'}|B|\varphi_{n,\tau}}$ are constant.
+The evolution of $\braket{B}(t)$ is described by a series of oscilatting terms, whose frequencies 
+\begin{align*}
+    \text{Bohr frequencies of the system}\qquad\nu_{n',n}=\frac{1}{2\pi}\frac{|E_{n'}-E_n|}{\hbar}=\left|\frac{E_{n'}-E_n}{h}\right|
+\end{align*}
+are characteristic of the system under consideration, but independent of $B$ and the initial state of the system.
+The importance of each frequency $\nu_{n'n}$ depends on the matrix elements $\braket{\varphi_{n',\tau'}|B|\varphi_{n,\tau}}$.
+This is the origin of thr selection rules which indicate what frequencies can be emitted or absorbed under given conditions. One would have 
+to study the non-diagonal matrix elements $n\neq n'$ of the various atomis operator such as the electric and magnetic dipoles, etc.
+
+Using the $\braket{B}(t)$ expression, we can say that the mean value of a constant of the motiion is always time-independent.
+The only terms of $\braket{B}$ that are non-ero are thus constant.
+
+\subsubsection{Time-energy uncertainty relation}
 

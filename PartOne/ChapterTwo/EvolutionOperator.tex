@@ -1,0 +1,73 @@
+\section{Evolution operator}
+
+The transformation of $\ket{\psi(t_0)}$ into $\ket{\psi(t)}$ is linear. Therefore, there exists a linear operator $U(t,t_0)$ such that 
+\begin{align}
+    \text{Evolution operator}\qquad\highlight{\ket{\psi(t)}=U(t,t_0)\ket{\psi{(t_0)}}},
+    \label{eq:evolutionoperator}
+\end{align}
+where $U(t,t_0)$ is the \bfemph{evolution operator}\index{Evolution operator} of the system.
+%
+\subsection{General properties}
+From \eqref{eq:evolutionoperator} we know that 
+\begin{align}
+    U(t_0,t_0)=\mathds{1}.
+    \label{eq:property1evolutionoperator}
+\end{align}
+If we substitute the linear operator into the Shcrodinger equation, we obtain:
+\begin{align}
+    i\hbar\frac{\partial}{\partial t}U(t,t_0)\ket{\psi(t_0)}=H(t)U(t,t_0)\ket{\psi(t_0)}\Longrightarrow i\hbar\frac{\partial}{\partial t}U(t,t_0)=H(t)U(t,t_0).
+    \label{eq:differentialequationevolutionoperator}
+\end{align}
+This a first-order differential equation completely defined $U(t,t_0)$. Equations \eqref{eq:property1evolutionoperator} and \eqref{eq:differentialequationevolutionoperator} 
+can be condenses into a single integral form:
+\begin{align}
+    U(t,t_0)=\mathds{1}=\int_{t_0}^tH(t')U(t',t_0)\;dt.
+    \label{eq:integralequationevolutionoperator}
+\end{align}
+
+Lets know take three instants $t'',t'',t$ so that $t''<t'<t$, then
+\begin{align*}
+    \left.\begin{array}{l}
+        \ket{\psi(t)}=U(t,t')\ket{\psi(t')}\\
+        \ket{\psi(t')}=U(t',t'')\ket{\psi(t'')}
+    \end{array}\right\}\Longrightarrow \ket{\psi(t)}=U(t,t')U(t',t'')\ket{\psi(t'')}=U(t,t'')\ket{\psi(t'')}.
+\end{align*}
+From last expression, we have:
+\begin{align}
+    U(t,t')U(t',t'')=U(t,t'')
+\end{align}
+If we set $t=t''$ and interchange the roles of $t$ and $t'$ we have
+\begin{align}
+    \mathds{1}=U(t',t)U(t,t')\Longrightarrow U(t',t)=U^{-1}(t,t').
+\end{align}
+
+On the other hand, the evolution operator between two instants separated by $dt$ is :
+\begin{align*}
+    d\ket{\psi(t)}=\ket{\psi(t+dt)}-\ket{\psi(t)}=-\frac{i}{\hbar}H(t)|\ket{\psi(t)}\;dt.
+\end{align*}
+From this we have 
+\begin{align*}
+    \ket{\psi(t+dt)}=\left[\mathds{1}-\frac{i}{\hbar}H(t)\;dt\right]\ket{\psi(t)}=U(t+dt,t)\ket{\psi(t)}.
+\end{align*}
+That is, we have the \bfemph{infinitesimal evolution operator}:
+\begin{align}
+    \text{Infinitesimal evolution operator}\qquad \highlight{U(t+dt,t)=\mathds{1}-\frac{i}{\hbar}H(t)\;dt}.
+    \label{eq:infinitesimalevolutionoperator}
+\end{align}
+Since $H(t)$ is Hermitian, $U(t+dt,t)$ is unitary. It is not surprising that the evolution operator conserves the norm of 
+vectors on which it acts. We saw preivously that the norm of the state vector does not change over time.
+
+%%
+\subsection{Case of conservative systems}
+When the operator $H$ does not depend on time, equation \eqref{eq:differentialequationevolutionoperator} can be integrated easily:
+\begin{align}
+    U(t,t_0)=e^{-iH(t-t_0)/\hbar}.
+\end{align}
+
+Applying this operator on a state vector $\ket{\varphi_{n,\tau}}$ yields:
+\begin{align}
+    U(t,t_0)\ket{\varphi_{n,\tau}}=e^{-iH(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}=e^{-iE_n(t-t_0)/\hbar}\ket{\varphi_{n,\tau}}.
+\end{align}
+
+
+

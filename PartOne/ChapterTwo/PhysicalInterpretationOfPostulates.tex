@@ -1,16 +1,161 @@
 \section{The physical interpretation of the postulates}
 
-\subsection{Quantization rules are cnsistent with probabilistic interpretation}
-
-
+\subsection{Quantization rules are consistent with probabilistic interpretation}
+Lets consider a one-dimensional problem. If the particle is in the normalized state $\ket{\psi}$, the probability that a 
+measurement of its position will yield a result included between $x$ and $x+dx$ is equal to (equation \eqref{eq:probabilityfunction}):
+\begin{align*}
+    dP(x)=|\braket{x|\psi}|^2\;dx.
+\end{align*}
+Now, to the eigenvector $\ket{p}$ of the observable $P$ corresponds the plane wave:
+\begin{align}
+    \braket{x|p}=(2\pi\hbar)^{-1/2}e^{\frac{ipx}{\hbar}}.
+\end{align}
+and we have seen that de Broglie relations associate with this wave a well-defined momentum which is precisely $p$.
+In ddition, the probability of finding, for a particle in $\ket{\psi}$, a momnetum between $p$ and $p+dp$ is:
+\begin{align}
+    dP(p)=|\braket{p|\psi}|^2\;dp=|\tilde{\psi}(p)|^2\;dp.
+\end{align}
+%%
 \subsection{The measurement process}
+There is the question of the "fundamental" perturbation involved in the observation of quantum system.
+The origin of these problems lies in hte fact that the system under study is treated independently from the measurement device, although hteir interaction s 
+essential to the observation process. One should actually consider the system and the measurement device together as a whole. This raise 
+delicate questions concerning the details of the measurement process.
 
-
+The nondeterministic formulation of the fourth and fifth postulates is related to the problems that we have mentiones. OFr example, the abrup change from one stat evector 
+to another de to the measurement corrsponds to the fundamental perturbation of which we have spoken.
+We shall consider here only ideal measurements: the perturbation they provoke is due only to the quantum mechanical aspect of th emeasurement.
+Of course, real devices always present imperfections that affect the measurement and the system.
+%%
 \subsection{Mean value of an observable in a given state}
+The predictions deduced from the fourth postulate are expressed in terms of probabilities. To verigy them, it would be necessary to perform a large nuvmber of measurements
+under identical ocnditions. This means measuring the same quantity in a large number of systems which are all in the same quantum state.
+If these predictions are correct, the proportion of $N$ identical experiments resulting in a given event will approach, as $N\to\infty$, the 
+theorically predicted probability $P$ of this event. In practice, of course, $N$ is finite, and statisticla techniques must be used to interpret the results.
+
+The \bfemph{mean value of an observable}\index{Mean value of an observable} $A$ in the state $\ket{\psi}$, which we shall denote by 
+$\braket{A}_\psi$, or $\braket{A}$, is defined as the average of the results obtained when a large number $N$ of measurements of this observable are performed
+on systems which are all in the state $\ket{\psi}$. When $\ket{\psi}$ is given, we can compute the probabilities of findins all the possible results, 
+and therefore, $\braket{A}_\psi$ is known.
+
+If $\ket{\psi}$ is normalized, $\braket{A}$ is given by 
+\begin{align}
+    \braket{A}_\psi=\braket{\psi|A|\psi}
+\end{align}
+Assuming discrete spectrum, out of $N$ measurements of $\mathcal{A}$, the eigenvalue $a_n$ will be obtained $N(a_n)$ times, with 
+\begin{align}
+    \lim_{N\to\infty}\frac{N(a_n)}{N}=P(a_n),\quad\text{and}\quad\sum_nN(a_n)=N.
+\end{align}
+In the limit, we can approximate therefore the mean value of the results as 
+\begin{align}
+    \braket{A}_\psi=\lim_{N\to\infty}\frac{1}{N}\sum_na_nN(a_n)=\sum_na_nP(a_n).
+\end{align}
+The last expression is then treated:
+\begin{align*}
+    \braket{A}_\psi&=\sum_na_nP(a_n)=\sum_na_n\braket{\psi|P_n|\psi}=\sum_na_n\sum_{i=1}^{g_n}\braket{\psi|u_n^i}\braket{u_n^i|\psi}=\sum_n\sum_{i=1}^{g_n}\braket{\psi|a_n|u_n^i}\braket{u_n^i|\psi}\\
+    &=\sum_n\sum_{i=1}^{g_n}\braket{\psi|A|u_n^i}\braket{u_n^i|\psi}=\bra{\psi}A\left[\sum_n\sum_{i=1}^{g_n}\ket{u_n^i}\bra{u_n^i}\right]\ket{\psi}=\braket{\psi|A\mathds{1}|\psi}=\braket{\psi|A|\psi}.
+\end{align*}
+In the continuous case, we have something similar:
+\begin{align}
+    \lim_{N\to\infty}\frac{dN(\alpha)}{N}=dP(\alpha).
+\end{align}
+In the limit, we can approximate the mean value of the results as 
+\begin{align}
+    \braket{A}_\psi=\lim_{N\to\infty}\frac{1}{N}\int\alpha\;dN(\alpha)=\int\alpha\;dP(\alpha).
+\end{align}
+The last expression is then treated:
+\begin{align*}
+    \braket{A}_\psi&=\int\alpha\;dP(\alpha)=\int\alpha\braket{\psi|v_\alpha}\braket{v_\alpha|\psi}\;d\alpha=\int\braket{\psi|A|v_\alpha}\braket{v_\alpha|\psi}\;d\alpha\\
+    &=\bra{\psi}A\left[\int d\alpha\;\ket{v_\alpha}\bra{v_\alpha}\right]\ket{\psi}=\braket{\psi|A\mathds{1}|\psi}=\braket{\psi|A|\psi}.
+\end{align*}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item If the ket $\ket{\psi}$ is not normalized, then we use 
+    \begin{align}
+        \text{Mean value of $A$}\qquad\highlight{\braket{A}_\psi=\frac{\braket{\psi|A|\psi}}{\braket{\psi|\psi}}}.
+    \end{align}
+    \item In practice, one often places oneself in a particular representation to compute $\braket{A}_\psi$.
+    \begin{align*}
+        \braket{X}_\psi=\braket{\psi|X|\psi}&=\int d^3r\;\braket{\psi|\bR}\braket{\bR|X|\psi}=\int d^3r\;\psi^*(\bR)x\psi(\bR).\\
+        \braket{P_x}_\psi=\braket{\psi|P_x|\psi}&=\int d^3r\;\tilde{\psi}^*(\bp)p_x\tilde{\psi}(\bp),\quad\text{or}\\
+        \braket{P_x}_\psi=\braket{\psi|P_x|\psi}&=\int d^3r\;\braket{\psi|\bR}\braket{\bR|P_x|\psi}=\int d^3\;\psi^*(\bR)\left[\frac{\hbar}{i}\frac{\partial}{\partial x}\psi(\bR)\right].
+    \end{align*}
+\end{itemize}
 
 
+%%
 \subsection{The root mean square deviation}
+$\braket{A}$ indicates the order of magnitude of the values of the observables $A$ when the system is in the state $\ket{\psi}$.
+However, this mean values does not give any idea of the dispersion of the results we expect when measuring $A$.
 
+We therefore define the \bfemph{root mean square deviation} $\Delta A$ as 
+\begin{align}
+    \text{RMS deviation}\qquad\highlight{\Delta A=\sqrt{\braket{(A-\braket{A})^2}}=\sqrt{\braket{A^2}-\braket{A}^2}}.
+\end{align}
+If this definition is applied to the observable $\BR$ and $\BP$, we can shown, using commutation realtions, that for any state $\ket{\psi}$,
+we have 
+\begin{align}
+    \text{Heisenberg relations}\qquad\begin{array}{l}
+    \Delta X\cdot\Delta P_x\geq\frac{\hbar}{2}\\
+    \Delta Y\cdot\Delta P_y\geq\frac{\hbar}{2}\\
+    \Delta Z\cdot\Delta P_z\geq\frac{\hbar}{2}
+    \end{array}.
+\end{align}
 
-
+%%
 \subsection{Compatibility of observables}
+\subsubsection{Compatibility and commutation rules}
+Let be two commutate observable $A$ and $B$ $[A,B]=0$, and assume discrete spectrum.
+There exists a basis of the state space composed of eigenkets commont to $A$ and $B$, which we denote $\ket{a_n,b_p,i}$:
+\begin{align*}
+    A\ket{a_n,b_p,i}&=a_n\ket{a_n,b_p,i}\\
+    B\ket{a_n,b_p,i}&=b_p\ket{a_n,b_p,i}.
+\end{align*}
+For any $a_n$ and $b_p$, there exists at least one state $\ket{a_n,b_p,i}$ for which a measurement of $A$ will always give $a_n$ and a 
+measurement of $B$ will always give $b_p$. These observables which can be simultaneously determined are said to be \bfemph{compatible}\index{Compatible operators}.
+
+The initial state of a system $\ket{\psi}$ can always be written as
+\begin{align*}
+    \ket{\psi}=\sum_{n,p,i}c_{n,p,i}\ket{a_n,b_p,i}.
+\end{align*}
+Assume we measure $A$ and then immediately we measure $B$. First, the probability of having $a_n$ is 
+\begin{align}
+    P(a_n)=\sum_{p,i}|c_{n,p,i}|^2.
+\end{align}
+When we then measure $B$, the system is no long in the state $\ket{\psi}$ but, if we found $a_n$ in the state $\ket{\psi'_n}$ we have 
+\begin{align*}
+    \ket{\psi_n'}=\frac{1}{\sqrt{\sum_{p,i}|c_{n,p,i}|^2}}\sum_{p,i}c_{n,p,i}\ket{a_n,b_p,i}.
+\end{align*}
+The probability of obtaining $b_p$ when it is known that the first measurement was $a_n$ is then
+\begin{align}
+    P_{a_n}(b_p)=\frac{1}{\sum_{p,i}|c_{n,p,i}|^2}\sum_i|c_{n,p,i}|^2.
+\end{align}
+The probability $P(a_n,b_p)$ of obtaining $a_n$ in the first measureement and $b_p$ in the second is then a composite event, we must first find $a_n$ and then find $b_p$.
+Therefore,
+\begin{align}
+    P(a_n,b_p)=P(a_n)P_{a_n}(b_p)=\sum_i|c_{n,p,i}|^2.
+\end{align}
+The state of the system becomes imediately after the second measuremet 
+\begin{align}
+    \ket{\psi''_{n,p}}=\frac{1}{\sqrt{\sum_{i}|c_{n,p,i}|^2}}\sum_ic_{n,p,i}\ket{a_n,b_p,i}.
+\end{align}
+\begin{emphasizer}
+    $\ket{\psi''_{n,p}}$ is an eigenvector common to $A$ and $B$ with the eigenvalues $a_n$ and $b_p$, respectively.
+\end{emphasizer}
+If we do the same in opposite order, that is, measuring $B$ and then $A$ we have 
+\begin{align}
+    P(b_p,a_n)=\sum_i|c_{n,p,i}|^2,\quad\text{and}\quad\ket{\psi''_{p,n}}=\frac{1}{\sqrt{\sum_i|c_{n,p,i}|^2}}\sum_ic_{n,p,i}\ket{a_n,b_p,i}.
+\end{align}
+
+\begin{emphasizer}[Consequence of compatible observables]
+    When two observables are compatible, the physical predictions ae the \textbf{same}, whatever the order of performing the two measurements.
+    The probability and the state after the last measurements are for both cases:
+    \begin{align}
+        P(a_n,b_p)=P(b_p,a_n)&=\sum_i|c_{n,p,i}|^2=\sum_i|\braket{a_n,b_p,i|\psi}|^2,\quad\text{and}\\
+        \ket{\psi''_{n,p}}=\ket{\psi''_{p,n}}&=\frac{1}{\sqrt{\sum_i|c_{n,p,i}|^2}}\sum_ic_{n,p,i}\ket{a_n,b_p,i}.
+    \end{align}
+    When two observables $A$ and $B$ are compatibles, the measurement of $B$ does not cause any loss of information previously obtained from the measurement 
+    of $A$, and viceversa.
+\end{emphasizer}
+New measurement of $A$ or $B$ will yields the same values again without fail.
+
+\subsubsection{Preparation of a state}

@@ -42,15 +42,15 @@ expand $\ket{\psi}$ on the orthonormal basis $\{\ket{u_n^i}\}$:
     \label{eq:discretedegenerateexpansion}
 \end{align}
 The probability now becomes
-\begin{align*}
+\begin{align}
     P(a_n)=\sum_{i=1}^{g_n}|c_n^i|^2=\sum_{i=1}^{g_n}|\braket{u_n^i|\psi}|^2.
-\end{align*}
+\end{align}
 
 \begin{definition}[Foruth postulate (discrete case): Result of a measurement]
     When $\mathcal{A}$ is measured on a system in the normalized state $\ket{\psi}$, the probability $P(a_n)$ of 
-    obtaining the eigenvalue $a_n$ of the observable $A$ is proportional to the projection of $\psi$ onto the eigensubspace $\E_n$:
+    obtaining the eigenvalue $a_n$ of the observable $A$ is the discrete projection of $\psi$ onto the eigensubspace $\E_n$:
     \begin{align*}
-        \highlight{P(a_n)=|P_n\ket{\psi}|^2=\sum_{i=1}^{g_n}|\braket{u^i_n|\psi}|^2},\quad g_n=\text{degree of degeneracy of $a_n$}.
+        \highlight{P(a_n)=\braket{\psi|P_n|\psi}=\sum_{i=1}^{g_n}|\braket{u^i_n|\psi}|^2},\quad P_n=\sum_{i=1}^{g_n}\ket{u_n^i}\bra{u_n^i}.
     \end{align*}
     $\{\ket{u_n^i}\}$ is a set of orthonormal vectors which forms a basis in the eigensubspace $\E_n$.
 \end{definition}
@@ -67,10 +67,10 @@ included betwen $\alpha$ and $\alpha+d\alpha$ is
 \end{align*}
 
 \begin{definition}[Fourth postulate (continuous case, non-degenerate): Result of a measurement]
-    If $\mathcal{A}$ is measured in the normalized state $\ket{\psi}$, the probability $dP(\alpha)$ of obtaining a result included 
-    betwen $\alpha$ and $\alpha+d\alpha$ is 
+    If $\mathcal{A}$ is measured in the normalized state $\ket{\psi}$, the probability of obtaining a result within betwen $\alpha_1$ and $\alpha_2$ is 
+    the continuous projection of $\psi$ onto that interval:
     \begin{align}
-        \highlight{dP(\alpha)=|\braket{v_\alpha|\psi}|^2\;d\alpha}.
+        \highlight{P(\alpha_1<\alpha<\alpha_2)=\braket{\psi|P_{\alpha_1,\alpha_2}|\psi}=\int_{\alpha_1}^{\alpha_2}|\braket{v_\alpha|\psi}|^2\;d\alpha},\quad P_{\alpha_1,\alpha_2}=\int_{\alpha_1}^{\alpha_2}\ket{v_\alpha}\bra{v_\alpha}\;d\alpha.
     \end{align}
 \end{definition}
 In cases where the state $\ket{\psi}$ is \textbf{not normalized}, we then use the following expressions:
@@ -79,6 +79,7 @@ In cases where the state $\ket{\psi}$ is \textbf{not normalized}, we then use th
     \text{Discrete case}&\text{Continuous case}\\
     P(a_n)=\displaystyle\frac{1}{\braket{\psi|\psi}}\sum_{i=1}^{g_n}|c^i_n|^2&\rho(\alpha)=\cfrac{1}{\braket{\psi|\psi}}|c(\alpha)|^2.        
     \end{array}
+    \label{eq:probabilityfunction}
 \end{align}
 
 On the other hand, two proportional state vectors, $\ket{\psi'}=ae^{i\theta}\ket{\psi}$, represent \textbf{the same} physical state:
