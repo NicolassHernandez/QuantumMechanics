@@ -238,8 +238,8 @@
 We have the followings eigenpairs for each observator;
 \begin{align*}
   H:\qquad&\{(\hbar\omega_0,\ket{u_1}),(2\hbar\omega_0,\ket{u_2}),(2\hbar\omega_0,\ket{u_3})\}.\\
-  A:\qquad&\{(a,\ket{u_1}),(a,\frac{\ket{u_2}+\ket{u_3}}{\sqrt{2}}),(-a,\frac{\ket{u_2}-\ket{u_3}}{\sqrt{2}})\}.\\
-  B:\qquad&\{(b,\frac{\ket{u_1}+\ket{u_2}}{\sqrt{2}}),(-b,\frac{\ket{u_1}-\ket{u_2}}{\sqrt{2}}),(b,\ket{u_3})\}.
+  A:\qquad&\{(a,\ket{u_1}),(a,\ket{+}=\frac{\ket{u_2}+\ket{u_3}}{\sqrt{2}}),(-a,\ket{-}=\frac{\ket{u_2}-\ket{u_3}}{\sqrt{2}})\}.\\
+  B:\qquad&\{(b,\ket{+}=\frac{\ket{u_1}+\ket{u_2}}{\sqrt{2}}),(-b,\ket{-}=\frac{\ket{u_1}-\ket{u_2}}{\sqrt{2}}),(b,\ket{u_3})\}.
 \end{align*}
 We give a small derivation of how the eigenvector of $A$ were obtained. The first case is trivial, but for the second row we have:
 \begin{align*}
@@ -262,8 +262,12 @@ results we have the eigenket we have listed.
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*.]
   \item The reuslts can only be eigenvalues of the Hamiltonian by the third postulate. Each one has a given probability, therefore:
   \begin{align*}
-    &\hbar\omega_0,\quad\text{with}\quad P(\hbar\omega_0)=\braket{\psi|P_{\hbar\omega_0}|\psi}=\frac{1}{2}\\
-    &2\hbar\omega_0,\quad\text{with}\quad P(2\hbar\omega_0)=\braket{\psi|P_{2\hbar\omega_0}|\psi}=\frac{1}{4}+\frac{1}{4}=\frac{1}{2}.
+    \hbar\omega_0,&\quad\text{with}\quad P(\hbar\omega_0)=\braket{\psi|P_{\hbar\omega_0}|\psi}=|\braket{u_1|\psi}|^2=\frac{1}{2}\\
+    2\hbar\omega_0,&\quad\text{with}\quad P(2\hbar\omega_0)=\braket{\psi|P_{2\hbar\omega_0}|\psi}=|\braket{u_2|\psi}|^2+|\braket{u_3|\psi}|^2=\frac{1}{4}+\frac{1}{4}=\frac{1}{2}.
+  \end{align*}
+  In each case the projector was:
+  \begin{align*}
+    P_{\hbar\omega_0}=\ket{u_1}\bra{u_1},\quad\text{and}\quad P_{2\hbar\omega_0}=\ket{u_2}\bra{u_2}+\ket{u_3}\bra{u_3}.
   \end{align*}
   The mean value is:
   \begin{align*}
@@ -277,9 +281,29 @@ results we have the eigenket we have listed.
   \begin{align*}
     \Delta H=\sqrt{\braket{H^2}-\braket{H}^2}=\sqrt{\frac{5\hbar^2\omega_0^2}{2}-\left(\frac{3\hbar\omega_0}{2}\right)^2}=\frac{\hbar\omega_0}{2}.
   \end{align*}
-  \item sagasg
-  \item asgasg
-  \item sgsagag
+  \item In order to define th eprobability of every outcome, we will define first the projector for every result:
+  \begin{align*}
+    P_a&=\ket{u_1}\bra{u_1}+\ket{u_2}\bra{u_2}+\ket{u_3}\bra{u_3},\\
+    P_{-a}&=\ket{u_2}\bra{u_2}-\ket{u_3}\bra{u_3}.
+  \end{align*}
+  Now, the outcomes along with their probabilities are:
+  \begin{align*}
+    a,&\qquad\text{with}\quad P(a)=\braket{\psi|P_a|\psi}=|\braket{u_1|\psi}|^2+|\braket{u_2|\psi}|^2+|\braket{u_3|\psi}|^2=1\\
+    -a,&\qquad\text{with}\quad P(-a)=\braket{\psi|P_{-a}|\psi}=|\braket{u_2|\psi}|^2-|\braket{u_3|\psi}|^2=0.
+  \end{align*}
+  Given the above, The state vector immmediately after a measurement will be:
+  \begin{align*}
+    \ket{\psi}\stackrel{(a)}{\Longrightarrow}\frac{P_a\ket{\psi}}{\sqrt{\braket{\psi|P_a|\psi}}}=\frac{1}{\sqrt{2}}\ket{u_1}+\frac{1}{2}\ket{u_2}+\frac{1}{2}\ket{u_3}.
+  \end{align*}
+  Recall that each eigenvalue has its own projector. It is used to compute probabilities and states after measurements.
+  \item The system is conservative as the Hamiltonian is time-independent. Therefore, the evolution of the state to an arbitrary time $t$ is:
+  \begin{align*}
+    \ket{\psi(t)}=\sum_n\sum_{i=1}^{g_n}c_{n}^ie^{-iE_n(t-t_0)/\hbar}\ket{u_n^i}=\frac{1}{\sqrt{2}}e^{-i\omega_0(t-t_0)}\ket{u_1}+\frac{1}{2}e^{-i2\omega_0(t-t_0)}\ket{u_2}+\frac{1}{2}e^{-i2\omega_o(t-t_0)}\ket{u_3}.
+  \end{align*}
+  \item First, the mean value of $A$ over time is:
+  \begin{align*}
+    \braket{A}(t)=\braket{\psi|A|\psi}=\sum_n\sum_{i=1}^{g_n}=
+  \end{align*}
   \item asgasg
 \end{enumerate}
 %%
