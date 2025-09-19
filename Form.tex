@@ -46,7 +46,11 @@
         \multicolumn{2}{c}{Fourier transforms for 3D wavefunctions}\\
         \hline
         $\tilde{\psi}(\bp)=\fourier{\psi(\bR)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bR\;e^{-i\bR\cdot\bp/\hbar}\psi(\bR)$&$\psi(\bR)=\ifourier{\tilde{\psi}(\bp)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bp\;e^{i\bR\cdot\bp/\hbar}\tilde{\psi}(\bp)$\\
-        $\fourier{\psi^{(n)}(x)}=\left(\frac{ip}{\hbar}\right)^n\tilde{\psi}(p)$&$\tilde{\psi}^{(n)}(p)=\fourier{\left(-\frac{ix}{\hbar}\right)^n\psi(x)}$
+        $\fourier{\psi^{(n)}(x)}=\left(\frac{ip}{\hbar}\right)^n\tilde{\psi}(p)$&$\tilde{\psi}^{(n)}(p)=\fourier{\left(-\frac{ix}{\hbar}\right)^n\psi(x)}$\\
+        $\tilde{\psi}(p-p_0)=\fourier{e^{ip_0x/\hbar}\psi(x)}$&$e^{-px_0/\hbar}\tilde{\psi}(p)=\fourier{\psi(x-x_0)}$\\
+        $\fourier{\psi(cx)}=\tilde{\psi}(p/c)/|c|$&$\int_{-\infty}^\infty dx\;\varphi^*(x)\psi(x)=\int_{-\infty}^\infty dp\;\tilde{\varphi}^*(p)\tilde{\psi}(p)$\\
+        $\psi(x)$ real $[\tilde{\psi}(p)]^*=\tilde{\psi}(-p)$&$\psi(x)$ imaginary $[\tilde{\psi}(p)]^*=-\tilde{\psi}(-p)$\\
+        $\Delta x\Delta p\geq\hbar$&$$
     \end{tabular}
 \end{table}
 \begin{comment}
@@ -66,3 +70,15 @@
         $[H,P]=i\hbar\frac{dV(X)}{dX}$&$\braket{\varphi_n|[A,H]|\varphi_n}=0,\;\forall A$
     \end{tabular}}
 \end{table} 
+
+
+
+
+
+  \begin{align*}
+    \frac{d}{dt}\braket{X}&=\frac{1}{i\hbar}\braket{[X,H]}+\braket{\frac{\partial X}{\partial t}}
+    \\
+    &=\frac{1}{i\hbar}\braket{-\frac{i\hbar P}{m}}+\braket{\frac{\partial X}{\partial t}}\\
+    &=-\braket{P}+\braket{\frac{\partial X}{\partial t}}\\
+    &=
+  \end{align*}

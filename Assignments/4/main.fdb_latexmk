@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758225887.03176 "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/4/main.tex" "main.pdf" "main" 1758225891.14512 0
+["pdflatex"] 1758264079.71167 "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/4/main.tex" "main.pdf" "main" 1758264082.77761 0
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1757176733 123178 2ccd746f0a4ec0e4e75a2c14b6603cde ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1757261311 31952 8cd25b3d0b7ab187efc6e25c7864ac81 ""
   "C:/Users/irisp/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1756171257 40136 7003ba06b6cea7a70224e2f1036a7f49 ""
@@ -70,9 +70,12 @@
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1247596667 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb" 1247596670 30273 87a352d78b6810ae5cfdc68d2fb827b2 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
+  "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb" 1247596673 35309 940e81a5b9e04201a07e8b33a3ae6e64 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb" 1030470372 17014 61891910dfe21ad76f9789fdafdd860e ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -297,10 +300,10 @@
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/irisp/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/4/main.tex" 1758225885 22439 5ffaa59083d049ef326ba5ba06990f8a ""
-  "main.aux" 1758225890 286 2094bf6dd37955f830b23ce10a91707b "pdflatex"
-  "main.out" 1758225890 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1758225885 22439 5ffaa59083d049ef326ba5ba06990f8a ""
+  "c:/Users/irisp/Documents/python/QuantumMechanics/Assignments/4/main.tex" 1758264078 33243 6ee551d6137c6357419e3ecba569e191 ""
+  "main.aux" 1758264082 287 fa74fd28ae552adf4e369959241a0e55 "pdflatex"
+  "main.out" 1758264081 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1758264078 33243 6ee551d6137c6357419e3ecba569e191 ""
   "refs.bib" 1757722951 305 a8e082f4cca99b72918bc1c2f977372e ""
   (generated)
   "main.aux"
