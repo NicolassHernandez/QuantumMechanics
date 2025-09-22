@@ -49,7 +49,7 @@
         $\fourier{\psi^{(n)}(x)}=\left(\frac{ip}{\hbar}\right)^n\tilde{\psi}(p)$&$\tilde{\psi}^{(n)}(p)=\fourier{\left(-\frac{ix}{\hbar}\right)^n\psi(x)}$\\
         $\tilde{\psi}(p-p_0)=\fourier{e^{ip_0x/\hbar}\psi(x)}$&$e^{-ipx_0/\hbar}\tilde{\psi}(p)=\fourier{\psi(x-x_0)}$\\
         $\fourier{\psi(cx)}=\tilde{\psi}(p/c)/|c|$&$\int_{-\infty}^\infty dx\;\varphi^*(x)\psi(x)=\int_{-\infty}^\infty dp\;\tilde{\varphi}^*(p)\tilde{\psi}(p)$\\
-        $\psi(x)$ real $[\tilde{\psi}(p)]^*=\tilde{\psi}(-p)$&$\psi(x)$ imaginary $[\tilde{\psi}(p)]^*=-\tilde{\psi}(-p)$\\
+        $\psi(x)$ real: $[\tilde{\psi}(p)]^*=\tilde{\psi}(-p)$&$\psi(x)$ imaginary: $[\tilde{\psi}(p)]^*=-\tilde{\psi}(-p)$\\
         $\Delta x\Delta p\geq\hbar$&$$
     \end{tabular}
 \end{table}
@@ -62,10 +62,10 @@
     \resizebox{\columnwidth}{!}{%
     \begin{tabular}{l|l}
         $[A,B]=-[B,A]$&$[A+B,C+D]=[A,C]+[A,D]+[B,C]+[B,D]$\\
-        $[A,B]^\dagger=[B^\dagger,A^\dagger]$&$[A,BC]=[A,B]C+B[A,C]$\\
-        $[F(A),A]=0$&$[A,B]=0\Longrightarrow[F(A),B]=[A,F(B)]=[F(A),F(B)]=0$\\
-        $[A,[B,C]]+[B,[C,A]]+[C,[A,B]]=0$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[A,F(B)]=[A,B]\cfrac{dF(B)}{dB}$\\
-        $e^{A}e^{B}=e^{A+B}e^{\frac{1}{2}[A,B]}\;([A,[A,B]]=[B,[A,B]]=0)$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[F(A),B]=[A,B]\cfrac{dF(A)}{dA}$\\
+        $[A,B]^\dagger=[B^\dagger,A^\dagger]$&$[F(A),A]=0$\\
+        $[AB,CD]=A[B,C]D+AC[B,D]+[A,C]DB+C[A,D]B$&$[A,B]=0\Longrightarrow[F(A),B]=[A,F(B)]=[F(A),F(B)]=0$\\
+        $[A,[B,C]]+[B,[C,A]]+[C,[A,B]]=0$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[A,F(B)]=[A,B]\frac{dF(B)}{dB}$\\
+        $e^{A}e^{B}=e^{A+B}e^{\frac{1}{2}[A,B]}\;([A,[A,B]]=[B,[A,B]]=0)$&$[A,[A,B]]=[B,[A,B]]=0\Longrightarrow[F(A),B]=[A,B]\frac{dF(A)}{dA}$\\
         $[X,P]=i\hbar$&$[H,X]=-\frac{i\hbar}{m}P$\\
         $[H,P]=i\hbar\frac{dV(X)}{dX}$&$\braket{\varphi_n|[A,H]|\varphi_n}=0,\;\forall A$
     \end{tabular}}
@@ -73,12 +73,17 @@
 
 \subsection*{Key points}
 \begin{itemize}[itemsep=0pt,topsep=0pt]
-    \item When a matrix has a block form, we can compute the eigenvalues in each submatrix.
-    \item The orthonormalized eigenvectors of a matrix create the basis by concatenating them.
+    \item When a matrix has a block form, we can compute the eigenvalues in each block submatrix.
+    \item The eigenpairs allows you to diagonalize $A=V\Lambda V^{-1}$ in the eigenbasis, where $V=[\bm{u}_1|\bm{u}_2|\cdots]$, $\Lambda=\text{diag}(\lambda_1,\lambda_2,\cdots)$, and 
+    $A\ket{\bm{u}_i}=\lambda_i\ket{\bm{u}_i}$. In the eigenbasis we can do $F(A)=VF(\Lambda)V^{-1}$.
+    \item When $A$ is Hermitian, $V$ is unitary: $V^{-1}=V^\dagger$.
     \item If the matrix is diagonal, the exponential acts directly onto the elements.
-    \item Evolution opterator is defined as $U=e^{-iHt/\hbar}$, and then it evolves the stae by matrix multiplication $U\ket{\psi}$.
-    \item Eigenvectors that are related in the eigenequation must be considerd to the constuction of the new basis.
+    \item The evolution operator is $U=e^{-iHt/\hbar}$ and it evolves the state by matrix multiplication $U\ket{\psi}$.
+    \item The eigenequation show you the relation of the eigenvectors that must be considered to construct the eigenvectors of the eigenbasis: $A\ket{u_i}=\lambda\ket{u_j}$.
+    Its matrix representation is $\lambda$ in the $ji$ position.
     \item You can reduce the dimension of an operator to its eigensubspace when only acting inside it.
-    \item To know the action of an operator you can stimulate it by applying $\ket{\phi}$ or $\bra{\psi}$.
+    \item To know the action of an operator you can stimulate it by applying $\ket{\psi}$ or $\bra{\psi}$.
     \item In the operation $\ket{u_i}\bra{u_j}$, the element will be located at $ij$ in the matrix.
+    \item Conservative=$H$ time-independent, Stationary state=$\ket{\psi}$ projects in a single eigenstate of $H$.
+    \item Constant of motion=$A$ time-independent and $[A,H]=0$.
 \end{itemize}
