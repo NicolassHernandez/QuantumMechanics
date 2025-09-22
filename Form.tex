@@ -47,7 +47,7 @@
         \hline
         $\tilde{\psi}(\bp)=\fourier{\psi(\bR)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bR\;e^{-i\bR\cdot\bp/\hbar}\psi(\bR)$&$\psi(\bR)=\ifourier{\tilde{\psi}(\bp)}=\left(\frac{1}{2\pi\hbar}\right)^{3/2}\int_{-\infty}^\infty d^3\bp\;e^{i\bR\cdot\bp/\hbar}\tilde{\psi}(\bp)$\\
         $\fourier{\psi^{(n)}(x)}=\left(\frac{ip}{\hbar}\right)^n\tilde{\psi}(p)$&$\tilde{\psi}^{(n)}(p)=\fourier{\left(-\frac{ix}{\hbar}\right)^n\psi(x)}$\\
-        $\tilde{\psi}(p-p_0)=\fourier{e^{ip_0x/\hbar}\psi(x)}$&$e^{-px_0/\hbar}\tilde{\psi}(p)=\fourier{\psi(x-x_0)}$\\
+        $\tilde{\psi}(p-p_0)=\fourier{e^{ip_0x/\hbar}\psi(x)}$&$e^{-ipx_0/\hbar}\tilde{\psi}(p)=\fourier{\psi(x-x_0)}$\\
         $\fourier{\psi(cx)}=\tilde{\psi}(p/c)/|c|$&$\int_{-\infty}^\infty dx\;\varphi^*(x)\psi(x)=\int_{-\infty}^\infty dp\;\tilde{\varphi}^*(p)\tilde{\psi}(p)$\\
         $\psi(x)$ real $[\tilde{\psi}(p)]^*=\tilde{\psi}(-p)$&$\psi(x)$ imaginary $[\tilde{\psi}(p)]^*=-\tilde{\psi}(-p)$\\
         $\Delta x\Delta p\geq\hbar$&$$
@@ -71,14 +71,13 @@
     \end{tabular}}
 \end{table} 
 
-
-
-
-
-  \begin{align*}
-    \frac{d}{dt}\braket{X}&=\frac{1}{i\hbar}\braket{[X,H]}+\braket{\frac{\partial X}{\partial t}}
-    \\
-    &=\frac{1}{i\hbar}\braket{-\frac{i\hbar P}{m}}+\braket{\frac{\partial X}{\partial t}}\\
-    &=-\braket{P}+\braket{\frac{\partial X}{\partial t}}\\
-    &=
-  \end{align*}
+\subsection*{Key points}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item When a matrix has a block form, we can compute the eigenvalues in each submatrix.
+    \item The orthonormalized eigenvectors of a matrix create the basis by concatenating them.
+    \item If the matrix is diagonal, the exponential acts directly onto the elements.
+    \item Evolution opterator is defined as $U=e^{-iHt/\hbar}$, and then it evolves the stae by matrix multiplication $U\ket{\psi}$.
+    \item Eigenvectors that are related in the eigenequation must be considerd to the constuction of the new basis.
+    \item You can reduce the dimension of an operator to its eigensubspace when only acting inside it.
+    \item To know the action of an operator you can stimulate it by applying $\ket{\phi}$ or $\bra{\psi}$.
+\end{itemize}
