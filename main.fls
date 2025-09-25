@@ -1329,9 +1329,15 @@ INPUT PartOne\ChapterTwo\SupoerpositionPrinciple.tex
 INPUT .\PartOne\ChapterTwo\EvolutionOperator.tex
 INPUT .\PartOne\ChapterTwo\EvolutionOperator.tex
 INPUT PartOne\ChapterTwo\EvolutionOperator.tex
+INPUT .\PartOne\ChapterTwo\1DGaussianWavePacket.tex
+INPUT .\PartOne\ChapterTwo\1DGaussianWavePacket.tex
+INPUT PartOne\ChapterTwo\1DGaussianWavePacket.tex
 INPUT .\PartOne\ChapterTwo\InfinitePotentialWell.tex
 INPUT .\PartOne\ChapterTwo\InfinitePotentialWell.tex
 INPUT PartOne\ChapterTwo\InfinitePotentialWell.tex
+INPUT .\PartOne\ChapterTwo\SchrodingerHeisenbergPictures.tex
+INPUT .\PartOne\ChapterTwo\SchrodingerHeisenbergPictures.tex
+INPUT PartOne\ChapterTwo\SchrodingerHeisenbergPictures.tex
 INPUT .\Form.tex
 INPUT .\Form.tex
 INPUT Form.tex

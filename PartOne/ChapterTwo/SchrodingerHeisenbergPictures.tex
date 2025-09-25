@@ -1,0 +1,73 @@
+\section{Shcrodinger and Heisenberg pictures}
+
+The evolution of the system is entirely contained in that of the state vector $\ket{\psi(t)}$ (written here $\ket{\psi_S(t)})$, and 
+is obtained from the Schrodinger equation. This is why this approach is called \emph{Shcrodinger picture}.
+
+We know that all the predictions of quantum mecanics are expressed i terms of scalar products of a bra an a key or matrix elements of operators.
+These quatnties are invatiant when the same unitary transformation is performed on the kets and on the operators. This transformation can be chosen so 
+as to make the transform of a ket $\ket{\psi_S(t)}$ a time-indenepdent ket.
+The transformfs of the observable above then dpeend on time. We thus obtain the \emph{Heisenber picture}.
+
+We will assign the subscript $S$ for Schrodinger and $H$ for Heisenberg pictures.
+
+The state vector $\ket{\psi_S(t)}$ at $t$ is expresseed in terms of $\ket{\psi_S(t_0)}$ by the relation:
+\begin{align*}
+    \ket{\psi_S(t)}=U(t,t_0)\ket{\psi_S(t_0)}.
+\end{align*}
+Since this operator is unitary, it is sufficient to perform the unitary transformation associated with the operator $U^\dagger(t,t_0)$ to obtain
+a constant transformed vector:
+\begin{align*}
+    \ket{\psi_H}=U^\dagger(t,t_0)\ket{\psi_S(t)}=U^\dagger(t,t_0)U(t,t_0)\ket{\psi_S(t_0)}=\ket{\psi_S(t_0)}.
+\end{align*}
+In the Heisenberg picture, the state vector, which is constant, is therefore equal to $\ket{\psi_S(t)}$ at time $t_0$.
+
+The transform $A_H(t)$ of an operator $A_S(t)$ is given by
+\begin{align*}
+    \highlight{A_H(t)=U^\dagger(t,t_0)A_S(t)U(t,t_0)}.
+\end{align*}
+$A_H(t)$ generally depends on time, even if $A_S$ does not. Nevertheless, there exists an interesting special case in which, if $A_S$ is 
+time-independent, the same is true of $A_H$: the case in whic the system is conservative and $[A_S,H_S]=0$. In this case, we have 
+\begin{align*}
+    U(t,t_0)=e^{-iH_S(t-t_0)/\hbar}.
+\end{align*}
+If $[A_S,H_S]=0$, then $[A_S,U(t,t_0)]=0$ so that 
+\begin{align*}
+    A_H(t)=U^\dagger(t,t_0)U(t,t_0)A_S=A_S.
+\end{align*} 
+The operators $A_S$ and $A_H$ are simply equal in this case; they indeed correspond to a constant of the motion.
+
+When $A_S(t)$ is arbitrary, the evolution of $A_H(t)$ is:
+
+\begin{align*}
+    \frac{d}{dt}A_H(t)=&-\frac{1}{i\hbar}U^\dagger(t,t_0)H_S(t)A_S(t)U(t,t_0)+U^\dagger(t,t_0)\frac{dA_S(t)}{dt}U(t,t_0)+\frac{1}{i\hbar}U^\dagger(t,t_0)A_S(t)H_S(t)U(t,t_0)\\
+    =&-\frac{1}{i\hbar}U^\dagger(t,t_0)H_S(t)\textcolor{red}{U(t,t_0)U^\dagger(t,t_0)}A_S(t)U(t,t_0)+U^\dagger(t,t_0)\frac{dA_S(t)}{dt}U(t,t_0)\\
+    &+\frac{1}{i\hbar}U^\dagger(t,t_0)A_S(t)\textcolor{red}{U(t,t_0)U^\dagger(t,t_0)}H_S(t)U(t,t_0).
+\end{align*}
+Then, using the previous definitions:
+\begin{align}
+    \highlight{i\hbar\frac{d}{dt}A_H(t)=[A_H(t),H_H(t)]+i\hbar\left(\frac{d}{dt}A_S(t)\right)_H}.
+\end{align}
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The above equation is more general than the evolution of the operator found in the chapter. Also, the evolution of the mean value:
+        \begin{align*}
+            \braket{A}(t)=\braket{\psi_S(t)|A_S(t)|\psi_S(t)}
+        \end{align*}    
+        can be calculated, since in $\braket{A}(t)=\braket{\phi_H|A_H(t)|\psi_H}$ only $A_H$ depends on time ans therefore is obtained directly by differentiation.
+    \item When the system is composed of a particle of mass $m$ uner a potential. Then we have (1D):
+    \begin{align*}
+        H_S(t)=\frac{P_S^2}{2m}+V(X_S,t),\quad\text{and therefore}\quad H_H(t)=\frac{P_H^2}{2m}+V(X_H,t).
+    \end{align*}
+    Using the fact that $[X_H,P_H]=[X_S,P_S]=i\hbar$, we obtain that:
+    \begin{align}
+        \text{Generalization of Ehrenfest theorem}\qquad\highlight{\begin{array}{l}
+            \displaystyle\frac{d}{dt}X_H(t)=\frac{1}{m}P_H(t)\\
+            \displaystyle\frac{d}{dt}P_H(t)=-\frac{\partial V}{\partial X}(X_H,t)
+        \end{array}}.
+    \end{align}
+    \begin{emphasizer}
+        An advantage of Heisenberg picture is that it leads to equations formally similar to those of classical mechanics.
+    \end{emphasizer}
+\end{itemize}
+
+
