@@ -1,0 +1,187 @@
+\section{The density operator}
+
+To determine the state of a system at a given time, it suffices to perform on the system a set of measurements corresponding to a CSCO.
+However, in practice, the state of the system is often not perfectly determined.
+How can we incorporate into the formalism the incomplete information we possess about the state of the system, so that our predictions make 
+maximum use of this partial information? We will then introduce the \bfemph{density operator}.
+
+%%
+\subsection{Concept of a statistical mixture of states}
+When one has incomplete information about a system, one typically appeals to the concept of probability. This incomplete information is 
+presented in the following way:
+\begin{emphasizer}
+    The state of this system may be either the state $\ket{\psi_1}$ with probability $p_1$ or $\ket{\psi_2}$ with probability $p_2$. Obviously,
+    \begin{align*}
+        \sum_kp_k=1.
+    \end{align*}
+\end{emphasizer}
+We say then we are dealing with a \bfemph{statistica mixture} of states $\ket{\psi_1},\ket{\psi_2},\cdots$ with probabilities $p_1,p_2,\cdots$.
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The various states are not necessarily orthogonal. However, they can always be chosen normalized.
+    \item Probabilities intervene at two different levels: a) initial information about the system, b) postulates concerning the meassurement nature.
+    \item It is impossible, in general, to describe a statistical mixture by an average state vector which would be a superposition of the states $\ket{\psi_k}$.
+\end{itemize}
+
+%%
+\subsection{The pure case}
+The density operator is an \textbf{average operator} which permits a simple description of the statistical mixture of states. 
+We will first consider the case where the state of the system is perfectly known, that is, a \bfemph{pure state}. Characterizing the system by its 
+state vector if completely equivalent to characterizing it by acertain operator acting in the state space.
+%%
+\subsubsection{Description by a state vector}
+Let be a system whise state vector is 
+\begin{align*}
+    \ket{\psi(t)}=\sum_nc_n(t)\ket{u_n},\quad\text{with}\quad\sum_n|c_n(t)|^2=1.
+\end{align*}
+If $A$ is an observable with $A_{np}=\braket{u_n|A|u_p}$, then the mean value of $A$ is
+\begin{align*}
+    \braket{A}(t)=\braket{\psi(t)|A|\psi(t)}=\sum_{n,p}c_n^*(t)c_p(t)A_{np}.
+\end{align*}
+Finally, the evolution of $\ket{\psi(t)}$ is 
+\begin{align*}
+    i\hbar\partial_t\ket{\psi(t)}=H(t)\ket{\psi(t)}.
+\end{align*}
+%%
+\subsubsection{Description by a density operator}
+We introduce the density operator $\rho(t)$ as 
+\begin{align}
+    \text{Density operator}\qquad\highlight{\rho(t)=\ket{\psi(t)}\bra{\psi(t)}}.
+    \label{eq:densityoperator}
+\end{align}
+The density operator is represented in $\{\ket{u_n}\}$ basys by a matrix called te \bfemph{density matrix} whose elements are:
+\begin{align*}
+    \rho_{pn}(t)=\braket{u_p|\rho(t)|u_n}=c_n^*(t)c_p(t).
+\end{align*}
+The specification of $\rho(t)$ suffices to characterize the quantum state of the system. 
+
+First, we have the following normalization condition
+\begin{align*}
+    \text{Normalization condition}\qquad\sum_n|c_n(t)|^2=\sum_n\rho_{nn}(t)=\tr{\rho(t)}=1.
+\end{align*}
+Secondly, the mean value of $A$ is 
+\begin{align*}
+    \text{Mean value of $A$}\qquad\braket{A}(t)=\sum_{n,p}\braket{u_p|\rho(t)|u_n}\braket{u_n|A|u_p}=\sum_p\braket{u_p|\rho(t)|u_p}=\tr{\rho(t)A}.
+\end{align*}
+Finally, the time evolution of the operator can be deduced from the Schrodinger equation above:
+\begin{align}
+    \text{Time evolution of $\rho(t)$}\qquad \partial_t\rho(t)&=(\partial_t\ket{\psi(t)})\bra{\psi(t)}+\ket{\psi(t)}(\partial_t\bra{\psi(t)})\notag\\
+    &=\frac{1}{i\hbar}H(t)\ket{\psi(t)}\bra{\psi(t)}-\frac{1}{i\hbar}\ket{\psi(t)}\bra{\psi(t)}\notag\\
+    \partial_t\rho(t)&=\frac{1}{i\hbar}[H(t),\rho(t)].\label{eq:timeevolution_purecase}
+\end{align}
+The probabilities $P(a_n)$ are then given by  
+\begin{align*}
+    P(a_n)=\tr{P_n\rho(t)},\quad P_n=\text{Eigensubspace of $a_n$}.
+\end{align*}
+
+%%
+\subsubsection{Properties of the density operator in a pure case}
+In a pure case, a system can be described just as well by a density operator as by a state vector. However, the density operator presents a certain 
+number of advantages. Using this operator eliminates the drawbacks related to the existence of an arbitrary global phase factor for the state vector.
+Also, by looking the above formulas we see that the expression are linear with respect to $\rho(t)$.
+Furtheremore, we have 
+\begin{align}
+    \rho^\dagger(t)=\rho(t),\quad \underbrace{\rho^2(t)=\rho(t),\quad\tr{\rho^2(t)}=1}_{\text{Only for pure case}}.
+\end{align}
+
+%%
+\subsection{A statistical mixture of states (non-pure case)}
+\subsubsection{Definition of the density operator}
+Lets consider a system for which the various probabilities are arbitrary, on the condition that they satisfy the relations:
+\begin{align*}
+\left\{\begin{array}{l}
+    0\leq p_1,p_2,\cdots,p_k,\cdots\leq1\\
+    \sum_kp_k=1
+\end{array}\right.
+\end{align*}
+How does one calculate hte probability $P(a_n)$ that a measurement of the observable $A$ will yield the result $a_n$?
+Let $P_k(a_n)=\braket{\psi_k|P_n|\psi_k}$ be the probability of finding $a_n$ if the state vector were $\ket{\psi_k}$. 
+To obtain the desired probability $P(a_n)$, one must weight $P_k(a_n)$ by $p_k$ and then sum over $k$:
+\begin{align}
+    P(a_n)=\sum_kp_kP_k(a_n)=\sum_kp_k\tr{\rho_kP_n}=\tr{\sum_kp_k\rho_kP_n}=\tr{\rho P_n}.
+\end{align}
+We see that the linearity of the formulas whih use the density operator enables us to express all physical predictions in terms of $\rho$.
+
+The same density operator can be interpreted as several different statistical mixtures of pure states. This situation is sometimes described as the \bfemph{multiple preparations} of the 
+same density operator.
+%%
+\subsubsection{General properties of the density operator}
+Since the coefficients $p_k$ are real, $\rho$ is obviously a Hermitian operator.
+The trace of $\rho$ is
+\begin{align*}
+    \tr{\rho}=\sum_kp_k\tr{\rho_k}\stackrel{(a)}{=}\sum_kp_k1=1.
+\end{align*}
+In $(a)$ we saw that the trace of $\rho_k$ (trace of pure states) is always 1.
+We can also generalize the formula of the mean value to statistical mixture:
+\begin{align}
+    \braket{A}=\sum_na_nP(a_n)=\tr{\rho\sum_na_nP_n}=\tr{\rho A}.
+\end{align}
+Now let us calculate the time evolution of the density operator. We will assume that, unlike the state of the system, its Hamiltoninan $H(t)$ is well known.
+If the system at the initial time $t_0$ has the probability $p_k$ og being the state $\ket{\psi_k}$, then, at a subsequent time $t$, it has the same probability $p_k$ of 
+being in the state $\ket{\psi_k(t)}$ given by
+\begin{align*}
+    \left\{\begin{array}{l}
+        i\hbar\partial_t\ket{\psi_k(t)}=H(t)\ket{\psi_k(t)}\\
+        \ket{\psi_k(t_0)}=\ket{\psi_k}
+    \end{array}\right.
+\end{align*}
+The density operator at the instant $t$ will then be 
+\begin{align}
+    \rho(t)=\sum_kp_k\rho_k(t),\quad\text{with}\quad \rho_k(t)=\ket{\psi_k(t)}\bra{\psi_k(t)}.
+\end{align}
+According to the pure case, $\rho_k(t)$ obeys the evolution equation \eqref{eq:timeevolution_purecase}. Thus,
+\begin{align}
+\text{Time evolution of $\rho(t)$}\qquad\highlight{i\hbar\partial_t\rho(t)=[H(t),\rho(t)]}.
+\end{align}
+So, we could generalize most of theequations except to the one pointed out previously. Since $\rho$ is no longer a projector (as in the pure case), we have, in general:
+\begin{align*}
+    \rho^2(t)\neq\rho(t).
+\end{align*}
+and, consequently,
+\begin{align*}
+    \tr{\rho^2}\leq1.
+\end{align*}
+Finally, we see from a previous equation that, for any ket $\ket{u}$, we have 
+\begin{align*}
+    \braket{u|\rho|u}=\sum_kp_k\braket{u|\rho_k|u}=\sum_kp_k|\braket{u|\psi_k}|^2\Longrightarrow \braket{u|\rho|u}\geq0.
+\end{align*}
+Consequently, $\rho$ is a positive operator.
+%%
+\subsubsection{Populations; coherences}
+What is the physical meaning of the matrix element $\rho_{np}$ in the $\{\ket{u_n}\}$ basis?
+We analyze first the diagional elements $\rho_{nn}$:
+\begin{align*}
+    \rho_{nn}=\sum_kp_k[\rho_k]_{nn}=\sum_kp_k|c_n^{(k)}|^2,\quad\text{with}\quad |c_n^{(k)}|^2\geq0.
+\end{align*}
+$\rho_{nn}$ represents the average probability of finding the system in the state $\ket{u_n}$. Thats why $\rho_{nn}$ is called the population of the state $\ket{u_n}$.
+
+A similar calculation can be carried out for non-diagonal elements $\rho_{np}$:
+\begin{align*}
+    \rho_{np}=\sum_kp_kc_n^{(k)}c_p^{(k)*}.
+\end{align*}
+We see that $c_n^{(k)}c_p^{(k)*}$ is a cros term. It reflects the \textbf{interference effects} between the states $\ket{u_n}$ and $\ket{u_p}$ which can appear when the 
+state $\ket{\psi_k}$ is a coherent linear superposition of these states. $\rho_{np}$ is the average of these cross terms, taken over all possible states of the statistical mixture.
+We can see that $\rho_{nn}$ is the sym of real positive numbers, while $\rho_{np}$ is the sum of complex numbers.
+
+If $\rho_{np}\neq0$, means that a certain coherence subsists between these states (interference effects). This is why non-diagonal elements of $\rho$ are often called \bfemph{coherences}.
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The distinction between populations and coherences obviously depends on the basis $\{\ket{u_n}\}$ chosen in the state space. Since $\rho$ is Hermitian, it is always 
+    possible to find an orthonormal basis $\{\ket{\chi_l}\}$ where $\rho$ is diagonal and can be written as 
+    \begin{align*}
+        \rho=\sum_l\pi_l\ket{\chi_l}\bra{\chi_l}.
+    \end{align*}
+    Since $\rho$ is positive and $\tr{\rho}=1$, we have 
+    \begin{align*}
+        \left\{\begin{array}{l}
+            0\leq\pi_l\leq1\\
+            \sum_l\pi_l=1
+        \end{array}\right.
+    \end{align*}
+    $\rho$ can thus be considered to describe a statistical mixture of the states $\ket{\chi_l}$ with the probabilities $\pi_l$ (no coherence between the states $\ket{\chi_l}$).
+    \item If the kets $\ket{u_n}$ are eigenvectors of the Hamiltoninan $H$ (assumed time-independent), the populations are constant, and the coherences oscillates at the Bohr frequencies of the system.
+    \item $\rho$ can have coherences only between states whose populations are not zero ($\rho_{nn}\rho_{pp}\geq|\rho_{np}|^2$).
+\end{itemize}
+
+
+
+\subsection{Separate description of part of a physical system. Concept of a partial trace}

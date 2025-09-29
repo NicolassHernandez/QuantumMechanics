@@ -1,0 +1,193 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 5}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: $\infty$ hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Problem I}
+%
+\subsection*{Part 1.}
+We define the effective state in the second frame $\ket{\psi_E(t)}=\mathbb{F}(t)\ket{\psi(t)}$, where $\mathbb{F}(t)$ is some unitary time-dependend operator.
+Substituting $\ket{\psi(t)}=\mathbb{F}^\dagger(t)\ket{\psi_E(t)}$ into the Schrodinger equation yields:
+\begin{align*}
+  i\hbar\partial_t\left[\mathbb{F}^\dagger(t)\ket{\psi_E(t)}\right]&=H(t)\left[\mathbb{F}^\dagger(t)\ket{\psi_E(t)}\right]\\
+  i\hbar\left[\partial_t\mathbb{F}^\dagger(t)\ket{\psi_E(t)}+\mathbb{F}^\dagger(t)\partial_t\ket{\psi_E(t)}\right]&=H(t)\mathbb{F}^\dagger(t)\ket{\psi_E(t)}\\
+  i\hbar\mathbb{F}^\dagger(t)\partial_t\ket{\psi_E(t)}&=\left[H(t)\mathbb{F}^\dagger(t)-i\hbar\partial_t\mathbb{F}^\dagger(t)\right]\ket{\psi_E(t)}\biggr/\mathbb{F}(t)\\
+  i\hbar\partial_t\ket{\psi_E(t)}&=\left[\mathbb{F}(t)H(t)\mathbb{F}^\dagger(t)-i\hbar\mathbb{F}(t)\partial_t\mathbb{F}^\dagger(t)\right]\ket{\psi_E(t)}\\
+  i\hbar\partial_t\ket{\psi_E(t)}&=H_E(t)\ket{\psi_E(t)},
+\end{align*}
+where $H_E(t)$ is the effective Hamiltonian:
+\begin{align*}
+  H_E(t)=\mathbb{F}(t)H(t)\mathbb{F}^\dagger(t)-i\hbar\mathbb{F}(t)\partial_t\mathbb{F}^\dagger(t).
+\end{align*}
+%
+\subsection*{Part 2.}
+We know that 
+\begin{align*}
+  \ket{\psi_I(t)}=\mathbb{U}_0^\dagger(t,t_0)\ket{\psi_S(t)},\quad\text{with}\quad\mathbb{U}_0(t,t_0)=e^{-i(t-t_0)H_0/\hbar}.
+\end{align*}
+Then,
+{
+\begin{align*}
+  i\hbar\partial_t\left[\mathbb{U}_0^\dagger\ket{\psi_S(t)}\right]&=i\hbar\partial_t\mathbb{U}^\dagger\ket{\psi_S(t)}+i\hbar\mathbb{U}_0^\dagger\partial_t\ket{\psi_S(t)}\\
+  &=i\hbar\partial_t\mathbb{U}_0^\dagger\ket{\psi_S(t)}+\mathbb{U}_0^\dagger H_S(t)\ket{\psi_S}\\
+  &=\left[i\hbar(\partial_t\mathbb{U}_0^\dagger)\mathbb{U}_0+\mathbb{U}_0^\dagger H_S(t)\mathbb{U}_0\right]\ket{\psi_I(t)}\\
+  &=\left[-\mathbb{U}_0^\dagger H_0\mathbb{U}_0+\mathbb{U}_0^\dagger(H_0+W(t))\mathbb{U}_0\right]\ket{\psi_I(t)}\quad(i\hbar\partial_t\mathbb{U}^\dagger_0=-\mathbb{U}_0^\dagger H_0)\\
+  i\hbar\partial_t\ket{\psi_I(t)}&=\left[\mathbb{U}_0(t,t_0)^\dagger W(t)\mathbb{U}_0(t,t_0)\right]\ket{\psi_I(t)}\\
+  i\hbar\partial_t\ket{\psi_I(t)}&=H_E(t)\ket{\psi_I(t)},
+\end{align*}}
+where $H_E(t)$ is the effective Hamiltonian:
+\begin{align*}
+  H_E(t)=\mathbb{U}_0(t,t_0)^\dagger W(t)\mathbb{U}_0(t,t_0).
+\end{align*}
+%%
+\section*{Problem II}
+\begin{enumerate}
+  \item The probability for energies greater than $2\hbar\omega$ is then
+  \begin{align*}
+    P(E>2\hbar\omega)=\sum_{n\geq2}|c_n|^2,\quad c_n=\braket{n|\psi(t)}.
+  \end{align*}
+  If $P=0$, then all $c_n=0,\;n\geq2$. Only $c_0$ and $c_1$ may be non-zero.
+  \item The normalization condition means that 
+  \begin{align*}
+    \sum_{n<2}|c_n|^2=1\Longrightarrow |c_0|^2+|c_1|^2=1.
+  \end{align*}
+  The mean value of the energy is
+  \begin{align*}
+    \braket{H}=\braket{\psi|H|\psi}=|c_0|^2E_0+|c_1|^2E_1=\frac{1}{2}\hbar\omega|c_0|^2+\frac{3}{2}\hbar\omega|c_1|^2.
+  \end{align*}
+  If $\braket{H}=\hbar\omega$, we have a system of equation composed of the normalization and mean value expression:
+  \begin{align*}
+    \left.
+    \begin{array}{l}
+      \displaystyle\frac{1}{2}\hbar\omega|c_0|^2+\frac{3}{2}\hbar\omega|c_1|^2=\hbar\omega\\
+      \displaystyle|c_0|^2+|c_1|^2=1
+    \end{array}\right\rfloor\longrightarrow
+    |c_0|^2=|c_1|^2=\frac{1}{2}.
+  \end{align*}
+  \item First, we develop the mean value of $X$:
+  \begin{align*}
+    \braket{X}&=\braket{\psi|X|\psi}=\frac{1}{2}(\bra{0}+e^{-i\theta_1}\bra{1})X(\ket{0}+e^{i\theta_1}\ket{1})=\frac{1}{2}\left[\braket{0|X|0}+e^{i\theta_1}\braket{0|X|1}+e^{-i\theta_1}\braket{1|X|0}+\braket{1|X|1}\right].
+  \end{align*}
+  The last result is due to the result we have obtained in the previous incise. Now, we use the matrix element of $X$ of the harmonic oscillator:
+  \begin{align*}
+    X=\sqrt{\frac{\hbar}{2m\omega}}(a+a^\dagger),\quad\text{where}\quad a\ket{n}=\sqrt{n}\ket{n-1},\;\;a^\dagger\ket{n}=\sqrt{n+1}\ket{n+1}.
+  \end{align*}
+  We compute the terms separately,
+  \begin{align*}
+    \braket{0|X|0}&=\sqrt{\frac{\hbar}{2m\omega}}\braket{0|(a+a^\dagger)|0}=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{0|a|0}+\braket{0|a^\dagger|0}\right]=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{0|0}+\braket{0|1}\right]=0,\\
+    \braket{1|X|1}&=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{1|a|1}+\braket{1|a^\dagger|1}\right]=\sqrt{\frac{\hbar}{2m\omega}}\left[\sqrt{1}\braket{1|0}+\sqrt{2}\braket{1|2}\right]=0,\\
+    \braket{0|X|1}&=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{0|a|1}+\braket{0|a^\dagger|1}\right]=\sqrt{\frac{\hbar}{2m\omega}}\left[\sqrt{1}\braket{0|0}+\sqrt{2}\braket{0|2}\right]=\sqrt{\frac{\hbar}{2m\omega}},\\
+    \braket{1|X|0}&=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{1|a|0}+\braket{1|a^\dagger|0}\right]=\sqrt{\frac{\hbar}{2m\omega}}\left[\braket{1|0}+\sqrt{1}\braket{1|1}\right]=\sqrt{\frac{\hbar}{2m\omega}}.
+  \end{align*}
+  We put these results in $\braket{X}$:
+  \begin{align*}
+    \braket{X}=\sqrt{\frac{\hbar}{2m\omega}}\frac{e^{i\theta_1}+e^{i\theta_1}}{2}=\sqrt{\frac{\hbar}{2m\omega}}\cos\theta_1=\frac{1}{2}\sqrt{\frac{\hbar}{m\omega}}.
+  \end{align*}
+  The last relation means that 
+  \begin{align*}
+    \cos\theta_1=\frac{\sqrt{2}}{2}\longrightarrow \theta_1=\pm\frac{\pi}{4}\quad(\text{inside one period}).
+  \end{align*}
+  \item The time evolution is:
+  \begin{align*}
+    \ket{\psi(t)}=\sum_{n=0}^1c_ne^{-iE_nt/\hbar}\ket{n}=\frac{1}{\sqrt{2}}\left(e^{-i\omega t/2}\ket{0}+e^{i\theta_1}e^{-i3\omega t/2}\ket{1}\right)
+  \end{align*}
+  We can factor out the common phase that translates to global phase factor so that we have
+  \begin{align*}
+    \ket{\psi(t)}\propto\frac{1}{\sqrt{2}}\left(\ket{0}+e^{i(\theta_1-\omega t)\ket{1}}\right)\longrightarrow\theta_1(t)=\theta_1-\omega t.
+  \end{align*}
+  We use out previous result of $\braket{X}$ and replace $\theta_1$ by $\theta_1(t)$:
+  \begin{align*}
+    \braket{X}(t)=\sqrt{\frac{\hbar}{2m\omega}}\cos(\omega t-\theta_1).
+  \end{align*}
+  The argument of the cosine is reversedas the one in part c) due to the restriction of $\cos\theta_1=1/\sqrt{2}$.
+
+
+\end{enumerate}
+
+
+%%
+\section*{Problem III}
+
+
+%%
+\section*{Problem IV}
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}

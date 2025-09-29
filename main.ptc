@@ -1,109 +1,58 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Preface}{2}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Mathematical Formalism}{8}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Postulates of Quantum Mechanics}{8}{chapter.1}%
 \ttl@starttoc {chapters@1}
 \contentsline {section}{\numberline {1.1}Introduction}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Scalar product}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Linear operators}{10}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Discrete orthonormal bases in $\mathscr {F}:\tmspace +\thickmuskip {.2777em}\{u_i(\bm {r})\}$}{10}{subsection.1.1.3}%
-\contentsline {subsubsection}{Definition of discrete orthonormal bases}{10}{subsection.1.1.3}%
-\contentsline {subsubsection}{Closure relation}{11}{equation.1.1.14}%
-\contentsline {subsection}{\numberline {1.1.4}Bases not belonging to $\mathscr {F}$}{11}{subsection.1.1.4}%
-\contentsline {subsubsection}{Plane waves}{12}{subsection.1.1.4}%
-\contentsline {subsubsection}{Delta function}{13}{equation.1.1.27}%
-\contentsline {subsubsection}{Continuous orthonormal bases}{14}{equation.1.1.33}%
-\contentsline {section}{\numberline {1.2}Dirac notation}{15}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Ket and Bra vectors}{16}{subsection.1.2.1}%
-\contentsline {subsubsection}{Ket vectors}{16}{subsection.1.2.1}%
-\contentsline {subsubsection}{Dual space and bra vectors}{16}{equation.1.2.43}%
-\contentsline {subsubsection}{Relation bra-ket}{16}{equation.1.2.46}%
-\contentsline {subsection}{\numberline {1.2.2}Linear operators}{17}{subsection.1.2.2}%
-\contentsline {subsubsection}{Projector}{17}{equation.1.2.54}%
-\contentsline {subsection}{\numberline {1.2.3}Hermitian conjugation (adjoint)}{18}{subsection.1.2.3}%
-\contentsline {subsubsection}{Properties}{18}{equation.1.2.60}%
-\contentsline {subsubsection}{Hermitian conjugation in Dirac notation}{18}{equation.1.2.60}%
-\contentsline {subsubsection}{Hermitian operators}{19}{equation.1.2.60}%
-\contentsline {section}{\numberline {1.3}Representations in state space}{19}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Relations characteristic of an orthonormal basis}{19}{subsection.1.3.1}%
-\contentsline {subsubsection}{Orthonormalization relation}{19}{subsection.1.3.1}%
-\contentsline {subsubsection}{Closure relation}{20}{equation.1.3.62}%
-\contentsline {subsection}{\numberline {1.3.2}Representation of kets and bras}{20}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Representation of operators}{21}{subsection.1.3.3}%
-\contentsline {subsubsection}{Representation of $A$ by a square matrix}{21}{subsection.1.3.3}%
-\contentsline {subsubsection}{Representation of the ket $|\psi '\rangle =A|\psi \rangle $}{22}{equation.1.3.72}%
-\contentsline {subsubsection}{Expression for the number $\langle \varphi |A|\psi \rangle $}{22}{equation.1.3.72}%
-\contentsline {subsubsection}{Matrix representation of $A^\dagger $}{22}{equation.1.3.72}%
-\contentsline {subsection}{\numberline {1.3.4}Change of representation}{23}{subsection.1.3.4}%
-\contentsline {section}{\numberline {1.4}Eigenvalue equations. Observables}{24}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Eigenket and eigenbra equations}{24}{subsection.1.4.1}%
-\contentsline {subsubsection}{Finding the eigenvalues and eigenvector in an operator}{24}{equation.1.4.75}%
-\contentsline {subsubsection}{Determination of eigenvectors}{25}{equation.1.4.78}%
-\contentsline {subsection}{\numberline {1.4.2}Observables}{26}{subsection.1.4.2}%
-\contentsline {subsubsection}{Properties of the eigenvalues and eigenvectors of a Hermitian operator}{26}{subsection.1.4.2}%
-\contentsline {subsubsection}{Definition of a observable}{26}{Item.2}%
-\contentsline {subsection}{\numberline {1.4.3}Sets of commuting observables}{27}{subsection.1.4.3}%
-\contentsline {subsubsection}{Important theorems}{27}{subsection.1.4.3}%
-\contentsline {subsubsection}{Complete sets of commting observables (C.S.C.O.)}{29}{equation.1.4.96}%
-\contentsline {section}{\numberline {1.5}More about operators}{30}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Trace of an operator}{30}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Function of an operator}{30}{subsection.1.5.2}%
-\contentsline {subsubsection}{Potential operator}{31}{equation.1.5.98}%
-\contentsline {subsection}{\numberline {1.5.3}Commutator algebra}{31}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Derivative of an operator}{32}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Unitary operators}{32}{subsection.1.5.5}%
-\contentsline {subsubsection}{Change of bases}{33}{equation.1.5.104}%
-\contentsline {subsubsection}{Unitary transformations of operators}{33}{equation.1.5.104}%
-\contentsline {section}{\numberline {1.6}Two important examples of representation and observables}{34}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}The $\{\bm {r}\}$ and $\{\bm {p}\}$ representations}{34}{subsection.1.6.1}%
-\contentsline {subsubsection}{Orthonormalization and closure relations}{34}{equation.1.6.107}%
-\contentsline {subsubsection}{Components of a ket}{35}{equation.1.6.109}%
-\contentsline {subsubsection}{Changing from $\{|\bm {r}\rangle \}$ to $\{|\bm {p}\rangle \}$ representation}{35}{equation.1.6.112}%
-\contentsline {subsection}{\numberline {1.6.2}The R and P operators}{35}{subsection.1.6.2}%
-\contentsline {subsubsection}{Eigenvectors of R and P}{37}{equation.1.6.120}%
-\contentsline {subsubsection}{R and P are observables}{37}{equation.1.6.122}%
-\contentsline {chapter}{\numberline {2}Postulates of Quantum Mechanics}{38}{chapter.2}%
-\ttl@stoptoc {chapters@1}
-\ttl@starttoc {chapters@2}
-\contentsline {section}{\numberline {2.1}Introduction}{39}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Statements of the postulates}{39}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}State and measurable physical quantites of a system}{39}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Principle of spectral decomposition}{40}{subsection.2.2.2}%
-\contentsline {subsubsection}{Discrete spectrum}{40}{subsection.2.2.2}%
-\contentsline {subsubsection}{Continuous case}{41}{equation.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Reduction of the wave packet}{41}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Time evolution of Systems}{42}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Quantization rules}{42}{subsection.2.2.5}%
-\contentsline {section}{\numberline {2.3}The physical interpretation of the postulates}{43}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Quantization rules are consistent with probabilistic interpretation}{43}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}The measurement process}{43}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Mean value of an observable in a given state}{43}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}The root mean square deviation}{45}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}Compatibility of observables}{45}{subsection.2.3.5}%
-\contentsline {subsubsection}{Compatibility and commutation rules}{45}{subsection.2.3.5}%
-\contentsline {subsubsection}{Preparation of a state}{46}{equation.2.3.25}%
-\contentsline {section}{\numberline {2.4}Physical implications of the Schrodinger equation}{46}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}General properties of the Schrodinger equation}{46}{subsection.2.4.1}%
-\contentsline {subsubsection}{Supeorposition}{47}{subsection.2.4.1}%
-\contentsline {subsubsection}{Conservation of probability}{47}{equation.2.4.27}%
-\contentsline {subsubsection}{Evolution of the mean value of an observable}{47}{equation.2.4.28}%
-\contentsline {subsubsection}{classical limits of the Ehrenfest's theorem}{48}{equation.2.4.31}%
-\contentsline {subsection}{\numberline {2.4.2}Conservative systems}{48}{subsection.2.4.2}%
-\contentsline {subsubsection}{Solution of the Schrodinger equation}{48}{subsection.2.4.2}%
-\contentsline {subsubsection}{Stationary states}{49}{equation.2.4.35}%
-\contentsline {subsubsection}{Constants of the motion}{49}{equation.2.4.35}%
-\contentsline {subsubsection}{Bohr frequencies of a system}{50}{equation.2.4.37}%
-\contentsline {subsubsection}{Time-energy uncertainty relation}{51}{equation.2.4.37}%
-\contentsline {section}{\numberline {2.5}The superposition principle and physical predictions}{51}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Evolution operator}{51}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}General properties}{51}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Case of conservative systems}{52}{subsection.2.6.2}%
-\contentsline {section}{\numberline {2.7}One-dimensional Gaussian wave packet}{52}{section.2.7}%
-\contentsline {section}{\numberline {2.8}Infinite potential well}{52}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Introduction (H1)}{52}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}Distribution of the momentum values in a stationary state}{52}{subsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.8.3}Evolution of the particle's wave function}{52}{subsection.2.8.3}%
-\contentsline {subsection}{\numberline {2.8.4}Perturbation created by a position measurement}{52}{subsection.2.8.4}%
-\contentsline {section}{\numberline {2.9}Shcrodinger and Heisenberg pictures}{52}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Useful formulas}{55}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Basis}{55}{subsection.2.9.2}%
+\contentsline {section}{\numberline {1.2}Statements of the postulates}{9}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}State and measurable physical quantites of a system}{9}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Principle of spectral decomposition}{10}{subsection.1.2.2}%
+\contentsline {subsubsection}{Discrete spectrum}{10}{subsection.1.2.2}%
+\contentsline {subsubsection}{Continuous case}{11}{equation.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Reduction of the wave packet}{11}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Time evolution of Systems}{12}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Quantization rules}{12}{subsection.1.2.5}%
+\contentsline {section}{\numberline {1.3}The physical interpretation of the postulates}{13}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Quantization rules are consistent with probabilistic interpretation}{13}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}The measurement process}{13}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Mean value of an observable in a given state}{13}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}The root mean square deviation}{15}{subsection.1.3.4}%
+\contentsline {subsection}{\numberline {1.3.5}Compatibility of observables}{15}{subsection.1.3.5}%
+\contentsline {subsubsection}{Compatibility and commutation rules}{15}{subsection.1.3.5}%
+\contentsline {subsubsection}{Preparation of a state}{16}{equation.1.3.25}%
+\contentsline {section}{\numberline {1.4}Physical implications of the Schrodinger equation}{16}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}General properties of the Schrodinger equation}{16}{subsection.1.4.1}%
+\contentsline {subsubsection}{Supeorposition}{17}{subsection.1.4.1}%
+\contentsline {subsubsection}{Conservation of probability}{17}{equation.1.4.27}%
+\contentsline {subsubsection}{Evolution of the mean value of an observable}{17}{equation.1.4.28}%
+\contentsline {subsubsection}{classical limits of the Ehrenfest's theorem}{18}{equation.1.4.31}%
+\contentsline {subsection}{\numberline {1.4.2}Conservative systems}{18}{subsection.1.4.2}%
+\contentsline {subsubsection}{Solution of the Schrodinger equation}{18}{subsection.1.4.2}%
+\contentsline {subsubsection}{Stationary states}{19}{equation.1.4.35}%
+\contentsline {subsubsection}{Constants of the motion}{19}{equation.1.4.35}%
+\contentsline {subsubsection}{Bohr frequencies of a system}{20}{equation.1.4.37}%
+\contentsline {subsubsection}{Time-energy uncertainty relation}{21}{equation.1.4.37}%
+\contentsline {section}{\numberline {1.5}The superposition principle and physical predictions}{21}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Evolution operator}{21}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}General properties}{21}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Case of conservative systems}{22}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}One-dimensional Gaussian wave packet (G1)}{22}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Particle in an infinite potential well}{22}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Introduction (H1)}{22}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Distribution of the momentum values in a stationary state}{22}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Evolution of the particle's wave function}{24}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Perturbation created by a position measurement}{24}{subsection.1.8.4}%
+\contentsline {section}{\numberline {1.9}Shcrodinger and Heisenberg pictures}{24}{section.1.9}%
+\contentsline {section}{\numberline {1.10}The density operator}{25}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Concept of a statistical mixture of states}{25}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}The pure case}{26}{subsection.1.10.2}%
+\contentsline {subsubsection}{Description by a state vector}{26}{subsection.1.10.2}%
+\contentsline {subsubsection}{Description by a density operator}{26}{subsection.1.10.2}%
+\contentsline {subsubsection}{Properties of the density operator in a pure case}{27}{equation.1.10.56}%
+\contentsline {subsection}{\numberline {1.10.3}A statistical mixture of states (non-pure case)}{27}{subsection.1.10.3}%
+\contentsline {subsubsection}{Definition of the density operator}{27}{subsection.1.10.3}%
+\contentsline {subsubsection}{General properties of the density operator}{28}{equation.1.10.58}%
+\contentsline {subsubsection}{Populations; coherences}{28}{equation.1.10.61}%
+\contentsline {subsection}{\numberline {1.10.4}Separate description of part of a physical system. Concept of a partial trace}{29}{subsection.1.10.4}%
+\contentsline {subsection}{\numberline {1.10.5}Useful formulas}{30}{subsection.1.10.5}%
+\contentsline {subsection}{\numberline {1.10.6}Basis}{30}{subsection.1.10.6}%
 \contentsfinish 

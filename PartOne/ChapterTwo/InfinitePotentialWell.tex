@@ -1,11 +1,81 @@
-\section{Infinite potential well}
+\section{Particle in an infinite potential well}
 
 \subsection{Introduction (H1)}
 
 
-
 \subsection{Distribution of the momentum values in a stationary state}
+We have seen that the stationary states of the particle correspond to the energies
+\begin{align}
+    E_n=\frac{n^2\pi^2\hbar^2}{2ma^2}
+\end{align}
+and to the wave functions
+\begin{align}
+    \psi_n(x)=\sqrt{\frac{2}{a}}\sin\frac{n\pi x}{a},
+\end{align}
+where $a$ is the width of the well.
 
+The probability of a measurement of the momentum $P$ of the particle yielding a result between $p$ and $p+dp$ is
+\begin{align}
+    \bar{P}_n(p)\;dp=|\bar{\varphi}_n(p)|^2\;dp,\quad\text{with}
+\end{align}
+\begin{align}
+    \bar{\varphi}_n(p)&=\frac{1}{\sqrt{2\pi\hbar}}\int_0^a\sqrt{\frac{2}{a}}\sin\frac{n\pi x}{a}e^{-ipx/\hbar}\;dx\notag\\
+    &=\frac{1}{2i\sqrt{n\hbar a}}\int_0^a\left[e^{(\frac{n\pi}{a}-\frac{p}{\hbar})x}-e^{-i(\frac{n\pi}{a}+\frac{p}{\hbar})x}\right]\;dx\label{eq:insidebrackets}\\
+    &=\frac{1}{2i}\sqrt{\frac{a}{\pi\hbar}}e^{i(\frac{n\pi}{a}-\frac{pa}{2\hbar})}\left[F(p-\frac{n\pi\hbar}{a})+(-1)^{n+1}F(p+\frac{n\pi\hbar}{a})\right],\quad\text{with}\quad F(p)=\frac{\sin(pa/2\hbar)}{pa/2\hbar}.\notag
+\end{align}
+The function inside the brakets in equation \eqref{eq:insidebrackets} is even if $n$ is odd, and odd if $n$ is even. The probability density $\bar{P}_n(p)$ is therefore an even function of $p$ in all cases, so that
+\begin{align}
+    \text{Mean value of the momentum in the energy state $E_n$}\qquad\braket{P}_n=\int_{-\infty}^\infty\bar{P}_n(p)p\;dp=0.
+\end{align}
+In the same way, we can compute $\braket{P^2}_n$. Using the fact that in the $\{\ket{x}\}$ representation $P$ acts like $-i\hbar\partial_x$ and performing an integration by parts,
+we obtain:
+\begin{align}
+    \braket{P^2}_n=\hbar^2\int_0^a\left|\frac{d\varphi_n}{dx}\right|^2\;dx=\hbar^2\int_0^a\frac{2}{a}\left(\frac{n\pi}{a}\right)^2\cos^2\frac{n\pi x}{a}\;dx=\left(\frac{n\pi x}{a}\right)^2.
+\end{align}
+Using both $\braket{P}_n$ and $\braket{P^2}_n$ we get:
+\begin{align*}
+    \Delta P_n=\sqrt{\braket{P^2}_n-\braket{P}_n^2}=\frac{n\pi\hbar}{a}.
+\end{align*}
+
+We can plot the probability density $\bar{P}_n(p)$ for different values of $n\in\{1,2,\text{large}\}$. The resutls are illustrated in the followign plot.
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}{.3\columnwidth}
+        \centering
+        \includegraphics[width=\columnwidth]{PartOne/ChapterTwo/infinitewell_groundstate.png}
+        \caption{Ground state ($n=1$)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\columnwidth}
+        \centering
+        \includegraphics[width=\columnwidth]{PartOne/ChapterTwo/infinitewell_firstexcitedstate.png}
+        \caption{First excited state ($n=2$)}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.3\columnwidth}
+        \centering
+        \includegraphics[width=\columnwidth]{PartOne/ChapterTwo/infinitewell_largen.png}
+        \caption{State for large $n$}
+    \end{subfigure}
+\end{figure} 
+We can see that as $n$ increase, the interference term between $F(p-n\pi\hbar/a)$ and $F(p+n\pi\hbar/a)$ is negligible:
+\begin{align*}
+    \bar{P}_n(p)=\frac{a}{4\pi\hbar}\left[F\left(p-\frac{n\pi\hbar}{a}\right)+(-1)^{n+1}F\left(p+\frac{n\pi\hbar}{2}\right)\right]^2\approx\frac{a}{4\pi\hbar}\left[F^2\left(p-\frac{n\pi\hbar}{a}\right)+F^2\left(p+\frac{n\pi\hbar}{a}\right)\right].
+\end{align*}
+In this limit, is then possible to predict with almost complete certainty the results of a meqasurement of the momentum of the particle in the state $\ket{\varphi_n}$: the value will be nearly equalt to 
+$\pm\frac{n\pi\hbar}{a}$, with accuraccy increasing as $n$ grows.
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The momentum of a classical particle of energy $E_n$ is:
+    \begin{align*}
+        \frac{p^2_{cl}}{2m}=\frac{n^2\pi^2\hbar^2}{2ma^2}\longrightarrow p_{cl}=\pm\frac{n\pi\hbar}{a}.
+    \end{align*}
+    When $n$ is large, the two peaks of $\bar{P}_n(p)$ therefore correspond to the classical values of the momentum.
+    \item For large $n$, although the absolute value of the momentum is well-defined, its sign is not. This is why $\Delta P_n$ is large: the rms deviation reflects the distance 
+    between the two peaks, it is no longer related to their widths.
+\end{itemize}
+%%
 \subsection{Evolution of the particle's wave function}
+
+
 
 \subsection{Perturbation created by a position measurement}
