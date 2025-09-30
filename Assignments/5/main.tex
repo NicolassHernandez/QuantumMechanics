@@ -59,7 +59,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: $\infty$ hours}
+\date{\today\\Total time: 5 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -169,22 +169,106 @@ where $H_E(t)$ is the effective Hamiltonian:
   \begin{align*}
     \ket{\psi(t)}\propto\frac{1}{\sqrt{2}}\left(\ket{0}+e^{i(\theta_1-\omega t)\ket{1}}\right)\longrightarrow\theta_1(t)=\theta_1-\omega t.
   \end{align*}
-  We use out previous result of $\braket{X}$ and replace $\theta_1$ by $\theta_1(t)$:
+  We use our previous result of $\braket{X}$ and replace $\theta_1$ by $\theta_1(t)$:
   \begin{align*}
     \braket{X}(t)=\sqrt{\frac{\hbar}{2m\omega}}\cos(\omega t-\theta_1).
   \end{align*}
-  The argument of the cosine is reversedas the one in part c) due to the restriction of $\cos\theta_1=1/\sqrt{2}$.
-
-
+  The argument of the cosine is reversed as the one in part c) due to the restriction of $\cos\theta_1=1/\sqrt{2}$.
 \end{enumerate}
 
 
 %%
 \section*{Problem III}
+We know that we can express the density operator in an orthogonal basis
+\begin{align*}
+  \rho=\sum_i\pi_i\ket{\chi_i}\bra{\chi_i},\quad \pi_i\geq0,\;\sum_i\pi_i=1.
+\end{align*}
+Then squaring $\rho$ affect only to the $\pi_i$ elements:
+\begin{align*}
+  \rho^2=\sum_i\pi_i^2\ket{\chi_i}\bra{\chi_i}.
+\end{align*}
 
+In a pure state, $\rho=\ket{\psi(t)}\bra{\psi(t)}$ behaves as a projector, and its eigenvalues are therefore $\{1,0,0,\cdots\}$.
+Thus, in the $\{\ket{\chi_i}\}$ basis, 
+\begin{align*}
+  [\rho]_\chi=\text{diag}(1,0,0,\cdots),\quad[\rho^2]_\chi=[\rho]_\chi.
+\end{align*}
+However, in the statistical mixture, more than one eigenvalue is non-zero, with $0<\pi_i<1$ for at least two indices. Then $[\rho]_\chi$ has 
+several diagonal elements between 0 and 1, and $[\rho^2]_\chi$ has those entries squared.
+
+Since we initially had $\sum_i\pi_i=1,\;\pi_i\geq0$, we have that $\sum_i\pi_i\leq1$ with the equality if one $\pi_i=1$ and all others are 0.
+So, the trace will indicate when we are in a pure state or a statistical mixture:
+\begin{align*}
+  \text{$\rho$ is pure}\Longleftrightarrow\text{Tr}[{\rho^2}]=1.
+\end{align*} 
+The inequality between statistical mixture and pure state is that in the latter we can interpret the density operator as a projector whereas in the first case not.
+This is expressed with the inequality of the idempotency property of any projector:
+\begin{align*}
+  \rho^2\neq\rho.
+\end{align*}
+which translates to a trace les or equal than unity:
+\begin{align*}
+  \text{Tr}[\rho^2]\leq1.
+\end{align*}
 
 %%
 \section*{Problem IV}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item We use the definition of the trace
+  \begin{align*}
+    \text{Tr}[P_{\psi(t)}]&=\sum_j\braket{\phi_j|P_{\psi(t)}|\phi_j}=\sum_j\braket{\phi_j|\psi(t)}\braket{\psi(t)|\phi_j}=\sum_j\braket{\psi(t)|\phi_j}\braket{\phi_j|\psi(t)}=\braket{\psi(t)|\psi(t)}.
+  \end{align*}
+  We now replace the relation with the time-evolution operator, which preserves the norm,
+  \begin{align*}
+    \braket{\psi(t)|\psi(t)}&=\braket{\psi(0)|U^\dagger(t,0)U(t,0)|\psi(0)}=\braket{\psi(0)|\psi(0)}=1.
+  \end{align*}
+  Then,
+  \begin{align*}
+    \text{Tr}[P_{\psi(t)}]=1,\quad\forall t.
+  \end{align*}
+  \item We use the expansion of $\ket{\psi(t)}$ to show that the projector at $t=0$ is
+  \begin{align*}
+    [P_{\psi(0)}]_{mn}=\braket{u_m|P_{\psi(0)}|u_n}=\braket{u_m|\psi(0)}\braket{\psi(0)|u_n}=c_mc_n^*.
+  \end{align*}
+  So, iterating over $m,n$ we construct the matrix:
+  \begin{align*}
+    P_{\psi(0)}=\begin{bmatrix}
+      |c_1|^2&c_1c_2^*&c_1c_3^*\\c_2c_1^*&|c_2|^2&c_2c_3^*\\c_3c_1^*&c_3c_2^*&|c_3|^2
+    \end{bmatrix}
+  \end{align*}
+  We can see directly that the trace (sum of diagonal element) is unitary:
+  \begin{align*}
+    \text{Tr}[P_{\psi(0)}]=|c_1|^2+|c_2|^2+|c_3|^2=1.
+  \end{align*}
+  \item if the first element if $\ket{u_1}=\ket{\psi(0)}$, then the projector will only consider this element 
+  \begin{align*}
+    P_{\psi(0)}=\ket{\psi(0)}\bra{\psi(0)}=\begin{bmatrix}
+      1&0&\cdots\\
+      0&0&\\
+      \vdots&&\ddots
+    \end{bmatrix}.
+  \end{align*}
+  We can see that the trace is 1 sa is the only element in the diagonal.
+  \item Let define another projector $P_m=\ket{w_m}\bra{w_m}$. The probability of obtaining $\lambda_m$ is 
+  \begin{align*}
+    p_m(t)&=\braket{\psi(t)|P_m|\psi(t)}=\sum_j\braket{\psi(t)|u_j}\braket{u_j|P_m|\psi(t)}=\sum_j\braket{u_j|P_m|\psi(t)}\braket{\psi(t)|u_j}\\
+    p_m(t)&=\text{Tr}[P_m\ket{\psi}\bra{\psi}]=\text{Tr}[P_mP_{\psi(t)}].
+  \end{align*}
+  We use cyclic property of the trace to interchange the order of the argument and finally obtain
+  \begin{align*}
+    p_m(t)=\text{Tr}[P_mP_{\psi(t)}]=\text{Tr}[P_{\psi(t)}P_m].
+  \end{align*}
+  \item The derivative ot $P_{\psi(t)}$ is 
+  \begin{align*}
+    \frac{d}{dt}P_{\psi(t)}&=\frac{d}{dt}\ket{\psi}\bra{\psi}\\
+    &=\frac{d}{dt}\ket{\psi}\bra{\psi}+\ket{\psi}\frac{d}{dt}\bra{\psi}\\
+    &=\frac{1}{i\hbar} H\ket{\psi}\bra{\psi}-\frac{1}{i\hbar}\ket{\psi}\bra{\psi}H\quad\left(i\hbar\frac{d}{dt}\ket{\psi}=H\ket{\psi}\right)\\
+    &=\frac{1}{i\hbar}(HP_{\psi(t)}-P_{\psi(t)}H)\\
+    \frac{d}{dt}P_{\psi(t)}&=\frac{1}{i\hbar}[H,P_{\psi(t)}].
+  \end{align*}
+\end{enumerate}
+
+
 
 %\nocite{*}
 %\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
