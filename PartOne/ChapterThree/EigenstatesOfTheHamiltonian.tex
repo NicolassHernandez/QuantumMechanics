@@ -1,0 +1,40 @@
+\section{Eigenstates of the Hamiltonian}
+
+%
+\subsection{The $\{\varphi_n\}$ representation}
+Since none of the eigenvalues of $N$ ($H$) is degenerate, $N$ ($H$) alon constitutes a CSCO in $\E_c$.
+%
+\subsubsection{The basis vectors in terms of $\ket{\psi_0}$}
+We assume that the vector $\ket{\varphi_0}$ which satsfies $a\ket{\varphi_0}=0$, is normalized. According to lemma III, the vector $\ket{\varphi_1}$ is proportional 
+to $a^\dagger\ket{\varphi_0}$ in the form 
+\begin{align*}
+    \ket{\varphi_1}=c_1a^\dagger\ket{\varphi_0}.
+\end{align*} 
+We shall determine $c_1$ by requiring $\ket{\varphi_1}$ to e normalized and choosing the phase of $\ket{\varphi_1}$ such that $c_1$ is real and positive.
+The square of the norm of $\ket{\varphi_1}$ is 
+\begin{align*}
+    \braket{\varphi_1|\varphi_1}=|c_1|^2\braket{\varphi_0|aa^\dagger|\varphi_0}=|c_1|^2\braket{\varphi_0|(a^\dagger a+1)|\varphi_0}=|c_1|^2[\underbrace{\braket{\varphi_0|N|\varphi_0}}_{0\braket{\varphi_0|\varphi_0}}+\braket{\varphi_0|\varphi_0}]=|C_1|^2.
+\end{align*}
+We find that $c_1=1$:
+\begin{align}
+    \braket{\varphi_1|\varphi_1}=|c_1|^2=1\Longrightarrow \ket{\varphi_1}=a^\dagger\ket{\varphi_0}.
+\end{align}
+We can do the same to constrcut $\ket{\varphi_2}$ from $\ket{\varphi_1}$ and get $c_2$ and so on. In general, if we know $\ket{\varphi_{n-1}}$ (normalized), then the 
+normalized vector $\ket{\varphi_n}$ is written 
+\begin{align*}
+    \ket{\varphi_n}=c_na^\dagger\ket{\varphi_{n-1}},\quad\text{so that}\quad c_n=\frac{1}{\sqrt{n}}.
+\end{align*}
+In fact, we can express all $\ket{\varphi_n}$ in terms of $\ket{\varphi_0}$ by recursion:
+\begin{align}
+    \highlight{\ket{\varphi_n}=\frac{1}{\sqrt{n}}(a^\dagger)^n\ket{\varphi_0}}.
+\end{align}
+%
+\subsubsection{Orthonormalization and closure relations}
+%
+\subsubsection{Action of the various operators}
+
+%
+\subsection{Wave functions associated with the stationary states}
+
+
+

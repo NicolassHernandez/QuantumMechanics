@@ -75,7 +75,64 @@ $\pm\frac{n\pi\hbar}{a}$, with accuraccy increasing as $n$ grows.
 \end{itemize}
 %%
 \subsection{Evolution of the particle's wave function}
+Time evolution appears only when the state vector is a inear combination of several kets $\ket{\varphi_n}$. 
+%
+\subsubsection{Wave function at $t$}
+Assuming that at $t=0$ we have 
+\begin{align*}
+    \ket{\psi(0)}=\frac{1}{\sqrt{2}}[\ket{\varphi_1}+\ket{\varphi_2}],
+\end{align*}
+we apply formula of this chapter to get 
+\begin{align*}
+    \ket{\psi(t)}=\frac{1}{\sqrt{2}}\left[e^{-i\frac{\pi^2\hbar}{2ma^2}}\ket{\varphi_1}+e^{-2i\frac{\pi^2\hbar}{ma^2}}\ket{\varphi_2}\right]\propto\frac{1}{\sqrt{2}}[\ket{\varphi_1}+e^{-i\omega_{21}t}\ket{\varphi_2}],\quad\text{with}\quad\omega_{21}=\frac{E_2-E_1}{\hbar}=\frac{3\pi^2\hbar}{2ma^2}.
+\end{align*}
+%
+\subsubsection{Evolution of the shape of the wave packet}
+The shape of the wave packet is given by the probability density:
+\begin{align*}
+    |\psi(x,t)|^2=\frac{1}{2}\varphi_1^2(x)+\frac{1}{2}\varphi_2^2(x)+\varphi_1(x)\varphi_2(x)\cos\omega_{21}t.
+\end{align*}
+We see that the time variation is due to the interference term in $\varphi_1\varphi_2$. Only one Bohr frequency appears, $\nu_{21}=(E_2-E_1)/\hbar$.
 
-
+%
+\subsubsection{Motion of the center of the wave packet}
+The mean value $\braket{X}$ of the position of the particle at $t$ is done by first doing $X'=X-a/2$. By Symmetry, the diagonal matrix elements of $X'$ are zero:
+\begin{align*}
+    \braket{\varphi_1|X'|\varphi_2}\propto\int_0^a\left(x-\frac{a}{2}\right)\sin^2\frac{\pi x}{a}\;dx=0,\quad\text{and}\quad\braket{\varphi_2|X'|\varphi_2}\propto\int_0^a\left(x-\frac{a}{2}\right)\sin^2\frac{2\pi x}{a}\;dx=0.
+\end{align*}
+We then have 
+\begin{align*}
+    \braket{X'}(t)=\re{e^{-i\omega_{21}t}\braket{\varphi_1|X'|\varphi_2}},
+\end{align*}
+with 
+\begin{align*}
+    \braket{\varphi_1|X'|\varphi_2}=\braket{\varphi_1|X|\varphi_2}-\frac{a}{2}\braket{\varphi_1|\varphi_2}=\frac{2}{a}\int_0^ax\sin\frac{\pi x}{a}\sin\frac{2\pi x}{a}\;dx=-\frac{16a}{9\pi^2}.
+\end{align*}
+Therefore, 
+\begin{align*}
+    \braket{X}(t)=\frac{a}{2}-\frac{16a}{9\pi^2}\cos\omega_{21}t.
+\end{align*}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.5\columnwidth]{PartOne/ChapterTwo/meanvalueinfinitewell.png}
+    \caption{Time variation of $\braket{X}$ corresponding to the wave packet's motion. QM predicts that the center of the wave packet will turn back before hitting the wall}
+\end{figure}
+We immediately notice a very clear difference between these two typoe of motion. Before the center of the wave packet has touched the wall, the action of the potential on the edges 
+of this packet is sufficient to make it turn back.
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The mean value of the energy of the particle in $\ket{\psi(t)}$ is 
+    \begin{align*}
+        \braket{H}&=\frac{1}{2}E_1+\frac{1}{2}E_2=\frac{5}{2}E_1\\
+        \braket{H^2}^=\frac{1}{2}E_1^2+\frac{1}{2}E_2^2=\frac{17}{2}E_1^2,
+    \end{align*}
+    which gives 
+    \begin{align*}
+        \Delta H=\frac{3}{2}H_1.
+    \end{align*}
+    We have seen that the wave packet evolves appreciably over a time of the order of $\Delta t\approx1/\omega_{21}$. Therefore,
+    \begin{align}
+        \Delta H\Delta t=\frac{3}{2}E_1\frac{\hbar}{3E_1}=\frac{\hbar}{2}.
+    \end{align}
+\end{itemize}
 
 \subsection{Perturbation created by a position measurement}

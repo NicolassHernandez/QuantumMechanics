@@ -1,0 +1,198 @@
+\section{Eigenvalues of the Hamiltonian}
+%
+\subsection{Notation}
+It is easy to see that the observables $\hat{X}$ and $\hat{P}$ 
+\begin{align*}
+    \text{dimensionless observables}\qquad\highlight{\hat{X}=\sqrt{\frac{m\omega}{\hbar}}X,\quad\hat{P}=\frac{1}{\sqrt{m\hbar\omega}}P}
+\end{align*}
+are dimensionless. With these new operators, the canonical commutation is 
+\begin{align}
+    \text{Canonical commutation}\qquad\highlight{[\hat{X},\hat{P}]=i}
+\end{align}
+and the Hamiltonian can be put in the form 
+\begin{align}
+    H=\hbar\omega\hat{H},\quad\text{with}\quad \hat{H}=\frac{1}{2}(\hat{X}+\hat{P}).
+\end{align}
+In consequence, we seek the solutions of the following eigenequation
+\begin{align*}
+    \hat{H}\ket{\varphi_\nu^i}=\epsilon_\nu\ket{\varphi_\nu^i},
+\end{align*}
+where the operator $\hat{H}$ and the eigenvalues $\epsilon_\nu$ are \textbf{dimensionless}.
+
+If $\hat{X}$ and $\hat{P}$ were numbers and not operators, we could write the sum $\hat{X}^2+\hat{P}^2$ appearing in the definition of $\hat{H}$ in the form of a product 
+$(\hat{X}-i\hat{P})(\hat{X}+i\hat{P})$. However, the introuction of operators proportional to $\hat{H}\pm i\hat{P}$ enables us to simplify considerably out search for eigenvalues 
+and eigenvectors of $\hat{H}$.
+We therefore set 
+\begin{align}
+    \begin{array}{l}
+        a=\dfrac{1}{\sqrt{2}}(\hat{X}+i\hat{P})\\
+        a^\dagger=\dfrac{1}{\sqrt{2}}(\hat{X}-i\hat{P})
+    \end{array}\Longleftrightarrow
+    \begin{array}{l}
+        \hat{X}=\dfrac{1}{\sqrt{2}}(a^\dagger+a)\\
+        \hat{P}=\dfrac{i}{\sqrt{2}}(a^\dagger-a)
+    \end{array}.
+\end{align}
+The commutator of $a$ and $a^\dagger$ is 
+\begin{align}
+    [a,a^\dagger]=\frac{1}{2}[\hat{X}+i\hat{P},\hat{X}-i\hat{P}]=\frac{i}{2}[\hat{P},\hat{X}]-\frac{i}{2}[\hat{X},\hat{P}]=1\longrightarrow\highlight{[a,a^\dagger]=1}.
+\end{align}
+If we do $aa^\dagger$ we obtain
+\begin{align*}
+    a^\dagger a=\frac{1}{2}(\hat{X}-i\hat{P})(\hat{X}+i\hat{P})=\frac{1}{2}(\hat{X}^2+\hat{P}^2+i\hat{X}\hat{P}-i\hat{P}\hat{X})=\frac{1}{2}(\hat{X}^2+\hat{P}^2-1).
+\end{align*}
+Comparing with $\hat{H}$ we see that 
+\begin{align*}
+    \highlight{\hat{H}=a^\dagger a+\frac{1}{2}=aa^\dagger-\frac{1}{2}}.
+\end{align*}
+We see that we canot put $\hat{H}$ in a product of linear terms, due to the non-commutatitivty of $\hat{X}$ and $\hat{P}$ ($1/2$ term).
+
+We introduce another operator:
+\begin{align}
+    \text{Operator $N$}\qquad\highlight{N=a^\dagger a}.
+\end{align}
+This operator is Hermitian 
+\begin{align}
+    N^\dagger=a^\dagger(a^\dagger)^\dagger=a^\dagger a=N.
+\end{align}
+And its relation with $\hat{H}$ is 
+\begin{align}
+    \hat{H}=N+\frac{1}{2}
+\end{align}
+so that the eigenvectors of $\hat{H}$ are eigenvectors of $N$, and viceversa. The commutators with $a$ and $a^\dagger$ are:
+\begin{align}
+    [N,a]&=[a^\dagger a,a]=a^\dagger[a,a]+[a^\dagger,a]a=-a\longrightarrow\highlight{[N,a]=-a}\\
+    [N,a^\dagger]&=[a^\dagger a,a^\dagger]=a^\dagger[a,a^\dagger]+[a^\dagger,a^\dagger]a=a^\dagger\longrightarrow\highlight{[N,a^\dagger]=a^\dagger}.
+\end{align}
+The study of the harmonic oscilator is based on these operatores $a$, $a^\dagger$, and $N$. The eigenequation for $N$ is 
+\begin{align}
+    \text{Eigenequation of $N$}\qquad\highlight{N\ket{\varphi_\nu^i}=\nu\ket{\varphi_\nu^i}}.
+\end{align}
+When this is solved, we know that the eigenvector $\ket{\varphi_\nu^i}$ of $N$ is also an eigenvector of $H$ with the eigenvalue $E_\nu=(\nu+1/2)\hbar\omega$:
+\begin{align}
+    H\ket{\varphi_\nu^i}=(\nu+1/2)\hbar\omega\ket{\varphi_nu^i}.
+\end{align}
+The solution of the eigenequation of $N$ will be based on the commutation relation $[a,a^\dagger]=1$.
+
+%
+\subsection{Determination of the spectrum}
+\subsubsection{Lemmas}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{Properties of the eigenvalues of $N$} The eigenvalues $\nu$ of the operator $N$ are positive or zero. 
+    We can see this by looking the qaure of the norm of the vector $a\ket{\varphi_nu^i}$
+    \begin{align*}
+        \|a\ket{\varphi_\nu^i}\|^2=\braket{\varphi_\nu^i|a^\dagger a|\varphi_\nu^i}=\braket{\varphi_\nu^i|N|\varphi_\nu^i}=\nu\braket{\varphi_\nu^i|\varphi_\nu^i}\geq0\Longrightarrow\highlight{\nu\geq0}.
+    \end{align*}
+    \item\textbf{Properties of the vector $a\ket{\varphi_\nu^i}$} 
+    \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+        \item $\nu=0\Longrightarrow a\ket{\varphi_{\nu=0}^i}=0$.
+        If $\nu=0$ is an eigenvalue of $N$, all eigenvectors $\ket{\varphi_0^i}$ associated with this eigenvalue satisfy the relation 
+        \begin{align}
+            a\ket{\varphi_0^i}=0.
+        \end{align}
+        Anyn vector which satisfy this relation is therefore an eigenvector of $N$ with the eigenvalue $\nu=0$.
+        \item $\nu>0\Longrightarrow a\ket{\varphi_\nu^i}$ is a non-zero eigenvector of $N$ with eigenvalue $\nu-1$.
+        \begin{align*}
+            \begin{array}{rl}
+            \displaystyle[N,a]\ket{\varphi_\nu^i}&=-a\ket{\varphi_\nu^i}\\
+            \displaystyle Na\ket{\varphi_\nu^i}&=aN\ket{\varphi_\nu^i}-a\ket{\varphi_\nu^i}\\
+            \displaystyle N[a\ket{\varphi_\nu^i}]&=a\nu\ket{\varphi_\nu^i}-a\ket{\varphi_\nu^i}
+            \end{array}\Longrightarrow
+            \highlight{N[a\ket{\varphi_\nu^i}]=(\nu-1)[a\ket{\varphi_\nu^i}]}.
+        \end{align*}
+    \end{enumerate}
+    \item\textbf{Properties of the vector $a^\dagger\ket{\varphi_\nu^i}$}
+    \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+        \item $a^\dagger\ket{\varphi_\nu^i}$ is always non-zero.
+        We study it with the square of the norm:
+        \begin{align*}
+            \|a^\dagger\ket{\varphi_\nu^i}\|^2=\braket{\varphi_\nu^i|aa^\dagger|\varphi_\nu^i}=\braket{\varphi_\nu^i|(N+1)|\varphi_\nu^i}=(\nu+1)\braket{\varphi_\nu^i|\varphi_\nu^i}.
+        \end{align*}
+        As $\nu\geq0$ by lemma 1, the ket $a^\dagger\ket{\varphi_\nu^i}$ always has non-zero norm and, consequently, is never zero.
+        \item $a^\dagger\ket{\varphi_\nu^i}$ is an eigenvector of $N$ with eigenvalue $N+1$.
+        We do it analoguisly to lemma IIb):
+        \begin{align*}
+            \begin{array}{rl}
+            \displaystyle[N,a^\dagger]\ket{\varphi_\nu^i}&=a^\dagger\ket{\varphi_\nu^i}\\
+            \displaystyle Na^\dagger\ket{\varphi_\nu^i}&=a^\dagger N\ket{\varphi_\nu^i}+a^\dagger\ket{\varphi_\nu^i}\\
+            \displaystyle N[a^\dagger\ket{\varphi_\nu^i}]&=\nu a^\dagger\ket{\varphi_\nu^i}+a^\dagger\ket{\varphi_\nu^i}                
+            \end{array}\Longrightarrow
+            \highlight{N[a^\dagger\ket{\varphi_\nu^i}]=(\nu+1)[a^\dagger\ket{\varphi_\nu^i}]}.
+        \end{align*}
+    \end{enumerate}
+\end{itemize}
+
+%
+\subsubsection{The spectrum of $N$ is composed of non-negative integers}
+If $\nu$ is non-integral, we can therefore construct a non-zero eigenvector of $N$ with a strictly negative eigenvalue.
+Since this is impossible by lemma 1, the hypothesis of non-integral $\nu$ must be rejected.
+
+\begin{emphasizer}
+    $\nu$ can only be a non-negative integer.
+\end{emphasizer}
+
+We conclude that the eigenvalues of $H$ are of the form 
+\begin{align}
+    \text{Eigenvalue of $H$}\qquad\highlight{E_n=\left(n+\frac{1}{2}\right)\hbar\omega,\quad n\in\mathbb{N}^+_0}.
+\end{align}
+In QM, the energy of the harmonic oscillator is \textbf{quantized}. The smallest value (ground state) is $\hbar\omega/2$.
+%
+\subsubsection{Interpretation of the $a$ and $a^\dagger$ operators}
+We have seen that, given $\ket{\varphi_n^i}$ with eigenvalue $E_n$, application of $a$ gives an eigenvector associated with $E_{n-1}$ while 
+application of $a^\dagger$ yields the energy $E_{n+1}$.
+
+Thats why $a^\dagger$ is said to be a \bfemph{creation operator} and $a$ an \bfemph{annihilation operator}; their action on an eigenvector of $N$ makes 
+an energy quantum $\hbar\omega$ appear or dissapear.
+
+%%
+\subsection{Degeneracy of the eigenvalues}
+%
+\subsubsection{The grounds state is non-degenerate}
+The eigenstates of $H$ associated with $E_0=\hbar\omega/2$ (or eigenvector of $N$ associated with $n=0$), according to lemma II,
+must all satisfy the equation
+\begin{align*}
+    a\ket{\varphi_0^i}=0.
+\end{align*}
+To find the degeneracy of the $E_0$ level, all we must do is see how many li kets satisfy the above.
+We can write the above equation using the definition of $\hat{X},\hat{P}$ and $a$ in terms of them, in the form 
+\begin{align*}
+    \frac{1}{\sqrt{2}}\left[\sqrt{\frac{m\omega}{\hbar}}X+\frac{i}{\sqrt{m\hbar\omega}}P\right]\ket{\varphi_0^i}=0.
+\end{align*}
+In the $\{\ket{x}\}$ representation, this relation becomes
+\begin{align*}
+    \left(\frac{m\omega}{\hbar}x+\frac{d}{dx}\right)\varphi_0^i(x)=0,\quad\text{where}\quad\varphi_0^i(x)=\braket{x|\varphi_0^i}.
+\end{align*}
+Therefore we msut solve a first-order differential equation, which solution is 
+\begin{align}
+    \varphi_0^i(x)=ce^{-\frac{1}{2}\frac{m\omega}{\hbar}x^2}
+\end{align}
+The various solutions of the ODE are all proportional to each other. Consequently, there exists only one ket $\ket{\varphi_0}$ that satisfies 
+the initial equation: the ground sate $E_0=\hbar\omega/2$ is not degenerate.
+%
+\subsubsection{All the states are non-degenerate}
+We use recurrence to show that all other states are also non-degenerate. We need to prove that if $E_n$ is non degenerate, the level $E_{n+1}$ is 
+not either.
+
+Lets assume there exists only one vector $\ket{\varphi_n}$ such that 
+\begin{align*}
+    N\ket{\varphi_n}=n\ket{\varphi_n}.
+\end{align*}
+Then consider an eigenvector $\ket{\varphi_{n+1}^i}$ corresponding to the eigenvalue $n+1$
+\begin{align*}
+    N\ket{\varphi_{n+1}^i}=(n+1)\ket{\varphi_{n+1}^i}.
+\end{align*}
+We know that the ket $a\ket{\varphi_{n+1}^i}$ is not zero and that it is an eigenvector of $N$ with eigenvalue $n$. Since this ket 
+is not degenerae by hypothesis, there exists a number $c^i$ such that 
+\begin{align*}
+    a\ket{\varphi_{n+1}^i}=c^i\ket{\varphi_n}\bigr/a^\dagger\longrightarrow a^\dagger a\ket{\varphi_{n+1}^i}=N\ket{\varphi_{n+1}^i}=(n+1)\ket{\varphi_{n+1}^i}=c^ia^\dagger\ket{\varphi_n}.
+\end{align*}
+We have, 
+\begin{align*}
+    \ket{\varphi_{n+1}^i}=\frac{c^i}{n+1}a^\dagger\ket{\varphi_n}.
+\end{align*}
+
+We see that all kets $\ket{\varphi_{n+1}^i}$ associated with the eigenvalue $n+1$ are proportional to $a^\dagger\ket{\varphi_n}$.
+They are proportional to each other: the eigenvalue $n+1$ is not degenerate.
+
+Since the eigenvalue $n=0$ is not degenerate, the eigenvalue $n=1$ is not either, nor is $n=2$, etc.: all the eigenvalues of $N$ and, consequently,
+all those of $H$, are non-degenerate. Now, we can just write $\ket{\varphi_n}$ for the eigenvector of $H$ associated with $E_n$.
