@@ -3,11 +3,77 @@
 
 \subsection{Mean values and rms eviations of $X$ and $P$ in a state $\ket{\varphi_n}$}
 
+Neither $X$ nor $P$ comutes with $H$, and the eigenstates $\ket{\varphi_n}$ of $H$ are not eigenstates of $X$ or $P$. Consequently, if the harmonics oscillator is in stationary state $\ket{\varphi_n}$,
+a measurement of the observable $X$ or $P$ can, a priori, yield any result.
+
+
+We will compute the mean values of $X,P$ in such stationary state and also theirs rms deviation in order to set the uncertainty relation. 
+We will use equations \eqref{eq:XPintermsofaa}, which show that neither $X$ nor $P$ has diagonal matrix elements:
+\begin{align}
+    \braket{\varphi_n|X|\varphi_n}=\braket{\varphi_n|P|\varphi_n}=0.
+\end{align}
+To obtain the rms deviations, we must calculate the mean value of $X^2$ and $P^2$. First, we note that 
+\begin{align*}
+    X^2&=\frac{\hbar}{2m\omega}(a^\dagger+a)(a^\dagger+a)=\frac{\hbar}{2m\omega}(a^{\dagger 2}+aa^\dagger+a^\dagger a+a^2)\\
+    P^2&=-\frac{m\hbar\omega}{2}(a^\dagger-a)(a^\dagger-a)=-\frac{m\hbar\omega}{2}(a^{\dagger2}-aa^\dagger-a^\dagger a+a^2)
+\end{align*}
+The terms $a^2$ and $a^{\dagger2}$ do not contribute to the diagonal matrix elements, since $a^2\ket{\varphi_n}$ is proportional to $\ket{\varphi_{n-2}}$ and 
+$a^{\dagger2}\ket{\varphi_n}$ to $\ket{\varphi_{n+2}}$; both are orthogonal to $\ket{\varphi_n}$. The rest of the terms yields:
+\begin{align*}
+    \braket{\psi_n|(a^\dagger a+aa^\dagger)|\varphi_n}=\braket{\varphi_n|(2a^\dagger a+1)|\varphi_n}=2n+1.
+\end{align*}
+Therefore, we have:
+\begin{align}
+    (\Delta X)^2&=\braket{\varphi_n|X|\varphi_n}-\braket{\varphi_n|X^2|\varphi_n}=\braket{\varphi_n|X^2|\varphi_n}=\left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega}=\sigma^2\left(x+\frac{1}{2}\right).\\
+    (\Delta P)^2&=\braket{\varphi_n|P|\varphi_n}-\braket{\varphi_n|P^2|\varphi_n}=\braket{\varphi_n|P^2|\varphi_n}=\left(n+\frac{1}{2}\right)m\hbar\omega=\frac{\hbar^2}{\sigma^2}\left(x+\frac{1}{2}\right).
+\end{align}
+The product is therefore 
+\begin{align}
+    \text{Uncertainty relation}\qquad\highlight{\Delta X\Delta P=\left(n+\frac{1}{2}\right)\hbar}.
+\end{align}
+We see that the lower bound is attained for $n=0$, that is, for the ground state.
 
 \subsection{Properties of the ground state}
+In classical mechanics, the lowest energy of the harmonic oscilaltor is obtained when the particle is at rest. In QM, the moninum energy sate is $\ket{\varphi_0}$, whose energy 
+is not zero, and the associates wave function has a certain spatial extension, characterized by the rms deviation $\Delta X=\sqrt{\hbar/2m\omega}$.
+The ground state correesponds to a compromie in which the sum of the kinetic and potential energy is as small as possible (uncertainty limitation).
 
+\begin{emphasizer}
+    The QHO possesses the peculiarity that due to the form of $V(x)$, the $\Delta X\Delta P$ attains its lower value at the ground state $\ket{\varphi_0}$. This is related to 
+    the fact that the wave function of the ground state is Gaussian.
+\end{emphasizer}
 
-
+%%
 \subsection{Time evolution of the mean values}
+Consider thw state at $t=0$ 
+\begin{align*}
+    \ket{\psi(0)}=\sum_{n=0}^\infty c_n(0)\ket{\varphi_n}.
+\end{align*}
+Its state $\ket{\psi(t)}$ at $t$ can be obtained by using the evolution operator for conservative systems:
+\begin{align}
+    \ket{\psi(t)}=\sum_{n=0}^\infty c_n(0)e^{-iE_nt/\hbar}\ket{\varphi_n}=\sum_{n=0}^\infty c_n(0)e^{-i(n+1/2)\omega t}\ket{\varphi_n}.
+\end{align}
+The mean value of any physical quantity $A$ is 
+\begin{align*}
+    \braket{\varphi(t)|A|\varphi(t)}=\sum_{m,n=0}^\infty c_m^*(0)c_n(0)A_{mn}e^{i(m-n)\omega t},\quad\text{with}\quad A_{mn}=\braket{\varphi_m|A|\varphi_n}.
+\end{align*}
+The time evolution of the mean values involves only the frequency $\omega/2\pi$ and its various harmonics, which constitutes the Bohr frequencies of the harmonics oscillator.
 
+If we consider $X$ and $P$, we know that the only non-zero elements $X_{mn}$ and $P_{mn}$ are those for which $m=n\pm1$. Consequently, the mean values of $X$ and $P$ include only terms in $e^{\pm\omega t}$.
+Moreover, the form of the harmonics oscillator potential implies that for all $|ket{\varphi_n}$ the mean values of $X$ and $P$ rigorously satisfy the classical equations of motion. Using Ehrenfest theorem:
+\begin{align}
+    \begin{array}{l}
+    \dfrac{d}{dt}\braket{X}=\dfrac{1}{i\hbar}\braket{[X,H]}=\dfrac{\braket{P}}{m}\\    
+    \dfrac{d}{dt}\braket{P}=\dfrac{1}{i\hbar}\braket{[P,H]}=-m\omega^2\braket{X}
+    \end{array}
+    \stackrel{\int dt}{\longrightarrow}
+    \begin{array}{l}
+        \braket{X}(t)=\braket{X}(0)\cos\omega t+\dfrac{1}{m\omega}\braket{P}(0)\sin\omega t\\
+        \braket{P}(t)=\braket{P}(0)\cos\omega t+m\omega\braket{X}(0)\sin\omega t
+    \end{array}
+\end{align}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item In a stationary state $\ket{\varphi_n}$, the behavior of the harmonic oscillator is totally different from that predicted by classical mechanics. 
+    The mean values of all the observables are constant over time.
+\end{itemize}
 
