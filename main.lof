@@ -7,4 +7,6 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Potential energy $V(x)$ of a 1D harmonic oscillator.}}{34}{figure.caption.9}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Any potential can be approximated by a parabolic potential. In $V(x)$, a classical particle of energy $E$ oscillates between $x_1$ and $x_2$.}}{35}{figure.caption.10}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Shape of the Gaussian function $F(z)$ and its first and second derivatices.}}{45}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of four HO states in the phase-space diagram: black=ground state, gray=first excited state, ovals=squeezed state, green=coherent state.}}{51}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Motion of the Gaussian wave packet associated with $|\alpha \rangle $ state. Thanks to the form of $V(x)$, the wave packet oscillates without distortion.}}{56}{figure.caption.14}%
 \contentsfinish 

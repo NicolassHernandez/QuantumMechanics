@@ -92,13 +92,29 @@
 \contentsline {subsection}{\numberline {2.5.1}Hermite polynomials}{45}{subsection.2.5.1}%
 \contentsline {subsubsection}{Definition}{45}{subsection.2.5.1}%
 \contentsline {subsubsection}{Generating function}{45}{figure.caption.12}%
-\contentsline {subsubsection}{Recurrence relations; differential equation}{45}{figure.caption.12}%
-\contentsline {subsection}{\numberline {2.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{45}{subsection.2.5.2}%
-\contentsline {subsubsection}{Generating function}{45}{subsection.2.5.2}%
-\contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{45}{subsection.2.5.2}%
-\contentsline {subsubsection}{Recurrence relations}{46}{equation.2.5.39}%
+\contentsline {subsubsection}{Recurrence relations; differential equation}{46}{equation.2.5.40}%
+\contentsline {subsection}{\numberline {2.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{46}{subsection.2.5.2}%
+\contentsline {subsubsection}{Generating function}{46}{subsection.2.5.2}%
+\contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{46}{subsection.2.5.2}%
+\contentsline {subsubsection}{Recurrence relations}{47}{equation.2.5.44}%
 \contentsline {section}{\numberline {2.6}The isotropic three-dimensional harmonic oscillator}{47}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Coherent states of the harmonic oscillator}{47}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Useful formulas}{48}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Basis}{48}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.6.1}Separation of variables in cartesian coordinates}{48}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Degeneracy of the energy levels}{49}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Coherent states of the harmonic oscillator}{50}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Quasi-classical states}{50}{subsection.2.7.1}%
+\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{50}{subsection.2.7.1}%
+\contentsline {subsubsection}{Conditions defining quasi-classical states}{51}{equation.2.7.68}%
+\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{52}{equation.2.7.73}%
+\contentsline {subsection}{\numberline {2.7.2}Properties of the $|\alpha \rangle $ states}{52}{subsection.2.7.2}%
+\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{52}{subsection.2.7.2}%
+\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{53}{equation.2.7.78}%
+\contentsline {subsubsection}{Calculation of mean values and uncertainties}{53}{equation.2.7.79}%
+\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{54}{equation.2.7.82}%
+\contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{55}{example.2.2}%
+\contentsline {subsection}{\numberline {2.7.3}Time evolution of a quasi-classical state}{55}{subsection.2.7.3}%
+\contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{55}{subsection.2.7.3}%
+\contentsline {subsubsection}{Evolution of physical properties}{55}{equation.2.7.86}%
+\contentsline {subsubsection}{Motion of the wave packet}{56}{equation.2.7.89}%
+\contentsline {subsection}{\numberline {2.7.4}Useful formulas}{57}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}Basis}{57}{subsection.2.7.5}%
 \contentsfinish 

@@ -9,11 +9,17 @@ Let be the Gaussian function
 \end{align}
 The successive derivatives are 
 \begin{align*}
-    F'(z)=-2ze^{-z^2},\quad F''(z)=(4z^2-2)e^{-z^2},\quad\cdots,\quad F^{(n)}(z)=(-1)^nH_n(z)e^{-z^2},
+    F'(z)=-2ze^{-z^2},\quad F''(z)=(4z^2-2)e^{-z^2},\quad\cdots,\quad F^{(n)}(z)=(-1)^nH_n(z)e^{-z^2}.
 \end{align*}
+If we have $F^{(n-1)}$, its differentiation will yields $F^{(n)}$ and we can obtain the above general equation:
+\begin{align}
+    H_n(z)=\left(2z-\frac{d}{dz}\right)H_{n-1}(z),
+    \label{eq:relhermite}
+\end{align}
 where $H_n(z)$ is the nth-degree \bfemph{Hermite polynomial}:
 \begin{align}
     \text{Hermite polynomial}\qquad\highlight{H_n(z)=(-1)^ne^{z^2}\frac{d^n}{dz^n}e^{-z^2}}.
+    \label{eq:hermitepolynomial}
 \end{align}
 The parity of $H_n(x)$ is $(-1)^n$, and it has $n$ real zeros between which one finds those of $H_{n-1}$.
 \begin{figure}[h!]
@@ -21,22 +27,44 @@ The parity of $H_n(x)$ is $(-1)^n$, and it has $n$ real zeros between which one 
     \includegraphics[width=.4\columnwidth]{PartOne/ChapterThree/gaussianandf.png}
     \caption{Shape of the Gaussian function $F(z)$ and its first and second derivatices.}
 \end{figure}
-
+%%
 \subsubsection{Generating function}
-
-
-
+Consider the function 
+\begin{align*}
+    F(z+\lambda)=e^{-(z+\lambda)^2}\stackrel{\text{Taylor}}{=}\sum_{n=0}^\infty\frac{\lambda^n}{n!}F^{(n)}(z)=\sum_{n=0}^\infty\frac{\lambda^n}{n!}(-1)^nH_n(z)e^{-z^2}.
+\end{align*}
+Multiplying this relation by $e^{z^2}$ and replacing $\lambda$ by $-\lambda$ we obtain:
+\begin{align}
+    \text{Generating function of Hermite polynomials}\qquad e^{z^2}F(z-\lambda)=\highlight{e^{-\lambda^2+2\lambda z}=\sum_{n=0}^\infty\frac{\lambda^n}{n!}H_n(z)}.
+    \label{eq:generatingfunctionhermite}
+\end{align}
+The Hermite polynomials can therefore be obtained from the series expansion in $\lambda$ for the function $e^{-\lambda^2+2\lambda z}$.
+%
 \subsubsection{Recurrence relations; differential equation}
-
-
-
-
-
+We can obtain other recurrence relation by using the equation \eqref{eq:generatingfunctionhermite}. For instance, differentiating equation \eqref{eq:generatingfunctionhermite} with respect to 
+$z$ and using its expansion:
+\begin{align}
+    \frac{d}{dz}H_n(z)=2nH_{n-1}(z).
+    \label{eq:diffhermite}
+\end{align} 
+If we differentiate with respect to $\lambda$, we get 
+\begin{align}
+    H_n(z)=2zH_{n-1}(z)-2(n-1)H_{n-2}(z).
+\end{align}
+Finally, we can obtain an ODE differentiating equation \eqref{eq:diffhermite} and using \eqref{eq:relhermite}:
+\begin{align*}
+    \frac{d^2}{dz^2}H_n(z)=2n\frac{d}{dz}H_{n-1}(z)=2n[2zH_{n-1}(z)-H_n(z)]=2z\frac{d}{dz}H_{n-1}(z)-2nH_n(z),
+\end{align*}
+Thus,
+\begin{align}
+    \text{ODE satisfied by Hermite polynomials}\qquad\highlight{\left[\frac{d^2}{dz^2}-2z\frac{d}{dz}+2n\right]H_n(z)=0}.
+\end{align}
 %%
 \subsection{The eigenfunctions of the harmonic oscillator Hamiltonian}
-
+%
 \subsubsection{Generating function}
 
+%
 \subsubsection{$\varphi_n(x)$ in terms of the Hermite polynomials}
 What is $\varphi(x)=\braket{x|\varphi}$?
 
