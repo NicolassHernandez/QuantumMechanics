@@ -1,120 +1,58 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Preface}{2}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Postulates of Quantum Mechanics}{8}{chapter.1}%
+\contentsline {chapter}{\numberline {1}The quantum harmonic oscillator}{8}{chapter.1}%
 \ttl@starttoc {chapters@1}
 \contentsline {section}{\numberline {1.1}Introduction}{9}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Statements of the postulates}{9}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}State and measurable physical quantites of a system}{9}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Principle of spectral decomposition}{10}{subsection.1.2.2}%
-\contentsline {subsubsection}{Discrete spectrum}{10}{subsection.1.2.2}%
-\contentsline {subsubsection}{Continuous case}{11}{equation.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Reduction of the wave packet}{11}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Time evolution of Systems}{12}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Quantization rules}{12}{subsection.1.2.5}%
-\contentsline {section}{\numberline {1.3}The physical interpretation of the postulates}{13}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Quantization rules are consistent with probabilistic interpretation}{13}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}The measurement process}{13}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Mean value of an observable in a given state}{13}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}The root mean square deviation}{15}{subsection.1.3.4}%
-\contentsline {subsection}{\numberline {1.3.5}Compatibility of observables}{15}{subsection.1.3.5}%
-\contentsline {subsubsection}{Compatibility and commutation rules}{15}{subsection.1.3.5}%
-\contentsline {subsubsection}{Preparation of a state}{16}{equation.1.3.25}%
-\contentsline {section}{\numberline {1.4}Physical implications of the Schrodinger equation}{16}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}General properties of the Schrodinger equation}{16}{subsection.1.4.1}%
-\contentsline {subsubsection}{Supeorposition}{17}{subsection.1.4.1}%
-\contentsline {subsubsection}{Conservation of probability}{17}{equation.1.4.27}%
-\contentsline {subsubsection}{Evolution of the mean value of an observable}{17}{equation.1.4.28}%
-\contentsline {subsubsection}{classical limits of the Ehrenfest's theorem}{18}{equation.1.4.31}%
-\contentsline {subsection}{\numberline {1.4.2}Conservative systems}{18}{subsection.1.4.2}%
-\contentsline {subsubsection}{Solution of the Schrodinger equation}{18}{subsection.1.4.2}%
-\contentsline {subsubsection}{Stationary states}{19}{equation.1.4.35}%
-\contentsline {subsubsection}{Constants of the motion}{19}{equation.1.4.35}%
-\contentsline {subsubsection}{Bohr frequencies of a system}{20}{equation.1.4.37}%
-\contentsline {subsubsection}{Time-energy uncertainty relation}{21}{equation.1.4.37}%
-\contentsline {section}{\numberline {1.5}The superposition principle and physical predictions}{21}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Evolution operator}{21}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}General properties}{21}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Case of conservative systems}{22}{subsection.1.6.2}%
-\contentsline {section}{\numberline {1.7}One-dimensional Gaussian wave packet (G1)}{22}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Particle in an infinite potential well}{22}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Introduction (H1)}{22}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Distribution of the momentum values in a stationary state}{22}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Evolution of the particle's wave function}{24}{subsection.1.8.3}%
-\contentsline {subsubsection}{Wave function at $t$}{24}{subsection.1.8.3}%
-\contentsline {subsubsection}{Evolution of the shape of the wave packet}{24}{subsection.1.8.3}%
-\contentsline {subsubsection}{Motion of the center of the wave packet}{24}{subsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.8.4}Perturbation created by a position measurement}{25}{subsection.1.8.4}%
-\contentsline {section}{\numberline {1.9}Shcrodinger and Heisenberg pictures}{25}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1}Time-dependent reference frames}{25}{subsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.9.2}Schrodinger, Heisenberg, and interaction pictures}{26}{subsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.9.3}Schrodinger picture}{26}{subsection.1.9.3}%
-\contentsline {subsection}{\numberline {1.9.4}Heisenberg picture}{27}{subsection.1.9.4}%
-\contentsline {subsection}{\numberline {1.9.5}Interaction picture}{27}{subsection.1.9.5}%
-\contentsline {section}{\numberline {1.10}The density operator}{28}{section.1.10}%
-\contentsline {subsection}{\numberline {1.10.1}Concept of a statistical mixture of states}{28}{subsection.1.10.1}%
-\contentsline {subsection}{\numberline {1.10.2}The pure case}{28}{subsection.1.10.2}%
-\contentsline {subsubsection}{Description by a state vector}{29}{subsection.1.10.2}%
-\contentsline {subsubsection}{Description by a density operator}{29}{subsection.1.10.2}%
-\contentsline {subsubsection}{Properties of the density operator in a pure case}{30}{equation.1.10.62}%
-\contentsline {subsection}{\numberline {1.10.3}A statistical mixture of states (non-pure case)}{30}{subsection.1.10.3}%
-\contentsline {subsubsection}{Definition of the density operator}{30}{subsection.1.10.3}%
-\contentsline {subsubsection}{General properties of the density operator}{30}{equation.1.10.64}%
-\contentsline {subsubsection}{Populations; coherences}{31}{equation.1.10.67}%
-\contentsline {subsection}{\numberline {1.10.4}Separate description of part of a physical system. Concept of a partial trace}{32}{subsection.1.10.4}%
-\contentsline {chapter}{\numberline {2}The quantum harmonic oscillator}{33}{chapter.2}%
-\ttl@stoptoc {chapters@1}
-\ttl@starttoc {chapters@2}
-\contentsline {section}{\numberline {2.1}Introduction}{34}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Importance of the harmonic oscillator in physics}{34}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}The harmonic oscillator in classical mechanics}{34}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}General properties of the quantum mechanical Hamiltonian}{35}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Eigenvalues of the Hamiltonian}{36}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Notation}{36}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Determination of the spectrum}{38}{subsection.2.2.2}%
-\contentsline {subsubsection}{Lemmas}{38}{subsection.2.2.2}%
-\contentsline {subsubsection}{The spectrum of $N$ is composed of non-negative integers}{38}{Item.4}%
-\contentsline {subsubsection}{Interpretation of the $a$ and $a^\dagger $ operators}{39}{equation.2.2.16}%
-\contentsline {subsection}{\numberline {2.2.3}Degeneracy of the eigenvalues}{39}{subsection.2.2.3}%
-\contentsline {subsubsection}{The grounds state is non-degenerate}{39}{subsection.2.2.3}%
-\contentsline {subsubsection}{All the states are non-degenerate}{39}{equation.2.2.17}%
-\contentsline {section}{\numberline {2.3}Eigenstates of the Hamiltonian}{40}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}The $\{\varphi _n\}$ representation}{40}{subsection.2.3.1}%
-\contentsline {subsubsection}{The basis vectors in terms of $|\psi _0\rangle $}{40}{subsection.2.3.1}%
-\contentsline {subsubsection}{Orthonormalization and closure relations}{40}{equation.2.3.19}%
-\contentsline {subsubsection}{Action of the various operators}{41}{equation.2.3.19}%
-\contentsline {subsubsection}{Eigenstates of $a$}{41}{equation.2.3.26}%
-\contentsline {subsection}{\numberline {2.3.2}Wave functions associated with the stationary states}{42}{subsection.2.3.2}%
-\contentsline {section}{\numberline {2.4}Discussion}{43}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Mean values and rms eviations of $X$ and $P$ in a state $|\varphi _n\rangle $}{43}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Properties of the ground state}{44}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Time evolution of the mean values}{44}{subsection.2.4.3}%
-\contentsline {section}{\numberline {2.5}Stationary states in the $\{|x\rangle \}$ representation}{45}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Hermite polynomials}{45}{subsection.2.5.1}%
-\contentsline {subsubsection}{Definition}{45}{subsection.2.5.1}%
-\contentsline {subsubsection}{Generating function}{45}{figure.caption.12}%
-\contentsline {subsubsection}{Recurrence relations; differential equation}{46}{equation.2.5.40}%
-\contentsline {subsection}{\numberline {2.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{46}{subsection.2.5.2}%
-\contentsline {subsubsection}{Generating function}{46}{subsection.2.5.2}%
-\contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{46}{subsection.2.5.2}%
-\contentsline {subsubsection}{Recurrence relations}{47}{equation.2.5.44}%
-\contentsline {section}{\numberline {2.6}The isotropic three-dimensional harmonic oscillator}{47}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Separation of variables in cartesian coordinates}{48}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Degeneracy of the energy levels}{49}{subsection.2.6.2}%
-\contentsline {section}{\numberline {2.7}Coherent states of the harmonic oscillator}{50}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Quasi-classical states}{50}{subsection.2.7.1}%
-\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{50}{subsection.2.7.1}%
-\contentsline {subsubsection}{Conditions defining quasi-classical states}{51}{equation.2.7.68}%
-\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{52}{equation.2.7.73}%
-\contentsline {subsection}{\numberline {2.7.2}Properties of the $|\alpha \rangle $ states}{52}{subsection.2.7.2}%
-\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{52}{subsection.2.7.2}%
-\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{53}{equation.2.7.78}%
-\contentsline {subsubsection}{Calculation of mean values and uncertainties}{53}{equation.2.7.79}%
-\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{54}{equation.2.7.82}%
-\contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{55}{example.2.2}%
-\contentsline {subsection}{\numberline {2.7.3}Time evolution of a quasi-classical state}{55}{subsection.2.7.3}%
-\contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{55}{subsection.2.7.3}%
-\contentsline {subsubsection}{Evolution of physical properties}{55}{equation.2.7.86}%
-\contentsline {subsubsection}{Motion of the wave packet}{56}{equation.2.7.89}%
-\contentsline {subsection}{\numberline {2.7.4}Useful formulas}{57}{subsection.2.7.4}%
-\contentsline {subsection}{\numberline {2.7.5}Basis}{57}{subsection.2.7.5}%
+\contentsline {subsection}{\numberline {1.1.1}Importance of the harmonic oscillator in physics}{9}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}The harmonic oscillator in classical mechanics}{9}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}General properties of the quantum mechanical Hamiltonian}{10}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Eigenvalues of the Hamiltonian}{11}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Notation}{11}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Determination of the spectrum}{13}{subsection.1.2.2}%
+\contentsline {subsubsection}{Lemmas}{13}{subsection.1.2.2}%
+\contentsline {subsubsection}{The spectrum of $N$ is composed of non-negative integers}{13}{Item.4}%
+\contentsline {subsubsection}{Interpretation of the $a$ and $a^\dagger $ operators}{14}{equation.1.2.16}%
+\contentsline {subsection}{\numberline {1.2.3}Degeneracy of the eigenvalues}{14}{subsection.1.2.3}%
+\contentsline {subsubsection}{The grounds state is non-degenerate}{14}{subsection.1.2.3}%
+\contentsline {subsubsection}{All the states are non-degenerate}{14}{equation.1.2.17}%
+\contentsline {section}{\numberline {1.3}Eigenstates of the Hamiltonian}{15}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}The $\{\varphi _n\}$ representation}{15}{subsection.1.3.1}%
+\contentsline {subsubsection}{The basis vectors in terms of $|\psi _0\rangle $}{15}{subsection.1.3.1}%
+\contentsline {subsubsection}{Orthonormalization and closure relations}{15}{equation.1.3.19}%
+\contentsline {subsubsection}{Action of the various operators}{16}{equation.1.3.19}%
+\contentsline {subsubsection}{Eigenstates of $a$}{16}{equation.1.3.26}%
+\contentsline {subsection}{\numberline {1.3.2}Wave functions associated with the stationary states}{17}{subsection.1.3.2}%
+\contentsline {section}{\numberline {1.4}Discussion}{18}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Mean values and rms eviations of $X$ and $P$ in a state $|\varphi _n\rangle $}{18}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Properties of the ground state}{19}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Time evolution of the mean values}{19}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Stationary states in the $\{|x\rangle \}$ representation}{20}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Hermite polynomials}{20}{subsection.1.5.1}%
+\contentsline {subsubsection}{Definition}{20}{subsection.1.5.1}%
+\contentsline {subsubsection}{Generating function}{20}{figure.caption.9}%
+\contentsline {subsubsection}{Recurrence relations; differential equation}{21}{equation.1.5.40}%
+\contentsline {subsection}{\numberline {1.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{21}{subsection.1.5.2}%
+\contentsline {subsubsection}{Generating function}{21}{subsection.1.5.2}%
+\contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{21}{subsection.1.5.2}%
+\contentsline {subsubsection}{Recurrence relations}{22}{equation.1.5.44}%
+\contentsline {section}{\numberline {1.6}The isotropic three-dimensional harmonic oscillator}{22}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Separation of variables in cartesian coordinates}{23}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Degeneracy of the energy levels}{24}{subsection.1.6.2}%
+\contentsline {section}{\numberline {1.7}Coherent states of the harmonic oscillator}{25}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Quasi-classical states}{25}{subsection.1.7.1}%
+\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{25}{subsection.1.7.1}%
+\contentsline {subsubsection}{Conditions defining quasi-classical states}{26}{equation.1.7.68}%
+\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{27}{equation.1.7.73}%
+\contentsline {subsection}{\numberline {1.7.2}Properties of the $|\alpha \rangle $ states}{27}{subsection.1.7.2}%
+\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{27}{subsection.1.7.2}%
+\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{28}{equation.1.7.78}%
+\contentsline {subsubsection}{Calculation of mean values and uncertainties}{28}{equation.1.7.79}%
+\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{29}{equation.1.7.82}%
+\contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{30}{example.1.2}%
+\contentsline {subsection}{\numberline {1.7.3}Time evolution of a quasi-classical state}{30}{subsection.1.7.3}%
+\contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{30}{subsection.1.7.3}%
+\contentsline {subsubsection}{Evolution of physical properties}{30}{equation.1.7.86}%
+\contentsline {subsubsection}{Motion of the wave packet}{31}{equation.1.7.89}%
+\contentsline {subsection}{\numberline {1.7.4}Useful formulas}{32}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Basis}{32}{subsection.1.7.5}%
 \contentsfinish 

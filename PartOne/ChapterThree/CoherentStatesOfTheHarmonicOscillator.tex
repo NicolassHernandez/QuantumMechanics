@@ -80,7 +80,7 @@ The equation \eqref{eq:timeevolutiona} is anaologous to equation \eqref{eq:timee
 the mean value of $X$ and $P$ to get:
 \begin{align}
     \braket{X}(t)&=\frac{1}{\sqrt{2}}(a+a^\dagger)=\frac{1}{\sqrt{2}}[\braket{a}(0)e^{-i\omega t}+\braket{a}^*e^{i\omega t}]\\
-    \braket{P}(t)&=\frac{i}{\sqrt{2}}(a^\dagger-a)=\frac{i}{\sqrt{2}}[\braket{a}^*e^{i\omega t}+\braket{a}(0)e^{-i\omega t}]
+    \braket{P}(t)&=\frac{i}{\sqrt{2}}(a^\dagger-a)=\frac{i}{\sqrt{2}}[\braket{a}^*e^{i\omega t}-\braket{a}(0)e^{-i\omega t}]
 \end{align}
 It is necessary and sufficient to set at $t=0$ the condition $\braket{a}(0)=\alpha_0$, which resembles to the classical motion. The normalized state vector $\ket{\psi(t)}$ of the oscillator 
 must therefore satisfy the condition 
@@ -250,7 +250,7 @@ We use the time eovlution assuming conservative system (Hamiltonian time-indepen
 \end{align*} 
 Thus, we have found that 
 \begin{align}
-    \text{Evolution of the quasi-classical state}\qquad\highlight{\ket{\psi(t)}=e^{-\frac{i\omega t}{2}}\ket{\alpha(t)}=e^{-\frac{i\omega t}{2}}\ket{\alpha=\alpha_0e^{-i\omega t}}}.
+    \text{Evolution of the quasi-classical state}\qquad\highlight{\ket{\psi(t)}=e^{-\frac{i\omega t}{2}}\ket{\alpha(t)=\alpha_0e^{-i\omega t}}}.
     \label{eq:evolcoherentstate}
 \end{align}
 We see that a quasi-classical state remains an eigenvector of $a$ for all time, with an eigenvalue $\alpha_0e^{-i\omega t}$ which is nothing more than $\alpha(t)$ obtained at the begining.
