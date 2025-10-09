@@ -1,9 +1,14 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{The quantum harmonic oscillator}{8}{chapter.1}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Potential energy $V(x)$ of a 1D harmonic oscillator.}}{9}{figure.caption.6}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Any potential can be approximated by a parabolic potential. In $V(x)$, a classical particle of energy $E$ oscillates between $x_1$ and $x_2$.}}{10}{figure.caption.7}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Shape of the Gaussian function $F(z)$ and its first and second derivatices.}}{20}{figure.caption.9}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Illustration of four HO states in the phase-space diagram: black=ground state, gray=first excited state, ovals=squeezed state, green=coherent state.}}{26}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Motion of the Gaussian wave packet associated with $|\alpha \rangle $ state. Thanks to the form of $V(x)$, the wave packet oscillates without distortion.}}{31}{figure.caption.11}%
+\contentsline {xchapter}{Mathematical Formalism}{8}{chapter.1}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Postulates of Quantum Mechanics}{38}{chapter.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Time variation of $\langle X\rangle $ corresponding to the wave packet's motion. QM predicts that the center of the wave packet will turn back before hitting the wall}}{55}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{The quantum harmonic oscillator}{63}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Potential energy $V(x)$ of a 1D harmonic oscillator.}}{64}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Any potential can be approximated by a parabolic potential. In $V(x)$, a classical particle of energy $E$ oscillates between $x_1$ and $x_2$.}}{65}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Shape of the Gaussian function $F(z)$ and its first and second derivatices.}}{75}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of four HO states in the phase-space diagram: black=ground state, gray=first excited state, ovals=squeezed state, green=coherent state.}}{81}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Motion of the Gaussian wave packet associated with $|\alpha \rangle $ state. Thanks to the form of $V(x)$, the wave packet oscillates without distortion.}}{86}{figure.caption.20}%
 \contentsfinish 
