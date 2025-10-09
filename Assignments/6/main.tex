@@ -79,9 +79,42 @@
 %%
 \section*{Problem I}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item asfaf
-  \item asfasf
-  \item asfafasf
+  \item On the one hand, the action of $\tilde{a}(t)$ is 
+  \begin{align*}
+    \tilde{a}(t)\ket{\varphi_n}&=U^\dagger(t,0)aU(t,0)\ket{\varphi_n}=U^\dagger(t,0)ae^{-i\left(N+\frac{1}{2}\right)\omega t}\ket{\varphi_n}=e^{-i\left(n+\frac{1}{2}\right)\omega t}U^\dagger(t,0)a\ket{\varphi_n}\\
+    &=\sqrt{n}e^{-i\left(n+\frac{1}{2}\right)\omega t}U^\dagger(t,0)\ket{\varphi_{n-1}}=\sqrt{n}e^{-i\left(n+\frac{1}{2}\right)\omega t}e^{i\left(n-\frac{1}{2}\right)\omega t}\ket{\varphi_{n-1}}=\sqrt{n}e^{-i\omega t}\ket{\varphi_{n-1}}.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    \tilde{a}(t)\ket{\varphi_n}=\sqrt{n}e^{-i\omega t}\ket{\varphi_{n-1}}=e^{-i\omega t}a\ket{\varphi_n}.
+  \end{align*}
+  On the other hand, the action of $\tilde{a}^\dagger(t)$ is 
+  \begin{align*}
+    \tilde{a}^\dagger(t)\ket{\varphi_n}&=U^\dagger(t,0)a^\dagger U(t,0)\ket{\varphi_n}=e^{-i\left(n+\frac{1}{2}\right)\omega t}U^\dagger(t,0)a^\dagger\ket{\varphi_n}=\sqrt{n+1}e^{-i\left(n+\frac{1}{2}\right)\omega t}U^\dagger(t,0)\ket{\varphi_{n+1}}\\
+    &=\sqrt{n+1}e^{-i\left(n+\frac{1}{2}\right)\omega t}e^{i\left(n+\frac{3}{2}\right)\omega t}\ket{\varphi_{n+1}}.
+  \end{align*}
+  Consequently,
+  \begin{align*}
+    \tilde{a}^\dagger(t)\ket{\varphi_n}=\sqrt{n+1}e^{i\omega t}\ket{\varphi_{n+1}}=e^{i\omega t}a^\dagger\ket{\varphi_n}.
+  \end{align*}
+  \item We can compute the operators if we stimulate them with a ket $\ket{\varphi_n}$. We make use of the $a,a^\dagger$ expression for $\tilde{X}$ and $\tilde{P}$.
+  \begin{align*}
+    \tilde{X}(t)\ket{\varphi_n}=\frac{1}{\sqrt{2}}\left[U^\dagger a^\dagger U+U^\dagger aU\right]\ket{\varphi_n}.
+  \end{align*}
+  But, we have already computed these operations in the previous part, so we will use it here:
+  \begin{align*}
+    \tilde{X}(t)\ket{\varphi_n}&=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger+e^{-i\omega t}a\right]\ket{\varphi_n}\Longrightarrow \tilde{X}(t)=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger+e^{-i\omega t}a\right].
+  \end{align*}
+  In the same manner, we have for $\tilde{P}$:
+  \begin{align*}
+    \tilde{P}(t)\ket{\varphi_n}=\frac{1}{\sqrt{2}}\left[U^\dagger a^\dagger U-U^\dagger aU\right]\ket{\varphi_n}=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right]\ket{\varphi_n}
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    \tilde{P}(t)=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right].
+  \end{align*}
+  They are like trigonometric functions cosine and sine, with the different that the operator $a,a^\dagger$ is in the middle.
+  \item To show that a ket is an eigenvector of an operator, it will have to satisfy its eigenequation with a constant representing the eigenvalue: $P\ket{\psi}=\lambda\ket{\psi}$.
   \item asfa
   \item asfafasf
   \item asfsa
