@@ -27,6 +27,8 @@
 \newcommand{\braket}[1]{\langle#1\rangle}
 \newcommand{\F}{\mathscr{F}}
 \newcommand{\E}{\mathscr{E}}
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
 \usepackage{dsfont}
 \usepackage{cancel}
 \usepackage{bm}
@@ -59,7 +61,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 5 hours}
+\date{\today\\Total time: 15 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -86,7 +88,7 @@
   \end{align*}
   Therefore,
   \begin{align*}
-    \tilde{a}(t)\ket{\varphi_n}=\sqrt{n}e^{-i\omega t}\ket{\varphi_{n-1}}=e^{-i\omega t}a\ket{\varphi_n}.
+    \tilde{a}(t)\ket{\varphi_n}=\sqrt{n}e^{-i\omega t}\ket{\varphi_{n-1}}=e^{-i\omega t}a\ket{\varphi_n}\longrightarrow \tilde{a}(t)=e^{-i\omega t}a.
   \end{align*}
   On the other hand, the action of $\tilde{a}^\dagger(t)$ is 
   \begin{align*}
@@ -95,7 +97,7 @@
   \end{align*}
   Consequently,
   \begin{align*}
-    \tilde{a}^\dagger(t)\ket{\varphi_n}=\sqrt{n+1}e^{i\omega t}\ket{\varphi_{n+1}}=e^{i\omega t}a^\dagger\ket{\varphi_n}.
+    \tilde{a}^\dagger(t)\ket{\varphi_n}=\sqrt{n+1}e^{i\omega t}\ket{\varphi_{n+1}}=e^{i\omega t}a^\dagger\ket{\varphi_n}\longrightarrow \tilde{a}^\dagger(t)=e^{i\omega t}a^\dagger.
   \end{align*}
   \item We can compute the operators if we stimulate them with a ket $\ket{\varphi_n}$. We make use of the $a,a^\dagger$ expression for $\tilde{X}$ and $\tilde{P}$.
   \begin{align*}
@@ -105,13 +107,21 @@
   \begin{align*}
     \tilde{X}(t)\ket{\varphi_n}&=\frac{\sigma}{\sqrt{2}}\left[e^{i\omega t}a^\dagger+e^{-i\omega t}a\right]\ket{\varphi_n}\Longrightarrow \tilde{X}(t)=\frac{\sigma}{\sqrt{2}}\left[e^{i\omega t}a^\dagger+e^{-i\omega t}a\right].
   \end{align*}
+  We can further simplified if we develop the complex exponential, obtaining:
+  \begin{align*}
+    \tilde{X}(t)=X\cos\omega t+\frac{\sigma^2P}{\hbar}\sin\omega t.
+  \end{align*}
   In the same manner, we have for $\tilde{P}$:
   \begin{align*}
-    \tilde{P}(t)\ket{\varphi_n}=\frac{1}{\sqrt{2}}\left[U^\dagger a^\dagger U-U^\dagger aU\right]\ket{\varphi_n}=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right]\ket{\varphi_n}
+    \tilde{P}(t)\ket{\varphi_n}=\frac{i\hbar}{\sqrt{2}\sigma}\left[U^\dagger a^\dagger U-U^\dagger aU\right]\ket{\varphi_n}=\frac{i\hbar}{\sqrt{2}\sigma}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right]\ket{\varphi_n}
   \end{align*}
   Therefore,
   \begin{align*}
-    \tilde{P}(t)=\frac{1}{\sqrt{2}}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right].
+    \tilde{P}(t)=\frac{i\hbar}{\sqrt{2}\sigma}\left[e^{i\omega t}a^\dagger-e^{-i\omega t}a\right].
+  \end{align*}
+  And, 
+  \begin{align*}
+    \tilde{P}(t)=P\cos\omega t+i\frac{\sqrt{2}}{\sigma}X\sin\omega t.
   \end{align*}
   They are like trigonometric functions cosine and sine, with the different that the operator $a,a^\dagger$ is in the middle.
   \item To show that a ket is an eigenvector of an operator, it will have to satisfy its eigenequation with a constant representing the eigenvalue: $P\ket{\psi}=\lambda\ket{\psi}$.
@@ -123,24 +133,120 @@
 
 \section*{Problem II}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item asfaf
-  \item asfasf
-  \item asfafasf
-  \item asfa
+  \item We know that $\alpha_0=\ket{\psi(0)}$ is a coherent state, so $a\ket{\alpha}=\alpha\ket{\alpha}$. Then, replcaing the definitions of $X$ and $P$ in terms of $a,a^\dagger$ and doing algebra we find:
+  \begin{align*}
+    \braket{\alpha_0|P|\alpha_0}&=\frac{i\hbar}{\sqrt{2}\sigma}\braket{\alpha_0|(a^\dagger-a)|\alpha_0}=\frac{i\hbar}{\sqrt{2}\sigma}\left[\braket{\alpha_0|a^\dagger|\alpha_0}-\braket{\alpha_0|a|\alpha_0}\right]=\frac{i\hbar}{\sqrt{2}\sigma}\left[\alpha_0^*-\alpha_0\right]=-\frac{i2\hbar}{\sqrt{2}\sigma}\im{\alpha_0}.
+  \end{align*} 
+  In the same manner,
+  \begin{align*}
+    \braket{\alpha_0|X|\alpha_0}&=\frac{\sigma}{\sqrt{2}}\braket{\alpha_0|(a^\dagger+a)|\alpha_0}=\frac{\sigma}{\sqrt{2}}\left[\braket{\alpha_0|a^\dagger|\alpha_0}+\braket{\alpha_0a|\alpha_0}\right]=\frac{\sigma}{\sqrt{2}}[\alpha_0^*+\alpha_0]=\frac{2\sigma}{\sqrt{2}}\re{\alpha_0}.
+  \end{align*}
+  Then,
+  \begin{align*}
+    \alpha_0=\frac{1}{\sqrt{2}}\left[\frac{\braket{X}(0)}{\sigma}+i\frac{\sigma\braket{P}(0)}{\hbar}\right].
+  \end{align*}
+  These mean values are the ones we have computed.
+  \item Due to the momentum kick, we know that 
+  \begin{align*}
+    \alpha_0=\frac{ip_o\sigma}{\sqrt{2}\hbar}.
+  \end{align*}
+  Then, doing the same as in the previous part, we have:
+  \begin{align*}
+    \braket{\alpha_0|H|\alpha_0}&=\hbar\omega\braket{\alpha_0|(a^\dagger a+1/2)|\alpha_0}=\hbar\omega\left[|\alpha_0|^2+\frac{1}{2}\right]=\frac{p_0^2\sigma^2\omega}{2\hbar}+\frac{\hbar\omega}{2}.
+  \end{align*}
+  But, the oscillator length is given by:
+  \begin{align*}
+    \sigma=\sqrt{\frac{\hbar}{m\omega}},
+  \end{align*}
+  so
+  \begin{align*}
+    \braket{\alpha_0|H|\alpha_0}=\frac{p_0^2}{2m}+\frac{\hbar\omega}{2}.
+  \end{align*}
+  \item The eigenvalue is $\alpha(t)$:
+  \begin{align*}
+    \alpha(t)=\frac{ip_0\sigma}{\sqrt{2}\hbar}e^{-i\omega t}.
+  \end{align*}
+  This is because the state vector remains a coherent state over time, and under that condition the eigenequation of $a$ gives you $\alpha_0$ when acting on such a vector.
   \item sgag
-  \item asgag
-  \item asgagasg
-  \item asg
+  \begin{align*}
+    [a,X]=\left[\frac{1}{\sqrt{2}}\left\{\frac{X}{\sigma}+i\frac{\sigma}{\hbar}P\right\},X\right]=i\frac{\sigma}{\sqrt{2}\hbar}[P,X]=i\frac{\sigma}{\sqrt{2}\hbar}(-i\hbar)=\frac{\sigma}{\sqrt{2}}.
+  \end{align*}
+  For the other commutator, we can use the commutator of a function property:
+  \begin{align*}
+    [a,T(p_0)]=[a,e^{ip_0X/\hbar}]=[a,X]\frac{d(e^{ip_oX/\hbar})}{dX}=\frac{\sigma}{\sqrt{2}}\frac{ip_0}{\hbar}e^{ip_0X/\hbar}=\alpha_0T(p_0).
+  \end{align*}
+  Using the definition of the commutator and the result above:
+  \begin{align*}
+    aT(p_0)-T(p_0)a=\alpha_0T(p_0)\longrightarrow aT(p_0)=(a+\alpha_0)T(p_0).
+  \end{align*}
+  \item Yes, it remains a coherent state. The only adding is a global phase factor. The eigenvalue at $t=t_1$ is $\alpha(t_1)=\alpha_0e^{-i\omega t_1}$.
+  \begin{align*}
+    a(T(p_0)\ket{\psi(t_1)})=T(p_0)(a+\alpha_0)\ket{\psi(t_1)}=(\alpha(t_1)+\alpha_0)T(p_0)\ket{\psi(t_1)}.
+  \end{align*}
+  so that 
+  \begin{align*}
+    \alpha_2=\alpha(t_1)+\alpha_0=\alpha_0(e^{-i\omega t_1}+1).
+  \end{align*}
+  \item We do the same as before, but with the new $\alpha$.
+  \begin{align*}
+    \braket{\alpha_2|H|\alpha_2}&=\hbar\omega\left[|\alpha_0(1+e^{-i\omega t_1})|^2+1/2\right]=\hbar\omega|\alpha_0|^2(2+2\cos\omega t_1)+\frac{\hbar\omega}{2}=\hbar\omega\frac{2p_0^2\sigma^2}{2\hbar^2}(1+\cos\omega t_1)+\frac{\hbar\omega}{2}\\
+    \braket{\alpha_2|H|\alpha_2}&=\frac{p_0^2}{m}(1+\cos\omega t_1)+\frac{\hbar\omega}{2}.
+  \end{align*}
+  \item This means that the mean value $\braket{H}$ before and after the second kick must be equal:
+  \begin{align*}
+    \braket{H}_{\text{before}}=\frac{p_0^2}{2m}+\frac{\hbar\omega}{2},\quad\text{and}\quad\braket{H}_{\text{after}}=\frac{p^2_0}{m}(1+\cos\omega t_1)+\frac{\hbar\omega}{2}.
+  \end{align*}
+  We set both to be equal and solve for $t_1$:
+  \begin{align*}
+    \frac{p^2_0}{m}(1+\cos\omega t_1)+\frac{\hbar\omega}{2}&=\frac{p_0^2}{2m}+\frac{\hbar\omega}{2}\\
+    \cos\omega t_1&=-\frac{1}{2}\\
+    t_1&\in\left\{\frac{2\pi}{3\omega},\frac{4\pi}{3\omega}\right\}.
+  \end{align*}
+  \item Each tiem evolution given by $t_1=2\pi/3\omega$ rotates a third of the full cycle, so with three we complete a full period. We know that a kick adds $\alpha$, while a time evolution 
+  rotates along the phase-space. The sequence is therefeore:
+  \begin{align*}
+    Q=T(p_0)U(t_1)T(p_0)U(t_1)T(p_0).
+  \end{align*}
 \end{enumerate}
 
 
 %5
 \section*{Problem III}
+We consider the system as a tensor product of each dimension.
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item asfaf
-  \item asfasf
-  \item asfafasf
-  \item asfa
+  \item The changes in position can be represented in the following way:
+  \begin{align*}
+    \ket{\alpha_x}=T(m\delta_v)\ket{\varphi_0},\quad\ket{\alpha_y}=\ket{\varphi_0},\quad\ket{\alpha_z}=S(1\;mm)\ket{\varphi_0}.
+  \end{align*}
+  At $t=0^+$, we have
+  \begin{align*}
+    \alpha_x(0)=\frac{1}{\sqrt{2}}\frac{i\sigma m\delta_V}{\hbar},\quad\alpha_y(0)=0,\quad\alpha_z(0)=\frac{1}{\sqrt{2}}\frac{1\;mm}{\sigma}.
+  \end{align*}
+  The maximum displacements in $z$ is $A_z=1\;mm$, whereas for $x$ we know that $p_x(0)=m\omega\delta_v$ so:
+  \begin{align*}
+    A_x(0)=\frac{\delta_v}{m\omega}=\frac{\delta_v}{100}.
+  \end{align*}
+  \item In this case, $A_x=A_z$ and 
+  \begin{align*}
+    \frac{\delta_v}{\omega}=A_z=1\;mm\longrightarrow\delta_v=(1\;mm)\omega=100\;mm/s=0.1\;m/s.
+  \end{align*}
+  \item The probability follows a Poisson distribution. First, we have that 
+  \begin{align*}
+    \alpha_x=\frac{i}{\sqrt{2}}\sqrt{\frac{m}{\hbar\omega}}\delta_v,\quad\alpha_z=\frac{1\;mm\sigma}{\sqrt{2}}.
+  \end{align*}
+  The square of them corresponds to the Poisson mean and we will take the floor of that value as the most likelikood:
+  \begin{align*}
+    |\alpha_x|^2=\frac{1}{2}\frac{m\delta_v^2}{\hbar\omega}=\frac{1}{2}\frac{(1.5\times10^{-25})(0.1)^2}{(1.054571817\times10^{-34})(100)}=71118.91.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    \ket{n_x=71118},\quad\ket{n_z=71118},\quad\ket{n_y=0}.
+  \end{align*}
+  \item They both are zero:
+  \begin{align*}
+    \braket{X}_{\text{after}}=\braket{P}_{\text{after}}=0.
+  \end{align*}
+
 \end{enumerate}
 
 
@@ -149,15 +255,53 @@
 
 \subsection*{Part 1.}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item 
+  \item We can treat the problem as a harmonic oscillator. The potential makes a force of the form
+  \begin{align*}
+    F_r=-\partial_rV(r)=-\frac{GM_Em}{R_E^3}r=-m\omega^3r,\quad\omega=\sqrt{\frac{GM_E}{R_E^3}}.
+  \end{align*}
+  Using the information provided, we can obtain the period as:
+  \begin{align*}
+    T=\frac{2\pi}{\omega}=2\pi\sqrt{\frac{R_E^3}{GM_E}}=5085.24\;s\equiv84.75\;min.
+  \end{align*}
+  For the case of the velocity, we know that because we are ignoring other forces the system must conserves the energy and it will be distributed in potential and kinetic energy.
+  So,
+  \begin{align*}
+    -\frac{3}{2}\frac{GM_Em}{R_E}=\frac{1}{2}mv_c^2-\frac{3}{2}\frac{GM_Em}{R_E}\longrightarrow v_c=\sqrt{\frac{GM_E}{R_E}}=7907.67\;m/s\equiv28.467\;km/h.
+  \end{align*}
 \end{enumerate}
 
 \subsection*{Part 2.}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*),start=2]
-  \item asfaf
-  \item asfasf
-  \item asfafasf
-  \item asfa
+  \item For the potential $r<R$, we can take Gauss law to give a structure and then froce throught the whole space to be something continuous. However,
+  I will compare it with the form of the graviational force to deduce that:
+  \begin{align*}
+    V_C(r)=-\frac{3}{2}\frac{k_ee^2}{R}+\frac{k_ee^2}{2R^3}r^2
+  \end{align*}
+  Now, the force can be derived similarly and equated to the clasical harmonic oscillator:
+  \begin{align*}
+    F=-\partial_rV_C(r)=-\frac{k_ee^2}{R^3}r=-m_p\omega^2r\longrightarrow\omega=\sqrt{\frac{k_ee^2}{m_pR^3}}=2.945\times10^{15}\;rad/s.
+  \end{align*}
+  \item The oscillator length $\sigma$ is:
+  \begin{align*}
+    \sigma=\sqrt{\frac{\hbar}{m_p\omega}}=4.588\times10^{-12}\;m.
+  \end{align*}
+  \item The step of the energy is $\Delta E=\hbar\omega$, and this value is also $hc/\lambda$ so equating them and solving for $\lambda$:
+  \begin{align*}
+    \lambda=\frac{hc}{\hbar\omega}=\frac{2\pi c}{\omega}=640\;nm.
+  \end{align*}
+  \item Using the general potential we have derived evaluated at $r=R$ yields 
+  \begin{align*}
+    V_C(R)=-\frac{k_ee^2}{R}.
+  \end{align*}
+  At that position, there is no kinetic energy as it is at rest. Equating it with the total energy of an arbitrary position provides:
+  \begin{align*}
+    \frac{1}{2}m_pv^2+V_C(r)=-\frac{k_ee^2}{R}\longrightarrow v=\sqrt{\frac{k_ee^2}{m_pR^3}(R^2-r^2)}.
+  \end{align*}
+  At the origin, we have $r=0$ so 
+  \begin{align*}
+    v=\sqrt{\frac{k_ee^2}{m_pR}}=7.4\times10^4\;m/s\equiv2.66\times10^5\;km/h.
+  \end{align*}
+  It is about $10$ times faster that under gravitational potential.
 \end{enumerate}
 
 
