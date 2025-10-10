@@ -109,7 +109,7 @@
   \end{align*}
   We can further simplified if we develop the complex exponential, obtaining:
   \begin{align*}
-    \tilde{X}(t)=X\cos\omega t+\frac{\sigma^2P}{\hbar}\sin\omega t.
+    \tilde{X}(t)=X\cos\omega t+\frac{P}{m\omega}\sin\omega t.
   \end{align*}
   In the same manner, we have for $\tilde{P}$:
   \begin{align*}
@@ -121,13 +121,84 @@
   \end{align*}
   And, 
   \begin{align*}
-    \tilde{P}(t)=P\cos\omega t+i\frac{\sqrt{2}}{\sigma}X\sin\omega t.
+    \tilde{P}(t)=P\cos\omega t-m\omega X\sin\omega t.
   \end{align*}
-  They are like trigonometric functions cosine and sine, with the different that the operator $a,a^\dagger$ is in the middle.
-  \item To show that a ket is an eigenvector of an operator, it will have to satisfy its eigenequation with a constant representing the eigenvalue: $P\ket{\psi}=\lambda\ket{\psi}$.
-  \item asfa
-  \item asfafasf
-  \item asfsa
+  They oscillate in time with the operators of position an momentum acting on kets, the coefficients of each trigonometric function resemble to the classical motion of HO.
+  \item To show that $U^\dagger\ket{x}$ is an eigenvector of $P$ with a given eigenvalue, we must satisfy the eigenequation of $P$. Using the $\tilde{P}$ found in the previous part, we have:
+  \begin{align*}
+    PU^\dagger(\frac{\pi}{2\omega},0)\ket{x}&=U^\dagger UPU^\dagger\ket{x}=U^\dagger \tilde{P}^\dagger(\pi/2\omega)\ket{x}=U^\dagger[P\cos\pi/2+m\omega X\sin\pi/2]\ket{x}\\
+    PU^\dagger(\frac{\pi}{2\omega},0)\ket{x}&=U^\dagger[m\omega X\ket{x}]=m\omega xU^\dagger(\frac{\pi}{2\omega},0)\ket{x}.
+  \end{align*}
+  In consequence, $U^\dagger(\pi/2\omega,0)\ket{x}$ is an eigenvector of $P$ with eigenvalue $m\omega x$.
+  Similarly, we have that $U^\dagger(\pi/2\omega,0)\ket{p}$ is an eigenvector of $X$ with eigenvalue $-p/m\omega$:
+  \begin{align*}
+    XU^\dagger(\frac{\pi}{2\omega},0)\ket{p}=-\frac{p}{m\omega}U^\dagger(\frac{\pi}{2\omega})\ket{p}.
+  \end{align*}
+  \item It turnt out that when $t_q=q\pi/2\omega$ evolves, the operators $\tilde{X}$ and $\tilde{P}$ also evolve in a way that in some cases we have purely the action of $X$ 
+  while in others the action of $P$. Assuming that $\psi(x,0)$ is normalized, all the other evolutions will remains normalized as the evolutino operator is unitary.
+  Then,
+  \begin{align*}
+    \psi(x,t_q)=\braket{x|U(t_q)|\psi(0)},\quad t_q=\frac{q\pi}{2\omega}.
+  \end{align*}
+  For the $tilde{P}(t_1)$ we have:
+  \begin{align*}
+    \tilde{P}(t_1)=U(t_1)PU^\dagger(t_1)=m\omega X.
+  \end{align*}
+  Multiplying to the left by $\bra{x}$ and to the right by $U(t_1)$ yields:
+  \begin{align*}
+    (\bra{x}U(t_1))P=m\omega x\bra{x}U(t_1)=c\bra{p=m\omega x}.
+  \end{align*}
+  Then,
+  \begin{align*}
+    \psi(x,t_1)=\braket{x|U(t_1)|\psi(0)}=C\braket{p=m\omega x|\psi(0)}=c\tilde{\psi}(m\omega x),
+  \end{align*}
+  where $\tilde{\psi}$ is te Fourier transform evaluated at $p=m\omega x$. To find $c$, we impose normalization:
+  \begin{align*}
+    |c|^2\int_{-\infty}^\infty|\tilde{\psi}(m\omega x)|^2dx=\frac{|c|^2}{m\omega}\int_{-\infty}^\infty|\tilde{\psi(p)}|^2\;dp=1\longrightarrow|c|=\sqrt{m\omega}.
+  \end{align*}
+  The phase of $c$ can be found by taking the global factor of the evolution operator:
+  \begin{align*}
+    U(t_1)=e^{iHt/\hbar}=e^{-i\omega t/2}e^{-ia^\dagger a t}\longrightarrow \angle c|_{t=t_1}=e^{-i\pi/4}.
+  \end{align*}
+  So that:
+  \begin{align*}
+    \psi(x,t_1)=e^{-i\pi/4}\sqrt{m\omega}\tilde{\psi}(m\omega x).
+  \end{align*}
+  When we evolve to $t_2$, there is another $90^\circ$ that performs a Fourier transform over $\psi(t_1)$. By property of this transformation, two successive applications return
+  the original function with the coordinates inverted:
+  \begin{align*}
+    \psi(x,t_1)=\psi(-x,0).
+  \end{align*}
+  Then, for $t_3$ we obtain $\psi(t_1)$ with the negative obtained above:
+  \begin{align*}
+    \psi(x,t_3)=\sqrt{m\omega}\tilde{\psi}(-m\omega x).
+  \end{align*}
+  And another $t_4$ will return the original function:
+  \begin{align*}
+    \psi(x,t_4)=\psi(-(-x),0)=\psi(x,0).
+  \end{align*}
+  This can be done indefinitely.
+  \item We select $\varphi_n(x)$ the energy eigenstate of the HO. We saw that 
+  \begin{align*}
+    \psi(x,\frac{\pi}{2\omega})=e^{-i\pi/4}\sqrt{m\omega}\tilde{\psi}(m\omega x).
+  \end{align*}
+  A stationary state only evolves in its global phase factor, so:
+  \begin{align*}
+    \psi(x,\frac{\pi}{2\omega})=e^{-iE_n(\pi/2\omega)/\hbar}\varphi_n(x)=e^{-i(n+1/2)\pi/2}\varphi_n(x)=e^{-i\pi/4}e^{-in\pi/2}\varphi_n(x).
+  \end{align*}
+  Equating this result with the previous one:
+  \begin{align*}
+    e^{-i\pi/4}e^{-in\pi/2}\varphi_n(x)&=e^{-i\pi/4}\sqrt{m\omega}\tilde{\psi}(m\omega x)\\
+    \varphi_n(x)&=i^n\sqrt{m\omega}\tilde{\varphi}_n(m\omega x).
+  \end{align*}
+  \item 
+  \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+    \item This corresponds to a plane wave. For $t_1=\pi/2\omega$ we have its Fourier transform, which is a delta function shifted proportional to $t_1$. Then, 
+    we recover the plane wave with an additinoal exponential term, and so on.
+    \item Im not sure about this one, I know its Fourier transform but its difficult to describe it. It has a singularity proportional to $\rho$.
+    \item This is a rect function, so at $t_1$ we obtain a sinc function and so on.
+    \item This is a Gaussian function, so its Fourier transform remains Gaussian.
+  \end{enumerate}
 \end{enumerate}
 
 
@@ -167,7 +238,7 @@
     \alpha(t)=\frac{ip_0\sigma}{\sqrt{2}\hbar}e^{-i\omega t}.
   \end{align*}
   This is because the state vector remains a coherent state over time, and under that condition the eigenequation of $a$ gives you $\alpha_0$ when acting on such a vector.
-  \item sgag
+  \item We use the expresion of $a$ in terms of $X$ and $P$:
   \begin{align*}
     [a,X]=\left[\frac{1}{\sqrt{2}}\left\{\frac{X}{\sigma}+i\frac{\sigma}{\hbar}P\right\},X\right]=i\frac{\sigma}{\sqrt{2}\hbar}[P,X]=i\frac{\sigma}{\sqrt{2}\hbar}(-i\hbar)=\frac{\sigma}{\sqrt{2}}.
   \end{align*}
@@ -202,8 +273,8 @@
     \cos\omega t_1&=-\frac{1}{2}\\
     t_1&\in\left\{\frac{2\pi}{3\omega},\frac{4\pi}{3\omega}\right\}.
   \end{align*}
-  \item Each tiem evolution given by $t_1=2\pi/3\omega$ rotates a third of the full cycle, so with three we complete a full period. We know that a kick adds $\alpha$, while a time evolution 
-  rotates along the phase-space. The sequence is therefeore:
+  \item Each time evolution given by $t_1=2\pi/3\omega$ rotates a third of the full cycle, so with three we complete a full period. We know that a kick adds $\alpha$, while a time evolution 
+  rotates along the phase-space. The sequence is
   \begin{align*}
     Q=T(p_0)U(t_1)T(p_0)U(t_1)T(p_0).
   \end{align*}
