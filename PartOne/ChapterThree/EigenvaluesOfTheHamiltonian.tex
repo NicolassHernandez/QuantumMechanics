@@ -49,15 +49,15 @@ We see that we canot put $\hat{H}$ in a product of linear terms, due to the non-
 
 We introduce another operator:
 \begin{align}
-    \text{Operator $N$}\qquad\highlight{N=a^\dagger a}.
+    \text{Number operator}\qquad\highlight{N=a^\dagger a}.
 \end{align}
 This operator is Hermitian 
-\begin{align}
+\begin{align*}
     N^\dagger=a^\dagger(a^\dagger)^\dagger=a^\dagger a=N.
-\end{align}
+\end{align*}
 And its relation with $\hat{H}$ is 
 \begin{align}
-    \hat{H}=N+\frac{1}{2}
+    \hat{H}=N+\frac{1}{2},
 \end{align}
 so that the eigenvectors of $\hat{H}$ are eigenvectors of $N$, and viceversa. The commutators with $a$ and $a^\dagger$ are:
 \begin{align}
@@ -156,15 +156,15 @@ must all satisfy the equation
 To find the degeneracy of the $E_0$ level, all we must do is see how many li kets satisfy the above.
 We can write the above equation using the definition of $\hat{X},\hat{P}$ and $a$ in terms of them, in the form 
 \begin{align*}
-    \frac{1}{\sqrt{2}}\left[\sqrt{\frac{m\omega}{\hbar}}X+\frac{i}{\sqrt{m\hbar\omega}}P\right]\ket{\varphi_0^i}=0.
+    \frac{1}{\sqrt{2}}\left[\frac{X}{\sigma}+\frac{i\sigma}{\hbar}P\right]\ket{\varphi_0^i}=0.
 \end{align*}
 In the $\{\ket{x}\}$ representation, this relation becomes
 \begin{align*}
-    \left(\frac{m\omega}{\hbar}x+\frac{d}{dx}\right)\varphi_0^i(x)=0,\quad\text{where}\quad\varphi_0^i(x)=\braket{x|\varphi_0^i}.
+    \left(\frac{1}{\sigma^2}x+\frac{d}{dx}\right)\varphi_0^i(x)=0,\quad\text{where}\quad\varphi_0^i(x)=\braket{x|\varphi_0^i}.
 \end{align*}
 Therefore we msut solve a first-order differential equation, which solution is 
 \begin{align}
-    \varphi_0^i(x)=ce^{-\frac{1}{2}\frac{m\omega}{\hbar}x^2}
+    \text{Ground state}\qquad\varphi_0^i(x)=ce^{-\frac{x^2}{2\sigma^2}}\stackrel{\text{normalization}}{\longrightarrow}\varphi_0^i(x)=\left(\frac{1}{\pi\sigma^2}\right)^{1/4}e^{-\frac{x^2}{2\sigma^2}}.
 \end{align}
 The various solutions of the ODE are all proportional to each other. Consequently, there exists only one ket $\ket{\varphi_0}$ that satisfies 
 the initial equation: the ground sate $E_0=\hbar\omega/2$ is not degenerate.

@@ -59,20 +59,20 @@ The action of $a$ and $a^\dagger$ on the vectors of the $\{\ket{\varphi_n}\}$ ba
 Note that $a$ decreases or increases $n$ by one unit depending on wheter it acts on the $\ket{\varphi_n}$ or on the bra $\bra{\varphi_n}$, similarly for $a^\dagger$.
 The expressions for $X$ and $P$ are then:
 \begin{align}
-    X\ket{\varphi_n}=\sqrt{\frac{\hbar}{m\omega}}\frac{1}{\sqrt{2}}(a^\dagger+a)\ket{\varphi_n}=\sqrt{\frac{\hbar}{2m\omega}}[\sqrt{n+1}\ket{\varphi_{n+1}}+\sqrt{n}\ket{\varphi_{n-1}}]\\
-    P\ket{\varphi_n}=\sqrt{m\hbar\omega}\frac{i}{\sqrt{2}}(a^\dagger-a)\ket{\varphi_n}=i\sqrt{\frac{m\hbar\omega}{2}}[\sqrt{n+1}\ket{\varphi_{n+1}}-\sqrt{n}\ket{\varphi_{n-1}}]
+    X\ket{\varphi_n}=\frac{\sigma}{\sqrt{2}}(a^\dagger+a)\ket{\varphi_n}=\frac{\sigma}{\sqrt{2}}[\sqrt{n+1}\ket{\varphi_{n+1}}+\sqrt{n}\ket{\varphi_{n-1}}]\\
+    P\ket{\varphi_n}=\frac{i\hbar}{\sqrt{2}\sigma}(a^\dagger-a)\ket{\varphi_n}=\frac{i\hbar}{\sqrt{2}\sigma}[\sqrt{n+1}\ket{\varphi_{n+1}}-\sqrt{n}\ket{\varphi_{n-1}}]
     \label{eq:XPintermsofaa}
 \end{align}
 The matrix elements of $a,a^\dagger,X,P$ in the $\{\ket{\varphi_n}\}$ representation are therefore
 \begin{align}
     \braket{\varphi_{n'}|a|\varphi_n}=\sqrt{n}\delta_{n',n-1}\\
     \braket{\varphi_{n'}|a^\dagger|\varphi_n}=\sqrt{n+1}\delta_{n',n+1}\\
-    \braket{\varphi_{n'}|X|\varphi_n}=\sqrt{\frac{\hbar}{2m\omega}}[\sqrt{n+1}\delta_{n',n+1}+\sqrt{n}\delta_{n',n-1}]\\
-    \braket{\varphi_{n'}|P|\varphi_n}=i\sqrt{\frac{m\hbar\omega}{2}}[\sqrt{n+1}\delta_{n',n+1}-\sqrt{n}\delta_{n',n-1}]
+    \braket{\varphi_{n'}|X|\varphi_n}=\frac{\sigma}{\sqrt{2}}[\sqrt{n+1}\delta_{n',n+1}+\sqrt{n}\delta_{n',n-1}]\\
+    \braket{\varphi_{n'}|P|\varphi_n}=\frac{i\hbar}{\sqrt{2}\sigma}[\sqrt{n+1}\delta_{n',n+1}-\sqrt{n}\delta_{n',n-1}]
 \end{align}
 The matrices representing $a$ and $a^\dagger$ are Hermitian conjugates of each other, while matrices representing $X$ and $P$ are both Hermitian.
 %
-\subsubsection{Eigenstates of $a$}
+\subsubsection{Eigenstates of $a$ (cris, coherent states)}
 Does $a$ have eigenstates? that is, can we express any vector as 
 \begin{align*}
     \ket{\alpha}=\sum_{n=0}^\infty c_n\ket{n}?
@@ -109,7 +109,7 @@ Therefore, we finally get:
 \subsection{Wave functions associated with the stationary states}
 We know that $\varphi_0(x)$ is the ground sate:
 \begin{align*}
-    \varphi_0(x)=\braket{x|\varphi_0}=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{1}{2}\frac{m\omega}{\hbar}x^2}.
+    \varphi_0(x)=\braket{x|\varphi_0}=\left(\frac{1}{\pi\sigma^2}\right)^{1/4}e^{-\frac{1}{2}\frac{m\omega}{\hbar}x^2}.
 \end{align*}
 To obtain the functions $\varphi_n(x)$, all we need to do is use expression \eqref{eq:excitedstatesfromground} and the fact that in $\{\ket{x}\}$ $a^\dagger$ is represented by 
 \begin{align}
@@ -117,7 +117,7 @@ To obtain the functions $\varphi_n(x)$, all we need to do is use expression \eqr
 \end{align}
 since $X$ is represented by multiplication by $x$, and $P$ by $-i\hbar\partial_x$. We thus obtain
 \begin{align}
-    \varphi_n(x)=\braket{x|\varphi_n(x)}=\frac{1}{\sqrt{n!}}\braket{x|(a^\dagger)^n|\varphi_0}=\frac{1}{\sqrt{n!}}\frac{1}{\sqrt{2^n}}\left[\sqrt{\frac{m\omega}{\hbar}}x-\sqrt{\frac{\hbar}{m\omega}}\frac{d}{dx}\right]^n\varphi_0(x).
+    \varphi_n(x)=\braket{x|\varphi_n}=\frac{1}{\sqrt{n!}}\braket{x|(a^\dagger)^n|\varphi_0}=\frac{1}{\sqrt{n!}}\frac{1}{\sqrt{2^n}}\left[\sqrt{\frac{m\omega}{\hbar}}x-\sqrt{\frac{\hbar}{m\omega}}\frac{d}{dx}\right]^n\varphi_0(x).
 \end{align}
 That is, 
 \begin{align}

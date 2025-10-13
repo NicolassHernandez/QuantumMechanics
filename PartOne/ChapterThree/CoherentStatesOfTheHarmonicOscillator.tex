@@ -203,6 +203,7 @@ Comparing with \eqref{eq:alphaket} we have
     \ket{\alpha}=D(\alpha)\ket{\varphi_0}.
 \end{align}
 $D(\alpha)$ is therefore the unitary transformation which transforms the ground state $\ket{\varphi_0}$ into the quasi-classical state $\ket{\alpha}$.
+This was that cris derived but for only a position displacement.
 \begin{example}{Translation with D}
     Let be 
     \begin{align*}
@@ -234,7 +235,7 @@ We see that \textbf{they are not orthogonal}, unless $\alpha=\alpha'$.
 
 However, \textbf{they do satisfy the closure relation}:
 \begin{align*}
-    \frac{1}{\pi}\iint\ket{\alpha}\bra{\alpha}\;d\{\re{\alpha}\}d\{\im{\alpha}\}=\cdots=\sum_n\ket{\varphi_n}\bra{\ket_n}=1.
+    \frac{1}{\pi}\iint\ket{\alpha}\bra{\alpha}\;d\{\re{\alpha}\}d\{\im{\alpha}\}=\cdots=\sum_n\ket{\varphi_n}\bra{\varphi_n}=1.
 \end{align*}
 
 %%
@@ -279,7 +280,7 @@ The uncertainty relation holds:
 \end{align*}
 Using the above mean values, we express $\alpha(t)$ as:
 \begin{align}
-    \alpha(t)=\frac{1}{\sqrt{2}}\left[\frac{\braket{X}(t)}{\sigma}+i\frac{\sigma\braket{P}(t)}{\hbar}\right].
+    \highlight{\alpha(t)=\frac{1}{\sqrt{2}}\left[\frac{\braket{X}(t)}{\sigma}+i\frac{\sigma\braket{P}(t)}{\hbar}\right]}.
 \end{align}
 %
 \subsubsection{Motion of the wave packet}

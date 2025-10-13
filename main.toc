@@ -130,48 +130,48 @@
 \contentsline {subsection}{\numberline {3.2.2}Determination of the spectrum}{68}{subsection.3.2.2}%
 \contentsline {subsubsection}{Lemmas}{68}{subsection.3.2.2}%
 \contentsline {subsubsection}{The spectrum of $N$ is composed of non-negative integers}{68}{Item.8}%
-\contentsline {subsubsection}{Interpretation of the $a$ and $a^\dagger $ operators}{69}{equation.3.2.16}%
+\contentsline {subsubsection}{Interpretation of the $a$ and $a^\dagger $ operators}{69}{equation.3.2.15}%
 \contentsline {subsection}{\numberline {3.2.3}Degeneracy of the eigenvalues}{69}{subsection.3.2.3}%
 \contentsline {subsubsection}{The grounds state is non-degenerate}{69}{subsection.3.2.3}%
-\contentsline {subsubsection}{All the states are non-degenerate}{69}{equation.3.2.17}%
+\contentsline {subsubsection}{All the states are non-degenerate}{69}{equation.3.2.16}%
 \contentsline {section}{\numberline {3.3}Eigenstates of the Hamiltonian}{70}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}The $\{\varphi _n\}$ representation}{70}{subsection.3.3.1}%
 \contentsline {subsubsection}{The basis vectors in terms of $|\psi _0\rangle $}{70}{subsection.3.3.1}%
-\contentsline {subsubsection}{Orthonormalization and closure relations}{70}{equation.3.3.19}%
-\contentsline {subsubsection}{Action of the various operators}{71}{equation.3.3.19}%
-\contentsline {subsubsection}{Eigenstates of $a$}{71}{equation.3.3.26}%
+\contentsline {subsubsection}{Orthonormalization and closure relations}{70}{equation.3.3.18}%
+\contentsline {subsubsection}{Action of the various operators}{71}{equation.3.3.18}%
+\contentsline {subsubsection}{Eigenstates of $a$ (cris, coherent states)}{71}{equation.3.3.25}%
 \contentsline {subsection}{\numberline {3.3.2}Wave functions associated with the stationary states}{72}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}Discussion}{73}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Mean values and rms eviations of $X$ and $P$ in a state $|\varphi _n\rangle $}{73}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Properties of the ground state}{74}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Time evolution of the mean values}{74}{subsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.4.3}Time evolution of the mean values (57 anderson), verify - in solutions p}{74}{subsection.3.4.3}%
 \contentsline {section}{\numberline {3.5}Stationary states in the $\{|x\rangle \}$ representation}{75}{section.3.5}%
 \contentsline {subsection}{\numberline {3.5.1}Hermite polynomials}{75}{subsection.3.5.1}%
 \contentsline {subsubsection}{Definition}{75}{subsection.3.5.1}%
 \contentsline {subsubsection}{Generating function}{75}{figure.caption.18}%
-\contentsline {subsubsection}{Recurrence relations; differential equation}{76}{equation.3.5.40}%
+\contentsline {subsubsection}{Recurrence relations; differential equation}{76}{equation.3.5.39}%
 \contentsline {subsection}{\numberline {3.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{76}{subsection.3.5.2}%
 \contentsline {subsubsection}{Generating function}{76}{subsection.3.5.2}%
 \contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{76}{subsection.3.5.2}%
-\contentsline {subsubsection}{Recurrence relations}{77}{equation.3.5.44}%
+\contentsline {subsubsection}{Recurrence relations}{77}{equation.3.5.43}%
 \contentsline {section}{\numberline {3.6}The isotropic three-dimensional harmonic oscillator}{77}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Separation of variables in cartesian coordinates}{78}{subsection.3.6.1}%
 \contentsline {subsection}{\numberline {3.6.2}Degeneracy of the energy levels}{79}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}Coherent states of the harmonic oscillator}{80}{section.3.7}%
 \contentsline {subsection}{\numberline {3.7.1}Quasi-classical states}{80}{subsection.3.7.1}%
 \contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{80}{subsection.3.7.1}%
-\contentsline {subsubsection}{Conditions defining quasi-classical states}{81}{equation.3.7.68}%
-\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{82}{equation.3.7.73}%
+\contentsline {subsubsection}{Conditions defining quasi-classical states}{81}{equation.3.7.67}%
+\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{82}{equation.3.7.72}%
 \contentsline {subsection}{\numberline {3.7.2}Properties of the $|\alpha \rangle $ states}{82}{subsection.3.7.2}%
 \contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{82}{subsection.3.7.2}%
-\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{83}{equation.3.7.78}%
-\contentsline {subsubsection}{Calculation of mean values and uncertainties}{83}{equation.3.7.79}%
-\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{84}{equation.3.7.82}%
+\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{83}{equation.3.7.77}%
+\contentsline {subsubsection}{Calculation of mean values and uncertainties}{83}{equation.3.7.78}%
+\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{84}{equation.3.7.81}%
 \contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{85}{example.3.2}%
 \contentsline {subsection}{\numberline {3.7.3}Time evolution of a quasi-classical state}{85}{subsection.3.7.3}%
 \contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{85}{subsection.3.7.3}%
-\contentsline {subsubsection}{Evolution of physical properties}{85}{equation.3.7.86}%
-\contentsline {subsubsection}{Motion of the wave packet}{86}{equation.3.7.89}%
-\contentsline {subsection}{\numberline {3.7.4}Useful formulas}{87}{subsection.3.7.4}%
-\contentsline {subsection}{\numberline {3.7.5}Basis}{87}{subsection.3.7.5}%
+\contentsline {subsubsection}{Evolution of physical properties}{85}{equation.3.7.85}%
+\contentsline {subsubsection}{Motion of the wave packet}{86}{equation.3.7.88}%
+\contentsline {subsection}{\numberline {3.7.4}Useful formulas}{88}{subsection.3.7.4}%
+\contentsline {subsection}{\numberline {3.7.5}Basis}{88}{subsection.3.7.5}%
 \contentsfinish 
