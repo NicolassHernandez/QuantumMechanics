@@ -83,8 +83,28 @@
 %%
 \section*{Problem I}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item sagasg
-  \item asgasg
+  \item The evolution operator would be of the form 
+  \begin{align*}
+    \hat{\mathbb{U}}_E(t)=e^{-i\hat{H}_1t/\hbar}=e^{-i\Omega(\hat{N}^2-1/2)t}.
+  \end{align*}
+  The checking is as follows:
+  \begin{align*}
+    \hat{\mathbb{U}}_E(\frac{2\pi}{\Omega})\ket{\varphi_n}&=e^{-i\Omega(n^2-1/2)\frac{2\pi}{\Omega}}\ket{\varphi_n}\\
+    &=e^{-i2\pi(n^2-1/2)}\ket{\varphi_n}\\
+    &=(e^{-2\pi})^{n^2}e^{i\pi}\ket{\varphi_n}\\
+    \hat{\mathbb{U}}_E(\frac{2\pi}{\Omega})\ket{\varphi_n}&=-\ket{\varphi_n}.
+  \end{align*}
+  \item For $\tau=\pi/2\Omega$, the evolution is 
+  \begin{align*}
+    \hat{\mathbb{U}}_E(\tau)\ket{\varphi_n}&=e^{-i\Omega(n^2-1/2)\frac{\pi}{2\Omega}}\ket{\varphi_n}\\
+    &=e^{-i\frac{\pi}{2}n^2}e^{i\frac{\pi}{4}}\ket{\varphi_n}\\
+    &=(e^{-i\frac{\pi}{2}})^{n^2}e^{i\frac{\pi}{4}}\ket{\varphi_n}\\
+    &=(-i)^{n^2}e^{i\frac{\pi}{4}}\ket{\varphi_n}\\
+   \hat{\mathbb{U}}_E(\tau)\ket{\varphi_n}&=\begin{cases}
+      e^{i\frac{\pi}{4}}=\frac{1}{\sqrt{2}}+\frac{i}{\sqrt{2}},&\text{$n$ even}\\
+      e^{-i\frac{\pi}{4}}=\frac{1}{\sqrt{2}}-\frac{i}{\sqrt{2}},&\text{$n$ odd}
+    \end{cases}\ket{\varphi_n}.
+  \end{align*}
   \item We use the fact that in a coherent state, we can express it in terms of the energy eigenstates.
   \begin{align*}
     \ket{\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{\alpha_0^n}{\sqrt{n!}}\ket{n}.
@@ -122,7 +142,15 @@
   \begin{align*}
     \ket{\pm\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{(\pm\alpha_0)^n}{\sqrt{n!}}\ket{n}.
   \end{align*}
-  \item gasgas
+  \item The transfrmation from the Interaction picture to the Schrodinger picture is 
+  \begin{align*}
+    \ket{\psi(\tau)}&=\hat{\mathbb{U}}_0(\tau)\ket{\psi_E(\tau)},\qquad\hat{\mathbb{U}}_0(\tau)=e^{-iH_0\tau/\hbar}\\
+    &=e^{-i\omega\tau(\hat{N}+1/2)}\ket{\psi_E(\tau)}\\
+    &=\frac{1}{\sqrt{2}}e^{-i\omega\tau(\hat{N}+1/2)}[\alpha_0+i\ket{-\alpha_0}]\\
+    &=\frac{1}{\sqrt{2}}e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{1}{\sqrt{n!}}\left[\alpha_0^ne^{-i\omega\tau(n+1/2)}+i(-\alpha_0)^ne^{-i\omega\tau(n+1/2)}\right]\ket{n}\\
+    &=\frac{1}{\sqrt{2}}e^{-i\frac{\omega}{2}\tau}e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{1}{\sqrt{n!}}\left[\left(\alpha_0e^{-i\omega\tau}\right)^n\ket{n}+i\left(-\alpha_0e^{-i\omega\tau}\right)\ket{n}\right]\\
+    \ket{\psi(\tau)}&=\frac{1}{\sqrt{2}}e^{-i\frac{\omega}{2}\tau}\left[\ket{\alpha_0e^{-i\omega\tau}}+i\ket{-\alpha_0e^{-i\omega\tau}}\right].
+  \end{align*}
   \item asgagasga
 \end{enumerate}
 %%
