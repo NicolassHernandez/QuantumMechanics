@@ -85,7 +85,43 @@
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
   \item sagasg
   \item asgasg
-  \item asgag
+  \item We use the fact that in a coherent state, we can express it in terms of the energy eigenstates.
+  \begin{align*}
+    \ket{\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{\alpha_0^n}{\sqrt{n!}}\ket{n}.
+  \end{align*}
+  We have found that 
+  \begin{align*}
+    \hat{\mathbb{U}}_E(\tau)=\begin{cases}
+      e^{i\frac{\pi}{4}}=\frac{1}{\sqrt{2}}+\frac{i}{\sqrt{2}},&\text{$n$ even}\\
+      e^{-i\frac{\pi}{4}}=\frac{1}{\sqrt{2}}-\frac{i}{\sqrt{2}},&\text{$n$ odd}
+    \end{cases}.
+  \end{align*}
+  We then, must split the $\ket{\alpha_0}$ accordingly, in even and odd term so that the application of the evolution operator gives
+  \begin{align*}
+    \ket{\psi_E(\tau)}=e^{-\frac{|\alpha_0|^2}{2}}\left[e^{i\frac{\pi}{4}}S_{\text{even}}+e^{-i\frac{\pi}{4}}S_{\text{odd}}\right],
+  \end{align*}
+  where 
+  \begin{align}
+    S_{\text{even}}=\sum_{\text{$n$ even}}^\infty\frac{\alpha_0^n}{\sqrt{n!}}\ket{n},\quad\text{and}\quad S_{\text{odd}}=\sum_{\text{$n$ odd}}^\infty\frac{\alpha_0^n}{\sqrt{n!}}\ket{n}.
+  \end{align}
+  We then have that 
+  \begin{align*}
+    \left.\begin{array}{l}
+      \ket{\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}(S_{\text{even}}+S_{\text{odd}})\\
+      \ket{-\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}(S_{\text{even}}-S_{\text{odd}})      
+    \end{array}\right\}\longrightarrow\begin{array}{l}
+      S_{\text{even}}=\frac{1}{2}e^{\frac{|\alpha_0|^2}{2}}(\ket{\alpha_0}+\ket{-\alpha_0})\\
+      S_{\text{odd}}=\frac{1}{2}e^{\frac{|\alpha_0|^2}{2}}(\ket{\alpha_0}-\ket{-\alpha_0})
+    \end{array}.
+  \end{align*}
+  Substituting those in the evolution equation and rearranging:
+  \begin{align*}
+    \ket{\psi_E(\tau)}=\frac{1}{2}\left[(e^{i\frac{\pi}{4}}+e^{-i\frac{\pi}{4}})\ket{\alpha_0}+(e^{i\frac{\pi}{4}}-e^{-i\frac{\pi}{4}})\ket{-\alpha_0}\right]=\frac{1}{\sqrt{2}}[\alpha_0+i\ket{-\alpha_0}],
+  \end{align*}
+  where 
+  \begin{align*}
+    \ket{\pm\alpha_0}=e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{(\pm\alpha_0)^n}{\sqrt{n!}}\ket{n}.
+  \end{align*}
   \item gasgas
   \item asgagasga
 \end{enumerate}
