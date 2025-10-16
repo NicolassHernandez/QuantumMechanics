@@ -136,7 +136,7 @@
   \end{align*}
   Substituting those in the evolution equation and rearranging:
   \begin{align*}
-    \ket{\psi_E(\tau)}=\frac{1}{2}\left[(e^{i\frac{\pi}{4}}+e^{-i\frac{\pi}{4}})\ket{\alpha_0}+(e^{i\frac{\pi}{4}}-e^{-i\frac{\pi}{4}})\ket{-\alpha_0}\right]=\frac{1}{\sqrt{2}}[\alpha_0+i\ket{-\alpha_0}],
+    \ket{\psi_E(\tau)}=\frac{1}{2}\left[(e^{i\frac{\pi}{4}}+e^{-i\frac{\pi}{4}})\ket{\alpha_0}+(e^{i\frac{\pi}{4}}-e^{-i\frac{\pi}{4}})\ket{-\alpha_0}\right]=\frac{1}{\sqrt{2}}[\ket{\alpha_0}+i\ket{-\alpha_0}],
   \end{align*}
   where 
   \begin{align*}
@@ -146,22 +146,94 @@
   \begin{align*}
     \ket{\psi(\tau)}&=\hat{\mathbb{U}}_0(\tau)\ket{\psi_E(\tau)},\qquad\hat{\mathbb{U}}_0(\tau)=e^{-iH_0\tau/\hbar}\\
     &=e^{-i\omega\tau(\hat{N}+1/2)}\ket{\psi_E(\tau)}\\
-    &=\frac{1}{\sqrt{2}}e^{-i\omega\tau(\hat{N}+1/2)}[\alpha_0+i\ket{-\alpha_0}]\\
+    &=\frac{1}{\sqrt{2}}e^{-i\omega\tau(\hat{N}+1/2)}[\alpha_0+i\ket{-\alpha_0}]\ket{n}\\
     &=\frac{1}{\sqrt{2}}e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{1}{\sqrt{n!}}\left[\alpha_0^ne^{-i\omega\tau(n+1/2)}+i(-\alpha_0)^ne^{-i\omega\tau(n+1/2)}\right]\ket{n}\\
     &=\frac{1}{\sqrt{2}}e^{-i\frac{\omega}{2}\tau}e^{-\frac{|\alpha_0|^2}{2}}\sum_{n=0}^\infty\frac{1}{\sqrt{n!}}\left[\left(\alpha_0e^{-i\omega\tau}\right)^n\ket{n}+i\left(-\alpha_0e^{-i\omega\tau}\right)\ket{n}\right]\\
     \ket{\psi(\tau)}&=\frac{1}{\sqrt{2}}e^{-i\frac{\omega}{2}\tau}\left[\ket{\alpha_0e^{-i\omega\tau}}+i\ket{-\alpha_0e^{-i\omega\tau}}\right].
   \end{align*}
-  \item asgagasga
+  \item Evaluating with $\tau=\pi/2\omega$,
+  \begin{align*}
+    \ket{\psi(\frac{\pi}{2\omega})}&=\frac{1}{\sqrt{2}}e^{-i\frac{\omega}{2}\frac{\pi}{2\omega}}\left[\ket{\alpha_0e^{-i\omega\frac{\pi}{2\omega}}}+i\ket{-\alpha_0e^{-i\omega\frac{\pi}{2\omega}}}\right]\\
+    &=\frac{1}{\sqrt{2}}e^{-i\frac{\pi}{4}}\left[\ket{\alpha_0e^{-i\frac{\pi}{2}}}+i\ket{-\alpha_0e^{-i\frac{\pi}{2}}}\right]\\
+    \ket{\psi(\frac{\pi}{2\omega})}&=\frac{1}{\sqrt{2}}e^{-i\frac{\pi}{4}}\left[\ket{-i\alpha_0}+i\ket{i\alpha_0}\right].
+  \end{align*}
+  In addition, at $t=0$ we have 
+  \begin{align*}
+    \ket{\psi_E(0)}=\ket{\alpha_0}.
+  \end{align*}
+  Then,
+  \begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+      \draw[arrow](-2,0)--(2,0)node[below]{$\text{Re}({\alpha})$};
+      \draw[arrow](0,-2)--(0,2)node[right]{$\text{Im}({\alpha})$};
+      \draw[NavyBlue,very thick,-*](0,0)--(1,0)node[above]{$\ket{\alpha_0}$};
+      \draw[OliveGreen,very thick,-*](0,0)--(0,1)node[right]{$\ket{i\alpha_0}$};
+      \draw[OliveGreen,very thick,-*](0,0)--(0,-1)node[right]{$\ket{-i\alpha_0}$};
+    \end{circuitikz}
+  \end{figure}
 \end{enumerate}
 %%
 \section*{Problem II}
-
+The Hamiltonian in the whole range is:
+\begin{align*}
+  \hat{H}=\hat{H_0}+\hat{W}=\begin{cases}
+    \frac{\hat{P}^2}{2m},&t<0\\\\
+    \frac{\hat{P}^2}{2m}+\frac{1}{2}m\omega^2\hat{X}^2,&0\leq t<\tau\\\\
+    \frac{\hat{P}^2}{2m},&t\geq0
+  \end{cases},\qquad\hat{W}=\frac{1}{2}m\omega^2\hat{X}^2.
+\end{align*}
+The evolution operator is $U_0(t)=e^{-iH_0t/\hbar}=e^{-i\hat{P}^2t/2m\hbar}$.
+The effective Hamiltonian in terms of the Schrodinger picture position and momentum operators is:
+\begin{align*}
+  H_E&=U^\dagger_0(t,0)H_1U_0(t,0)=e^{i\frac{\hat{P}^2t}{2m\hbar}}\left[\frac{1}{2}m\omega^2\hat{X}^2\right]e^{-i\hat{P}^2t/2m\hbar}=\frac{1}{2}m\omega^2e^{i\hat{P}^2t/2m\hbar}\hat{X}^2e^{-i\hat{P}^2t/2m\hbar}\\
+  &\stackrel{(a)}{=}\frac{1}{2}m\omega^2\left[e^{i\hat{P}^2t/2m\hbar}\hat{X}e^{-i\hat{P}^2t/2m\hbar}\right]^2.
+\end{align*}
+In $(a)$, we used the property. We can see the term iinside the brackets as the product $ABC$ of operators, where we would like to switch the position of $\hat{X}$ with the right exponential, that why we use 
+\begin{align*}
+  ABC=A[B,C]+ACB.
+\end{align*}
+The commutator $[B,C]$ is
+\begin{align*}
+  [B,C]=[\hat{X},e^{-i\frac{\hat{P}^2t}{2m\hbar}}]=i\hbar\partial_{\hat{P}}e^{-i\frac{\hat{P}^2t}{2m\hbar}}=i\hbar\frac{-i2\hat{P}t}{2m\hbar}e^{-i\frac{\hat{P}^2t}{2m\hbar}}=\frac{\hat{P}t}{m}e^{-i\frac{\hat{P}^2t}{2m\hbar}}.
+\end{align*}
+Then, substituting this commutator in the above relation
+\begin{align*}
+  e^{i\frac{\hat{P}^2t}{2m\hbar}}\hat{X}e^{-i\frac{\hat{P}^2t}{2m\hbar}}=e^{i\frac{\hat{P}^2t}{2m\hbar}}\frac{\hat{P}t}{m}e^{-i\frac{\hat{P}^2t}{2m\hbar}}+e^{i\frac{\hat{P}^2t}{2m\hbar}}e^{-i\frac{\hat{P}^2t}{2m\hbar}}\hat{X}=\hat{X}+\frac{\hat{P}t}{m}.
+\end{align*}
+Finally,
+\begin{align*}
+  H_E=\frac{1}{2}m\omega^2\left[\hat{X}+\frac{\hat{P}t}{m}\right]^2.
+\end{align*}
 %%
 \section*{Problem III}
+The Hamiltonian is 
+\begin{align*}
+  H=\begin{cases}
+    H_0,&t<0\\
+    H_0+W(t),&0\leq t<\tau=\frac{4\pi}{\omega}\\
+    H_0,&t>\tau
+  \end{cases}.
+\end{align*}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item sagasg
-  \item asgasg
-  \item asgag
+  \item sa
+  \begin{align*}
+    \ket{\psi_I(t)}=U_0^\dagger(\tau,0)\ket{\psi_S(t)}=e^{-i4\pi(\hat{N}+1/2)}\ket{\psi_S(t)}=e^{-i4\pi n}e^{-i2\pi}\ket{\psi_S(t)}=\ket{\psi_S(t)}.
+  \end{align*}
+  \item The effective Hamiltonian is:
+  \begin{align*}
+    H_E&=U_0^\dagger W(t)U_0\\
+    &=\frac{i\hbar\Omega}{2}\left[e^{i\omega(\hat{N}+1/2)t}(\hat{a}^2e^{i2\omega t}-(\hat{a}^\dagger)^2e^{-i2\omega t})e^{-i\omega(\hat{N}+1/2)t}\right]\\
+    &=\frac{i\hbar\Omega}{2}\left\{e^{i2\omega t}[e^{i\omega(\hat{N}+1/2)t}\hat{a}e^{-i\omega(\hat{N}+1/2)t}]^2-e^{-i2\omega t}[e^{i\omega(\hat{N}+1/2)t}\hat{a}^\dagger e^{-i\omega(\hat{N}+1/2)t}]^2\right\}\\
+    H_E&=\frac{i\hbar\Omega}{2}\left\{\hat{a}^2-(\hat{a}^\dagger)^2\right\}.
+  \end{align*}
+  \item We use the expression of the $\hat{a}$ operators in terms of $\hat{X}$ and $\hat{P}$:
+  \begin{align*}
+    \hat{H}_E&=\frac{i\hbar\Omega}{2}\left\{\frac{1}{2}\left(\frac{\hat{X}}{\sigma}+i\frac{\hat{P}\sigma}{\hbar}\right)^2-\frac{1}{2}\left(\frac{\hat{X}}{\sigma}-i\frac{\hat{P}\sigma}{\hbar}\right)^2\right\}\\
+    &=\frac{i\hbar\Omega}{4}\left\{\frac{\hat{X}^2}{\sigma^2}+\frac{i}{\hbar}(\hat{X}\hat{P}+\hat{P}\hat{X})-\frac{\hat{P}^2\sigma^2}{\hbar^2}-\left[\frac{\hat{X}^2}{\sigma^2}-\frac{i}{\hbar}(\hat{X}\hat{P}+\hat{P}\hat{X})-\frac{\hat{P}^2\sigma^2}{\hbar^2}\right]\right\}\\
+    &=-\frac{\Omega}{2}(\hat{X}\hat{P}+\hat{P}\hat{X})\\
+    \hat{H}_E&=-\frac{\Omega}{2}\{\hat{X},\hat{P}\},\quad\{\cdot\}=\text{anti-commutator}.
+  \end{align*}
   \item gasgas
   \item asgagasga
   \item asgasg
@@ -199,8 +271,8 @@
   \end{align*}
   Similarly, for the Fourier transform we have:
   \begin{align*}
-    \braket{P}&=\int_{-\infty}^\infty p|\bar{\phi}(p)|^2\;dp=\frac{\pi\beta}{4\hbar}\int_{-\infty}^\infty p\;\text{sech}^2(\frac{\pi\beta p}{2\hbar})\;dp=0\\
-    \braket{P^2}&=\int_{-\infty}^\infty p^2|\bar{\phi}(p)|^2\;dp=\frac{\pi\beta}{4\hbar}\int_{-\infty}^\infty p^2\text{sech}^2(\frac{\pi\beta p}{2\hbar})\;dp=\frac{2\hbar^2}{\pi^2\beta^2}\int_{-\infty}^\infty u^2\text{sech}^2(u)\;du=\frac{\hbar^2}{\beta^23}.
+    \braket{P}&=\int_{-\infty}^\infty p|\hat{\phi}(p)|^2\;dp=\frac{\pi\beta}{4\hbar}\int_{-\infty}^\infty p\;\text{sech}^2(\frac{\pi\beta p}{2\hbar})\;dp=0\\
+    \braket{P^2}&=\int_{-\infty}^\infty p^2|\hat{\phi}(p)|^2\;dp=\frac{\pi\beta}{4\hbar}\int_{-\infty}^\infty p^2\text{sech}^2(\frac{\pi\beta p}{2\hbar})\;dp=\frac{2\hbar^2}{\pi^2\beta^2}\int_{-\infty}^\infty u^2\text{sech}^2(u)\;du=\frac{\hbar^2}{\beta^23}.
   \end{align*}
   Thus 
   \begin{align*}
@@ -216,11 +288,11 @@
   \end{align*}
   We can see that the function to be computed its Fourier transform is spatially shifted by $x_0$ so we could directly use the respective property of Fourier transform of a shifter function:
   \begin{align*}
-    \mathcal{F}\{\Phi(x,0)\}=\bar{\Phi}(p,0)\Longrightarrow \mathcal{F}\{\Phi(x-x_0,0)\}=e^{-ipx_0/\hbar}\bar{\Phi}(p,0).
+    \mathcal{F}\{\Phi(x,0)\}=\hat{\Phi}(p,0)\Longrightarrow \mathcal{F}\{\Phi(x-x_0,0)\}=e^{-ipx_0/\hbar}\hat{\Phi}(p,0).
   \end{align*}
   So,
   \begin{align*}
-    \Phi(x,\frac{\pi}{2\omega})=-e^{-i\pi/4}\sqrt{\frac{\hbar}{\sigma^2}}\left[e^{-ipx_0/\hbar}\bar{\Phi}(p,0)\right]\biggr|_{p=\hbar x/\sigma^2}=-\sqrt{\frac{\pi\beta}{4\sigma^2}}e^{-i\pi/4}e^{-i\frac{xx_0}{\sigma^2}}\;\text{sech}(\frac{\pi\beta x}{2\sigma^2}).
+    \Phi(x,\frac{\pi}{2\omega})=-e^{-i\pi/4}\sqrt{\frac{\hbar}{\sigma^2}}\left[e^{-ipx_0/\hbar}\hat{\Phi}(p,0)\right]\biggr|_{p=\hbar x/\sigma^2}=-\sqrt{\frac{\pi\beta}{4\sigma^2}}e^{-i\pi/4}e^{-i\frac{xx_0}{\sigma^2}}\;\text{sech}(\frac{\pi\beta x}{2\sigma^2}).
   \end{align*}
   \item To maintain the width $\Delta X=\frac{\pi\beta}{2\sqrt{3}}$, we compute $\Delta X$ for $\Phi(0,\pi/2\omega)$ and equate it to the uncertainty at $t=0$:
   \begin{align*}
@@ -238,8 +310,41 @@
 
 %%
 \section*{Problem V}
-
-
+  We handle the problem by approximating the potential given with its second-order Taylor expansion:
+    \begin{align*}
+    V(x)=-V_0-\frac{V_0}{2b^2}x^2+O(x^3)+\cdots=\frac{1}{2}m\omega^2x^2.
+  \end{align*}
+  The figure below represents the behavior of this approximation versus the real potential.
+  \begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+      \def\va{1}
+      \def\bb{1}
+      \draw[arrow](-2,0)--(2.5,0)node[below]{$x$};
+      \draw[arrow](0,-2)--(0,2)node[right]{$V(x)$};
+      \draw[very thick,NavyBlue,domain={-\bb}:{\bb},samples=500] plot(\x,{ -\va*sqrt( 1 - (\x/\bb)^2 ) });
+      \draw[very thick,NavyBlue](-2,0)--({-\bb},0)({\bb},0)--(2,0);
+      \draw[very thick,dashed,black,domain={-\bb-1}:{\bb+1},samples=500] plot(\x,{ -\va+(\va/(2*\bb^2))*\x*\x });
+      \draw(2,1.5)node[]{\small$V(x)\approx-V_0[1+\frac{x^2}{2b}]$}(-.1,{-\va})--(.1,{-\va})node[below right]{$-V_0$};
+    \end{circuitikz}
+  \end{figure}
+  
+  Comparing the quadratic term of the expansion with the QHO yields the following frequency:
+  \begin{align*}
+    \omega=\sqrt{\frac{V_0}{mb^2}}.
+  \end{align*}
+  The energy levels in the QHO is:
+  \begin{align*}
+    E_n=\hbar\omega\left(n+\frac{1}{2}\right),\quad n=0,1,2,\cdots.
+  \end{align*}
+  So, in this case they will be shifted
+  \begin{align*}
+    E'_n=-V_0+E_n=-V_0+\hbar\omega\left(n+\frac{1}{2}\right),\quad n=0,1,2,\cdots.
+  \end{align*}
+  The ground and first excited state energy eigenvalues are:
+  \begin{align*}
+    E_0=-V_0+\frac{1}{2}\hbar\omega,\quad E_1=-V_0+\frac{3}{2}\hbar\omega.
+  \end{align*}
 
 
 

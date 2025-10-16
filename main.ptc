@@ -111,10 +111,10 @@
 \contentsline {subsection}{\numberline {2.9.2}Schrodinger, Heisenberg, and interaction pictures}{56}{subsection.2.9.2}%
 \contentsline {subsection}{\numberline {2.9.3}Schrodinger picture}{56}{subsection.2.9.3}%
 \contentsline {subsection}{\numberline {2.9.4}Heisenberg picture}{57}{subsection.2.9.4}%
-\contentsline {subsection}{\numberline {2.9.5}Interaction picture}{57}{subsection.2.9.5}%
+\contentsline {subsection}{\numberline {2.9.5}Interaction picture}{58}{subsection.2.9.5}%
 \contentsline {section}{\numberline {2.10}The density operator}{58}{section.2.10}%
 \contentsline {subsection}{\numberline {2.10.1}Concept of a statistical mixture of states}{58}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}The pure case}{58}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.2}The pure case}{59}{subsection.2.10.2}%
 \contentsline {subsubsection}{Description by a state vector}{59}{subsection.2.10.2}%
 \contentsline {subsubsection}{Description by a density operator}{59}{subsection.2.10.2}%
 \contentsline {subsubsection}{Properties of the density operator in a pure case}{60}{equation.2.10.62}%
@@ -161,21 +161,21 @@
 \contentsline {subsubsection}{Recurrence relations}{77}{equation.3.5.43}%
 \contentsline {section}{\numberline {3.6}The isotropic three-dimensional harmonic oscillator}{77}{section.3.6}%
 \contentsline {subsection}{\numberline {3.6.1}Separation of variables in cartesian coordinates}{78}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Degeneracy of the energy levels}{79}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.2}Degeneracy of the energy levels}{80}{subsection.3.6.2}%
 \contentsline {section}{\numberline {3.7}Coherent states of the harmonic oscillator}{80}{section.3.7}%
-\contentsline {subsection}{\numberline {3.7.1}Quasi-classical states}{80}{subsection.3.7.1}%
-\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{80}{subsection.3.7.1}%
-\contentsline {subsubsection}{Conditions defining quasi-classical states}{81}{equation.3.7.67}%
+\contentsline {subsection}{\numberline {3.7.1}Quasi-classical states}{81}{subsection.3.7.1}%
+\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{81}{subsection.3.7.1}%
+\contentsline {subsubsection}{Conditions defining quasi-classical states}{82}{equation.3.7.67}%
 \contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{82}{equation.3.7.72}%
-\contentsline {subsection}{\numberline {3.7.2}Properties of the $|\alpha \rangle $ states}{82}{subsection.3.7.2}%
-\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{82}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.2}Properties of the $|\alpha \rangle $ states}{83}{subsection.3.7.2}%
+\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{83}{subsection.3.7.2}%
 \contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{83}{equation.3.7.77}%
-\contentsline {subsubsection}{Calculation of mean values and uncertainties}{83}{equation.3.7.78}%
+\contentsline {subsubsection}{Calculation of mean values and uncertainties}{84}{equation.3.7.78}%
 \contentsline {subsubsection}{The displacement operator $D(\alpha )$}{84}{equation.3.7.81}%
 \contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{85}{example.3.2}%
 \contentsline {subsection}{\numberline {3.7.3}Time evolution of a quasi-classical state}{85}{subsection.3.7.3}%
 \contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{85}{subsection.3.7.3}%
-\contentsline {subsubsection}{Evolution of physical properties}{85}{equation.3.7.85}%
+\contentsline {subsubsection}{Evolution of physical properties}{86}{equation.3.7.85}%
 \contentsline {subsubsection}{Motion of the wave packet}{86}{equation.3.7.88}%
 \contentsline {subsection}{\numberline {3.7.4}Useful formulas}{88}{subsection.3.7.4}%
 \contentsline {subsection}{\numberline {3.7.5}Basis}{88}{subsection.3.7.5}%

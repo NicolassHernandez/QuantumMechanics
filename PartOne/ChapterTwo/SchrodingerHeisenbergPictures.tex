@@ -48,12 +48,18 @@ Ehrenfest's equations are obtained by replacing $A_S(t)$ with the position and m
 %%
 \subsection{Heisenberg picture}
 This picture vanishes the time dependence of S picture state vector by applying the adjoint of the time evolution oeprator $U^\dagger(t,t_0)$, which defines a unitary transformation.
-
-An arbitrary operator $A_S(t)$ in the S picture is transformed to the H picture as 
+In addition, because expectation values of oeprators must be \textbf{conserved} regardless the interaction used, nn arbitrary operator $A_S(t)$ in the S picture is transformed to the H picture as 
 \begin{align*}
-    \text{$S\to H$ transformation operator}\qquad\highlight{A_H(t)=U^\dagger(t,t_0)A_S(t)U(t,t_0)}.
+    \text{Transformed state vector and operator}\qquad\highlight{
+    \begin{array}{l}
+    \ket{\psi_H}=U^\dagger(t,t_0)\ket{\psi_S(t)}=\ket{\psi_S(t_0)}\\
+    A_H(t)=U^\dagger(t,t_0)A_S(t)U(t,t_0)
+    \end{array}}.
 \end{align*}
-The time-dependent expectation value of $A_H(t)$ in the H picture is equivalent to that of $A_S(t)$, which must be the same in any picture.
+As,
+\begin{align*}
+    \braket{A}=\braket{\psi_S(t)|U(t,t_0)|\textcolor{BrickRed}{U^\dagger(t,0)AU(t,0)}U^\dagger(t,0)|\psi_S(t)}.
+\end{align*}
 The evolution of the operator $A_H(t)$ is then given by:
 \begin{align*}
     \frac{d}{dt}A_H(t)=&-\frac{1}{i\hbar}U^\dagger(t,t_0)H_S(t)A_S(t)U(t,t_0)+U^\dagger(t,t_0)\frac{dA_S(t)}{dt}U(t,t_0)+\frac{1}{i\hbar}U^\dagger(t,t_0)A_S(t)H_S(t)U(t,t_0)\\
@@ -108,3 +114,6 @@ The effective Schrodinger equation in the interaction picture is
     i\hbar\partial_t\ket{\psi_I(t)}=H_E(t)\ket{\psi_I(t)},\quad\text{where}\quad H_E(t)=U^\dagger_0(t,t_0)W(t)U(t,t_0)
 \end{align}
 is the effective Hamiltonian. If $W(t)=0$, then the interaction picture reduces to the H picture: $H_E(t)=0$ and $\ket{\psi_I(t)}=\ket{\psi_S(t_0)}$.
+\begin{emphasizer}[Meaning of the interaction picture]
+    In the I picture (E-picture), we are isolating the evolutino of $H_0$ while only allow evolve $H_1$.
+\end{emphasizer}
