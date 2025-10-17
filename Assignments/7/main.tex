@@ -234,16 +234,115 @@ The Hamiltonian is
     &=-\frac{\Omega}{2}(\hat{X}\hat{P}+\hat{P}\hat{X})\\
     \hat{H}_E&=-\frac{\Omega}{2}\{\hat{X},\hat{P}\},\quad\{\cdot\}=\text{anti-commutator}.
   \end{align*}
-  \item gasgas
-  \item asgagasga
+  \item We use the effective Hamiltonian of part b):
+  \begin{align*}
+    \hat{\mathbb{U}}_E(\tau)=e^{-\frac{i\tau}{\hbar}\frac{i\hbar\Omega}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)}=e^{\frac{\Omega\tau}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)}=e^{\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)}.
+  \end{align*}
+  \item In this case, we compare the definition the above operator with the new definition, and we look at the exponent of each function:
+  \begin{align*}
+    e^{-\hat{B}}=\hat{\mathbb{U}}_E(\tau)=e^{\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)}\Longrightarrow\hat{B}=-\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2).
+  \end{align*}
+  As a verification, the adjoint is:
+  \begin{align*}
+    \hat{B}^\dagger=-\frac{b}{2}((\hat{a}^\dagger)^2-\hat{a}^2)=\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)=-\hat{B}.
+  \end{align*}
+  So $\hat{B}$ is anti-Hermitian.
   \item asgasg
-  \item asgag
-  \item asgasg
-  \item asgasgasgasg
-  \item asgasgasgasg
-  \item asgag
-  \item asgasg
-  \item asfas
+  \begin{align*}
+    [\hat{B},\hat{a}]&=-\frac{b}{2}\{[\hat{a}^2,\hat{a}]-[(\hat{a}^\dagger)^2,\hat{a}]\}=\frac{b}{2}[(\hat{a}^\dagger)^2,\hat{a}]=\frac{b}{2}\{\hat{a}^\dagger[\hat{a}^\dagger,\hat{a}]+[\hat{a}^\dagger,\hat{a}]\hat{a}^\dagger\}=-b\hat{a}^\dagger\\
+    [\hat{B},\hat{a}^\dagger]&=-\frac{b}{2}\{[\hat{a}^2,\hat{a}^\dagger]-[(\hat{a}^\dagger)^2,\hat{a}^\dagger]\}=-\frac{b}{2}[\hat{a}^2,\hat{a}^\dagger]=-\frac{b}{2}\{\hat{a}[\hat{a},\hat{a}^\dagger]+[\hat{a},\hat{a}^\dagger]\hat{a}\}=-b\hat{a}.
+  \end{align*}
+  \item We now from the previous part the commutators, and also 
+  \begin{align*}
+    \hat{\mathbb{Q}}(b)=e^{-\hat{B}}=e^{\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)},\quad\hat{\mathbb{Q}}^\dagger(b)=e^{\hat{B}}=e^{-\frac{b}{2}(\hat{a}^2-(\hat{a}^\dagger)^2)},\quad\hat{\mathbb{Q}}(b)\hat{\mathbb{Q}}^\dagger(b)=\mathds{1}.
+  \end{align*}
+  To the application of the formula provided, we compute the following commutators:
+  \begin{align*}
+    [\hat{B},\hat{a}]=-b\hat{a}^\dagger,\quad[\hat{B},[\hat{B},\hat{a}]]=[\hat{B},-b\hat{a}^\dagger]=b^2\hat{a},\quad[\hat{B},[\hat{B},[\hat{B},\hat{a}]]]=-b^3\hat{a}^\dagger,\quad\cdots
+  \end{align*}
+  Then,
+  \begin{align*}
+    \hat{\mathbb{Q}}^\dagger(b)\hat{a}\hat{\mathbb{Q}}(b)&=\hat{a}+(-b\hat{a}^\dagger)+\frac{1}{2!}[\hat{B},[\hat{B},\hat{a}]]+\frac{1}{3!}[\hat{B},[\hat{B},[\hat{B},\hat{a}]]]+\cdots\\
+    &=\hat{a}-b\hat{a}^\dagger+\frac{b^2}{2!}\hat{a}-\frac{b^3}{3!}\hat{a}^\dagger+\cdots\\
+    &=\left(1+\frac{b^2}{2!}+\cdots\right)\hat{a}-\left(b-\frac{b^3}{3!}\right)\hat{a}^\dagger\\
+    \hat{\mathbb{Q}}^\dagger(b)\hat{a}\hat{\mathbb{Q}}(b)&=\text{cosh}(b)\hat{a}-\text{sinh}(b)\hat{a}^\dagger,
+  \end{align*}
+  and,
+  \begin{align*}
+    [\hat{\mathbb{Q}}^\dagger(b)\hat{a}\hat{\mathbb{Q}}(b)]^\dagger=\hat{\mathbb{Q}}^\dagger(b)\hat{a}^\dagger\hat{\mathbb{Q}}(b)=\text{cosh}(b)\hat{a}^\dagger-\text{sinh}(b)\hat{a}.
+  \end{align*}
+  \item We use both result from above
+  \begin{align*}
+    \hat{\mathbb{Q}}^\dagger(b)\hat{X}\hat{\mathbb{Q}}(b)&=\frac{\sigma}{\sqrt{2}}\hat{\mathbb{Q}}^\dagger(b)(\hat{a}^\dagger+\hat{a})\hat{\mathbb{Q}}(b)=\frac{\sigma}{\sqrt{2}}\left[\hat{\mathbb{Q}}^\dagger(b)\hat{a}^\dagger\hat{\mathbb{Q}}(b)+\hat{\mathbb{Q}}^\dagger(b)\hat{a}\hat{\mathbb{Q}}(b)\right]\\
+    &=\frac{\sigma}{\sqrt{2}}\left[\text{cosh}(b)\hat{a}^\dagger-\text{sinh}(b)\hat{a}+\text{cosh}(b)\hat{a}-\text{sinh}(b)\hat{a}^\dagger\right]\\
+    &=\frac{\sigma}{\sqrt{2}}[(\hat{a}^\dagger+\hat{a})(\text{cosh}(b)-\text{sinh}(b))]\\
+    \hat{\mathbb{Q}}^\dagger(b)\hat{X}\hat{\mathbb{Q}}(b)&=e^{-b}\hat{X}.
+  \end{align*}
+  For the momentum operator, we have similarly
+  \begin{align*}
+    \hat{\mathbb{Q}}^\dagger(b)\hat{P}\hat{\mathbb{Q}}(b)&=\frac{i\hbar}{\sqrt{2}\sigma}\hat{\mathbb{Q}}^\dagger(b)(\hat{a}^\dagger-\hat{a})\hat{\mathbb{Q}}(b)=\frac{i\hbar}{\sqrt{2}\sigma}\left[\hat{\mathbb{Q}}^\dagger(b)\hat{a}^\dagger\hat{\mathbb{Q}}(b)-\hat{\mathbb{Q}}^\dagger(b)\hat{a}\hat{\mathbb{Q}}(b)\right]\\
+    &=\frac{i\hbar}{\sqrt{2}\sigma}\left[\text{cosh}(b)\hat{a}^\dagger-\text{sinh}(b)\hat{a}-\text{cosh}(b)\hat{a}+\text{sinh}(b)\hat{a}^\dagger\right]\\
+    &=\frac{i\hbar}{\sqrt{2}\sigma}[(\hat{a}^\dagger+\hat{a})(\text{cosh}(b)+\text{sinh}(b))]\\
+    \hat{\mathbb{Q}}^\dagger(b)\hat{P}\hat{\mathbb{Q}}(b)&=e^{b}\hat{P}.
+  \end{align*}
+  The remaining ones are computed easily with the formular used in past exercise:
+  \begin{align*}
+    \hat{\mathbb{Q}}^\dagger(b)\hat{X}^2\hat{\mathbb{Q}}(b)&=[\hat{\mathbb{Q}}^\dagger(b)\hat{X}\hat{\mathbb{Q}}(b)]^2=e^{-2b}\hat{X}^2\\
+    \hat{\mathbb{Q}}^\dagger(b)\hat{P}^2\hat{\mathbb{Q}}(b)&=[\hat{\mathbb{Q}}^\dagger(b)\hat{P}\hat{\mathbb{Q}}(b)]^2=e^{2b}\hat{P}^2.
+  \end{align*}
+  \item The ground state of QHO is:
+  \begin{align*}
+    \braket{0|\hat{X}|0}=0,\quad\braket{0|\hat{P}|0}=0,\quad\braket{0|\hat{X}^2|0}=\frac{\sigma^2}{2},\quad\braket{0|\hat{P}|0}=\frac{\hbar^2}{2\sigma^2}.
+  \end{align*}
+  Using the above results, and the definition of the state $\ket{\varphi}=\hat{\mathbb{Q}}(b)\ket{0}$
+  \begin{align*}
+    \braket{\varphi|\hat{X}|\varphi}&=e^{-b}\braket{0|\hat{X}|0}=0\\
+    \braket{\varphi|\hat{P}|\varphi}&=e^b\braket{0|\hat{P}|0}=0\\
+    \braket{\varphi|\hat{X}^2|\varphi}&=e^{-2b}\braket{0|\hat{X}^2|0}=e^{-2b}\frac{\sigma^2}{2}\\
+    \braket{\varphi|\hat{P}^2|\varphi}&=e^{2b}\braket{0|\hat{P}^2|0}=e^{2b}\frac{\hbar^2}{2\sigma^2}.
+  \end{align*}
+  \item The uncertainty is therefore 
+  \begin{align*}
+    \left.\begin{array}{l}
+      \Delta\hat{X}=\sqrt{\braket{\hat{X}^2}}=e^{-b}\frac{\sigma}{\sqrt{2}}\\
+      \Delta\hat{P}=\sqrt{\braket{\hat{P}^2}}=e^b\frac{\hbar}{\sqrt{2}\sigma}
+    \end{array}\right\}\Delta\hat{X}\Delta\hat{P}=\frac{\hbar}{2}.
+  \end{align*}
+  \item The wavefunction in the $\{\ket{x}\}$ representation is $\varphi(x)=\braket{x|\varphi}$. We need to know the action of t
+  \begin{align*}
+    \hat{X}(\hat{\mathbb{Q}}(b)\ket{x})=\hat{\mathbb{Q}}(b)\hat{\mathbb{Q}}^\dagger(b)\hat{X}\hat{\mathbb{Q}}(b)\ket{x}=\hat{\mathbb{Q}}(b)e^{-b}\hat{X}\ket{x}=xe^{-b}(\hat{\mathbb{Q}}(b)\ket{x}).
+  \end{align*}
+  Therefore, 
+  \begin{align*}
+    \hat{X}(\hat{\mathbb{Q}}(b)\ket{x})=xe^{-b}(\hat{\mathbb{Q}}(b)\ket{x})\Longrightarrow\hat{\mathbb{Q}}(b)\ket{x}=C\ket{e^{-b}x}.
+  \end{align*}
+  The eigenstate $\ket{e^{-b}x}$ is proportional by the factor $C$. We find the coeficient $c$
+  \begin{align*}
+    \braket{x'|x}=\braket{x|\hat{\mathbb{Q}}^\dagger(b)\hat{\mathbb{Q}}(b)|x}=|c|^2\braket{e^{-b}x'|e^{-b}x}=|c|^2\delta[e^{-b}(x'-x)]=|c|^2e^b\delta(x'-x)=1.
+  \end{align*}
+  The coeffient is:
+  \begin{align*}
+    |c|^2e^b=1\longrightarrow c=e^{-b/2}.
+  \end{align*}
+  Because the expression for the ground state is a gaussian of the form:
+  \begin{align*}
+    \psi_0(x)=\left(\frac{1}{\pi\sigma^2}\right)^{1/4}e^{-\frac{x^2}{2\sigma^2}},
+  \end{align*}
+  we construct our function as:
+  \begin{align*}
+    \varphi(x)=\braket{x|\hat{\mathbb{Q}}(b)|0}=e^{-b/2}\braket{e^bx|0}=C\psi_0(e^bx)=e^{-b/2}\left(\frac{1}{\pi\sigma^2}\right)^{1/4}e^{b/2}e^{-\frac{e^{2b}x^2}{2\sigma^2}}=\left(\frac{1}{\pi\gamma^2}\right)^{1/4}e^{-\frac{x^2}{2\gamma^2}},
+  \end{align*}
+  with $\gamma=\sigma e^{-b}$.
+  \item Knowing that 
+  \begin{align*}
+    \hat{H_0}=\frac{\hat{P}^2}{2m}+\frac{1}{2}m\omega^2\hat{X}^2,\quad \braket{\hat{X}^2}_\varphi=e^{-2b}\frac{\sigma^2}{2},\quad \braket{\hat{P}^2}_\varphi=e^{2b}\frac{\hbar^2}{2\sigma^2}.
+  \end{align*}
+  The mean value of the Hamiltonian can be expressed in terms of the mean values of the position and momentum operators:
+  \begin{align*}
+    \braket{H_0}_\varphi=\frac{1}{2m}e^{2b}\frac{\hbar^2}{2\sigma^2}+\frac{1}{2}m\omega^2e^{-2b}\frac{\sigma^2}{2}=\frac{\hbar\omega}{2}\text{cosh}(2b),
+  \end{align*}
+  where we substituted $\sigma=\sqrt{\hbar/m\omega}$ to simplify further the expression. For $b=0$, we see that $\braket{H_0}_\varphi=\hbar\omega/2$ the ground state energy level.
+  \item The operator $\hat{\mathbb{Q}}(p)$ changes the uncertainty of the quadratures increasing one and reducing the other respectively so that the uncertainty product is maintained.
 \end{enumerate}
 
 %%
