@@ -1,0 +1,368 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 8}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: 12 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Problem I}
+Given that $j=1$, we have the magnetic quantum number $m\in\{1,0,-1\}$ and $\{\ket{z_+},\ket{z_0},\ket{z_-}\}=\{\ket{1,1},\ket{1,0},\ket{1,-1}\}$.
+The state vector can then be spanned as:
+\begin{align*}
+  \ket{\psi}=a\ket{z_+}+b\ket{z_0}+c\ket{z_-}\longrightarrow\ket{\psi}=\begin{bmatrix}
+    a\\b\\c
+  \end{bmatrix}.
+\end{align*}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item 
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+  \item In the state vector method, we want to compute $\braket{\psi|J_x|\psi}$. Using the eigenequation for the ladder operators:
+  \begin{align*}
+    J_\pm=\ket{j,m}=\hbar\sqrt{j(j+1)-m(m\pm1)}\ket{j,m\pm1},
+  \end{align*}
+  we have for $j=1$
+  \begin{align*}
+    j_+\ket{1,0}=\hbar\sqrt{2}\ket{1,1},\quad J_+\ket{1,-1}=\hbar\sqrt{2}\ket{1,0},\quad J_-\ket{1,1}=\hbar\sqrt{2}\ket{1,0},\quad J_-\ket{1,0}=\hbar\sqrt{2}\ket{1,-1}.
+  \end{align*}
+  In matrix form, we have 
+  \begin{align*}
+    J_+=\hbar\sqrt{2}\begin{bmatrix}
+      0&1&0\\0&0&1\\0&0&0
+    \end{bmatrix},\quad J_-=\hbar\sqrt{2}\begin{bmatrix}
+      0&0&0\\1&0&0\\0&1&0
+    \end{bmatrix}\longrightarrow J_x=\frac{1}{2}(J_++J_-)=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix}.
+  \end{align*}
+  Its action on the state is a matrix-multiplication:
+  \begin{align*}
+    \braket{\psi|J_x|\psi}=\frac{1}{\sqrt{2}}\begin{bmatrix}
+      a^*&b^*&c^*
+    \end{bmatrix}\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix}\begin{bmatrix}
+      a\\b\\c
+    \end{bmatrix}=\frac{\hbar}{\sqrt{2}}(a^*b+b^*a+b^*c+c^*b)\equiv\frac{2\hbar}{\sqrt{2}}[\re{a^*b}+\re{b^*c}].
+  \end{align*}
+  \item In the density operator method, the expectation we want to compute is 
+  \begin{align*}
+    \braket{J_x}=\text{Tr}(\rho J_x).
+  \end{align*}
+  In a pure state, we have that 
+  \begin{align*}
+    \ket{\psi}=a\ket{z_+}+b\ket{z_0}+c\ket{z_-},\quad\rho=\ket{\psi}\bra{\psi}.
+  \end{align*}
+  In matrix form, the density operator is 
+  \begin{align*}
+    \rho=\begin{bmatrix}
+      |a|^2&ab^*&ac^*\\
+      ba^*&|b|^2&bc^*\\
+      ca^*&cb^*&|c|^2
+    \end{bmatrix}.
+  \end{align*}
+  The trace then mean to sum over the diagonal of this matrix multiplied by $J_x$, that is, over the following elements:
+  \begin{align*}
+    (\rho J_x)_{11}&=\rho_{12}J_{21}+\rho_{13}J_{31}=ab^*\frac{\hbar}{\sqrt{2}}\\
+    (\rho J_x)_{22}&=\rho_{21}J_{12}+\rho_{23}J_{32}=ba^*\frac{\hbar}{\sqrt{2}}+bc^*\frac{\hbar}{\sqrt{2}}\\
+    (\rho J_x)_{33}&=\rho_{31}J_{13}+\rho_{32}J_{23}=cb^*\frac{\hbar}{\sqrt{2}}
+  \end{align*}
+  Then, the trace, and therefore the meanvalue is,
+  \begin{align*}
+    \braket{J_x}=(\rho J_x)_{11}+(\rho J_x)_{22}+(\rho J_x)_{33}=\frac{\hbar}{\sqrt{2}}[ab^*+ba^*+bc^*+cb^*]=\frac{2\hbar}{\sqrt{2}}[\re{a^*b}+\re{b^*c}].
+  \end{align*}
+\end{enumerate}
+  \item For $j=1$, 
+  \begin{align*}
+    J^2=J_x^2+J_y^2+J_z^2=j(j+1)\hbar^2\mathds{1}=2\hbar^2\mathds{1}.
+  \end{align*}
+  Then, for any state we have that 
+  \begin{align*}
+    \braket{J^2}=\braket{\psi|2\hbar\mathds{1}|\psi}=2\hbar^2(|a|^2+|b|^2+|c|^2)=2\hbar^2.
+  \end{align*}
+  \item We know that J operator matrices for the spin-1 are:
+  \begin{align*}
+    J_x=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix},\quad J_y=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+      0&-i&0\\i&0&-i\\0&i&0
+    \end{bmatrix},\quad J_z=\hbar\begin{bmatrix}
+      1&0&0\\0&0&0\\0&0&-1
+    \end{bmatrix}
+  \end{align*}
+  If we square them, we have:
+  \begin{align*}
+    J_x^2=\frac{\hbar^2}{2}\begin{bmatrix}
+      1&0&1\\0&2&0\\1&0&1
+    \end{bmatrix},\quad 
+    J_y^2=\frac{\hbar^2}{2}\begin{bmatrix}
+      1&0&-1\\0&2&0\\-1&0&1
+    \end{bmatrix},\quad 
+    J_z^2=\hbar^2\begin{bmatrix}
+      1&0&0\\0&0&0\\0&0&1
+    \end{bmatrix}
+  \end{align*}
+  The expectation $\braket{\psi|J^2_{i}|\psi}$ are then:
+  \begin{align*}
+    \braket{J_x^2}&=\frac{\hbar^2}{2}(|a|^2+2|b|^2+|c|^2+2\re{a^*c})\\
+    \braket{J_y^2}&=\frac{\hbar^2}{2}(|a|^2+2|b|^2+|c|^2-2\re{a^*c})\\
+    \braket{J_z^2}&=\hbar^2(|a|^2+|b|^2)\\
+    \braket{J^2}&=\braket{J_x^2}+\braket{J_y^2}+\braket{J_z^2}=2\hbar(|a|^2+|b|^2+|c|^2)=\braket{J^2}
+  \end{align*} 
+  \item We have from our previous parts both expectation required, so it becomes an algebra problem
+  \begin{align*}
+    (\Delta J_x)^2&=\braket{J_x^2}-\braket{J_x}^2\\
+    &=\frac{\hbar^2}{2}[|a|^2+2|b|^2+|c|^2+2\re{a^*c}-|a^*b+b^*a+b^*c+c^*b|^2]\\
+    (\Delta J_x)^2&=\frac{\hbar^2}{2}[1+|b|^2+2\re{a^*c}-4(\re{a^*b}+\re{b^*c})^2]\quad(|a|^2+|b|^2+|c|^2=1)
+  \end{align*}
+  \item If $b=0$, then the normalization condition becomes $|a|^2+|c|^2=1$, and 
+  \begin{align*}
+    \braket{J_x}=0,\quad\braket{J_x^2}=\frac{\hbar^2}{2}[|a|^2+|c|^2+2\re{a^*c}]=\frac{\hbar^2}{2}[1+2\re{a^*c}].
+  \end{align*}
+  Thus, we need to minimize the alst result, which means that $\re{a^*c}$ must take its minimum value. If $a=|a|e^{i\alpha}$ and $c=|c|e^{i\gamma}$, then 
+  we can express the real part as $|a||c|\cos(\alpha-\gamma)$. The minimum value of the cosine is when $\alpha-\gamma=\pi$. Assumind that both magnitudes are equal (simplest scenario), we therefore have $c=-a$ and :
+  \begin{align*}
+    a=\frac{e^{i\phi}}{\sqrt{2}},\quad b=0,\quad c=-\frac{e^{i\phi}}{\sqrt{2}}.
+  \end{align*} 
+  Which then gives 
+  \begin{align*}
+    \braket{J_x^2}=\frac{\hbar^2}{2}(1-1)=0\Longrightarrow(\Delta J_x)^2=0.
+  \end{align*}
+  \item We can just pick an eigenstate of $J_z$,
+  \begin{align*}
+    a=0,\quad b=e^{i\phi},\quad c=0.
+  \end{align*}
+  Thus,
+  \begin{align*}
+    \ket{\psi}=\ket{z_0}\quad (\Delta J_z)^2=0.
+  \end{align*}
+  We could also pick a non-zero value for $a$ or $c$.
+  \item We use the generalized Heisenberg uncertainty relation to compute the required uncertainty product:
+  \begin{align*}
+    \Delta J_y\Delta J_z\geq\frac{1}{2}|\braket{[J_y,J_z]}|=\frac{1}{2}|\braket{i\hbar J_x}|=\frac{\hbar^2}{\sqrt{2}}|\braket{\re{a^*b}+\re{b^*c}}|.
+  \end{align*}
+  We see that the uncertainty relation of two perpendicular angular momentum components $J_y$ and $J_z$ dependds on how much angular momentum you have along the third component $x$.
+  This relations is telling us that the more precisely the $J_x$ is known on average, the more uncertain are the perpendicular components.
+\end{enumerate}
+
+
+%%
+\section*{Problem II}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item The expansion of $\ket{x_+}$ for $\lambda=+\hbar$ is 
+  \begin{align*}
+    \ket{x_+}=\frac{1}{2}\ket{z_+}+\frac{1}{\sqrt{2}}\ket{z_0}+\frac{1}{2}\ket{z_-}.
+  \end{align*}
+  If $\ket{\psi(0)}=\ket{z_0}$, then 
+  \begin{align*}
+    \braket{x_+|\psi(0)}=\braket{x_+|z_0}=\frac{1}{\sqrt{2}}.
+  \end{align*}
+  The probability to measure $J_x\hbar$ is therefore 
+  \begin{align*}
+    P_x(\hbar)=|\braket{x_+|z_0}|^2=\frac{1}{2}.
+  \end{align*}
+  \item Now for $\lambda=0$, the expansion is 
+  \begin{align*}
+    \ket{x_0}=\frac{1}{\sqrt{2}}(\ket{z_+}-\ket{z_-}).
+  \end{align*}
+  The inner product $\ket{x_0|\psi(0)}$ is now zero, so the probability of measuring $J_x=0$ is zero.
+  \item For $\lambda=-\hbar$, 
+  \begin{align*}
+    \ket{x_-}=\frac{1}{2}\ket{z_+}-\frac{1}{\sqrt{2}}\ket{z_0}+\frac{1}{2}\ket{z_-}.
+  \end{align*}
+  The projection of $\ket{\psi(0)}$ onto $\ket{x_-}$ is $1/\sqrt{2}$, so that 
+  \begin{align*}
+    P_x(-\hbar)=|\braket{x_-|z_0}|^2=\frac{1}{2}.
+  \end{align*}
+  \item Since $\ket{\psi(0)}=\ket{z_0}$, it is evident that the probability of getting $\ket{z_+}$ is not possible. So,
+  \begin{align*}
+    P_z(\hbar)=|\braket{z_+|z_0}|^2=0.
+  \end{align*}
+  \item After the measurement, the state will evolve and live between the eigenstate of $J_x$ with certain probabilities:
+  \begin{align*}
+    \rho=\frac{1}{2}\ket{x_+}\bra{x_+}+\frac{1}{2}\ket{x_-}\bra{x_-}\quad(P_x(0)=0).
+  \end{align*}
+  This is a mixture of the eigenstate with the coefficient being the probability. If now we take a measurement with $J_z$, we 
+  will have, for a given angular momentum $m$ 
+  \begin{align*}
+    P_z(m\hbar)=\text{Tr}(\ket{z_m}\bra{z_m}\rho)=\frac{1}{2}\left[|\braket{zm|x_+}|^2+|\braket{zm|x_-}|^2\right].
+  \end{align*}
+  In $\ket{x_+}$ and $\ket{x_-}$ we substitute their expression in terms of the eigenstate of $J_z$ and evaluate for $m\in\{\hbar,0,-\hbar\}$:
+  \begin{align*}
+    P_z(\hbar)=\frac{1}{2}\left(\frac{1}{4}+\frac{1}{4}\right)=\frac{1}{4},\quad P_z(0)=\frac{1}{2}\left(\frac{1}{2}+\frac{1}{2}\right)=\frac{1}{2},\quad P_z(-\hbar)=\frac{1}{2}\left(\frac{1}{4}+\frac{1}{4}\right)=\frac{1}{4}.
+  \end{align*}
+  \item If the measurement is uncertain, then we can express it as a mixed state. However, if we know the result then it collapses into a single eigenstate of $J_x$, that is, a pure state. We 
+  can see for the statistical mixture that the trace of the density operator squared is less than 1, reinforcing this fact: $\text{Tr}(\rho^2)=1/2<1$.
+  \item This is the same we have computed previouslty, its matrix form is 
+  \begin{align*}
+    \rho^{(x)}=\frac{1}{2}\ket{x_+}\bra{x_+}+\frac{1}{2}\ket{x_-}\bra{x_-}=\begin{bmatrix}
+      1/2&0&0\\0&0&0\\0&0&1/2
+    \end{bmatrix}.
+  \end{align*}
+  \item The transformation matrix is needed to pass from $x$ to $z$, so we use the above definition in terms of $x$ to express in terms of $z$ and the formulation given in the field guide.
+  \begin{align*}
+    \ket{x_+}&=\frac{1}{2}\ket{z_+}+\frac{1}{\sqrt{2}}\ket{z_0}+\frac{1}{2}\ket{z_-}\\
+    \ket{x_0}&=\frac{1}{\sqrt{2}}\ket{z_+}-\frac{1}{\sqrt{2}}\ket{z_-}\\
+    \ket{x_-}&=\frac{1}{2}\ket{z_+}-\frac{1}{\sqrt{2}}\ket{z_0}+\frac{1}{2}\ket{z_-}
+  \end{align*}
+  We concatenate them to construct the transformation matrix:
+  \begin{align*}
+    M=\begin{bmatrix}
+      |&|&|\\
+      \ket{x_+}&\ket{x_0}&\ket{x_-}\\
+      |&|&|
+    \end{bmatrix}=\begin{bmatrix}
+      \frac{1}{2}&\frac{1}{\sqrt{2}}&\frac{1}{2}\\
+      \frac{1}{\sqrt{2}}&0&-\frac{1}{\sqrt{2}}\\
+      \frac{1}{2}&-\frac{1}{\sqrt{2}}&\frac{1}{2}
+    \end{bmatrix}.
+  \end{align*}
+  We use it to transform the state vector and the density operator as:
+  \begin{align*}
+    \ket{\psi}_z=M\ket{\psi}_x,\quad\text{and}\quad\rho^{(z)}=M\rho^{(x)}M^\dagger.
+  \end{align*}
+  This is exactly the same process shown in the field guide, because these elements on $M$ correspond to the inner product $M_{ij}=\braket{z_i|x_j}$.
+  \item The specific matrix $\rho^{(z)}$ is 
+  \begin{align*}
+    \rho^{(z)}=\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}
+  \end{align*}
+  Using it in the expectation values yields 
+  \begin{align*}
+    \braket{J_z}&=\text{Tr}(\rho^{(z)}J_z)=\hbar\text{Tr}\left(\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}\cdot\begin{bmatrix}
+      1&0&1\\0&0&0\\0&0&-1
+    \end{bmatrix}\right)=\hbar\left(\frac{1}{4}-\frac{1}{4}\right)=0\\
+    \braket{J_x}&=\text{Tr}(\rho^{(z)}J_x)=\frac{\hbar}{\sqrt{2}}\text{Tr}\left(\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}\cdot\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix}\right)=0.
+  \end{align*}
+  \item They should match the answer from part e as the transformation matrix shouldnt change the meaning of them.
+  \begin{align*}
+    P_z(\hbar)&=\text{Tr}(\rho^{(z)}P_+)=\text{Tr}\left(\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}\cdot\begin{bmatrix}
+      1&0&0\\0&0&0\\0&0&0
+    \end{bmatrix}\right)=\text{Tr}\left(\begin{bmatrix}
+      1/4&0&0\\0&0&0\\1/4&0&0
+    \end{bmatrix}\right)=\frac{1}{4}\\
+    P_z(0)&=\text{Tr}(\rho^{(z)}P_0)=\text{Tr}\left(\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}\cdot\begin{bmatrix}
+      0&0&0\\0&1&0\\0&0&0
+    \end{bmatrix}\right)=\text{Tr}\left(\begin{bmatrix}
+      0&0&0\\0&1/2&0\\0&0&0
+    \end{bmatrix}\right)=\frac{1}{2}\\
+    P_z(-\hbar)&=\text{Tr}(\rho^{(z)}P_-)=\text{Tr}\left(\begin{bmatrix}
+      \frac{1}{4}&0&\frac{1}{4}\\0&\frac{1}{2}&0\\\frac{1}{4}&0&\frac{1}{4}.
+    \end{bmatrix}\cdot\begin{bmatrix}
+      0&0&0\\0&0&0\\0&0&1
+    \end{bmatrix}\right)=\text{Tr}\left(\begin{bmatrix}
+      0&0&1/4\\0&0&0\\0&0&1/4
+    \end{bmatrix}\right)=\frac{1}{4}
+  \end{align*}
+  We see that these probabilities coincide with part e).
+\end{enumerate}
+
+%%
+\section*{Problem III}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item sgasg
+  \item asgsag
+  \item sagasg
+  \item asgsagasg
+  \item asgsag
+  \item asgsag
+  \item asgsag
+\end{enumerate}
+
+%%
+\section*{Problem IV}
+
+
+
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}
