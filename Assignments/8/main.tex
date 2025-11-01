@@ -63,7 +63,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 12 hours}
+\date{\today\\Total time: 8 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -112,7 +112,7 @@ The state vector can then be spanned as:
   \end{align*}
   Its action on the state is a matrix-multiplication:
   \begin{align*}
-    \braket{\psi|J_x|\psi}=\frac{1}{\sqrt{2}}\begin{bmatrix}
+    \braket{\psi|J_x|\psi}=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
       a^*&b^*&c^*
     \end{bmatrix}\begin{bmatrix}
       0&1&0\\1&0&1\\0&1&0
@@ -340,24 +340,134 @@ The state vector can then be spanned as:
       0&0&1/4\\0&0&0\\0&0&1/4
     \end{bmatrix}\right)=\frac{1}{4}
   \end{align*}
-  We see that these probabilities coincide with part e).
+  We see that these probabilities coincide with part e). The $P_m$ are the projectors into the respective $m$ eigenstate.
 \end{enumerate}
 
 %%
 \section*{Problem III}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item sgasg
-  \item asgsag
-  \item sagasg
-  \item asgsagasg
-  \item asgsag
-  \item asgsag
-  \item asgsag
+  \item By looking the table, the function asked to integrate is:
+  \begin{align*}
+    F(\theta,\phi)=(Y_0^0)^*Y_1^0Y_1^1=-\frac{3}{4\pi\sqrt{8\pi}}\cos\theta\sin\theta e^{i\phi}.
+  \end{align*}
+  Its integration is:
+  \begin{align*}
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=-\frac{3}{4\pi\sqrt{8\pi}}\int_0^{2\pi}\int_0^\pi\cos\theta\sin\theta e^{i\phi}\;\sin\theta d\theta d\phi\\
+    &=\int_0^{\pi}\cos\theta\sin^2\theta\left[\underbrace{\int_0^{2\pi} e^{i\phi}\;d\phi}_{0}\right]d\theta\\
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=0.
+  \end{align*}
+  \item Integration of the function yields
+  \begin{align*}
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=\frac{3}{8\pi\sqrt{4\pi}}\int_0^{2\pi}\int_0^\pi \sin^2\theta e^{i2\phi}\;\sin\theta d\theta d\phi\\
+    &=\frac{3}{8\pi\sqrt{4\pi}}\int_0^\pi\sin^3\theta\left[\underbrace{\int_0^{2\pi}e^{i2\phi}\;d\phi}_{0}\right]\;d\theta\\
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=0.
+  \end{align*}
+  \item Here, we have 
+  \begin{align*}
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=-\frac{3}{8\pi\sqrt{4\pi}}\int_0^{2\pi}\int_0^\pi\sin^2\theta\;\sin\theta\;d\theta d\phi\\
+    &=-\frac{3}{4\sqrt{4\pi}}\int_0^{\pi}\sin^3\theta\;d\theta\\
+    &=-\frac{3}{4\sqrt{4\pi}}\frac{4}{3}\\
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=-\frac{1}{\sqrt{4\pi}}.
+  \end{align*}
+  \item In this case, 
+  \begin{align*}
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=\frac{3}{4\pi\sqrt{4\pi}}\int_0^{2\pi}\int_0^\pi \cos^2\theta\;\sin\theta d\theta d\phi\\
+    &=\frac{3}{2\sqrt{4\pi}}\int_0^\pi\cos^2\theta\sin\theta\;d\theta\\
+    &=\frac{3}{2\sqrt{4\pi}}\frac{2}{3}\\
+    &=\frac{1}{\sqrt{4\pi}}.
+  \end{align*}
+  \item The integration is as follows
+  \begin{align*}
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=\frac{3\sqrt{15}}{16\pi^{3/2}}\int_0^{2\pi}\int_0^\pi\sin^2\theta\cos^2\theta\;\sin\theta d\theta d\phi\\
+    &=\frac{3\sqrt{15}}{8\sqrt{\pi}}\int_0^\pi\sin^3\theta\cos^2\theta\;d\theta\\
+    &=\frac{3\sqrt{15}}{8\sqrt{\pi}}\frac{4}{15}\quad(\text{integration by parts, }u=\cos\theta,\;du=-\sin\theta d\theta)\\
+    \int_0^{2\pi}\int_0^\pi F(\theta,\phi)\;\sin\theta d\theta d\phi&=\frac{\sqrt{15}}{10\sqrt{\pi}}.
+  \end{align*}
+  \item As each spherical harmonic is a separable function, we can treat them as the product of a $\theta$-dependent function and a $\phi$-dependent function:
+  \begin{align*}
+    F(\theta,\phi)=g(\theta)h(\phi),\quad\text{where}\quad h(\phi)=e^{-im_1\phi}e^{im_2\phi}e^{m_3\phi}.
+  \end{align*}
+  Because of the hint, we perform the integration only along $\phi$:
+  \begin{align*}
+    \int_0^{2\pi}h(\phi)\;d\phi=\int_0^{2\pi}e^{i(-m_1+m_2+m_3)\phi}\;d\phi=2\pi\delta_{-m_1+m_2+m_3,0}.
+  \end{align*}
+  The Kronecker function is non-zero only when the indicex match, that is,
+  \begin{align*}
+    m_1=m_2+m_3.
+  \end{align*}
+  \item If $l_2=1$ means that $m_2\in\{-1,0,+1\}$. In addition, using the $\Delta m_{13}$ we have 
+  \begin{align*}
+    m_1&=m_2+m_3\\
+    m_1-m_3&=m_2\\
+    \Delta m_{13}&=m_2.
+  \end{align*}
+  Therefore, 
+  \begin{align*}
+    \Delta m_{13}\in\{-1,0,+1\}.
+  \end{align*}
 \end{enumerate}
-
+In this problem, all the integrals were raised and then if needed was used integral calculator to facilitate the result.
 %%
 \section*{Problem IV}
-
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item We have a spin-1/2 system, where the spin operators are defined as $S_i=(\hbar/2)\sigma_i$. Measuring with $S_y$ and getting the eigenvalue $\hbar/2$ means that 
+  \begin{align*}
+    S_y\ket{y}=\frac{\hbar}{2}\ket{y}.
+  \end{align*}
+  The two eigenvectors from it allows to span the $\ket{\pm y}$ as follows:
+  \begin{align*}
+    \ket{\pm y}=\frac{1}{\sqrt{2}}(\ket{+}\pm i\ket{-}).
+  \end{align*}
+  After the measurement, we will have:
+  \begin{align*}
+    \ket{\psi(0)}=\ket{+y}=\frac{1}{\sqrt{2}}(\ket{+}+i\ket{-}).
+  \end{align*}
+  \item The Hamiltonian in this case is 
+  \begin{align*}
+    H(t)=\omega_0(t)S_z=\frac{\hbar}{2}\omega_0(t)\sigma_z,\quad0\leq t\leq T.
+  \end{align*}
+  Applying the evolution operator to $\ket{\psi(0)}$ allows to have the state at time $t$. Recall that the eigenvalues of $\sigma_z$ are $\pm1$.
+  In addition, as the B-field behaves as a ramp function we have 
+  \begin{align*}
+    \omega_0(t)=\frac{\omega_0}{T}t,\quad0\leq t\leq T.  
+  \end{align*}
+  Another property is that the Hamiltonian is always proportional to $S_z$ at any arbitrary time, which is the same as 
+  \begin{align*}
+    [H(t),H(t')]=0,\quad\forall t,t'.
+  \end{align*}
+  This makes us express the time evolution as:
+  \begin{align*}
+    U(t,0)=e^{-\frac{i}{\hbar}\int_0^tH(t')\;dt'}=e^{-i\frac{i}{\hbar}\int_0^t\omega_0(t')S_z\;dt'}=e^{-\frac{i}{\hbar}S_z\frac{\omega_0}{2T}t^2}.
+  \end{align*}
+  Application of $U(t,0)$ to the initial state yields
+  \begin{align*}
+    \ket{\psi(t)}=\frac{1}{\sqrt{2}}\left(e^{-\frac{i}{2}\frac{\omega_0}{2T}t^2}\ket{+}+ie^{+\frac{i}{2}\frac{\omega_0}{2T}t^2}\ket{-}\right)=\frac{1}{\sqrt{2}}(e^{i\theta(t)}\ket{+}+ie^{-i\theta(t)}\ket{-}),\quad \theta(t)=-\frac{\omega_0}{4T}t^2.
+  \end{align*}
+  This is a rotation around $z$ by the angle $\theta(t)$ on the Bloch sphere.
+  \item In the previous part we expressed the expansion of $\ket{\pm y}$, so that the probabilities are computed as the projection of $\ket{\psi(t)}$ onto them:
+  \begin{align*}
+    P_y(\hbar/2)&=|\braket{+y|\psi}|^2=\left|\frac{e^{i\theta}+e^{-i\theta}}{2}\right|^2=\cos^\theta\\
+    P_y(-\hbar/2)&=|\braket{-y|\psi}|^2=\left|\frac{e^{i\theta}-e^{-i\theta}}{2}\right|^2=\sin^2\theta.
+  \end{align*}
+  At $t>T$, we have $\theta(t)=\omega_0T/4$ and:
+  \begin{align*}
+    P_y(\hbar/2)=\cos^2\frac{\omega_0T}{4},\quad P_y(-\hbar/2)=\sin^2\frac{\omega_0T}{4}.
+  \end{align*} 
+  To be certain of getting $\hbar/2$, the cosine term must be unity, meaning that we must have:
+  \begin{align*}
+    \cos^2\frac{\omega_0T}{4}&=1\\
+    \cos\frac{\omega_0T}{4}&=1/\cos^{-1}(\cdot)\\
+    \frac{\omega_0T}{4}&=\pi n,\quad n\in\mathbb{Z}\\
+    \omega_0T&=4\pi n,\quad n\in\mathbb{Z}.
+  \end{align*}
+  Similarly, to be sure of getting $-\hbar/2$ we must have the sine term to be one, and therefore:
+  \begin{align*}
+    \sin^2\frac{\omega_0T}{4}&=1\\
+    \sin\frac{\omega_0T}{4}&=1/\sin^{-1}(\cdot)\\
+    \frac{\omega_0T}{4}&=\frac{\pi(2n+1)}{2},\quad n\in\mathbb{Z}\\
+    \omega_0T&=2\pi(2n+1),\quad n\in\mathbb{Z}.
+  \end{align*}
+\end{enumerate}
 
 
 
