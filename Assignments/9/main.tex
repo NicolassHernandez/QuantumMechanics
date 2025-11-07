@@ -70,7 +70,7 @@
 %
 \title{\textbf{\assignment}\\\course\\{\Large\institution}}
 \author{\autor}
-\date{\today\\Total time: 8 hours}
+\date{\today\\Total time: 7 hours}
 %
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \fancypagestyle{mainstyle}{
@@ -119,99 +119,35 @@
       \end{scope}
     \end{circuitikz}
   \end{figure}
-  \item The Hamiltonian can be written in term of the Pauli matrices when $\Omega_0=|\Omega_0|e^{i\beta}$:
-  \begin{align*}
-    H=\frac{\hbar}{2}[\Delta\sigma_z+|\Omega_0|\cos\beta\sigma_x-|\Omega_0|\sin\beta\sigma_y]=\frac{\hbar}{2}\bm{\Omega}\cdot\bm{\sigma}.
-  \end{align*}
-  The last is called effective field, or Rabi vector.
-  The Bloch sphere is $\br(t)=\braket{\psi(t)|\bm{\sigma}|\psi(t)}$, with $\bR(0)=(0,0,1)$.
+  \item We have the following.
   \begin{figure}[h!]
     \centering
-    \begin{subfigure}{.3\columnwidth}
-      \centering
-      \begin{tikzpicture}[line cap=round, line join=round, >=Triangle]
-      \clip(-2.19,-2.49) rectangle (2.66,2.58);
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (56.7:0.4) arc (56.7:90.:0.4) -- cycle;
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (-135.7:0.4) arc (-135.7:-33.2:0.4) -- cycle;
-      \draw(0,0) circle (2cm);
-      \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (2cm and 0.9cm);
-      \draw (0,0)-- (0.70,1.07);
-      \draw [->] (0,0) -- (0,2);
-      \draw [->] (0,0) -- (-0.81,-0.79);
-      \draw [->] (0,0) -- (2,0);
-      \draw [dotted] (0.7,1)-- (0.7,-0.46);
-      \draw [dotted] (0,0)-- (0.7,-0.46);
-      \draw (-0.08,-0.3) node[anchor=north west] {$\varphi$};
-      \draw (0.01,0.9) node[anchor=north west] {$\theta$};
-      \draw (-1.01,-0.72) node[anchor=north west] {$\mathbf {\hat{x}}$};
-      \draw (2.07,0.3) node[anchor=north west] {$\mathbf {\hat{y}}$};
-      \draw (-0.5,2.6) node[anchor=north west] {$\mathbf {\hat{z}=|0\rangle}$};
-      \draw (-0.4,-2) node[anchor=north west] {$-\mathbf {\hat{z}=|1\rangle}$};
-      \draw (0.4,1.65) node[anchor=north west] {$|\psi\rangle$};
-      \scriptsize
-      \draw [fill] (0,0) circle (1.5pt);
-      \draw [fill] (0.7,1.1) circle (0.5pt);
-    \end{tikzpicture}
-    \caption{$\Delta=0$}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.3\columnwidth}
-      \centering
-      \begin{tikzpicture}[line cap=round, line join=round, >=Triangle,scale=.7]
-      \clip(-2.19,-2.49) rectangle (2.66,2.58);
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (56.7:0.4) arc (56.7:90.:0.4) -- cycle;
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (-135.7:0.4) arc (-135.7:-33.2:0.4) -- cycle;
-      \draw(0,0) circle (2cm);
-      \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (2cm and 0.9cm);
-      \draw (0,0)-- (0.70,1.07);
-      \draw [->] (0,0) -- (0,2);
-      \draw [->] (0,0) -- (-0.81,-0.79);
-      \draw [->] (0,0) -- (2,0);
-      \draw [dotted] (0.7,1)-- (0.7,-0.46);
-      \draw [dotted] (0,0)-- (0.7,-0.46);
-      \draw (-0.08,-0.3) node[anchor=north west] {$\varphi$};
-      \draw (0.01,0.9) node[anchor=north west] {$\theta$};
-      \draw (-1.01,-0.72) node[anchor=north west] {$\mathbf {\hat{x}}$};
-      \draw (2.07,0.3) node[anchor=north west] {$\mathbf {\hat{y}}$};
-      \draw (-0.5,2.6) node[anchor=north west] {$\mathbf {\hat{z}=|0\rangle}$};
-      \draw (-0.4,-2) node[anchor=north west] {$-\mathbf {\hat{z}=|1\rangle}$};
-      \draw (0.4,1.65) node[anchor=north west] {$|\psi\rangle$};
-      \scriptsize
-      \draw [fill] (0,0) circle (1.5pt);
-      \draw [fill] (0.7,1.1) circle (0.5pt);
-    \end{tikzpicture}
-    \caption{$\Delta=|\Omega_0|$}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.3\columnwidth}
-      \centering
-      \begin{tikzpicture}[line cap=round, line join=round, >=Triangle]
-      \clip(-2.19,-2.49) rectangle (2.66,2.58);
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (56.7:0.4) arc (56.7:90.:0.4) -- cycle;
-      \draw [shift={(0,0)}, lightgray, fill, fill opacity=0.1] (0,0) -- (-135.7:0.4) arc (-135.7:-33.2:0.4) -- cycle;
-      \draw(0,0) circle (2cm);
-      \draw [rotate around={0.:(0.,0.)},dash pattern=on 3pt off 3pt] (0,0) ellipse (2cm and 0.9cm);
-      \draw (0,0)-- (0.70,1.07);
-      \draw [->] (0,0) -- (0,2);
-      \draw [->] (0,0) -- (-0.81,-0.79);
-      \draw [->] (0,0) -- (2,0);
-      \draw [dotted] (0.7,1)-- (0.7,-0.46);
-      \draw [dotted] (0,0)-- (0.7,-0.46);
-      \draw (-0.08,-0.3) node[anchor=north west] {$\varphi$};
-      \draw (0.01,0.9) node[anchor=north west] {$\theta$};
-      \draw (-1.01,-0.72) node[anchor=north west] {$\mathbf {\hat{x}}$};
-      \draw (2.07,0.3) node[anchor=north west] {$\mathbf {\hat{y}}$};
-      \draw (-0.5,2.6) node[anchor=north west] {$\mathbf {\hat{z}=|0\rangle}$};
-      \draw (-0.4,-2) node[anchor=north west] {$-\mathbf {\hat{z}=|1\rangle}$};
-      \draw (0.4,1.65) node[anchor=north west] {$|\psi\rangle$};
-      \scriptsize
-      \draw [fill] (0,0) circle (1.5pt);
-      \draw [fill] (0.7,1.1) circle (0.5pt);
-    \end{tikzpicture}
-    \caption{$\Delta=2|\Omega_0|$}
-    \end{subfigure}
+    \includegraphics[width=.9\columnwidth]{1b.jpg}
+    \caption{Problem I, part b)}
   \end{figure}
-
+  \item The probability is the projection of the Bloch vector $\br(t)$ onto the measurement direction.
+  For the cases given and that $\Delta=|\Omega_0|$ and $\beta=0$, we have that:
+  \begin{align*}
+    P_{\ket{x+}}(t)=\frac{3-\cos(\Omega t)}{4},\quad\text{and}\quad P_{\ket{y+}}(t)=\frac{1-\frac{1}{\sqrt{2}}\sin(\Omega t)}{2}.
+  \end{align*}
+  The y are plotted in the following:
+  \begin{figure}[h!]
+    \centering
+    \begin{circuitikz}[xscale=1,yscale=2,scale=.6]
+      \def\Omo{1}
+      \draw[arrow](0,0)--({2*pi/\Omo+2},0)node[below]{$t$};
+      \draw[arrow](0,0)--(0,2)node[right]{$f(t)$};
+      \draw[very thick,OliveGreen,domain=0:{2*pi/\Omo},samples=500] plot(\x,{ ( 3-cos( deg(\Omo*\x) ) )/4 });
+      \draw[very thick,NavyBlue,domain=0:{2*pi/\Omo},samples=500] plot(\x,{ ( 1-(1/sqrt(2))*sin( deg(\Omo*\x) ) )/2 });
+      \foreach \x in {1,2}{\draw({\x*pi/\Omo},.1)--({\x*pi/\Omo},-.1)node[below]{$\frac{\x\pi}{\Omega}$}; }
+      \foreach \y in {1,1/2}{\draw(.1,\y)--(-.1,\y)node[left]{\small$\y$};}
+      \draw(0,.1)--(0,-.1)node[below]{$0$};
+      \begin{scope}[shift={(8,1)}] % move legend to top-right
+          \draw[very thick,OliveGreen](0,0)--(0.8,0)node[right,black]{$P_{\ket{x+}}(t)$};
+          \draw[very thick,NavyBlue](0,-0.5)--(0.8,-0.5)node[right,black]{$P_{\ket{y+}}(t)$};
+      \end{scope}
+    \end{circuitikz}
+  \end{figure}
 \end{enumerate}
 
 
@@ -254,15 +190,154 @@
 
 %%
 \section*{Problem III}
-The initial state is $\ket{+}_z$. The firt pulse is along the y-direction which make a Hamiltonian of the form 
+The action of a B-field gives a precession about it with angular frequency of 
 \begin{align*}
-  H=-\gamma\hbar/2\bm{\sigma}\cdot\bm{B}\Longrightarrow U(t)=e^{-iHt/\hbar}=e^{-i\alpha\bm{\sigma}\cdot\bm{B}/2},\quad\alpha=-|\gamma|Bt.
+  \omega=-\gamma B_0.
 \end{align*}
-where $\alpha$ is the rotation angle generated by the pulse along y.
+The angular displacement in the duration of the pulse is:
+\begin{align*}
+  \alpha=\omega_1\tau.
+\end{align*}
+These two quantities must be considerd for each B-field.
+
+First, we start at $\ket{+}_z$. The first pulse is along $+y$ for a duration of $\tau_y$, which produces a rotation of the polar angle of 
+\begin{align*}
+  \theta=-\gamma B_0\tau_y.
+\end{align*}
+The vector still lives in the $x-z$ plane. Nesxt, the second pulse is along $+z$ for a time of $\tau_z$. 
+This is a rotation about the $+z$ axis, or a rotatin in the azimuth angle of the spherical coordinates $\phi$.
+The rotation is 
+\begin{align*}
+  \phi=-\gamma B_0\tau_z.  
+\end{align*}
+Solving for each equation for the pulse duration yields:
+\begin{align*}
+  \tau_y=-\frac{\theta}{\gamma B_0},\quad\text{and}\quad\tau_z=-\frac{\phi}{\gamma B_0}.
+\end{align*}
+
 
 %%
 \section*{Problem IV}
-
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item Writing the Hailtonian yields:
+  \begin{align*}
+    H=pc\mathds{1}+\frac{c^4}{2pc}\begin{bmatrix}
+      m_1^2&0\\0&m_2^2
+    \end{bmatrix}.
+  \end{align*}
+  \item We can write it in that form if we compare the elements:
+  \begin{align*}
+    H_1&=pc+\frac{c^4}{2pc}m_1^2E_m+\epsilon\\
+    H_2&=pc+\frac{c^4}{2pc}m_2^2=E_m-\epsilon.
+  \end{align*}
+  Then,
+  \begin{align*}
+    H_1+H_2&=2E_m=[2pc+\frac{c^4}{2pc}(m_1^2+m_1^2)]\longrightarrow E_m=pc+\frac{c^4}{4pc}(m_1^2+m_2^2)\\
+    H_1-H_2&=2\epsilon=\frac{c^4}{2pc}(m_1^2-m_2^2)\longrightarrow\epsilon=\frac{c^4}{4pc}(m_1^2-m_2^2)=-\frac{c^4}{4pc}\delta_m^2.
+  \end{align*}
+  Thus, our Hamiltonian takes the following form:
+  \begin{align*}
+    H=\left[pc+\frac{c^4}{4pc}(m_1^2+m_2^2)\right]\mathds{1}-\frac{c^4}{4pc}\delta_m^2\sigma_z.
+  \end{align*}
+  \item The transformation matrix $M$ is:
+  \begin{align*}
+    M=\begin{bmatrix}
+      \sin\beta&\cos\beta\\-\cos\beta&\sin\beta
+    \end{bmatrix}.
+  \end{align*}
+  Then, to transform the hamiltonian we do:
+  \begin{align*}
+    H_{\{\ket{v_e},\ket{v_\mu}\}}&=MH_{\{\ket{v_1},\ket{v_2}\}}M^\dagger\\
+    &=\epsilon\begin{bmatrix}
+      \sin\beta&\cos\beta\\-\cos\beta&\sin\beta
+    \end{bmatrix}\begin{bmatrix}
+      1&0\\0&-1
+    \end{bmatrix}\begin{bmatrix}
+      \sin\beta&-\cos\beta\\\cos\beta&\sin\beta
+    \end{bmatrix}\\
+    &=\epsilon\begin{bmatrix}
+      \sin\beta&\cos\beta\\-\cos\beta&\sin\beta
+    \end{bmatrix}\begin{bmatrix}
+      \sin\beta&-\cos\beta\\-\cos\beta&-\sin\beta
+    \end{bmatrix}\\
+    H_{\{\ket{v_e},\ket{v_\mu}\}}&=-\frac{c^4}{4pc}\delta_m^2\begin{bmatrix}
+      \cos2\beta&-2\sin2\beta\\
+      -2\sin2\beta&-\cos2\beta
+    \end{bmatrix}.
+  \end{align*}
+  \item By comparing the above result with the form required, we can conclude by looking the element $11$ and $21$ that:
+  \begin{align*}
+    \frac{\hbar}{2}\Delta&=-\frac{c^4}{4pc}\delta_m^2\cos2\beta\longrightarrow\Delta=-\frac{c^4}{2\hbar pc}\delta_m^2\cos2\beta\\
+    \frac{\hbar}{2}\Omega_0&=\frac{c^4}{4pc}\delta_m^2\sin2\beta\longrightarrow\Omega_0=\frac{c^4}{2\hbar pc}\delta_m^2\sin2\beta.
+  \end{align*}
+  We can also compute $\Omega$:
+  \begin{align*}
+    \Omega=\sqrt{\Omega_0^2+\Delta^2}=\frac{c^4}{2\hbar pc}\delta_m^2.
+  \end{align*}
+  \item Using the numerical values of the variables, by evaluating we have that:
+  \begin{align*}
+    \Omega_0&=\frac{2.5\times10^{-3}(eV)^2}{2(6.6\times10^{-16}\;eV\cdot s)(10^{10}\;eV)}\sin160^\circ=64.776\;s^{-1}\\
+    \Delta&=-\frac{2.5\times10^{-3}\;(eV)^2}{2(6.6\times10^{-16}\;eV\cdot s)(10^{10}\;eV)}\cos160^\circ=177.972\;s^{-1}.
+  \end{align*}
+  Then,
+  \begin{align*}
+    \Omega=\sqrt{\Omega_0^2+\Delta^2}=189.394\;s^{-1}.
+  \end{align*}
+  \item The probability asked is the transition probability, given we are initially in $\ket{\nu_\mu}$. This probability is:
+  \begin{align*}
+    P_{\mu\to e}(t)=|\braket{\nu_e|e^{-iHt\hbar}|\nu_\mu}|^2=\frac{|\Omega_0|^2}{\Omega^2}\sin^2\frac{\Omega t}{2}=\sin^2(2\beta)\sin^2\left(\frac{c^4\delta_m^2}{4\hbar pc}t\right).
+  \end{align*}
+  \item We need to do the change of variable $t=d/c$ for the above probability:
+  \begin{align*}
+    P_{\mu\to e}(d)=\sin^2(2\beta)\sin^2\left(\frac{c^3\delta_m^2}{4\hbar pc}d\right).
+  \end{align*}
+  Note that now we have $c^3$.
+  \item To maximize the probability, we need the sin squared function of distance to be 1. It have the same period as $\sin(\cdot)$ which is ieasier to manipulate, so:
+  \begin{align*}
+    \sin\frac{c^3\delta_m^2}{4\hbar pc}d&=1\bigr/\sin^{-1}(\cdot)\\
+    \frac{c^3\delta_m^2}{4\hbar pc}d&=\frac{\pi(2n-1)}{2},\quad n\in\mathbb{Z}.
+  \end{align*}
+  The shortest distance is obtained by picking the first zero, $n=0$,
+  \begin{align*}
+    \frac{c^3\delta_m^2}{4\hbar pc}d&=\frac{\pi}{2}\\
+    d&=\frac{2\pi\hbar pc}{c^3\delta_m^2}=\frac{2\pi(6.6\times10^{-16}\;eV)(10^{10}\;eV)(3\times10^8\;m/s)}{2.5\times10^{-3}\;(eV)^2}=4.976\times10^3\;km.
+  \end{align*}
+  \item Evaluating the probability with $d=300\;km$ yields:
+  \begin{align*}
+    P_{\mu\to e}(300\times10^3)=\sin^2(160^\circ)\sin^2\left(\frac{2.5\times10^{-3}\;(eV)^2}{4(6.6\times10^{-16}\;eV)(10^{10}\;eV)(3\times10^8\;m/s)}300\times10^3\right)=0.0011.
+  \end{align*}
+  \item The density operator in the $\{\ket{\nu_e},\ket{\nu_\mu}\}$ is:
+  \begin{align*}
+    \rho_{\{\ket{\nu_e},\ket{\nu_\mu}\}}=\frac{1}{4}\ket{\nu_e}\bra{\nu_e}+\frac{3}{4}\ket{\nu_\mu}\bra{\nu_\mu}=\begin{bmatrix}
+      \frac{1}{4}&0\\0&\frac{3}{4}
+    \end{bmatrix}.
+  \end{align*}
+  In the $\{\ket{\nu_1},\ket{\nu_2}\}$, we use the transformation matrix used in prevous part to convert this operator:
+  \begin{align*}
+    \rho_{\{\ket{\nu_1},\ket{\nu_2}\}}&=M^\dagger\rho_{\{\ket{\nu_e},\ket{\nu_\mu}\}}M\\
+    &=\begin{bmatrix}
+      \sin\beta&-\cos\beta\\
+      \cos\beta&\sin\beta
+    \end{bmatrix}\begin{bmatrix}
+      \frac{1}{4}&0\\0&\frac{3}{4}
+    \end{bmatrix}\begin{bmatrix}
+      \sin\beta&\cos\beta\\-\cos\beta&\sin\beta
+    \end{bmatrix}\\
+    &=\begin{bmatrix}
+      \sin\beta&-\cos\beta\\
+      \cos\beta&\sin\beta
+    \end{bmatrix}
+    \begin{bmatrix}
+      \frac{1}{4}\sin\beta&\frac{1}{4}\cos\beta\\
+      -\frac{3}{4}\cos\beta&\frac{3}{4}\sin\beta
+    \end{bmatrix}\\
+    \rho_{\{\ket{\nu_1},\ket{\nu_2}\}}&=\begin{bmatrix}
+      \frac{1}{2}+\frac{1}{4}\cos2\beta&-\frac{1}{4}\sin2\beta\\
+      -\frac{1}{4}\sin2\beta&\frac{1}{2}-\frac{1}{4}\cos2\beta
+    \end{bmatrix}.
+  \end{align*}
+  We see that in both representation, the trace is unitary.
+\end{enumerate}
 
 
 
