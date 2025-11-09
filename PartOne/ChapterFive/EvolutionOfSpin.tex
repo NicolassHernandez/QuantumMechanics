@@ -1,0 +1,63 @@
+\section{Illustration of the postules in the case of a spin 1/2}
+
+%
+\subsection{Evolution of a spin 1/2 particle in a uniform magnetic field}
+
+\subsection{The interaction Hamiltonian and the Schrodinger equation}
+Consider a silver atom in a unifrom magnetic field $\bB_0$, and choose the Oz axis along $\bB_0$.
+The classical potential energy of the magnetic moment $\bm{\mu}=\gamma\bJ$ of this atom is then:
+\begin{align}
+    W=-\bm{\mu}\cdot\bB_0=-\mu_zB_0=\underbrace{-\gamma B_0}_{\omega_0}J_z.
+\end{align}
+Since we are quantizing onl the internal degrees of freedom of the particle, $J_z$ must be replaced by the operator $S_z$, and the clasical energy above becomes an operator:
+it is the Hamiltonian $H$ which describes the evolution of the spin of the atom in the field $\bB_0$:
+\begin{align}
+    H=\omega_0S_z.
+    \label{eq:Hamiltonianspin12}
+\end{align}
+Since $H$ is time-independent, we solve the respective eigenequation. We see that the eigenvectors of $H$ are tose of $S_z$:
+\begin{align}
+    H\ket{\pm}=\pm\frac{\hbar\omega_0}{2}\ket{\pm}=E_\pm\ket{\pm}.
+\end{align}
+There are theerefore two energy levels, $E_\pm$. Their separation $\hbar\omega_0$ is proportional to the B-field; they define a single Bohr frequency:
+\begin{align}
+    \nu_{+-}=\frac{1}{\hbar}(E_+-E_-)=\frac{\omega_0}{2\pi}.
+\end{align}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item If $\bB_0$ is parallel to the unit vector $\bm{u}$, the Hmailtonian \eqref{eq:Hamiltonianspin12} msut be replaced by its general form:
+    \begin{align}
+        \text{General form Hamiltonian}\qquad\highlight{H=\omega_0\bS\cdot\bm{u}}.
+    \end{align}
+    \item For silver atoms, $\gamma<0$; $\omega_0$ is therefore positive.
+\end{itemize}
+%%
+\subsubsection{Larmor precession}
+Consider the spin at $t=0$ in the state 
+\begin{align}
+    \ket{\psi(0)}=\cos\frac{\theta}{2}e^{-i\phi/2}\ket{+}+\sin\frac{\theta}{2}e^{i\phi/2}\ket{-}.
+\end{align}
+We saw that any state can be put in this form. To calculate the state at $t>0$, we apply the evolution operator:
+\begin{align*}
+    \ket{\psi(t)}=\cos\frac{\theta}{2}e^{-i\phi/2}e^{-iE_+t/\hbar}\ket{+}+\sin\frac{\theta}{2}e^{i\phi/2}e^{-iE_-t/\hbar}\ket{-}=\cos\frac{\theta}{2}e^{-\frac{i(\phi+\omega_0t)}{2}}\ket{+}+\sin\frac{\theta}{2}e^{\frac{i(\phi+\omega_0t)}{2}}\ket{-}.
+\end{align*}
+The presence of $\bB_0$ therefore introduces a phase shift between $\ket{+}$ and $\ket{-}$. The direction of $\bm{u}(t)$ along which the spin 
+component if $+\hbar/2$ with certainty is defined by the polar angles:
+\begin{align}
+    \begin{array}{l}
+        \theta(t)=\theta\\
+        \phi(t)=\phi+\omega_0t
+    \end{array}
+\end{align}
+The angle between $\bm{u}(t)$ and Oz therefore remains constant, but $\bm{u}(t)$ revolves about Oz at an angular velocity of $\omega_0$. THis effect
+is called the \bfemph{Larmor precession}. 
+
+It can verified from $\ket{\psi(t)}$ that the probabilities of obtaining $+\hbar/2$ or $-\hbar/2$ in a measurement of this observables are time-indendent. These probabilities are equal, respectively, to 
+$\cos^2\theta/2$ and $\sin^2\theta/2$. The mean value of $S_z$ is also time-independent:
+\begin{align}
+    \braket{\psi(t)|S_z|\psi(t)}=\frac{\hbar}{2}\cos\theta.
+\end{align}
+Because $S_x$ and $S_y$ do not comute with $H$, we have that 
+\begin{align}
+    \braket{\psi(t)|S_x|\psi(t)}=\frac{\hbar}{2}\sin\theta\cos(\phi+\omega_0t),\quad\braket{\psi(t)|S_y|\psi(t)}=\frac{\hbar}{2}\sin\theta\sin(\phi+\omega_0t).
+\end{align}
+We again find the Bohr frequencies $\omega_0/2\pi$ of the system. Moreover, the mean values above behave like the components of a classical AM of modulus $\hbar/2$ undergoing Larmos precession.

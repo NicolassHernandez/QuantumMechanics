@@ -1,57 +1,13 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Preface}{2}{chapter*.1}%
-\contentsline {chapter}{\numberline {1}Theory of angular moment}{8}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Introduction}{9}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Importance of the harmonic oscillator in physics}{9}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}The harmonic oscillator in classical mechanics}{9}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}General properties of the quantum mechanical Hamiltonian}{10}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}Eigenvalues of the Hamiltonian}{11}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Notation}{11}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Determination of the spectrum}{13}{subsection.1.2.2}%
-\contentsline {subsubsection}{Lemmas}{13}{subsection.1.2.2}%
-\contentsline {subsubsection}{The spectrum of $N$ is composed of non-negative integers}{13}{Item.4}%
-\contentsline {subsubsection}{Interpretation of the $a$ and $a^\dagger $ operators}{14}{equation.1.2.15}%
-\contentsline {subsection}{\numberline {1.2.3}Degeneracy of the eigenvalues}{14}{subsection.1.2.3}%
-\contentsline {subsubsection}{The grounds state is non-degenerate}{14}{subsection.1.2.3}%
-\contentsline {subsubsection}{All the states are non-degenerate}{14}{equation.1.2.16}%
-\contentsline {section}{\numberline {1.3}Eigenstates of the Hamiltonian}{15}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}The $\{\varphi _n\}$ representation}{15}{subsection.1.3.1}%
-\contentsline {subsubsection}{The basis vectors in terms of $|\psi _0\rangle $}{15}{subsection.1.3.1}%
-\contentsline {subsubsection}{Orthonormalization and closure relations}{15}{equation.1.3.18}%
-\contentsline {subsubsection}{Action of the various operators}{16}{equation.1.3.18}%
-\contentsline {subsubsection}{Eigenstates of $a$ (cris, coherent states)}{16}{equation.1.3.25}%
-\contentsline {subsection}{\numberline {1.3.2}Wave functions associated with the stationary states}{17}{subsection.1.3.2}%
-\contentsline {section}{\numberline {1.4}Discussion}{18}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Mean values and rms eviations of $X$ and $P$ in a state $|\varphi _n\rangle $}{18}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Properties of the ground state}{19}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Time evolution of the mean values (57 anderson), verify - in solutions p}{19}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Stationary states in the $\{|x\rangle \}$ representation}{20}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Hermite polynomials}{20}{subsection.1.5.1}%
-\contentsline {subsubsection}{Definition}{20}{subsection.1.5.1}%
-\contentsline {subsubsection}{Generating function}{20}{figure.caption.9}%
-\contentsline {subsubsection}{Recurrence relations; differential equation}{21}{equation.1.5.39}%
-\contentsline {subsection}{\numberline {1.5.2}The eigenfunctions of the harmonic oscillator Hamiltonian}{21}{subsection.1.5.2}%
-\contentsline {subsubsection}{Generating function}{21}{subsection.1.5.2}%
-\contentsline {subsubsection}{$\varphi _n(x)$ in terms of the Hermite polynomials}{21}{subsection.1.5.2}%
-\contentsline {subsubsection}{Recurrence relations}{22}{equation.1.5.43}%
-\contentsline {section}{\numberline {1.6}The isotropic three-dimensional harmonic oscillator}{22}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Separation of variables in cartesian coordinates}{23}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Degeneracy of the energy levels}{25}{subsection.1.6.2}%
-\contentsline {section}{\numberline {1.7}Coherent states of the harmonic oscillator}{25}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Quasi-classical states}{26}{subsection.1.7.1}%
-\contentsline {subsubsection}{Introducing $\alpha _0$ to characterize a classical motion}{26}{subsection.1.7.1}%
-\contentsline {subsubsection}{Conditions defining quasi-classical states}{27}{equation.1.7.67}%
-\contentsline {subsubsection}{Quasi-classical states are eigenvectors of the operator $a$}{27}{equation.1.7.72}%
-\contentsline {subsection}{\numberline {1.7.2}Properties of the $|\alpha \rangle $ states}{28}{subsection.1.7.2}%
-\contentsline {subsubsection}{Expansion of $|\alpha \rangle $ on the basis of the stationary states $|\varphi _n\rangle $}{28}{subsection.1.7.2}%
-\contentsline {subsubsection}{Possible values of the energy in an $|\alpha \rangle $ state}{28}{equation.1.7.77}%
-\contentsline {subsubsection}{Calculation of mean values and uncertainties}{29}{equation.1.7.78}%
-\contentsline {subsubsection}{The displacement operator $D(\alpha )$}{29}{equation.1.7.81}%
-\contentsline {subsubsection}{Scalar product of two $|\alpha \rangle $ states. Closure relation}{30}{example.1.2}%
-\contentsline {subsection}{\numberline {1.7.3}Time evolution of a quasi-classical state}{30}{subsection.1.7.3}%
-\contentsline {subsubsection}{A quasi-classical state always remains an eigenvector of $a$}{30}{subsection.1.7.3}%
-\contentsline {subsubsection}{Evolution of physical properties}{31}{equation.1.7.85}%
-\contentsline {subsubsection}{Motion of the wave packet}{31}{equation.1.7.88}%
-\contentsline {subsection}{\numberline {1.7.4}Useful formulas}{33}{subsection.1.7.4}%
-\contentsline {subsection}{\numberline {1.7.5}Basis}{33}{subsection.1.7.5}%
+\contentsline {chapter}{\numberline {1}Theory of angular momentum}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Spin 1/2 particle: quantization of the angular momentum}{9}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Experimental demonstration}{9}{subsection.1.1.1}%
+\contentsline {subsubsection}{The Stern-Gerlach apparatus}{9}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Classical calculations of the deflection}{9}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Illustration of the postules in the case of a spin 1/2}{10}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Evolution of a spin 1/2 particle in a uniform magnetic field}{10}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}The interaction Hamiltonian and the Schrodinger equation}{10}{subsection.1.2.2}%
+\contentsline {subsubsection}{Larmor precession}{10}{equation.1.2.7}%
+\contentsline {section}{\numberline {1.3}Two-level systems}{11}{section.1.3}%
 \contentsfinish 

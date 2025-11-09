@@ -1,0 +1,70 @@
+\section{Commutation relations characteristic of angular momentum}
+
+\subsection{Orbital angular momentum}
+From the clasical conterpart of a spinless particle with $\mathcal{L}$, we apply the quantization rules to get 
+the equivalent relation in the observables in the quantum mechanics framework.
+
+For instance,
+\begin{align*}
+    \mathcal{L}_x=yp_z-zp_y\stackrel{\text{Quantization rules}}{\longrightarrow}L_x=YP_z-ZP_y.
+\end{align*}
+
+Then, in general we will have:
+\begin{align}
+    \bL=\BR\times\BP.
+\end{align}
+Since we know the canonical relation for $\BR,\BP$, we can easily calculate the commutators of the operators $L_x,L_y,L_z$.
+For instance, 
+\begin{align*}
+    [L_x,L_y]&=[YP_z-ZP_y,ZP_x-XP_z]=[YP_z,ZP_x]+[ZP_y,XP_z]\\
+    &=Y[P_z,Z]P_x+X[Z,P_z]P_y=-i\hbar YP_x+i\hbar XP_y\\
+    [L_x,L_y]&=i\hbar L_z.
+\end{align*}
+Then, for the other cases we have the following commutation relations:
+\begin{align}
+    \text{Commutation relations for $\bL$}\qquad[L_x,L_y]=i\hbar L_z,\;[L_y,L_z]=i\hbar L_x,\;[L_z,L_x]=i\hbar L_y.
+    \label{eq:commutationrelationsAM_L}
+\end{align}
+
+This result can be generalized to a system of $N$ spinless particles. The total AM of such a system is, in quantum mechanics,
+\begin{align}
+    \text{AM in a system of $N$ spinless particles}\qquad\highlight{\bL=\sum_{i=1}^N\bL_i,\quad\bL_i=\BR_i\times\BP_i}.
+\end{align}
+Each of the individual AM $\bL_i$ satisfies the commutation relations \eqref{eq:commutationrelationsAM_L} and commutes with $\bL_j$ when $j\neq i$ (state spaces of different particles).
+%%
+\subsection{Definition of angular momentum}
+The origin of these relations \eqref{eq:commutationrelationsAM_L} lies in the geometric properties of rotations in three-dimensional space.
+This is why we shall adopt a more general point of view and define an angular momentum $\bJ$ as any set of three observables $J_x,J_y,J_z$ that satisfies
+\begin{align}
+    \text{Commutation relations for $\bJ$}\qquad\highlight{[J_x,J_y]=i\hbar J_z,\quad[J_y,J_z]=i\hbar J_x,\quad[J_z,J_x]=i\hbar J_y}.
+    \label{eq:commutationrelationsAM_J}
+\end{align}
+We then introduce the operator:
+\begin{align}
+    \text{Magnitude of $\bJ$}\qquad\highlight{\bJ^2=J_x^2+J_y^2+J_z^2}
+    \label{eq:magnitudeJoperator}
+\end{align}
+the (scalar) square of the angular momentum $\bJ$. This operator is Hermitian, since the components are Hermitian.
+Moreover, $\bJ^2$ commutes with the these componentes:
+\begin{align}
+    \highlight{[\bJ^2,\bJ]=\bO}.
+\end{align}
+For instance, for $J_x$:
+\begin{align*}
+    [\bJ^2,J_x]&=[J_x^2+J_y^2+J_z^2,J_x]\\
+    &=[J_y^2,J_x]+[J_z^2,J_x]\\
+    &=J_y[J_y,J_x]+[J_y,J_x]J_y+J_z[J_z,J_x]+[J_z,J_x]J_z\\
+    &=-i\hbar J_yJ_z-i\hbar J_zJ_y+i\hbar J_zJ_y+i\hbar J_yJ_z\\
+    [\bJ^2,J_x]&=0.
+\end{align*}
+
+\begin{emphasizer}
+    AM theory in QM is founded \textbf{entirely} on the commutation relations \eqref{eq:commutationrelationsAM_J}. These relations imply that 
+    it is impossible to measure simumltaneously the three components of an angular momentum; however, $\bJ^2$ and any component of $\bJ$ are compatible.
+\end{emphasizer}
+
+%%
+\subsection{Statement of the problem}
+In general, we must pick only a few of operators that forms the CSCO with the Hamiltonian as the components of an arbitrary AM $\bJ$ 
+do not commute; they are not simultaneously diagonalizable.
+We shall therefore seek the system of eigenvectors common to $\bJ^2$ and $J_z$.

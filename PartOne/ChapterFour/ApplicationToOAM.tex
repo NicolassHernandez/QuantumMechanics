@@ -1,0 +1,175 @@
+\section{Application to orbital angular momentum}
+We return now to the orbital angular momentum $\bL$ of a spinless particle and see how the general theory developed applies to this particular case.
+
+Using the $\{\ket{\bR}\}$ representation, we shall show that the eigenvalues of the operator $\bL^2$ are the numbers $l(l+1)\hbar^2$. Then, we shall indicate 
+the eigenfunctions common to $\bL^2$ and $L_z$ and their principal properties.
+%%
+\subsection{Eigenvalues and eigenfunctions of $\bL^2$ and $L_z$}
+%%
+\subsubsection{Eigenequation in the $\{\ket{\bR}\}$ representation}
+In the $\{\ket{\bR}\}$ representation, the observables $\BR$ and $\BP$ correspond respectively to multiplication by $\bR$ and to the differential operator $(\hbar/i)\nabla$. 
+The three components can therefore be written as
+\begin{align}
+    L_x=\frac{\hbar}{i}(y\partial_z-z\partial_y),\quad L_y=\frac{\hbar}{i}(z\partial_x-x\partial_z),\quad L_z=\frac{\hbar}{i}(x\partial_y-y\partial_x).
+\end{align}
+It is more convenient to work in spherical coordinates, since the various AM operators act only on the angular variables $\theta$ and $\phi$, and not on $r$.
+
+The conversion of a point M at $\bR=(x,y,z)$ in the spherical coorindates $\bR=(r,\theta,\phi)$ is therefore:
+\begin{align}
+    \text{Spherical coordinates}\qquad\begin{array}{l}
+        x=r\sin\theta\cos\phi\\
+        y=r\sin\theta\sin\phi\\
+        z=r\cos\theta
+    \end{array},\quad\text{with}\quad\begin{array}{l}
+        r\geq0\\
+        0\in[0,\pi]\\
+        \phi\in[0,2\pi]\\
+        d^3r=r^2\sin\theta dr d\theta d\phi
+    \end{array}.
+\end{align}
+Using them in the AM operators yield
+{\small
+\begin{align}
+    &\highlight{L_x=i\hbar\left(\sin\phi\partial_\theta+\frac{\cos\phi}{\tan\theta}\partial_\phi\right),\quad L_y=i\hbar\left(-\cos\phi\partial_\theta+\frac{\sin\phi}{\tan\theta}\partial_\phi\right),\quad L_z=\frac{\hbar}{i}\partial_\phi}\\
+    &\highlight{\bL^2=-\hbar^2\left(\partial^2_\theta+\frac{1}{\tan\theta}\partial_\theta+\frac{1}{\sin^2\theta}\partial^2_\phi\right),\quad L_+=\hbar e^{i\phi}\left(\partial_\theta+i\cot\theta\partial_\phi\right),\quad L_-=\hbar e^{-i\phi}\left(-\partial_\theta+i\cot\theta\partial_\phi\right).}
+    \label{eq:Loperatorspherical}
+\end{align}}
+In the $\{\ket{\bR}\}$ representation, the eigenfunctions associated with the eigenvalues $l(l+1)\hbar^2$ of $\bL^2$ and $m\hbar$ of $L_z$ are the solutions of the following partial differential equations:
+\begin{align}
+    \left.\begin{array}{r}
+        \displaystyle-\left[\partial^2_\theta+\frac{1}{\tan\theta}\partial_\theta+\frac{1}{\sin^2\theta}\partial^2_\phi\right]\psi(r,\theta,\phi)=l(l+1)\psi(r,\theta,\phi)\\
+        \displaystyle-i\partial_\phi\psi(r,\theta,\phi)=m\psi(r,\theta,\phi)
+    \end{array}\right\rfloor
+\end{align}
+We already know that $l$ is integral or half-integral and that, for fixed $l$, $m$ can take only the values $-l,\cdots,l$.
+We also notice from the equations that $r$ does not appear in any differential operator, se we can consider it to be a parameter and take into account only the $\theta-$ and $\phi-$dependence of $\psi$.
+
+Thus, we denote by $Y_l^m(\theta,\phi)$ a common eigenfunction of $\bL^2$ and $L_z$ which corresponds to the eigenvalues $l(l+1)\hbar^2$ and $m\hbar$:
+\begin{align}
+    \begin{array}{l}
+        \bL^2Y_l^m(\theta,\phi)=l(l+1)\hbar^2 Y_l^m(\theta,\phi)\\
+        L_zY_l^m(\theta,\phi)=m\hbar Y_l^m(\theta,\phi)
+    \end{array}
+    \label{eq:equationYml}
+\end{align}
+These equations have only one solution for each pairt of allowed values of $l$ and $m$, both indices are sufficient.
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Equation \eqref{eq:equationYml} gives the $\theta,\phi-$dependence of the eigenfuntions of $\bL^2$ and $L_z$, after which we construct the complete eigenfunction:
+    \begin{align}
+        \phi_{l,m}(r,\theta,\phi)=f(r)Y_l^m(\theta,\phi).
+    \end{align}
+    The fact that $f(r)$ is arbitrary shows that $\bL^2$ and $L_z$ do not form a CSCO in the space $\E_r$ of functions of $r$.
+    \item In order to normalize $\phi_{l,m}$ it is convenient to normalize $Y_l^m$ and $f$ \textbf{separately}:
+    {\small
+    \begin{align}
+        \int\limits_{r=0}^\infty\int\limits_{\phi=0}^{2\pi}\int\limits_{\theta=0}^\pi|\psi_{m,l}(r,\theta,\phi)|^2\;r^2\sin\theta drd\theta d\phi=\int\limits_{\phi=0}^{2\pi}\int\limits_{\theta=0}^\pi|Y_l^m(\theta,\phi)|^2\;\sin\theta d\theta d\phi=\int\limits_{r=0}^\infty r^2|f(t)|^2\;dr=1.
+    \end{align}}
+\end{itemize}
+%%
+\subsubsection{Values of $l$ and $m$}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{$l$ and $m$ must be integral}\\
+    Using $L_z=\frac{\hbar}{i}\partial_\phi$ in \eqref{eq:equationYml} we have:
+    \begin{align}
+        \frac{\hbar}{i}\partial_\phi Y_l^m(\theta,\phi)=m\hbar Y_l^m(\theta,\phi)\longrightarrow Y_l^m(\theta,\phi)=F_l^m(\theta)e^{im\phi}.
+        \label{eq:YmlFmlexp}
+    \end{align}
+    We can cover all space by letting $\phi$ vary in $[0,2\pi]$. We must have by continuity of the solution,
+    \begin{align}
+        Y_l^m(\theta,\phi=0)=Y_l^m(\theta,\phi=2\pi)\Longrightarrow e^{2im\pi}=1.
+    \end{align}
+    Therefore, in an orbital AM $l$ and $m$ must be integer.
+    \item\textbf{All integral values $\geq0$ of $l$ can be found}\\
+    Given an integral value of $l$, we know from the prevous section that:
+    \begin{align*}
+        L_+Y_l^l(\theta,\psi)=0.
+    \end{align*}
+    Using \eqref{eq:eqationYml} and \eqref{eq:YmlFmlexp} yields
+    \begin{align*}
+        \left[\partial_\theta-l\cot\theta\right]F_l^l(\theta)=0.
+    \end{align*}
+    This first-order ODE can be integrated noting that $\cos\theta\;d\theta=d(\sin\theta)/\sin\theta$. The solution is:
+    \begin{align*}
+        F_l^l(\theta)=c_l(\sin\theta)^l.
+    \end{align*}
+    Thus, for each positive or zero integral value of $l$, there exists a function $Y_l^l(\theta,\phi)$ which is unique:
+    \begin{align}
+        \text{Spherical harmonics}\qquad\highlight{Y_l^l=c_l(\sin\theta)^le^{il\phi}}.
+        \label{eq:sphericalharmonic}
+    \end{align}
+    Through repeated action fo $L_-$, we construct $Y_l^{l-1},\cdots,Y_l^m,\cdots,Y_l^{-l}$. We see then there corresponds to the pair of eigenvalues $l(l+1)\hbar^2$ and $m\hbar$
+    one and only one eigenfunction $Y_l^m(\theta,\phi)$, which can be computed from \eqref{eq:sphericalharmonic}.
+\end{itemize}
+%%
+\subsubsection{Fundamental properties of the spherical harmonics}
+We summarize some properties of spherical harmonics.
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{Recurrence relations}\\
+    \begin{align}
+        \begin{array}{l}
+        e^{i\phi}\left[\partial_\theta-m\cot\theta\right]Y_l^m(\theta,\phi)=\sqrt{l(l+1)-m(m+1)}Y_l^{m+1}(\theta,\phi)\\
+        e^{i\phi}\left[-\partial_\theta-m\cot\theta\right]Y_l^m(\theta,\phi)=\sqrt{l(l+1)-m(m-1)}Y_l^{m-1}(\theta,\phi)
+        \end{array}
+    \end{align}
+    \item\textbf{Orthonormalization and closure relations}\\
+    Normalization imposed on the spherical harmonics yields
+    \begin{align}
+        \int_0^{2\pi}\int_0^\pi\sin\theta Y_{l'}^{m'*}(\theta,\phi)Y_l^m(\theta,\phi)\;\sin\theta d\theta d\phi=\delta_{l'l}\delta_{m'm}.
+    \end{align}
+    Furtheremore, any function $f(\theta,\phi)$ can be expanded in terms of the spherical hermonics:
+    \begin{align}
+        f(\theta,\phi)=\sum_{l=0}^\infty\sum_{m=-l}^{+l}c_{l,m}Y_l^m(\theta,\phi),\quad\text{with}\quad c_{l,m}=\int_0^{2\pi}\int_0^\pi f(\theta,\phi)Y_l^{m*}(\theta,\phi)\;d\theta d\phi.
+    \end{align}
+    The spherical harmonics therefore constitute an orthonormal basis in the space $\E_\Omega$, which means the surface of a sphere with fixed value of $r$.
+    This fact in expressed by the closure relation:
+    \begin{align}
+        \sum_{l=0}^\infty\sum_{m=-l}^{l}Y_l^m(\theta,\phi)Y_l^{m*}(\theta',\phi')=\delta(\cos\theta-\cos\theta')\delta(\phi-\phi')=\frac{1}{\sin\theta}\delta(\theta-\theta')\delta(\phi-\phi').
+    \end{align}
+    \item\textbf{Parity and complex conjugation}\\
+    A reflection through the coordinate origin is expressed as $\bR\longrightarrow-\bR$ in cartesian coordinates, and as 
+    \begin{align}
+        \text{Reflection}\qquad\begin{array}{l}
+            r\longrightarrow r\\
+            \theta\longrightarrow \pi-\theta\\
+            \phi\longrightarrow \pi+\phi
+        \end{array}
+    \end{align}
+    in spherical coordinates. It is simple to show that a reflection in $Y_l^m$ yields:
+    \begin{align}
+        \text{Reflection in spherical harmonics}\qquad\highlight{Y_l^m(\pi-\theta,\pi+\phi)=(-1)^lY_l^m(\theta,\phi)}.
+    \end{align}
+    Also, that a complex conjugation results in
+    \begin{align}
+        \text{Complex conjugatino of spherical harmonics}\qquad\highlight{[Y_l^m(\theta,\phi)]^*=(-1)^mY_l^{-m}(\theta,\phi).}
+    \end{align}
+\end{itemize}
+
+%%
+\subsubsection{Standard bases of the wave function space of a spinless particle}
+We know that $\bL^2$ and $L_z$ do not constitute a CSCO in the wave function spcae of a spinless particle. We shall now indicate the form of the standard bases of this space.
+By repeated application of $L_-$ on $\psi_{k,l,l}(\bR)$, we then construct the functions $\psi_{k,l,m}(\bR)$ which complete the standard basis for $m\neq l$. They satisfy the equations in \label{eq:sumeigenequationJ1} and \label{eq:sumeigenequationJ2}:
+
+But we saw that all eigenfunctions common to $\bL^2$ and $L_z$ that correspond to given eigenvalues $l(l+1)\hbar^2$ and $m\hbar$ have the same angualr dependence in $Y_l^m(\theta,\phi)$, and only the radial dependence differs.
+From the same above equations we deduce that the functions $\psi_{k,l,m}(\bR)$ of a standard basis of the wave function space of a spinless particle have the form:
+\begin{align}
+    \psi_{k,l,m}(\bR)=R_{k,l}(r)Y_l^m(\theta,\phi).
+\end{align}
+Notice the dependence indices for each term of the right-side. The orthonormalization relation for the radial function is:
+\begin{align}
+    \int_0^\infty R^*_{k,l}(r)R_{k',l}(r)\;r^2dr=\delta_{kk'}.
+\end{align}
+Notice also the orthogonality is to respect to the $k$ variable.
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item If we want the basis function $\psi_{k,l,m}(\bR)$ to be continuous, only the radial functions corresponding to $l=0$ can be non-zero at $r=0$.
+\end{itemize}
+%%
+\subsection{Physical considerations}
+
+\subsubsection{Study of a $\ket{k,l,m}$ state}
+
+
+
+\subsubsection{Calculations of the physical predictions concerning measurements of $\bL^2$ and $L_z$}
+
+

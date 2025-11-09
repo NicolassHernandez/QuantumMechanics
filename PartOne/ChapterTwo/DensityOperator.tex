@@ -98,9 +98,9 @@ How does one calculate hte probability $P(a_n)$ that a measurement of the observ
 Let $P_k(a_n)=\braket{\psi_k|P_n|\psi_k}$ be the probability of finding $a_n$ if the state vector were $\ket{\psi_k}$. 
 To obtain the desired probability $P(a_n)$, one must weight $P_k(a_n)$ by $p_k$ and then sum over $k$:
 \begin{align}
-    P(a_n)=\sum_kp_kP_k(a_n)=\sum_kp_k\tr{\rho_kP_n}=\tr{\sum_kp_k\rho_kP_n}=\tr{\rho P_n}.
+    P(a_n)=\sum_kp_kP_k(a_n)=\sum_kp_k\tr{\rho_kP_n}=\tr{\sum_kp_k\rho_kP_n}=\tr{\rho P_n},\quad\rho=\sum_kp_k\rho_k.
 \end{align}
-We see that the linearity of the formulas whih use the density operator enables us to express all physical predictions in terms of $\rho$.
+We see that the linearity of the formulas which use the density operator enables us to express all physical predictions in terms of $\rho$.
 
 The same density operator can be interpreted as several different statistical mixtures of pure states. This situation is sometimes described as the \bfemph{multiple preparations} of the 
 same density operator.
@@ -182,6 +182,65 @@ If $\rho_{np}\neq0$, means that a certain coherence subsists between these state
     \item $\rho$ can have coherences only between states whose populations are not zero ($\rho_{nn}\rho_{pp}\geq|\rho_{np}|^2$).
 \end{itemize}
 
-
-
+%%
 \subsection{Separate description of part of a physical system. Concept of a partial trace}
+Consider two different systems (1) and (2) and the global system (1)+(2), whose state space is the tensor product:
+\begin{align}
+    \E=\E(1)\otimes\E(2).
+\end{align}
+If $\{u_n(1)\}$ is a basis in $\E(1)$ and $\{v_p(2)\}$ is a basis in $\E(2)$, the ket $\ket{u_n(1)}\ket{v_p(2)}$ form a basis in $\E$.
+
+We shall construct from $\rho$ an operator $\rho(1)$ ($\rho(2)$) acting only in $\E(1)$ ($\E(2)$). This operation will be called \bfemph{partial trace}
+with respect to (1) ((2)).
+
+We introduce the operator $\rho(1)$, whose matrix elements are
+\begin{align*}
+    \braket{u_n(1)|\rho(1)|u_n'(1)}=\sum_p(\bra{u_n(1)}\bra{u_n(2)})\rho(\ket{u_n'(1)}\ket{v_p(2)}).
+\end{align*}
+$\rho(1)$ is obtained from $\rho$ by perfoming a partial trace on (2): $\rho(1)=\text{Tr}_2\rho$. Similarly, the operator $\rho(2)=\text{Tr}_1\rho$ has matrix elements:
+\begin{align*}
+    \braket{v_p(2)|\rho(2)|v_p'(2)}=\sum_n(\bra{u_n(1)}\bra{v_p(2)})\rho(\ket{u_n(1)}\ket{v_p'(2)}).
+\end{align*}
+We now that the total trace of $\rho$ is:
+\begin{align*}
+    \tr{\rho}=\sum_n\sum_p\left(\bra{u_n(1)}\bra{v_p(2)}\right)\rho\left(\ket{u_n(1)}\ket{v_p(2)}\right).
+\end{align*}
+For the partial traces, the indices $n$ and $n'$ (or $p$ and $p'$) are not required to be equal and the summation is performed only over $p$ (or $n$). We have, moreover:
+\begin{align*}
+    \tr{\rho}=\text{Tr}_1[\text{Tr}_2(\rho)]=\text{Tr}_2[\text{Tr}_1(\rho)].
+\end{align*}
+$\rho(1)$ and $\rho(2)$ are, like $\rho$, operators whose trace is unitary, Hermitian, and satisfy all the general properties of a density operator.
+
+Now, let $A(1)$ be an observable acting on $\E(1)$, and $\tilde{A}(1)=A(1)\otimes\mathds{1}(2)$ its extension in $\E$.
+We have that,
+\begin{align*}
+    \braket{\tilde{A}(1)}=&\tr{\rho\tilde{A}(1)}\\
+    =&\sum_{n,p}\sum_{n',p'}\left(\bra{u_n(1)}\bra{v_p(2)}\right)\rho\left(\ket{u_n'(1)}\ket{v_p'(2)}\right)\cdot\left(\bra{u_n'(1)}\bra{v_p'(2)}\right)A(1)\otimes\mathds{1}(2)\left(\ket{u_n(1)}\ket{v_p(2)}\right)\\
+    =&\sum_{n,p,n',p'}\left(\bra{u_n(1)}\bra{v_p(2)}\right)\rho\left(\ket{u_n'(1)}\ket{v_p'(2)}\right)\cdot\braket{u_n'(1)|A(1)|u_n(1)}\underbrace{\braket{v_p'(2)|v_p(2)}}_{\delta_{pp'}}\\
+    =&\sum_{n,n'}\underbrace{\left[\sum_p\braket{u_n(1)v_p(2)|\rho|u_n'(1)v_p(2)}\right]}_{\rho(1)}\braket{u_n'(1)|A(1)|u_n(1)}\\
+    =&\sum_n\braket{u_n(1)|\rho(1)A(1)|u_n(1)}\\
+    \braket{\tilde{A}(1)}=&\tr{\rho(1)A(1)}.
+\end{align*}
+The partial trace $\rho(1)$ enables us to calculate all the mean values $\braket{\tilde{A}(1)}$ as if the system (1) were and had $\rho(1)$ for a density operator.
+We see that $\rho(1)$ also enables us to obtain the probabilities of all the results of measurements bearing on system (1) alone.
+
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item Sometimes, it is impossible to assign a state vector to system (1) or (2) when the state of the global system (1)+(2) is not a product state. However, one can always, thanks to the partial trace operation, assign a density operator to subssystem (1) and (2).
+    \item The traces $\tr{\rho^2(1)}$ and $\tr{\rho^2(2)}$ are not generally equal to 1.
+    \item If the global system is in product state $\ket{\psi}=\ket{\varphi(1)}\ket{\chi(2)}$, we can verify that the corresponding density operator is
+    \begin{align}
+        \rho=\sigma(1)\otimes\tau(2),\quad\text{where}\quad\begin{array}{l}
+            \sigma(1)=\ket{\varphi(1)}\bra{\varphi(1)}\\
+            \tau(2)=\ket{\chi(2)}\bra{\chi(2)}
+        \end{array}.
+    \end{align}  
+    The partial trace operation then yields:
+    \begin{align}
+        \text{Tr}_2[\sigma(1)\otimes\tau(2)]=\sigma(1),\quad\text{and}\quad\text{Tr}_1[\sigma(1)\otimes\tau(2)]=\tau(2).
+    \end{align}
+    \item If $\rho$ cannot be factored out as in the previous case, there is therefore a certain correlation between systems (1) and (2), which is no longer contained in the operator 
+    $\rho=\rho(1)\otimes\rho(2)$.
+    \item If the evolution of the global system is governed by \eqref{eq:timeevolution_purecase}, it is in general impossible to find a Hamiltonian operator relating to system (1) alone that would enable us to write an analogous equation for $\rho(1)$.
+    The evolution of $\rho(1)$ is much more difficult to describe.
+\end{itemize}

@@ -1,0 +1,176 @@
+\section{General theory of angular momentum}
+We will determine the spectrum of $\bJ^2$ and $J_z$ for the general case and study their common eigenvectors.
+%%
+\subsection{Definitions and notation}
+
+\subsubsection{The $J_+$ and $J_-$ operators}
+
+It is more convenient to introduce the ladder operators for $J$ to use in favor of $J_x$ and $J_y$:
+\begin{align}
+    \text{Ladder operators}\qquad\begin{array}{l}
+        J_+=J_x+iJ_y\\
+        J_-=J_x-iJ_y
+    \end{array}.
+    \label{eq:ladderoperators_J}
+\end{align}
+They are not Hermitian; they are adjoints of each other.
+We will use the following operators: $J_+,J_-,J_z,\bJ^2$. These operators satisfy the commutation relation:
+\begin{align}
+    [J_z,J_+]=\hbar J_+,\quad[J_z,J_-]=-\hbar J_-,\quad[J_+,J_-]=2\hbar J_z,\quad[\bJ^2,J_+]=[\bJ^2,J_-]=[\bJ^2,J_z]=0.
+\end{align}
+Using \eqref{eq:magnitudeJoperator} and the above relations, we can express $\bJ^2$ in the following form:
+\begin{align*}
+    \highlight{\bJ^2=\frac{1}{2}(J_+J_-+J_-J_+)+J_z^2}.
+\end{align*}
+
+%%
+\subsubsection{Notation for the eigenvalues of $\bJ^2$ and $J_z$}
+According to \eqref{eq:magnitudeJoperator}, $\bJ^2$ is the sum of the squares of three Hermitian operators.
+Consequently, for any ket $\ket{\psi}$, the matrix element $\braket{\psi|\bJ^2|\psi}$ is positive or zero:
+\begin{align*}
+    \braket{\psi|\bJ^2|\psi}=\braket{\psi|J^2_x|\psi}+\braket{\psi|J_y^2|\psi}+\braket{\psi|J^2_z|\psi}=\|J_x\ket{\psi}\|^2+\|J_y\ket{\psi}\|^2+\|J_z\ket{\psi}\|^2\geq0.
+\end{align*}
+This implies that all the eigenvalues of $\bJ^2$ are positive or zero. We shall write the eigenvalues of $\bJ^2$ in the form $j(j+1)\hbar^2$, with $j\geq0$, so that 
+they have dimensions of $\hbar^2$ and the $j(j+1)$ is a dimensionless number.
+As for the eigenvalues of $J_z$, which have the same dimensions as $\hbar$, they are traditionally written as $m\hbar$, with $m$ a dimensionless number.
+%%
+\subsubsection{Eigenequations for $\bJ^2$ and $J_z$}
+We shall label the eigenvector common to $\bJ^2$ and $J_z$ by the indices $j$ and $m$. However, as they dont constitute a CSCO, it is necessary to introduce a third index $k$ in 
+order to distinguish between the different eigenvectors correposnding to the same eigenvalues $j(j+1)\hbar^2$ and $m\hbar$ of $\bJ^2$ and $J_z$.
+
+We shall therefore try to solve the simultaneously eigenequations:
+\begin{align}
+    \bJ^2\ket{k,j,m}=j(j+1)\hbar^2\ket{k,j,m},\quad\text{and}\quad J_z\ket{k,j,m}=m\hbar\ket{k,j,m}.
+\end{align}
+
+%%
+\subsection{Eigenvalues of $\bJ^2$ and $J_z$}
+We will prove three lemmas (as in the QHO) which will enable us to determine the spectrum of $\bJ^2$ and $J_z$.
+
+\subsubsection{Lemmas}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+    \item\textbf{Properties of the eigenvalues of $\bJ^2$ and $J_z$}\\ If $j(j+1)\hbar^2$ and $m\hbar$ are the eigenvalues of $\bJ^2$ and $J_z$ associated with the same eigenvector $\ket{k,j,m}$, then $j$ and $m$ satisfy the inequality:
+    \begin{align}
+        -j\leq m\leq j.
+    \end{align}
+    \item\textbf{Properties of the vector $J_-\ket{k,j,m}$}\\ Let $\ket{k,j,m}$ be an eigenvector of $\bJ^2$ and $J_z$ with the eigenvalues $j(j+1)\hbar^2$ and $m\hbar$.
+    \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+        \item $m=-j\Longrightarrow J_-\ket{k,j,-j}=0$.
+        \item If $m>-j$, $J_-\ket{k,j,m}$ is a non-null eigenvector of $\bJ^2$ and $J_z$ with the eigenvalues $j(j+1)\hbar^2$ and $(m-1)\hbar$.
+    \end{enumerate} 
+    \item\textbf{Properties of the vector $J_+\ket{k,j,m}$}\\
+    Let $\ket{k,j,m}$ be an eigenvector of $\bJ^2$ and $J_z$ with the eigenvalues $j(j+1)\hbar$ and $m\hbar$.
+    \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+        \item $m=j\Longrightarrow J_+\ket{k,j,j}=0$.
+        \item If $m<j$, $J_+\ket{k,j,m}$ is a non-null eigenvector of $\bJ^2$ and $J_z$ with the eigenvalues $j(j+1)\hbar^2$ and $(m+1)\hbar$.
+    \end{enumerate} 
+\end{enumerate}
+
+%%
+\subsubsection{Determination of the spectrum of $\bJ^2$ and $J_z$}
+We shall show that the three lemmas above enable us to determine the possible values of $j$ and $m$. The proove will be performed under iteration and is skipped.
+
+\begin{emphasizer}[Summarize of the results]
+    Let $\bJ$ be an arbitrary AM, obeying the commutation relations \eqref{eq:commutationrelationsAM_J}. If $j(j+1)\hbar^2$ and $m\hbar$ denote the eivengalues of 
+    $\bJ^2$ and $J_z$, then:
+    \begin{itemize}[itemsep=0pt,topsep=0pt]
+        \item The only possible values for $j$ are postive integers of half-integers or zero: $0,1/2,1,3,2,2,\cdots$.
+        \item For a fixed $j$, the only values possible for $m$ are the $(2j+1)$ numbers: $-j,-j+1,\cdots,j-1,j$.
+    \end{itemize}
+\end{emphasizer}
+
+
+%%
+\subsection{Standard $\{\ket{k,j,m}\}$ representations}
+We shall now study the eigenvectors common to $\bJ^2$ and $J_z$.
+%%
+\subsubsection{The basis state}
+Given a pair of eigenvalues, $j(j+1)\hbar^2$ and $m\hbar$, the set of eigenvectors associated with this pair of eigenvalues forms a vector subspace
+of $\E$ which we shall denote by $\E(j,m)$.
+We choose in $\E(j,m)$ an arbitrary orthonormal basis, $\{\ket{k,j,m};\;k=1,2,\cdots,g(j,m)\}$ with $g(j,m)\geq1$ the dimension of this subspace.
+
+
+
+
+%%
+\subsubsection{The spaces $\E(k,j)$}
+
+
+%%
+\subsubsection{Matrices representing the angular momentum operators}
+Let us give some exmamples of $(J_u)^{(j)}$ matrices:
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\roman*)]
+    \item\textbf{$\bm{j=0}$}\\ The subspaces $\E(k,j=0)$ are one-dimensional, since zero si the only possible value for $m$. The $(J_u)^{0}$ matrices reduces to numbers, which according to C-51, are zero.
+    \item\textbf{$\bm{j=1/2}$}\\ The subspaces $\E(k,j=1/2)$ are two-dimensional $m\in\{1/2,-1/2\}$. If we choose the basis vector in this order, we find using C-51:
+    \begin{align*}
+        &(J_z)^{(1/2)}=\frac{\hbar}{2}\begin{bmatrix}
+            1&0\\0&-1
+        \end{bmatrix},\quad(J_+)^{(1/2)}=\hbar\begin{bmatrix}
+            0&1\\0&0
+        \end{bmatrix},\quad(J_-)^{(1/2)}=\hbar\begin{bmatrix}
+            0&0\\1&0
+        \end{bmatrix},\\
+        &(J_x)^{(1/2)}=\frac{\hbar}{2}\begin{bmatrix}
+            0&1\\1&0
+        \end{bmatrix},\quad(J_y)^{(1/2)}=\frac{\hbar}{2}\begin{bmatrix}
+            0&-i\\i&0
+        \end{bmatrix},\quad(\bJ^2)^{(1/2)}=\frac{3}{4}\hbar^2\begin{bmatrix}
+            1&0\\0&1
+        \end{bmatrix}.
+    \end{align*} 
+    \item\textbf{$\bm{j=1}$}\\ The subspaces $\E(k,j=1)$ are two-dimensional $m\in\{1,0,-1\}$. Similarly,
+    \begin{align*}
+        &(J_z)^{(1)}=\frac{\hbar}{2}\begin{bmatrix}
+            1&0&0\\0&0&0\\0&0&-1
+        \end{bmatrix},\quad(J_+)^{(1)}=\hbar\begin{bmatrix}
+            0&\sqrt{2}&0\\0&0&\sqrt{2}\\0&0&0
+        \end{bmatrix},\quad(J_-)^{(1)}=\hbar\begin{bmatrix}
+            0&0&0\\\sqrt{2}&0&0\\0&\sqrt{2}&0
+        \end{bmatrix},\\
+        &(J_x)^{(1)}=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+            0&1&0\\1&0&1\\0&1&0
+        \end{bmatrix},\quad(J_y)^{(1)}=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+            0&-i&0\\i&0&-i\\0&i&0
+        \end{bmatrix},\quad(\bJ^2)^{(1)}=2\hbar^2\begin{bmatrix}
+            1&0&0\\0&1&0\\0&0&1
+        \end{bmatrix}.
+    \end{align*} 
+    \item\textbf{$\bm{j}$ arbitrary}\\ The ladder operators can be written using C-51:
+    \begin{align*}
+        \braket{k,j,m|J_x|k',j',m'}&=\frac{\hbar}{2}\delta_{kk'}\delta_{jj'}[\sqrt{j(j+1)-m'(m'+1)}\delta_{m,m'+1}+\sqrt{j(j+1)-m'(m'-1)}\delta_{m,m'-1}]\\
+        \braket{k,j,m|J_y|k',j',m'}&=\frac{\hbar}{2i}\delta_{kk'}\delta_{jj'}[\sqrt{j(j+1)-m'(m'+1)}\delta_{m,m'+1}-\sqrt{j(j+1)-m'(m'-1)}\delta_{m,m'-1}].
+    \end{align*}
+    $(J_x)^{(j)}$ is symmetrical and real, and $(J_y)^{(j)}$ is antisymmetrical and pure imaginary. Since the kets $\ket{k,j,m}$ are eigenvectors of $\bJ^2$, we have:
+    \begin{align*}
+        \braket{k,j,m|\bJ^2|k',j',m'}=j(j+1)\hbar^2\delta_{k'k}\delta_{jj'}\delta_{mm'}.
+    \end{align*}
+    The matrix $(\bJ^2)^{(j)}$ is therefore proportinoal to the $(2j+1)\times(2j+1)$ unit matrix: its diagonal elements are all equal to $j(j+1)\hbar^2$.
+\end{enumerate}
+
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item The OZ axis chosen as the quantization axis is \textbf{entirely arbitrary}. All directions are physically equivalent, and we 
+    should expect the eigenvalues of $J_x$ and $J_y$ to be the same as those of $J_z$. In general, inside a given subspace $\E(k,j)$, the eigenvalues of $J_x$ and $J_y$
+    (like those of $J_u=\bJ\cdot\bm{u}$) are $j\hbar,(j-1)\hbar,\cdots,(-j+1)\hbar,-j\hbar$.
+    The corresponding eigenvectors [$(\bJ^2,J_x)$, $(\bJ^2,J_y)$, or $(\bJ^2,J_z)$] are linear combinations of the $\ket{k,j,m}$ with $k$ and $j$ fixed.
+\end{itemize}
+
+
+
+
+
+\begin{emphasizer}[Summarize of the results]
+    An orthonormal basis $\{\ket{k,j,m}\}$ of the state space, composed of eigenvectors common to $\bJ^2$ and $J_z$:
+    \begin{align}
+        \left.\begin{array}{rl}
+            \bJ^2\ket{k,j,m}&=j(j+1)\hbar^2\ket{k,j,m}\\
+            J_z\ket{k,j,m}&=m\hbar\ket{k,j,m}
+        \end{array}\right\rfloor
+        \label{eq:sumeigenequationJ1}
+    \end{align}
+    is called a \bfemph{standard basis} if the action of $J_\pm$ on the basis vectors is given by:
+    \begin{align}
+        \text{Eigenequation of $J_\pm$}\qquad\highlight{J_\pm\ket{k,j,m}=\hbar\sqrt{j(j+1)-m(m\pm1)}\ket{k,j,m\pm1}}.
+        \label{eq:sumeigenequationJ2}
+    \end{align}
+\end{emphasizer}
