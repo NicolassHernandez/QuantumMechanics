@@ -1,4 +1,9 @@
 \section{Spin 1/2 particle: quantization of the angular momentum}
+We will study a fundamental experiment that revealed the quantization of a simple physical quantity, the angular momentum.
+We will see that the component along Oz of the AM can take only certain values ($\pm\hbar/2$), that is, is quantized.
+
+A silver atom in the ground state is said to be a \bfemph{spin 1/2 particle}. We shall alo study the exolution of a spin 1/2 particle in a uniform magneti field (Larmor precession).
+
 \subsection{Experimental demonstration}
 We are going to describe and analyze the Stern-Gerlach experiment, which demonstrated the quantization of the componentes of the angular momentum.
 %
@@ -12,21 +17,27 @@ The B-field has no components along Oy, and its larges component is along Oz; it
 Since the B-field has a conserved flux $\nabla\cdot\bB=0$, it must also have a component along Ox which varies with the distance x from the plane of symmetry.
 \begin{figure}[h!]
     \centering
-    \begin{subfigure}{.45\columnwidth}
+    \begin{subfigure}{.4\columnwidth}
         \centering
         \includegraphics[width=\columnwidth]{PartOne/ChapterFive/stern1.png}
         \caption{Stern-gerlach apparatus}
     \end{subfigure}
     \hfill
-    \begin{subfigure}{.45\columnwidth}
+    \begin{subfigure}{.3\columnwidth}
         \centering
         \includegraphics[width=.8\columnwidth]{PartOne/ChapterFive/stern2.png}
         \caption{B-field distribution}
     \end{subfigure}
-    \caption{}
+    \hfill
+    \begin{subfigure}{.2\columnwidth}
+        \centering
+        \includegraphics[width=.5\columnwidth]{PartOne/ChapterFive/sternresults.png}
+        \caption{Experimental results}
+    \end{subfigure}
+    \caption{The Stern-Gerlach experiment.}
 \end{figure}
 %%
-\subsection{Classical calculations of the deflection}
+\subsubsection{Classical calculations of the deflection}
 The neutral silver atoms posses a permanent magnetic moment $\bm{\mu}$ (they are paramgnetic atoms); the resulting forces are derived from the potential energy:
 \begin{align}
     W_B=-\bm{\mu}\cdot\bB.
@@ -35,4 +46,130 @@ For a given atomic level, the magnetic moment $\bm{\mu}$ and the angular momentu
 \begin{align}
     \bm{\mu}=\gamma\bJ,
 \end{align} 
-where $\gamma$ is the \bfemph{gyromagnetic ratio} of the level.
+where $\gamma$ is the \bfemph{gyromagnetic ratio} of the level. Before the atoms traverse the electromagnet, the magnetic moments of the silver are oriented randomly (isotropically).
+
+The resultat foces exerted on te atom is:
+\begin{align}
+    \bm{F}=\nabla(\bm{\mu}\cdot\bB).
+\end{align}
+The angular momentum theorem can be written:
+\begin{align}
+    \partial_t\bL=\bm{\Gamma}=\gamma\bL\times\bB.
+\end{align}
+The atom thus behaves like a gyroscope: $\partial_t\bL$ is perpendicualr to $\bL$, and the angular momentum turns about the magnetic field, the angle $\theta$ between $|bL$ and $\bB$ remaining constant.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.2\columnwidth]{PartOne/ChapterFive/larmorprecession.png}
+    \caption{The effect of a uniform B-field $\bB$ is to cause $\bm{\mu}$ to turn about $\bB$ with a 
+    constant angular velocity (Larmor precession).}
+\end{figure}
+
+The rotational angular velocity is equal to the product of the gyromagnetic ratio $\gamma$ and the modulus of the B-field.
+
+To calculate the force $\bm{F}$, we can, to a very good aproximation, neglect in thte potential energy $W$ the terms proportional to $\mu_x$ and $\mu_y$ and take $\mu_z$ to be constant.
+This is becuase the frequency of oscillation sue to rotation of $\bm{\mu}$ is so great that only the time-average values of $\mu_x$ and $\mu_y$ can play a role in $W$, and there are both zero.
+
+Consequently, it is as if the atom were submitted to the sole force:
+\begin{align}
+    \bm{F}'=\nabla(\mu_zB_z)=\mu_z\nabla B_z.
+\end{align}
+The force on the atom is therefore parallel to Oz and proportional to $\mu_z$. Consequently, because this force produced the deflection HN, measuring HN is 
+equivalent to measuring $\mu_z$ and $L_z$.
+%%
+\subsubsection{Results and conclusions}
+The results of the experiment (performed in 1922) are in complete contradiction with the preceding predictions.
+We do not observe a single spot centered at H, but two spots centered at $N_1$ and $N_2$.
+The predictions of classical mechanics are therefore shown to be invalidated by the experiment.
+
+It is possible, in order to describe the motion of the silver atoms, to construct wave packets whose width $\Delta z$ and momentum dispersion $\Delta p$ are negligible. They must satisfy the 
+Heisenberg relation:
+\begin{align*}
+    \Delta z\cdot\Delta p_z\geq\hbar.
+\end{align*} 
+Numerically, the mass $M$ of a silver atom is $1.8\times10^{-25}\;kg$. $\Delta z$ and the velocity uncertainty $\Delta v_z=\Delta p_z/M$ must be such that:
+\begin{align}
+    \Delta z\cdot\Delta v_z\geq\frac{\hbar}{M}\approx10^{-9}.
+\end{align}
+
+Is is then easy to find uncertainties $\Delta z$ and $\Delta v_z$ which, while satisfying above, are negligible on the scale of the experiment being considered.
+Is is possible to reason in terms of quasi-pointlike wave packets moving along classical trajectories. Therefore, it is correct to claim that 
+measurement of the deflection HN constitutes a measurement of $\mu_z$ or $L_z$.
+
+\begin{emphasizer}[Conclusion of the experiment]
+    If we measure the component $L_z$ of the intrinsic angular momentum of a silver atom in its ground state, we can find only one or the other of two values 
+    corresponding to the deflections $HN_1$ and $HN_2$. $L_z$ is a \textbf{quantized} physical quantity whose discrete spectrum includes only two eigenvalues ($\pm\hbar/2$).
+\end{emphasizer}
+
+%%
+\subsection{Theorical description}
+We are now going to show how QM describes the degrees of freedom of a silver atom, that is, of a spin 1/2 particle.
+The idea is to give precise examples of kets and observables, to show how physical predictions can be extracted from them and how to distinguish clearly between
+the various stages of an experiment (preparation, evolution, measurement).
+
+We must therefore define the state space and the observables corresponding to the components of $\bL$: $L_x,L_y,L_z$, or more generally,
+$L_{\bm{u}}=L\cdot\bm{u}$, where $\bm{u}$ is an arbitrary unit vector.
+%
+\subsubsection{The observale $S_z$ and the spin state space}
+With $L_z$ we must associate an observable $S_z$ which has two eigenvalues $\pm\hbar/2$.
+We assume that these two eigenvalues are not degenrerate, ans we denot by $\ket{\pm}$ the respective orthonormal eigenvectors:
+\begin{align}
+    \text{Eigenequation of $S_z$}\qquad \highlight{S_z\ket{\pm}=\pm\frac{\hbar}{2}\ket{\pm},\quad\text{with}\quad\begin{array}{l}
+        \braket{+|+}=\braket{-|-}=1\\
+        \braket{\pm|\mp}=0
+    \end{array}}
+    \label{eq:sz}
+\end{align}
+$S_z$ alone forms a CSCO, and the spin state space is the two-dimensional space $\E_s$ spanned by the eigenvectors $\ket{\pm}$. This is mathematically expressed 
+by the closure relation:
+\begin{align}
+    \text{Closure relation of $\E_s$}\qquad\ket{+}\bra{+}+\ket{-}\bra{-}=\mathds{1}.
+\end{align}
+The very most general vector in $\E_s$ is a linear superposition os these eigenvectors:
+\begin{align}
+    \ket{\psi}=\alpha\ket{+}+\beta\ket{-},\quad\text{with}\quad|\alpha|^2+|\beta|^2=1.
+    \label{eq:generalpsispin}
+\end{align}
+In the $\{\ket{\pm}\}$ basis, the matrix representing $S_z$ is diagonal and is written as
+\begin{align}
+    S_z=\frac{\hbar}{2}\begin{bmatrix}
+        1&0\\0&-1
+    \end{bmatrix}.
+\end{align}
+%%
+\subsubsection{The other spin observables}
+With the $L_x$ and $L_y$ components of $\bL$ will be associates the observables $S_x$ and $S_y$. The three components of the angular momentum
+do not commute with each other but satisfy well-defined commutation relations.  The matrices representing $S_x$ and $S_y$ in the basis 
+of the eigenvectors $\ket{\pm}$ of $S_z$ are the following:
+\begin{align}
+    S_x=\frac{\hbar}{2}\begin{bmatrix}
+        0&1\\1&0
+    \end{bmatrix},\quad S_y=\frac{\hbar}{2}\begin{bmatrix}
+        0&-i\\i&0
+    \end{bmatrix}.
+\end{align}
+We see that they can be expressed in terms of the \bfemph{Pauli matrices} $\sigma_x,\sigma_y,\sigma_z$.
+
+As fot the $L_{\bm{u}}$ component of $\bL$ along the unit vector $\bm{u}$, charactrerized by the angles $(\theta,\phi)$, it is written
+\begin{align}
+    L_{\bm{u}}=\bL\cdot\bm{u}=L_x\sin\theta\cos\phi+L_y\sin\theta\sin\phi+L_z\cos\theta.
+\end{align}
+Using the previous definitions of $S_x,S_y,S_z$, we easily find the matrix that represents the correspondin observable $S_{\bm{u}}=\bS\cdot\bm{u}$ in the $\{\ket{\pm}\}$ basis:
+\begin{align}
+    S_u=S_x\sin\theta\cos\phi+S_y\sin\theta\sin\phi+S_z\cos\theta=\frac{\hbar}{2}\begin{bmatrix}
+        \cos\theta&\sin\theta e^{-i\phi}\\\sin\theta e^{i\phi}&-\cos\theta
+    \end{bmatrix}.
+\end{align}
+We now get the eigenvaleus of each observable defined. The $S_x,S_y,S_u$ operators have the \textbf{same eigenvalues}, $+\hbar/2$ and $-\hbar/2$, as $S_z$.
+This is equivalent to rotate the Stern-Gerlach device, as all directions of space have the same properties, it must be invariant under rotations.
+The measurements of $L_x,L_y,L_u$ can therefore yield only one of two results: $+\hbar/2$ or $-\hbar/2$.
+
+As for the eigenvectors of $S_x,S_y,S_u$, we shall denote them rspectively by $\ket{\pm}_x,\ket{\pm}_y,\ket{\pm}_u$. The expansion of the eigenvectors of $S_u$ in the 
+$\{\ket{\pm}_z\}$ basis is:
+\begin{align}
+    \text{Eigenstates of $S_u$ in the $\{\ket{\pm}_z\}$ basis}\qquad\highlight{\begin{array}{l}
+        \displaystyle\ket{+}_u=\cos\frac{\theta}{2}e^{-i\phi/2}\ket{+}_z+\sin\frac{\theta}{2}e^{i\phi/2}\ket{-}_z\\
+        \displaystyle\ket{-}_u=-\sin\frac{\theta}{2}e^{-i\phi/2}\ket{+}_z+\cos\frac{\theta}{2}e^{i\phi/2}\ket{-}_z
+    \end{array}}
+    \label{eq:eigenstatesSu}
+\end{align}
+We see that $S_x$ is obtained when $(\theta,\phi)=(\pi/2,0)$ while for $S_y$ through $(\theta,\phi)=(\pi/2,\pi)$.

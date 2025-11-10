@@ -1,5 +1,13 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \contentsline {xchapter}{Theory of angular momentum}{8}{chapter.1}%
-\contentsline {figure}{\numberline {1.1}{\ignorespaces \relax }}{9}{figure.caption.6}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Spin 1/2 and two-level systems}{18}{chapter.2}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The Stern-Gerlach experiment.}}{19}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The effect of a uniform B-field $\bm {B}$ is to cause $\bm {\mu }$ to turn about $\bm {B}$ with a constant angular velocity (Larmor precession).}}{20}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces The atoms that pass through the hole made are all in the spin state $|+\rangle $. The Stern-Gerlach is then acting like a polarizer.}}{23}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The result obtained is certain $+\hbar /2$.}}{24}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces The possible results are $+\hbar /2$ with $\cos ^2\theta $ of change and $-\hbar /2$ with $\sin ^2\theta /2$.}}{24}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Variation of the energies $E_\pm $ as a function of the energy difference $\Delta $. In absence of coupling, the levels behaves as the dashed lines. Under the effect of non-diagonal coupling, the two perturbed levels gives the solid lines.}}{29}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Evolution of $P_{12}(t)$ of finding the system in $|\varphi _2\rangle $ when initially was in $|\varphi _1\rangle $. When the states have the same unperturbed energy, the probability can attain the value 1.}}{31}{figure.caption.12}%
 \contentsfinish 

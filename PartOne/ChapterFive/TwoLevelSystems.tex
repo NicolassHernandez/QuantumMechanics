@@ -1,1 +1,205 @@
 \section{Two-level systems}
+
+There exist numerous other cases in physics which, to a first approximation, can be treated as a two-level system.
+
+Assume that we want to evaluate the effect of an external perturbation in two levels. Then the intensity of the perturbation is sufficiently weak, it can be shown that its effect on the two state can eb computed, approximately, by ignoring all the other enegy levels of the system.
+All the calculations can then be performed in a two-dimensional subspace of the state space.
+We will study certian general properties of two-level systems.
+
+%
+\subsection{Outline of the problem}
+%
+\subsubsection{Notation}
+Consider a physical system whose state space is two-dimensional. For a basis, we choose the system of the two eigenstates $\ket{\varphi_1}$ and $\ket{\varphi_2}$ of the Hamiltonian $H_0$ whose eigenvalues 
+are, respectively, $E_1$ and $E_2$:
+\begin{align}
+    \text{Eigenequation in a two-level system}\quad\highlight{\begin{array}{l}
+        H_0\ket{\varphi_1}=E_1\ket{\varphi_1}\\
+        H_0\ket{\varphi_2}=E_2\ket{\varphi_2}
+    \end{array}}
+\end{align}
+Assume we want to take into account an external perturbation, initially neglected in $H_0$. The Hamltonian, eigenstates and eigenvalues become:
+\begin{align}
+    H=H_0+W\Longrightarrow\begin{array}{l}
+        H\ket{\psi_+}=E_+\ket{\psi_+}\\
+        H\ket{\psi_-}=E_-\ket{\psi_-}
+    \end{array}.
+    \label{eq:hamiltoniancoupled}
+\end{align}
+$H_0$ is called the unperturbed Hamiltonian and $W$, the perturbation or coupling. We also assume that $W$ is time-independent.
+In the $\{\ket{\varphi_1},\ket{\varphi_2}\}$ basis of $H_0$, $W$ is represented by a Hermitian matrix:
+\begin{align}
+    (W)=\begin{bmatrix}
+        W_{11}&W_{12}\\W_{21}&W_{22}
+    \end{bmatrix}.
+\end{align}
+$W_{11}$ ans $W_{22}$ are real, and $W_{12}=(W_{21})^*$. In the absence of coupling, $E_1$ and $E_2$ are the possible energies of the system,
+and the states $\ket{\varphi_1}$ and $\ket{\varphi_2}$ are stationary states.
+%%
+\subsubsection{Consequences of the coupling}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{$E_1$ and $E_2$ are no longer the possible energies of the system}\\
+    An energy measurement will yield only one of the eigenvalues $E_+$ or $E_-$. We want to express these energies in terms of $E_1,E_2$ and the matrix elements $W_{ij}$.
+    \item\textbf{$\ket{\varphi_1}$ and $\ket{\varphi_2}$ are no longer stationary states}\\
+    Since $\ket{\varphi_1}$ and $|ket{\varphi_2}$ are not generally eigenstates of the total Hamiltonian $H$, they are no longer stationary states.
+    $W$ therefore induces \textbf{transitions} between the two unperturbed states. 
+\end{itemize}
+\begin{emphasizer}[Reduction to a ficticious spin 1/2]
+    With every two-level system, can be associated a \bfemph{ficticious spin 1/2} placed in a static field $\bB$ and described by a Hamiltonian whose form is 
+    identical tothat of the initial two level system.
+\end{emphasizer}
+%%
+\subsection{Static aspect: effect of coupling on the stationary states of the system}
+%
+\subsubsection{Expressions for the eigenstates and eigenvalues of $H$}
+In the $\{\ket{\varphi_1},\ket{\varphi_2}\}$ basis, the matrix representing $H$ is written
+\begin{align}
+    H=\begin{bmatrix}
+        E_1+W_{11}&W_{12}\\W_{21}&E_2+W_{22}
+    \end{bmatrix}.
+\end{align}
+The eigenvalues (after diagonalization) are:
+\begin{align}
+    \text{Eigenvalues}\qquad\highlight{E_\pm=\frac{1}{2}(E_1+W_{11}+E_2+W_{22})\pm\frac{1}{2}\sqrt{(E_1+W_{11}-E_2-W_{22})^2+4|W_{12}|^2}.}
+\end{align}
+The eigenvectors associated are:
+\begin{align}
+    \text{Eigenstates}\qquad\highlight{\begin{array}{l}
+        \displaystyle\ket{\psi_+}=\cos\frac{\theta}{2}e^{-\phi/2}\ket{\varphi_1}+\sin\frac{\theta}{2}e^{i\phi/2}\ket{\varphi_2}\\
+        \displaystyle\ket{\psi_+}=-\sin\frac{\theta}{2}e^{-\phi/2}\ket{\varphi_1}+\cos\frac{\theta}{2}e^{i\phi/2}\ket{\varphi_2}
+    \end{array}}
+    \label{eq:eigenstatescoupling}
+\end{align}
+The angles $\theta$ and $\phi$ are defined by:
+\begin{align}
+    \tan\theta=\frac{2|W_{12}|}{E_1+W_{11}-E_2-W_{22}},\quad\theta\in[0,\pi],\quad\text{and}\quad W_{21}=|W_{21}|e^{i\phi}.
+\end{align}
+%%
+\subsubsection{Discussion}
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item\textbf{Graphical representation of the effect of coupling}\\
+    We assume that $W_{11}=W_{22}=0$, which reduces the eigenstates to:
+    \begin{align*}
+        E_{\pm}=\frac{1}{2}(E_1+E_2)\pm\frac{1}{2}\sqrt{(E_1-E_2)^2+4|W_{12}|^2},\quad\text{and}\quad\tan\theta=\frac{2|W_{12}|}{E_1+E_2},\quad\theta\in[0,\pi].
+    \end{align*}
+    We introduce two other parameters, the \bfemph{detuning} $\Delta$ and \bfemph{mean energy} $E_m$:
+    \begin{align}
+        E_m=\frac{1}{2}(E_1+E_2),\quad\text{and}\quad\Delta=\frac{1}{2}(E_1-E_2).
+    \end{align}
+    We see that changing $E_m$ reduces to shifting the origin along the energy axis. Also, the eigenvectors do not depend on $E_m$, and we then care only 
+    about the influence of $\Delta$. Substituting these new parameters in the eigenvalues yield:
+    \begin{align}
+        E_\pm=E_m\pm\sqrt{\Delta^2+|W_{12}|^2}=E_c\pm\frac{\hbar\Omega}{2},\quad\Omega=\sqrt{\Delta^2+|\Omega_0|^2}.
+    \end{align}
+    By plotting the four energies $E_{1,2},E_\pm$, we obtain for $E_{1,2}$ two straight lines of slope $\pm1$. When $\Delta$ changes, $E_\pm$ describe two branches of a hyperbola whose 
+    asymptotes are the two straight lines associated with the unperturbed levels. The minimum separation is $2|W_{12}|$.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.4\columnwidth]{PartOne/ChapterFive/energydetuning.png}
+        \caption{Variation of the energies $E_\pm$ as a function of the energy difference $\Delta$. In absence of coupling, the levels behaves as the dashed lines. Under the effect of non-diagonal coupling, the two perturbed
+        levels gives the solid lines.}
+    \end{figure}
+    \item\textbf{Effect of the coupling on the energy levels}\\
+    In the absence of coupling the energies $E_{1,2}$ cross at $\Delta=0$. Under the effect fo non-diagonal coupling, the two level repel each other.
+    The diagram in solid lines is therefore called an \bfemph{anti-crossing diagram}.
+    Moreover, we see that, for any $\Delta$, we always have:
+    \begin{align}
+        |E_+-E_-|>|E_1-E_2|.
+    \end{align}
+     The coupling then separates the normal frequencies.
+
+    Near the asymptotes, $|\Delta|\gg|W_{12}|$, and the energies are written in power series expansion. On the other hand, at the center of the hyperbola, $\Delta=0$, and 
+    the energies reduces to the following:
+    \begin{align*}
+        |\Delta|\gg|W_{12}|:&\qquad E_\pm=E_m\pm\Delta\left(1+\frac{1}{2}\left|\frac{W_{12}}{\Delta}\right|^2+\cdots\right)\\
+        \Delta=0:&\qquad E_\pm=E_m\pm|W_{12}|
+    \end{align*}
+    Therefore, the effect of the coupling is much more important when the two unperturbed levels have the same energy.
+    \item\textbf{Effect of coupling on the eigenstates}\\
+    Using the detuning and mean enegy value, we have:
+    \begin{align}
+        \tan\theta=\frac{|W_{12}|}{\Delta}=\frac{|\Omega_0|}{\Delta}
+    \end{align}
+    When $\Delta\ll|W_{12}|$ (strong coupling), $\theta\approx\pi/2$. On the other hand, when $\Delta\gg|W_{12}|$ (weak coupling), $\theta\approx0$.
+
+    At the center of the hyperbola ($\Delta=0$), and near the symptotes ($\Delta\gg|W{12}|$) we have: 
+    \begin{align*}
+        \Delta=0:&\qquad\ket{\psi_\pm}=\frac{1}{\sqrt{2}}\left[\pm e^{-i\phi/2}\ket{\varphi_1}+e^{i\phi/2}\ket{\varphi_2}\right]\\
+        \Delta\gg|W_{12}|:&\qquad\begin{array}{l}
+        \ket{\psi_+}=e^{-i\phi/2}\left[\ket{\varphi_1}+e^{i\phi}\frac{|W_{12}|}{2\Delta}\ket{\varphi_2}+\cdots\right]\\
+        \ket{\psi_-}=e^{i\phi/2}\left[\ket{\varphi_2}-e^{-i\phi}\frac{|W_{12}|}{2\Delta}\ket{\varphi_1}+\cdots\right]
+        \end{array}
+    \end{align*}
+    We see that for weak coupling, the perturbed states differ very slightly from the unperturbed states. For instance $\ket{\psi_+}$ is equal to the state 
+    $\ket{\varphi_1}$ slightly contaminated b a small contribution from the state $\ket{\varphi_2}$.
+    On the other hand, for a strong coupling, the states $\ket{\psi_\pm}$ are ery different from the state $\ket{\varphi_{1,2}}$.
+\end{itemize}
+%%
+\subsection{Dynamical aspect: oscilattion of the system between the two unperturbed states}
+%
+\subsubsection{Evolution of the state vector}
+Let the state vector of the system at $t$ be:
+\begin{align*}
+    \ket{\psi(t)}=a_1(t)\ket{\varphi_1}+a_2(t)\ket{\varphi_2}
+\end{align*}
+The evolution of $\ket{\psi(t)}$ in the presence of coupling $W$ is governed by the Schrodinger equation:
+\begin{align*}
+    i\hbar\partial_t\ket{\psi(t)}=(H_0+W)\ket{\psi(t)}\stackrel{\text{Projecting onto $\{\ket{\varphi_{1,2}}\}$}}{\longrightarrow}
+    \left.\begin{array}{l}
+    i\hbar\partial_ta_1(t)=E_1a_1(t)+W_{12}a_2(t)\\
+    i\hbar\partial_ta_2(t)=W_{21}a_1(t)+E_2a_2(t)        
+    \end{array}\right\rfloor
+\end{align*}
+Is $|W_{12}|\neq0$, these equations form a linear system of homogeneous coupled differential equations.
+The classical method involves looking the eigenpairs $(\ket{\psi_\pm},E_\pm)$ of the operator $H=H_0+W$ and decompose 
+$\ket{\psi(0)}$ in terms of $\ket{\psi_\pm}$:
+\begin{align}
+    \ket{\psi(0)}=\lambda\ket{\psi_+}+\mu\ket{\psi_-}\Longrightarrow\ket{\psi(t)}=\lambda e^{-iE_+t/\hbar}\ket{\psi_+}+\mu e^{-iE_-t/\hbar}\ket{\psi_-}.
+\end{align}
+A system whose state vector is $\ket{\psi(t)}$ as above, oscillates between the two unperturbed states $\ket{\varphi_1}$ and $\ket{\varphi_2}$. To see this,
+we assume that at $t=0$ the system is in $\ket{\varphi_1}$:
+\begin{align}
+    \ket{\psi(0)}=\ket{\varphi_1}
+\end{align}
+and compute the probability $P_{12}(t)$ of finding it in the state $\ket{\varphi_2}$ at time $t$.
+%
+\subsubsection{Calculation of $P_{12}(t)$: Rabi's formula}
+Inverting \eqref{eq:eigenstatescoupling} for $\ket{\varphi_2}$ yields:
+{\small
+\begin{align}
+    \ket{\psi(0)}=\ket{\varphi_1}=e^{i\phi/2}\left[\cos\frac{\theta}{2}\ket{\psi_+}-\sin\frac{\theta}{2}\ket{\psi_-}\right]\longrightarrow \ket{\psi(t)}=e^{i\phi/2}\left[\cos\frac{\theta}{2}e^{-iE_+t/\hbar}\ket{\psi_+}-\sin\frac{\theta}{2}e^{-iE_-t/\hbar}\ket{\psi_-}\right]
+\end{align}}
+The probability $P_{12}(t)$ is then, the projection of $\ket{\psi(t)}$ onto $\ket{\varphi_2}$:
+\begin{align*}
+    P_{12}(t)&=|\braket{\varphi_2|\psi(t)}|^2\\
+    &=\left|e^{i\phi/2}\left[\cos\frac{\theta}{2}e^{-iE_+t/\hbar}\braket{\varphi_2|\psi_+}-\sin\frac{\theta}{2}e^{-iE_-t/\hbar}\braket{\varphi_2|\psi_-}\right]\right|^2\\
+    &=\left|e^{i\phi/2}\sin\frac{\theta}{2}\cos\frac{\theta}{2}[e^{-iE_+t/\hbar}-e^{-iE_-t/\hbar}]\right|^2\\
+    P_{12}(t)&=\sin^2\theta\sin^2\frac{(E_+-E_-)t}{2\hbar}.
+\end{align*}
+Which can further expressed as
+
+\begin{align}
+    \text{Rabi's oscillation}\qquad\highlight{P_{12}(t)=\frac{4|W_{12}|^2}{4|W_{12}|^2+(E_1-E_2)^2}\sin^2\left[\sqrt{4|W_{12}|^2+(E_1-E_2)^2}\frac{t}{2\hbar}\right]}.
+    \label{eq:rabisoscillation}
+\end{align}
+This expression is called \bfemph{Rabi's formula}.
+
+%%
+\subsubsection{Discussion}
+We see from \eqref{eq:rabisoscillation} that $P_{12}(t)$ oscillates over time with frequency $(E_+-E_-)/\hbar$, which is the unique Bohr frequency of the system. The maximum value 
+$\sin^2\theta$ is achieves for all values of $t$ such tat 
+\begin{align}
+    t=\frac{(2k+1)\hbar}{2(E_+-E_-)},\quad k=0,1,\cdots.
+\end{align}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.5\columnwidth]{PartOne/ChapterFive/rabioscillation.png}
+    \caption{Evolution of $P_{12}(t)$ of finding the system in $\ket{\varphi_2}$ when initially was in $\ket{\varphi_1}$. When the states have the same 
+    unperturbed energy, the probability can attain the value 1.}
+\end{figure}
+
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item When $E_1=E_2$, $(E_+-E_-)/\hbar=2|W_{12}|/\hbar$ and $\sin^2\theta$ takes on its greatest possible value $1$ at times $t=(2k+1)\pi\hbar/2|W_{12}|$. The frequency is proportional to the coupling.
+    \item When $E_1-E_2$ increases, so does $(E_+-E_-)/\hbar$ while $\sin^2\theta$ decreases. For weak coupling, $(E_+-E_-)\approx(E_1-E_2)$ and $\sin^\theta$ becomes very small. This is no surprising as 
+    the state $\ket{\varphi_1}$ is very close to the stationary state $\ket{\psi_+}$: the system, having statrted at $\ket{\varphi_1}$ evolves very little over time.
+\end{itemize}

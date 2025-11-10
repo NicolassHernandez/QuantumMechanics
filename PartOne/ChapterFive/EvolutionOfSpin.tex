@@ -1,14 +1,150 @@
 \section{Illustration of the postules in the case of a spin 1/2}
+We are now to apply the postulaes of QM to a certain number of experiments on silver atoms.
+%%
+\subsection{Actual preparation of the various spin states}
+In order to make predictions about the results of a measurement, we must know the state of the system immediately 
+before the measurement.
+%
+\subsubsection{Preparation of the states $\ket{\pm}$}
+Let assume we have the hole at $N_1$. The atoms which are deflected downward contnue to condense about $N_2$, while some of those which are 
+deflected upwards pass through $N_1$ of the plate.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.7\columnwidth]{PartOne/ChapterFive/preparationsystem.png}
+    \caption{The atoms that pass through the hole made are all in the spin state $\ket{+}$. The Stern-Gerlach is then acting like a polarizer.}
+\end{figure}
+
+Each of the atoms of the beam which propagates to the right of the plate is a physical system on which we have just performed a measurement
+of the observable $S_z$, the result being $+\hbar/2$: the atom is in the state $\ket{+}$.
+
+The device of the figure thus produces a beam of atoms which are all in the spin state $\ket{+}$, acting like a polarizer.
+%
+\subsubsection{Preparation of the states $\ket{\pm}_x,\;\ket{\pm}_y,\;\ket{\pm}_z$}
+To prepare one of eigenstates of $S_x$ (which is a CSCO), we must simply select, after a measurement of $S_x$, the atoms for which this measurement 
+has yieldes the correspoding eigenvalue. If we rotate the device through an angle of $+\pi/2$ about Oy, we obtain a beam of atoms 
+whose spin state is $\ket{+}_x$.
+
+\begin{emphasizer}[]
+    By placing the Stern-Gerlach device so that the axis of the magnetic field is parallel to an arbitrary unit vector $\bm{u}$, and piiercing the plate (at $N_1$ or $N_2$), we 
+    can prepare silver atoms in the spin state $\ket{+}_u$ or $\ket{-}_u$.
+\end{emphasizer}
 
 %
+\subsubsection{Preparation of the most general state}
+It is possible to prepare atoms whose spin state is described by the correpsondin ket $\ket{\psi}$?
+
+Tere exists, for all $\ket{\psi}$, a unit vector $\bm{u}$ such that $\ket{\psi}$ is collinear with the ket $\ket{+}_{\bm{u}}$.
+We choose two complex numbers $\alpha,\beta$ that satisfy normalization equation in\eqref{eq:generalpsispin}.
+
+We find that there necessarily exists an angle $\theta$ such that 
+\begin{align}
+    \cos\frac{\theta}{2}=|\alpha|\land\sin\frac{\theta}{2}=|\beta|,\quad\theta\in[0,\pi].
+\end{align}
+Let us set 
+\begin{align}
+    \begin{array}{l}
+        \varphi=\arg\beta-\arg\alpha\\
+        \chi=\arg\beta+\arg\alpha
+    \end{array}\Longrightarrow
+    \begin{array}{l}
+        \arg\beta=\frac{1}{2}\chi+\frac{1}{2}\varphi\\
+        \arg\alpha=\frac{1}{2}\chi-\frac{1}{2}\varphi
+    \end{array}
+\end{align}
+With this notation, the ket $\ket{\psi}$ is written as 
+\begin{align}
+    \ket{\psi}=e^{i\chi/2}\left[\cos\frac{\theta}{2}e^{-i\varphi/2}\ket{+}+\sin\frac{\theta}{2}e^{i\varphi/2}\ket{-}\right].
+\end{align} 
+Consequently, to prepare silver atoms in the state $\ket{\psi}$, it suffices to place the Stern-Gerlach apparatus (with its plate pierced at $N_1$) so that its axis is directed along the vector $\bm{u}$.
+%%
+\subsection{Spin measurements}
+If we place two Stern-Gerlach magnets one after the other, we can verify experimentally the predictions of the postules. The 
+first acts like ap olarizer, while the second is used to measure a specified component of the angular momentum $\bL$: the analyzer.
+%
+\subsubsection{First experiment}
+Assuming the axes of the two devices parallel to Oz. The first one prepares the aomt in the state $\ket{+}$ and the second one measure $L_z$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.6\columnwidth]{PartOne/ChapterFive/stern_first.png}
+    \caption{The result obtained is certain $+\hbar/2$.}
+\end{figure}
+
+Snce the state of the system under studiy is an eigenstat of $S_z$ which we want to measure, the measurement result is \textbf{certain}: we 
+find, without fail, the corresponding eigenvalue $+\hbar/2$. This is indeed what is observed experimentally: all the atoms strike the second plate 
+in the vecinit of $N_1$, none hittin near $N_2$.
+%
+\subsubsection{Second experiment}
+Let us place the axis of th first deviec along the unit vector $\bm{u}$, with $\theta,\phi=\pi$. $\bm{u}$ is therefore contained in the xOz plane.
+The axis of the second device rameins parallel to Oz. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.6\columnwidth]{PartOne/ChapterFive/stern_second.png}
+    \caption{The possible results are $+\hbar/2$ with $\cos^2\theta$ of change and $-\hbar/2$ with $\sin^2\theta/2$.}
+\end{figure}
+
+According to \eqref{eq:eigenstatesSu}, the spins state of the atoms when they leave the polarizer is:
+\begin{align}
+    \ket{\psi}=-\cos\frac{\theta}{2}\ket{+}+\sin\frac{\theta}{2}\ket{-}.
+\end{align}
+In this case, we find that certain atoms condense at $N_1$, and others at $N_2$.
+We can compute directly that the the probabilities of the eigenstates are, respectively $\cos^2\theta/2$ and $\sin^2\theta/2$.
+We observe experimentally that the intensity of the spots corresponds to numbers of aatoms which are proportional, to their respective probabilities.
+
+The mean value of the results which would be obtained in a large number of identical experiments is $\braket{S_z}=\frac{\hbar}{2}\cos\theta$, which corresponds ot the classical result.
+%
+\subsubsection{Third experiment}
+Let us take the second experiment, but with the analyzer rotated until its axis is directed along Ox, so that it measures the $L_x$ componente of the AM.
+
+We must expand the state $\ket{\psi}$ after the first device in terms of the eigenstates of $S_x$:
+\begin{align}
+    \begin{array}{l}
+        _x\braket{+|\psi}=\frac{1}{\sqrt{2}}(\cos\frac{\theta}{2}+\sin\frac{\theta}{2})=\cos(\frac{\pi}{4}-\frac{\theta}{2})\\
+        _x\braket{-|\psi}=\frac{1}{\sqrt{2}}(\cos\frac{\theta}{2}-\sin\frac{\theta}{2})=\sin(\frac{\pi}{4}-\frac{\theta}{2})
+    \end{array}
+\end{align}
+The probability of find the eienvalue $+\hbar/2$ of $S_x$ s therefore $\cos^2(\frac{\pi}{4}-\frac{\theta}{2})$ and that of finding $-\hbar/2$, $\sin^2(\frac{\pi}{4}-\frac{\theta}{2})$.
+
+It is possible to verify these predictions by measuring th inensity of the two spots on the plate situated at the exit of the second Stern-Gerlach device.
+%
+\subsubsection{Mean values}
+If we calculate the mean value of the possible results in the second experiment, we obtain:
+\begin{align}
+    \braket{S_z}=\frac{1}{N}\left[\frac{\hbar}{2}N\cos^2\frac{\theta}{2}-\frac{\hbar}{2}N\sin^2\frac{\theta}{2}\right]=\frac{\hbar}{2}\cos\theta.
+\end{align}
+This is indeed the value of the matrix element $\braket{\psi|S_z|\psi}$. Similarly, the average of the measurement results in the third experiment is
+\begin{align}
+    \braket{S_x}=\frac{1}{N}\left[\frac{\hbar}{2}N\cos^2(\frac{\pi}{2}-\frac{\theta}{2})-\frac{\hbar}{2}N\sin^2(\frac{\pi}{4}-\frac{\theta}{2})\right]=\frac{\hbar}{2}\sin\theta.
+\end{align}
+The matrix element can be computed matricially:
+\begin{align}
+    \braket{\psi|S_x|\psi}=\frac{\hbar}{2}\begin{bmatrix}
+        \cos\theta/2&\sin\theta/2
+    \end{bmatrix}\begin{bmatrix}
+        0&1\\1&0
+    \end{bmatrix}\begin{bmatrix}
+        \cos\theta/2\\\sin\theta/2
+    \end{bmatrix}=\frac{\hbar}{2}\sin\theta.
+\end{align}
+The mean value of $L_x$ is indeed equal to the matrix element, in the state $\ket{\psi}$, of the associated observable $S_x$.
+
+There is an equivalence with the motion of classical mechanics. Using matrix computation, the mean values of $S_x,S_y,S_z$ in the state $\ket{+}_u$ is:
+\begin{align}
+    _u\braket{+|S_x|+}_u=\frac{\hbar}{2}\sin\theta\cos\phi,\quad _u\braket{+|S_y|+}_u=\frac{\hbar}{2}\sin\theta\sin\phi,\quad _u\braket{+|S_z|+}_u=\frac{\hbar}{2}\cos\theta.
+\end{align}
+These mean values are equal to the components of a classical agular momentum of modulus $\hbar/2$ oriented along the vector $\bm{u}$ with angles $(\theta,\phi)$.
+However, recall that the only possible results of a measurements are $\pm\hbar/2$, not the above results of the mean values.
+
+In the quantum sense, the motion of the atom is a linear superposition of the possible results, so both $\pm\hbar/2$ are traveling.
+%%
 \subsection{Evolution of a spin 1/2 particle in a uniform magnetic field}
 
-\subsection{The interaction Hamiltonian and the Schrodinger equation}
+\subsubsection{The interaction Hamiltonian and the Schrodinger equation}
 Consider a silver atom in a unifrom magnetic field $\bB_0$, and choose the Oz axis along $\bB_0$.
 The classical potential energy of the magnetic moment $\bm{\mu}=\gamma\bJ$ of this atom is then:
 \begin{align}
-    W=-\bm{\mu}\cdot\bB_0=-\mu_zB_0=\underbrace{-\gamma B_0}_{\omega_0}J_z.
+    W=-\bm{\mu}\cdot\bB_0=-\mu_zB_0=\underbrace{-\gamma B_0}_{\omega_0}J_z,
 \end{align}
+where $\omega_0$ is the \bfemph{Larmor frequency}.
 Since we are quantizing onl the internal degrees of freedom of the particle, $J_z$ must be replaced by the operator $S_z$, and the clasical energy above becomes an operator:
 it is the Hamiltonian $H$ which describes the evolution of the spin of the atom in the field $\bB_0$:
 \begin{align}
@@ -61,3 +197,5 @@ Because $S_x$ and $S_y$ do not comute with $H$, we have that
     \braket{\psi(t)|S_x|\psi(t)}=\frac{\hbar}{2}\sin\theta\cos(\phi+\omega_0t),\quad\braket{\psi(t)|S_y|\psi(t)}=\frac{\hbar}{2}\sin\theta\sin(\phi+\omega_0t).
 \end{align}
 We again find the Bohr frequencies $\omega_0/2\pi$ of the system. Moreover, the mean values above behave like the components of a classical AM of modulus $\hbar/2$ undergoing Larmos precession.
+
+

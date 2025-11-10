@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.25)  9 NOV 2025 02:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.25)  9 NOV 2025 21:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2078,7 +2078,14 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 LaTeX Font Info:    Trying to load font information for T1+bch on input line 16.
 (C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1bch.fd
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `eq:sumeigenequationJ1' multiply defined.
+
+
+LaTeX Warning: Label `eq:sumeigenequationJ2' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
@@ -2278,35 +2285,59 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [6
 
-] [7] (PartOne/ChapterFive/main.tex
+] [7] (PartOne/ChapterFour/main.tex
 Chapter 1.
 \c@ttl@toc@chapters=\count591
 (main.ptc) [8
 
-] (PartOne/ChapterFive/Spin-12.tex
+] (PartOne/ChapterFour/Introduction.tex
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 10.40245pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 16.41594pt on input line 1.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 16.41594pt on input line 1.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 2.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 2.
-<PartOne/ChapterFive/stern1.png, id=104, 231.86626pt x 81.30376pt>
-File: PartOne/ChapterFive/stern1.png Graphic file (type png)
-<use PartOne/ChapterFive/stern1.png>
-Package pdftex.def Info: PartOne/ChapterFive/stern1.png  used on input line 17.
-(pdftex.def)             Requested size: 224.39664pt x 78.68588pt.
-<PartOne/ChapterFive/stern2.png, id=106, 141.52875pt x 114.4275pt>
-File: PartOne/ChapterFive/stern2.png Graphic file (type png)
-<use PartOne/ChapterFive/stern2.png>
-Package pdftex.def Info: PartOne/ChapterFive/stern2.png  used on input line 23.
-(pdftex.def)             Requested size: 179.51799pt x 145.15369pt.
-) (PartOne/ChapterFive/EvolutionOfSpin.tex
-Underfull \vbox (badness 5050) has occurred while \output is active []
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 17.
+ (C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1bch.fd
+File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
+ []
+
+) (PartOne/ChapterFour/CommutationRelations.tex
+Overfull \hbox (1.69003pt too wide) in paragraph at lines 1--1
+|[][]\T1/phv/b/n/17.28 Commutation re-la-tions char-ac-ter-is-tic of an-gu-lar mo-men-tum| 
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 11.39996pt on input line 3.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[9]
+Package mdframed Info: mdframed works in twoside mode on input line 62.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 62.
+) (PartOne/ChapterFour/GeneralTheory.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[10]
+Overfull \hbox (4.10089pt too wide) in paragraph at lines 18--21
+\T1/bch/m/n/10.95 They are not Her-mi-tian; they are ad-joints of each other. We will use the fol-low-ing op-er-a-tors: $\OML/cmm/m/it/10.95 J[]; J[]; J[]; \OML/cmm/b/it/10.95 J[]$\T1/bch/m/n/10.95 .
+ []
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2315,10 +2346,133 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[9 <./PartOne/ChapterFive/stern1.png> <./PartOne/ChapterFive/stern2.png>]
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 27.
- (C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ts1bch.fd
-File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
+[11]
+Package mdframed Info: mdframed works in twoside mode on input line 76.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 76.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 84.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[12]
+Overfull \hbox (6.51971pt too wide) detected at line 146
+[]
+ []
+
+Package mdframed Info: mdframed works in twoside mode on input line 166.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 166.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 184.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[13]) (PartOne/ChapterFour/ApplicationToOAM.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[14]
+
+LaTeX Warning: Reference `eq:eqationYml' on page 15 undefined on input line 88.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[16])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[17]) (PartOne/ChapterFive/main.tex
+Chapter 2.
+(main.ptc) [18
+
+] (PartOne/ChapterFive/Spin-12.tex
+<PartOne/ChapterFive/stern1.png, id=270, 231.86626pt x 81.30376pt>
+File: PartOne/ChapterFive/stern1.png Graphic file (type png)
+<use PartOne/ChapterFive/stern1.png>
+Package pdftex.def Info: PartOne/ChapterFive/stern1.png  used on input line 22.
+(pdftex.def)             Requested size: 199.46198pt x 69.94218pt.
+<PartOne/ChapterFive/stern2.png, id=272, 141.52875pt x 114.4275pt>
+File: PartOne/ChapterFive/stern2.png Graphic file (type png)
+<use PartOne/ChapterFive/stern2.png>
+Package pdftex.def Info: PartOne/ChapterFive/stern2.png  used on input line 28.
+(pdftex.def)             Requested size: 119.68068pt x 96.7662pt.
+<PartOne/ChapterFive/sternresults.png, id=273, 93.34875pt x 210.7875pt>
+File: PartOne/ChapterFive/sternresults.png Graphic file (type png)
+<use PartOne/ChapterFive/sternresults.png>
+Package pdftex.def Info: PartOne/ChapterFive/sternresults.png  used on input line 34.
+(pdftex.def)             Requested size: 49.8655pt x 112.59811pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[19 <./PartOne/ChapterFive/stern1.png> <./PartOne/ChapterFive/stern2.png> <./PartOne/ChapterFive/sternresults.png>]
+<PartOne/ChapterFive/larmorprecession.png, id=285, 115.18031pt x 188.20313pt>
+File: PartOne/ChapterFive/larmorprecession.png Graphic file (type png)
+<use PartOne/ChapterFive/larmorprecession.png>
+Package pdftex.def Info: PartOne/ChapterFive/larmorprecession.png  used on input line 62.
+(pdftex.def)             Requested size: 99.73099pt x 162.95714pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[20 <./PartOne/ChapterFive/larmorprecession.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 98.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 98.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 101.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 126.
+ (C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex/latex/doublestroke\udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2327,7 +2481,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[10]) (PartOne/ChapterFive/TwoLevelSystems.tex)
+[21]) (PartOne/ChapterFive/EvolutionOfSpin.tex
+<PartOne/ChapterFive/preparationsystem.png, id=306, 229.60782pt x 73.77562pt>
+File: PartOne/ChapterFive/preparationsystem.png Graphic file (type png)
+<use PartOne/ChapterFive/preparationsystem.png>
+Package pdftex.def Info: PartOne/ChapterFive/preparationsystem.png  used on input line 13.
+(pdftex.def)             Requested size: 349.06227pt x 112.16371pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 13.59999pt, for example:
@@ -2335,7 +2498,114 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
 
-[11]) [12
+[22]
+Package mdframed Info: mdframed works in twoside mode on input line 27.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 27.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[23 <./PartOne/ChapterFive/preparationsystem.png>]
+<PartOne/ChapterFive/stern_first.png, id=326, 217.5628pt x 68.50594pt>
+File: PartOne/ChapterFive/stern_first.png Graphic file (type png)
+<use PartOne/ChapterFive/stern_first.png>
+Package pdftex.def Info: PartOne/ChapterFive/stern_first.png  used on input line 68.
+(pdftex.def)             Requested size: 299.20059pt x 94.22469pt.
+<PartOne/ChapterFive/stern_second.png, id=327, 288.3272pt x 112.16907pt>
+File: PartOne/ChapterFive/stern_second.png Graphic file (type png)
+<use PartOne/ChapterFive/stern_second.png>
+Package pdftex.def Info: PartOne/ChapterFive/stern_second.png  used on input line 81.
+(pdftex.def)             Requested size: 299.20059pt x 116.40317pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[24 <./PartOne/ChapterFive/stern_first.png> <./PartOne/ChapterFive/stern_second.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[25]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[26]) (PartOne/ChapterFive/TwoLevelSystems.tex
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[27]
+Package mdframed Info: mdframed works in twoside mode on input line 47.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 47.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 50.
+<PartOne/ChapterFive/energydetuning.png, id=371, 229.60782pt x 166.37157pt>
+File: PartOne/ChapterFive/energydetuning.png Graphic file (type png)
+<use PartOne/ChapterFive/energydetuning.png>
+Package pdftex.def Info: PartOne/ChapterFive/energydetuning.png  used on input line 98.
+(pdftex.def)             Requested size: 199.46198pt x 144.53644pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[28]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[29 <./PartOne/ChapterFive/energydetuning.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[30]
+<PartOne/ChapterFive/rabioscillation.png, id=403, 233.37187pt x 116.68594pt>
+File: PartOne/ChapterFive/rabioscillation.png Graphic file (type png)
+<use PartOne/ChapterFive/rabioscillation.png>
+Package pdftex.def Info: PartOne/ChapterFive/rabioscillation.png  used on input line 196.
+(pdftex.def)             Requested size: 249.33128pt x 124.6711pt.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 13.59999pt, for example:
+(fancyhdr)                \setlength{\headheight}{13.59999pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-1.59999pt}.
+
+[31 <./PartOne/ChapterFive/rabioscillation.png>]) [32
 
 ] (main.ind)
 
@@ -2360,29 +2630,36 @@ Package minitoc(hints) Warning: W0024
 \tf@ptc=\write14
 \openout14 = `main.ptc'.
 
-[13] (main.aux)
+[33] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 45ACF94468C381D67F206C6B09F08211;1107.
+(rerunfilecheck)             Checksum: 4A10720D34EA339811306604F2E8F51F;2273.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 87278 strings out of 474486
- 2188185 string characters out of 5743755
- 3422763 words of memory out of 5000000
- 108376 multiletter control sequences out of 15000+600000
- 625855 words of font info for 101 fonts, out of 8000000 for 9000
+ 87600 strings out of 474486
+ 2195433 string characters out of 5743755
+ 3444090 words of memory out of 5000000
+ 108536 multiletter control sequences out of 15000+600000
+ 636382 words of font info for 140 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 103i,15n,104p,1677b,1828s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb>
-Output written on main.pdf (13 pages, 257344 bytes).
+ 103i,18n,104p,1677b,1843s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchb8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/bitstrea/charter/bchr8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/doublestroke/dsrom10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvb.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/tex-gyre/qhvr.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Users/irisp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb>
+Output written on main.pdf (33 pages, 636018 bytes).
 PDF statistics:
- 246 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
- 159 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 580 PDF objects out of 1000 (max. 8388607)
+ 163 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 
