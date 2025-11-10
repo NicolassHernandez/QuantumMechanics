@@ -1,13 +1,25 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Theory of angular momentum}{8}{chapter.1}%
+\contentsline {xchapter}{Mathematical Formalism}{9}{chapter.1}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Spin 1/2 and two-level systems}{18}{chapter.2}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The Stern-Gerlach experiment.}}{19}{figure.caption.6}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces The effect of a uniform B-field $\bm {B}$ is to cause $\bm {\mu }$ to turn about $\bm {B}$ with a constant angular velocity (Larmor precession).}}{20}{figure.caption.7}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The atoms that pass through the hole made are all in the spin state $|+\rangle $. The Stern-Gerlach is then acting like a polarizer.}}{23}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces The result obtained is certain $+\hbar /2$.}}{24}{figure.caption.9}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces The possible results are $+\hbar /2$ with $\cos ^2\theta $ of change and $-\hbar /2$ with $\sin ^2\theta /2$.}}{24}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Variation of the energies $E_\pm $ as a function of the energy difference $\Delta $. In absence of coupling, the levels behaves as the dashed lines. Under the effect of non-diagonal coupling, the two perturbed levels gives the solid lines.}}{29}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Evolution of $P_{12}(t)$ of finding the system in $|\varphi _2\rangle $ when initially was in $|\varphi _1\rangle $. When the states have the same unperturbed energy, the probability can attain the value 1.}}{31}{figure.caption.12}%
+\contentsline {xchapter}{Postulates of Quantum Mechanics}{39}{chapter.2}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Time variation of $\langle X\rangle $ corresponding to the wave packet's motion. QM predicts that the center of the wave packet will turn back before hitting the wall}}{56}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{The quantum harmonic oscillator}{65}{chapter.3}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Potential energy $V(x)$ of a 1D harmonic oscillator.}}{66}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Any potential can be approximated by a parabolic potential. In $V(x)$, a classical particle of energy $E$ oscillates between $x_1$ and $x_2$.}}{67}{figure.caption.16}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Shape of the Gaussian function $F(z)$ and its first and second derivatices.}}{78}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of four HO states in the phase-space diagram: black=ground state, gray=first excited state, ovals=squeezed state, green=coherent state.}}{83}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Motion of the Gaussian wave packet associated with $|\alpha \rangle $ state. Thanks to the form of $V(x)$, the wave packet oscillates without distortion.}}{89}{figure.caption.20}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Theory of angular momentum}{90}{chapter.4}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Spin 1/2 and two-level systems}{100}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Stern-Gerlach experiment.}}{101}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The effect of a uniform B-field $\bm {B}$ is to cause $\bm {\mu }$ to turn about $\bm {B}$ with a constant angular velocity (Larmor precession).}}{102}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The atoms that pass through the hole made are all in the spin state $|+\rangle $. The Stern-Gerlach is then acting like a polarizer.}}{105}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The result obtained is certain $+\hbar /2$.}}{106}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The possible results are $+\hbar /2$ with $\cos ^2\theta $ of change and $-\hbar /2$ with $\sin ^2\theta /2$.}}{106}{figure.caption.25}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Variation of the energies $E_\pm $ as a function of the energy difference $\Delta $. In absence of coupling, the levels behaves as the dashed lines. Under the effect of non-diagonal coupling, the two perturbed levels gives the solid lines.}}{111}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Evolution of $P_{12}(t)$ of finding the system in $|\varphi _2\rangle $ when initially was in $|\varphi _1\rangle $. When the states have the same unperturbed energy, the probability can attain the value 1.}}{113}{figure.caption.27}%
 \contentsfinish 
