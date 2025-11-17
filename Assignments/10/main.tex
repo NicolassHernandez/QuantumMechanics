@@ -1,0 +1,236 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{arrows.meta}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+\newcommand{\hn}{\bm{\hat{n}}}
+\newcommand{\hr}{\bm{\hat{r}}}
+\newcommand{\hx}{\bm{\hat{x}}}
+\newcommand{\hy}{\bm{\hat{y}}}
+\newcommand{\hz}{\bm{\hat{z}}}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 10}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: 7 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Problem I}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item The probabilities for x and y directions are:
+  \begin{align*}
+    P_x=|\braket{\phi_x|\phi_\mu}|^2=\cos^2\mu,\quad\text{and}\quad P_y=|\braket{\phi_y|\phi_\mu}|^2=\sin^2\mu.
+  \end{align*}
+  For circular polarization we do the same:
+  \begin{align*}
+    P_{\sigma_+}&=|\braket{\sigma_+|\phi_\mu}|^2=\left|-\frac{1}{\sqrt{2}}\left[(\bra{\phi_x}-i\bra{\phi_y})(\cos\mu\ket{\phi_x}+\sin\mu\ket{\phi_y})\right]\right|^2=\frac{1}{2}(\sin^2\mu+\cos^2\mu)=\frac{1}{2}\\
+    P_{\sigma_-}&=1-P_{\sigma_+}=\frac{1}{2}.
+  \end{align*}
+  \item The state producted by the source is:
+  \begin{align*}
+    \ket{\psi}=\frac{1}{\sqrt{2}}(\ket{\phi_x^L}\ket{\phi_y^R}-\ket{\phi_x^L}\ket{\phi_y^R}).
+  \end{align*}
+  The joint measurement is performed through the following projector which is the tensorproduct of the measurement for each photon:
+  \begin{align*}
+    P_{jk}=P_j^L\otimes P_k^R=\ket{\phi_j^L}\ket{\phi_k^R}\bra{\phi_j^L}\bra{\phi_k^R},\quad j,k\in\{x,y\}.
+  \end{align*}
+  We are let $j,k$ to vary in either direction so that we will have four types of measurements:
+  \begin{align*}
+    P_{xy}&=\braket{\psi|P_{xy}|\psi}=|\braket{\phi_x^L\phi_y^R|\psi}|^2=\frac{1}{2}\\
+    P_{yx}&=\braket{\psi|P_{yx}|\psi}=|\braket{\phi_y^L\phi_x^R|\psi}|^2=\frac{1}{2}\\
+    P_{xx}&=\braket{\psi|P_{xx}|\psi}=|\braket{\phi_x^L\phi_x^R|\psi}|^2=0\\
+    P_{yy}&=\braket{\psi|P_{yy}|\psi}=|\braket{\phi_y^L\phi_y^R|\psi}|^2=0
+  \end{align*}
+  Only the non-zero probabilities are possible state the system may be left after the measurement, which are then:
+  \begin{align*}
+    \ket{\psi}\stackrel{P_{xy}}{\longrightarrow}\frac{P_{xy}\ket{\psi}}{\sqrt{\braket{\psi|P_{xy}|\psi}}}=\ket{\phi_x^L\phi_y^R},\quad\text{and}\quad
+    \ket{\psi}\stackrel{P_{yx}}{\longrightarrow}\frac{P_{yx}\ket{\psi}}{\sqrt{\braket{\psi|P_{yx}|\psi}}}=\ket{\phi_y^L\phi_x^R}.
+  \end{align*}
+  On the other hand, measurement of a single photon is kind of a marginal measurement. The probabilities cn be constructed from the above probabilities:
+  \begin{align*}
+    P_x^L&=P_{xy}+P_{xx}=\frac{1}{2}+0=\frac{1}{2}\\
+    P_x^R&=P_{xx}+P_{yx}=0+\frac{1}{2}=\frac{1}{2}\\
+    P_y^L&=P_{yx}+P_{yy}=\frac{1}{2}+0=\frac{1}{2}\\
+    P_y^R&=P_{xy}+P_{yy}=\frac{1}{2}+0=\frac{1}{2}
+  \end{align*} 
+  \item We first change of basis, by passing from $\phi_{x,y}$ to $\phi_{+,-}$. The transformation matrix is:
+  \begin{align*}
+    M=\frac{-1}{\sqrt{2}}\begin{bmatrix}
+      1&i\\1&-i
+    \end{bmatrix}\longrightarrow M^\dagger=\frac{-1}{\sqrt{2}}\begin{bmatrix}
+      1&1\\-i&i
+    \end{bmatrix}
+  \end{align*}.
+  By extracting the equation from $M^\dagger$ ans subsitute them in $\phi_{x,y}$ we find the following equivalent state:
+  \begin{align*}
+    \ket{\psi}\propto\frac{1}{\sqrt{2}}(\ket{\phi_+^L\phi_-^R}-\ket{\phi_-^L\phi_+^R}).
+  \end{align*}
+  The measurements are analogous to the previous part, but now in the circular polarizaed basis, with the extacly same measurement projector, but 
+  with $j,k$ changed:
+  \begin{align*}
+    P_{jk}=P_j^L\otimes P_k^R=\ket{\phi_j^L}\ket{\phi_k^R}\bra{\phi_j^L}\bra{\phi_k^R},\quad j,k\in\{-,+\}.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    P_{++}&=|\braket{\phi_+^L\phi_+^R|\psi}|^2=0\\
+    P_{+-}&=|\braket{\phi_+^L\phi_-^R|\psi}|^2=\frac{1}{2}\\
+    P_{-+}&=|\braket{\phi_-^L\phi_+^R|\psi}|^2=\frac{1}{2}\\
+    P_{--}&=|\braket{\phi_-^L\phi_-^R|\psi}|^2=0.
+  \end{align*}
+  We see the polarization for either basis is exactly the same, but the states after the measurement will be different.
+\end{enumerate}
+%%
+\section*{Problem II}
+In the deuterium atom we have that $I=1$ and $S=1/2$.
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item In the state $1s$, we have $n=1$ and $l=0$. The quantum number J is:
+  \begin{align*}
+    J&\in\{|L-S|,|L-S|+1,\cdots,L+S-1,L+S\}=\left\{\frac{1}{2}\right\}.
+  \end{align*}
+  For this unique value, we have
+  \begin{align*}
+    J=\frac{1}{2}:\quad F\in\{|J-I|,|J-I|+1,\cdots,J+I-1,J+I\}=\left\{\frac{1}{2},\frac{3}{2}\right\}.
+  \end{align*}
+  \item For the state $2p$, we have $n=2$ and $l=1$. The quantum number J is:
+  \begin{align*}
+    J\in\left\{|1-\frac{1}{2}|,1+\frac{1}{2}\right\}=\left\{\frac{1}{2},\frac{3}{2}\right\}.
+  \end{align*}
+  For each J, we have F:
+  \begin{align*}
+    J=\frac{1}{2}:&\quad F\in\{|\frac{1}{2}-1|,\frac{1}{2}+1\}=\left\{\frac{1}{2},\frac{3}{2}\right\}\\
+    J=\frac{3}{2}:&\quad F\in\{|\frac{3}{2}-1|,|\frac{3}{2}-1|+1,\frac{3}{2}+1\}=\left\{\frac{1}{2},\frac{3}{2},\frac{5}{2}\right\}.
+  \end{align*}
+\end{enumerate}
+
+%%
+\section*{Problem III}
+We are asked to compute the matrix element of $A$, but the initial and final states are in the TAM basis, which is not suitable due to the action of $A$ only on $\ket{L,M_L}$; in the TAM basis those are encoded.
+We need therefore to convert from TAM basis to TP basis each $\ket{\phi}$ and $\ket{\phi'}$.
+We need to do the following for eacth state:
+\begin{align*}
+  \ket{F,M_F}\stackrel{CG}{\longrightarrow}\ket{J,M_J}\ket{I,M_I}\stackrel{CG}{\longrightarrow}\ket{L,M_L}\ket{S,M_S}\ket{I,M_I}.
+\end{align*}
+We do that for each state then,
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item $\ket{\phi}$ has $L=0,\;S=1/2,\;J=1/2,\;I=3/2$: we look at the $\frac{3}{2}\times\frac{1}{2}$ table:
+  \begin{align*}
+    \ket{\phi}=\ket{F=1,M_F=1}=\frac{1}{2}\ket{J=\frac{1}{2},m_J=\frac{1}{2}}\ket{I=\frac{3}{2},M_I=\frac{1}{2}}-\frac{\sqrt{3}}{2}\ket{J=\frac{1}{2},M_J=-\frac{1}{2}}\ket{I=\frac{3}{2},M_I=\frac{3}{2}}.
+  \end{align*}
+  Now, the second decomposition:
+  \begin{align*}
+    \ket{J=\frac{1}{2},M_J=\pm\frac{1}{2}}=\ket{L=0,M_L=0}\ket{S=\frac{1}{2},M_S=\pm\frac{1}{2}}.
+  \end{align*}
+  Inserting it into the first equation:
+  \begin{align*}
+    \ket{\phi}=\frac{1}{2}\ket{0,0;\frac{1}{2},\frac{1}{2};\frac{3}{2},\frac{1}{2}}-\frac{\sqrt{3}}{2}\ket{0,0;\frac{1}{2},-\frac{1}{2};\frac{3}{2},\frac{3}{2}}.
+  \end{align*}
+  Doing the same for $\ket{\phi'}$:
+  \begin{align*}
+    \ket{\phi'}=\frac{\sqrt{3}}{6}\ket{1,0;\frac{1}{2},\frac{1}{2};\frac{3}{2},\frac{1}{2}}-\frac{1}{2}\ket{1,0;\frac{1}{2},-\frac{1}{2};\frac{3}{2},\frac{3}{2}}.
+  \end{align*}
+  We now do the inner product:
+  \begin{align*}
+    \braket{\phi'|A|\phi}=A_{1000}[-\frac{\sqrt{3}}{6}\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{\sqrt{3}}{2}]=\frac{\sqrt{3}}{6}A_{1000}\longrightarrow T=\frac{1}{12}|A_{1000}|^2.
+  \end{align*}
+  The process is exactly the same for the others, we just show the results.
+  \item s
+  \begin{align*}
+    \ket{\phi}&=\frac{\sqrt{2}}{2}\ket{0,0;\frac{1}{2},\frac{1}{2};\frac{3}{2},-\frac{1}{2}}-\frac{\sqrt{2}}{2}\ket{0,0;\frac{1}{2},-\frac{1}{2},\frac{3}{2},\frac{1}{2}}\\
+    \ket{\phi'}&=-\frac{\sqrt{6}}{6}\ket{1,0;\frac{1}{2};-\frac{1}{2}}-\frac{\sqrt{6}}{6}\ket{1,0;-\frac{1}{2};\frac{1}{2}}\\
+    T&=0.
+  \end{align*}
+  \item asgas
+  \begin{align*}
+    \ket{\phi}&=\frac{1}{2}\ket{0,0;\frac{1}{2};\frac{1}{2}}-\frac{\sqrt{3}}{2}\ket{0,0;-\frac{1}{2};\frac{3}{2}}\\
+    \ket{\phi'}&=-\frac{1}{2}\ket{1,0;\frac{1}{2};\frac{1}{2}}+\frac{\sqrt{3}}{6}\ket{1,0;-\frac{1}{2};\frac{3}{2}}\\
+    T&=\frac{1}{4}|A_{1000}|^2.
+  \end{align*}
+  \item asgasg
+  \begin{align*}
+    \ket{\phi}&=\frac{\sqrt{2}}{2}\ket{0,0;\frac{1}{2};-\frac{1}{2}}-\frac{\sqrt{2}}{2}\ket{0,0;-\frac{1}{2};\frac{1}{2}}\\
+    \ket{\phi'}&=-\frac{\sqrt{6}}{6}\ket{1,0;\frac{1}{2};-\frac{1}{2}}+\frac{\sqrt{6}}{6}\ket{1,0;-\frac{1}{2};\frac{1}{2}}\\
+    T&=\frac{1}{3}|A_{1000}|^2.
+  \end{align*}
+\end{enumerate}
+
+
+
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}
