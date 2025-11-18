@@ -210,7 +210,7 @@ We do that for each state then,
   \end{align*}
   Thus, putting all together:
   \begin{align*}
-    \ket{\phi}=\ket{1,1}_F=&\sqrt{\frac{3}{4}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,3/2}_I-\sqrt{\frac{1}{4}}\ket{0,0}_L\ket{0,1/2}_S\ket{3/2,1/2}_I.
+    \ket{\phi}=\ket{1,1}_F=&\textcolor{blue}{\sqrt{\frac{3}{4}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,3/2}_I}-\textcolor{red}{\sqrt{\frac{1}{4}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,1/2}_I}.
   \end{align*}
   We do this process for $\ket{\phi'}$, which is completely analogous to this one.
   \begin{align*}
@@ -225,16 +225,12 @@ We do that for each state then,
   \begin{align*}
     \ket{\phi'}=\ket{1,1}_{F'}=&\sqrt{\frac{3}{4}}\left[\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{2}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,3/2}_{I'}\\
     &-\sqrt{\frac{1}{4}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,1/2}_{I'}\\
-    =&\sqrt{\frac{1}{4}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,3/2}_{I'}-\sqrt{\frac{1}{2}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,3/2}_{I'}\\
-    &-\sqrt{\frac{1}{6}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,1/2}_{I'}+\sqrt{\frac{1}{12}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,1/2}_{I'}.
+    =&\textcolor{blue}{\sqrt{\frac{1}{4}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,3/2}_{I'}}-\sqrt{\frac{1}{2}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,3/2}_{I'}\\
+    &-\sqrt{\frac{1}{6}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,1/2}_{I'}+\textcolor{red}{\sqrt{\frac{1}{12}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,1/2}_{I'}}.
   \end{align*}
   Finally, we compute the matrix element considering that only $L'-L=\pm1$ and $M_{L}'-M_L=0$ for z polarization. Also, recall that $A$ only acts on the $L$-basis:
   \begin{align*}
-    \braket{\phi'|A|\phi}=\left[\sqrt{\frac{3}{4}}\sqrt{\frac{1}{4}}-\frac{1}{4}+\sqrt{\frac{1}{12}}\sqrt{\frac{3}{4}}-\sqrt{\frac{1}{12}}\sqrt{\frac{1}{4}}\right]A_{1000}=0.2889A_{1000}.
-  \end{align*}
-  Therefore,
-  \begin{align*}
-    T=|\braket{\phi'|A|\phi}|^2=0.0834|A_{1000}|^2.
+    T=|\braket{\phi'|A|\phi}|^2=\left|\left[\sqrt{\frac{1}{4}}\sqrt{\frac{3}{4}}-\sqrt{\frac{1}{4}}\sqrt{\frac{1}{12}}\right]A_{1000}\right|^2=\frac{1}{12}|A_{1000}|^2.
   \end{align*}
   \item For $\ket{\phi}$, $n=5,\;S=1/2,\;L=0,\;J=1/2$:
   \begin{align*}
@@ -245,7 +241,7 @@ We do that for each state then,
     M_J=M_L+M_S\rfloor\quad\ket{1/2,1/2}_J&=\ket{0,0}_L\ket{1/2,1/2}_S
   \end{align*}
   \begin{align*}
-    \ket{\phi}=\ket{1,0}_F=&\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,1/2}_I-\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,-1/2}_I.
+    \ket{\phi}=\ket{1,0}_F=\textcolor{blue}{\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,1/2}_I}-\textcolor{red}{\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,-1/2}_I}.
   \end{align*}
   For $\ket{\phi'}$, $n=5,\;S=1/2,\;L=1,\;J=1/2$:
   \begin{align*}
@@ -258,13 +254,15 @@ We do that for each state then,
   \begin{align*}
     \ket{\phi'}=\ket{1,0}_{F'}=&\sqrt{\frac{1}{2}}\left[\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{2}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,1/2}_{I'}\\
     &-\sqrt{\frac{1}{2}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,-1/2}_{I'}\\
+    &=\textcolor{blue}{\sqrt{\frac{1}{6}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,1/2}_{I'}}-\sqrt{\frac{1}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,1/2}_{I'}\\
+    &-\sqrt{\frac{1}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,-1/2}_{I'}+\textcolor{red}{\sqrt{\frac{1}{6}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,-1/2}_{I'}}.
   \end{align*}
   \begin{align*}
-    \braket{\phi'|A|\phi}=\left[\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}-\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}+\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}-\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}\right]A_{1000}=0A_{1000}\Longrightarrow T=|\braket{\phi'|A|\phi}|^2=0.
+    T=|\braket{\phi'|A|\phi}|^2=\left|\left[\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}-\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}\right]A_{1000}\right|^2=0.
   \end{align*}
   \item For $\ket{\phi}$, $n=5,\;S=1/2,\;L=0,\;J=1/2$:
   \begin{align*}
-    \ket{\phi}=\ket{1,1}_F=\sqrt{\frac{3}{4}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,3/2}_I-\sqrt{\frac{1}{4}}\ket{0,0}_L\ket{0,1/2}_S\ket{3/2,1/2}_I.
+    \ket{\phi}=\ket{1,1}_F=&\textcolor{blue}{\sqrt{\frac{3}{4}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,3/2}_I}-\textcolor{red}{\sqrt{\frac{1}{4}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,1/2}_I}.
   \end{align*}
   For $\ket{\phi'}$, $n=5,\;S=1/2,\;L=1,\;J=1/2$:
   \begin{align*}
@@ -276,14 +274,16 @@ We do that for each state then,
   \end{align*}
   \begin{align*}
     \ket{\phi'}=\ket{2,1}_{F'}=&\sqrt{\frac{1}{4}}\left[\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{2}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,3/2}_{I'}\\
-    &+\sqrt{\frac{3}{4}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,1/2}_{I'}
+    &+\sqrt{\frac{3}{4}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,1/2}_{I'}\\
+    =&\textcolor{blue}{\sqrt{\frac{1}{12}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,3/2}_{I'}}-\sqrt{\frac{1}{6}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,3/2}_{I'}\\
+    &+\sqrt{\frac{1}{2}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,1/2}_{I'}-\textcolor{red}{\sqrt{\frac{1}{4}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,1/2}_{I'}}.
   \end{align*}
   \begin{align*}
-    \braket{\phi'|A|\phi}=\left[\sqrt{\frac{1}{12}}\sqrt{\frac{3}{4}}-\sqrt{\frac{1}{12}}\sqrt{\frac{1}{4}}-\sqrt{\frac{1}{3}}\sqrt{\frac{3}{4}}+\sqrt{\frac{1}{3}}\sqrt{\frac{1}{4}}\right]A_{1000}=-0.1056A_{1000}\Longrightarrow0.0111|A_{1000}|^2.
+    T=|\braket{\phi'|A|\phi}|^2=\left|\left[\sqrt{\frac{1}{12}}\sqrt{\frac{3}{4}}-\sqrt{\frac{1}{4}}\sqrt{\frac{1}{4}}\right]A_{1000}\right|^2=\frac{1}{4}|A_{1000}|^2.
   \end{align*}
   \item For $\ket{\phi}$, $n=5,\;S=1/2,\;L=0,\;J=1/2$:
   \begin{align*}
-    \ket{1,0}_F=\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,1/2}_I-\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,-1/2}_I.
+    \ket{1,0}_F=\textcolor{blue}{\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,-1/2}_S\ket{3/2,1/2}_I}-\textcolor{red}{\sqrt{\frac{1}{2}}\ket{0,0}_L\ket{1/2,1/2}_S\ket{3/2,-1/2}_I}.
   \end{align*}
   For $\ket{\phi'}$, $n=5,\;S=1/2,\;L=1,\;J=1/2$:
   \begin{align*}
@@ -295,10 +295,12 @@ We do that for each state then,
   \end{align*}
   \begin{align*}
     \ket{\phi'}=\ket{2,0}_{F'}=&\sqrt{\frac{1}{2}}\left[\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{2}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,1/2}_{I'}\\
-    &+\sqrt{\frac{1}{2}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,-1/2}_{I'}.
+    &+\sqrt{\frac{1}{2}}\left[\sqrt{\frac{2}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}-\sqrt{\frac{1}{3}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\right]\ket{3/2,-1/2}_{I'}\\
+    =&\textcolor{blue}{\sqrt{\frac{1}{6}}\ket{1,0}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,1/2}_{I'}}-\sqrt{\frac{1}{3}}\ket{1,-1}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,1/2}_{I'}\\
+    &+\sqrt{\frac{1}{3}}\ket{1,1}_{L'}\ket{1/2,-1/2}_{S'}\ket{3/2,-1/2}_{I'}-\textcolor{red}{\sqrt{\frac{1}{6}}\ket{1,0}_{L'}\ket{1/2,1/2}_{S'}\ket{3/2,-1/2}_{I'}}.
   \end{align*}
   \begin{align*}
-    \braket{\phi'|A|\phi}=\left[\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}-\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}-\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}+\sqrt{\frac{1}{6}}\sqrt{\frac{1}{2}}\right]A_{1000}=0A_{1000}\Longrightarrow T=0.
+    T=|\braket{\phi'|A|\phi}|^2=\left|\left[\sqrt{\frac{1}{2}}\sqrt{\frac{1}{6}}+\sqrt{\frac{1}{2}}\sqrt{\frac{1}{6}}\right]A_{1000}\right|^2=\frac{1}{3}|A_{1000}|^2.
   \end{align*}
 \end{enumerate}
 
