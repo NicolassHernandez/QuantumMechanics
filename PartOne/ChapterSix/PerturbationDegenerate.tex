@@ -1,1 +1,58 @@
 \section{Perturbation of a degenerate level}
+Now assume that the level $E_n^0$ whose perturbatino we want to study is $g_n$-degenerate, with $\E_n^0$ the eigensubspace of $H_0$.
+In this case, the choice $\varepsilon_0=E_n^0$ does not suffice to determine the vector $\ket{0}$, since the 0th-order equation \eqref{eq:spdt_statement} 
+can be satisfied by any linear combinarion of the $g_n$ vectors $\ket{\varphi_n^i}$.
+
+Under the action of $W$, the level $E_n^0$ generally gives rise to several distinct \bfemph{sublevels} $f_n\in[0,g_n]$. 
+If $f_n<g_n$, some of these sublevels are degenerate, since the total number of orthogonal eigenvectors of $H$ associated with the $f_n$ sublevels is always 
+equal to $g_n$. 
+
+To determine $\varepsilon_1$ and $\ket{0}$, we project 1st-order equation \eqref{eq:spdt_statement} onto the $g_n$ basis vectors $\ket{\varphi_n^i}$.
+Since these are eigenvectors of $H_0$ with eigenvalue $\varepsilon_0=E_n^0$, we obtain 
+\begin{align*}
+    \varepsilon_1\braket{\varphi_n^i|0}=\braket{\varphi_n^i|W|0}=\sum_p\sum_{i'}\braket{\varphi_n^i|W|\varphi_p^{i'}}\braket{\varphi_p^{i'}|0}\stackrel{(a)}{=}\sum_{i'=1}^{g_n}\braket{\varphi_n^i|W|\varphi_n^{i'}}\braket{\varphi_n^{i'}|0}.
+\end{align*}
+In $(a)$, the vector $\ket{0}$ belongs to the eigensubspace with $E_n^0$, is orthogonal to all the basis vectors $\ket{\varphi_p^{i'}},\;p\neq n$; it only produces a single term for $p=n$.
+
+We arrange the $g_n^2$ numbers $\braket{\varphi_n^i|W|\varphi_n^{i'}}$ ($n$ fixed, $i,i'=1,\cdots,g_n$) in a $g_n\times g_n$ matrix of row index $i$ 
+and collumn index $i'$. This matrix is denoted by $W^{n}$ and is the part which corresponds to $\E_n^0$. The column vector of elements 
+$\braket{\varphi_n^i|0}$ is an eigenvector of $W^{n}$ with the eigenvalue $\varepsilon_1$.
+
+This equation can also be transformed into a vector equation inside $\E_n^0$. The equivalent vector equation is then:
+\begin{align}
+    \shortstack{Eigenequation of $W^{(n)}$ (in $\E_n^0$)}\qquad\highlight{W^{(n)}\ket{0}=\varepsilon_1\ket{0}}.
+    \label{eq:spdt_eigenequationofwn}
+\end{align}
+To calculate the eigenvalues (to first order) and the eigenstates (to zeroth order) of the Hamiltonian corresponding to a degenerate uperturbed state $E_n^0$, 
+diagonalize the matrix $W^{n}$, which represents the perturbation $W$ inside the eigensubspace $\E_n^0$ associated with $E_n^0$.
+
+
+Let $\varepsilon_1^j,\;j=1,\cdots,f_n^{(1)}$ be the various distinct roots of the characteristic equation of $W^{(n)}$. Since $W^{(n)}$ is Hermitian,
+its eigenvalues are all real, and the sum of their degree of degeneracy is equal to $g_n$ ($f_n^{(1)}\leq g_n$). Each eigenvalue introduces a different energy correction.
+Therefore, under $W$, the degeneracy level splits, to first order, into $f_n^{(1)}$ distintc sublevels, whose energies can be written as:
+\begin{align}
+    \text{First-order eigenvalue of $W^{(n)}$}\qquad\highlight{E_{n,j}(\lambda)=E_n^0+\lambda\varepsilon_j^i,\quad j=1,\cdots,f_n^{(1)}\leq g_n}.
+\end{align}
+If $f_n^{(1)}=g_n$, we say that, to first order, $W$ completely removes the degeneracy of the level $E_n^0$. When $f_n^{(1)}<g_n$, the degeneracy, to first order, is only partially 
+removed (or not at all if $f_n^{(1)}=1$).
+
+
+We now choose $\varepsilon_1^j$ of $W^{(n)}$. If it is non-degenerate, the corresponding $\ket{0}$ is uniquely determined by \eqref{eq:spdt_eigenequationofwn}.
+There then exist a single eigenvalue $E(\lambda)$ of $H(\lambda)$ which is equal to $E_n^0+\lambda\varepsilon_1^j$, to first order, and this eigenvalue is non-degenerate.
+On the other hand, if $\varepsilon_1^j$ is $q$-degenerate, \eqref{eq:spdt_eigenequationofwn} indicates that only that $\ket{0}$ belongs to the corresponding q-dimensional 
+subspace $\mathcal{F}_j^{(1)}$.
+
+This property of $\varepsilon_1^j$ can reflect two different situations:
+\begin{itemize}[itemsep=0pt,topsep=0pt]
+    \item There is only one exact energy $E(\lambda)$ that is equal, to first order, to $E_n^0+\lambda\varepsilon_1^j$, and that this energy is q-degenerate. A q-dimensional eigensubspace
+    then corresponds to the eigenvalue $E(\lambda)$, so that the degeneracy of the approximate eigenvalues will never be removes, to any order of $\lambda$.
+
+    This often arises when $H_0$ and $W$ possess common symmetry properties. The degeneracy then remains to all order in the perturbation theory.
+    \item Several different energies $E(\lambda)$ are equal, to first order, to $E_n^0+\lambda\varepsilon_1^j$. The subspace $\mathcal{F}_j^{(1)}$ obtained to  first order is only 
+    the direct sum of the limits, for $\lambda\to0$, of several eigensubspaces associated with these various energies $E(\lambda)$. That is, all the eigenvectors 
+    of $H(\lambda)$ corresponding to these energies certainly approach kets of $\mathcal{F}_j^{(1)}$, but, inversely, a particular ket of $\mathcal{F}_j^{(1)}$ is not 
+    necessarily the limits $\ket{0}$ of an eigenket of $H(\lambda)$. Going to higher order terms allows one, not only to improve the accuracy of the energies, but also 
+    to determine the zeroth-order kets $\ket{0}$.
+\end{itemize}
+
+

@@ -1292,6 +1292,11 @@ INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\bitstrea\charter\bc
 INPUT .\PartOne\ChapterSix\PerturbationDegenerate.tex
 INPUT .\PartOne\ChapterSix\PerturbationDegenerate.tex
 INPUT PartOne\ChapterSix\PerturbationDegenerate.tex
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1bch.fd
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1bch.fd
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\tex\latex\psnfss\ts1bch.fd
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\tfm\bitstrea\charter\bchr8c.tfm
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\vf\bitstrea\charter\bchr8c.vf
 INPUT .\main.ind
 INPUT .\main.ind
 INPUT main.ind
@@ -1316,6 +1321,8 @@ INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
@@ -1338,6 +1345,8 @@ INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\q
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qhvb.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qhvr.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\tex-gyre\qhvr.pfb
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\rsfs\rsfs10.pfb
+INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\public\rsfs\rsfs10.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\urw\avantgar\uagk8a.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\urw\avantgar\uagk8a.pfb
 INPUT C:\Users\irisp\AppData\Local\Programs\MiKTeX\fonts\type1\urw\helvetic\uhvb8a.pfb
