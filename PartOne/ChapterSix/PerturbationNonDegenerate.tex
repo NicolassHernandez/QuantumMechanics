@@ -1,0 +1,109 @@
+\section{Perturbation of a non-degenerate case}
+Let be a non-denegerate eigenvalue $E_n^0$ of $H_0$, which is associated with the unique eigenvector $\ket{\varphi_n}$. We want to determine the 
+modifications in this unperturbed energy in the corresponding statinary state produces by $W$.
+
+For the eigenvalues of $H(\lambda)$ that approaches $E_n^0$ when $\lambda\to0$ we ave 
+\begin{align}
+    \varepsilon_0=E_n^0\Longrightarrow \ket{0}=\ket{\varphi_n}.
+    \label{eq:spdt_nondegenerate_statement}
+\end{align}
+Thus, when $\lambda\to0$ we again find the unperturbed state $\ket{\varphi_n}$ with the same phase. We call $E_n(\lambda)$ the eigenvalue of $H(\lambda)$ which when 
+$\lambda\to0$, approaches the eigenvalue $E_n^0$ of $H_0$, with eigenvector $\ket{\psi_n(\lambda)}$. We now compute the expansion of $E_n(\lambda)$ and 
+$\ket{\psi_n(\lambda)}$ in powers of $\lambda$.
+%
+\subsection{First-order corrections}
+We will determine the eigenvalue $\varepsilon_1$ and the eigenvector $\ket{1}$.
+%
+\subsubsection{Energy correction}
+Projecting the first-order equation from \eqref{eq:spdt_statement} onto $\ket{\varphi_n}$ yields
+\begin{align}
+    \braket{\varphi_n|(H_0-\varepsilon_0)|1}+\braket{\varphi_n|(W-\varepsilon_1)|0}=\cancelto{0}{\braket{\varphi_n|(\varepsilon_0-\varepsilon_0)|1}}+\braket{\varphi_n|(W-\varepsilon_1)|0}=0.
+\end{align}
+Considering equation \eqref{eq:spdt_nondegenerate_statement}, we have that:
+\begin{align}
+    \varepsilon_1=\braket{\varphi_n|W|0}=\braket{\varphi_n|W|\varphi_n}.
+\end{align}
+The eigenvalue $E_n(\lambda)$ of $H$ which corresponds to $E_n^0$ can be written, to first order in the perturbation as:
+\begin{align}
+    \text{First-order eigenvalue of $H$}\qquad\highlight{E_n(\lambda)=E_n^0+\braket{\varphi_n|W|\varphi_n}+O(\lambda^2)}.
+    \label{eq:spdt_firstorder_eigenvalue}
+\end{align}
+The first-order correction to a non-degenerate energy $E_n^0$ is simply equal to the averae value of the perturbation term $W$ in the unperturbed state $\ket{\varphi_n}$.
+%
+\subsubsection{Eigenvector correction}
+To exhaust all the information of the first-order perturbation equation \eqref{eq:spdt_statement}, we must project it onto all the vectors of the $\{\ket{\varphi_p^i}\}$ basis other than 
+$\ket{\varphi_n}$. Using \eqref{eq:spdt_nondegenerate_statement}:
+\begin{align*}
+    \braket{\varphi_p^i|(H_0-E_n^0)|1}+\braket{\varphi_p^i|(W-\cancelto{0\scriptsize\text{ Orthogonality}}{\varepsilon_1})|\varphi_n}&=0,\quad p\neq n\\
+    (E_p^0-E_n^0)\braket{\varphi_p^i|1}+\braket{\varphi_p^i|W|\varphi_n}&=
+\end{align*}
+THe index $i$ is for any possible degeneration in the energies $E_p^0$ other than $E_n^0$. 
+This expression gives the coefficients of the desired expansion of the vector $\ket{1}$ on all the unperturbed basis states, except $\ket{\varphi_n}$:
+\begin{align}
+    \braket{\varphi_p^i}=\frac{1}{E_n^0-E_p^0}\braket{\varphi_p^i|W|\varphi_n},\quad p\neq n.
+\end{align}
+The las coefficient which we lack, $\braket{\varphi_n|1}=\braket{0|1}$, is zero by the second condition of \eqref{eq:spdt_statement}. We therefore know the 
+vector $\ket{1}$ since we know its expansion on the $\{\ket{\varphi_p^i}\}$ basis:
+\begin{align}
+    \ket{1}=\sum_{p\neq n}\sum_i\frac{\braket{\varphi_p^i|W|\varphi_n}}{E_n^0-E_p^0}\ket{\varphi_p^i}.
+\end{align}
+Thus, to first order in the perturbation, the eigenvector $\ket{\varphi_n(\lambda)}$ of $H$ corresponding to the unperturbed state $\ket{\varphi_n}$ can be written as:
+\begin{align}
+    \text{First-order eigenvector of $H$}\qquad\highlight{\ket{\psi_n(\lambda)}=\ket{\varphi_n}+\sum_{p\neq n}\sum_i\frac{\braket{\varphi_p^i|W|\varphi_n}}{E_n^0-E_p^0}+O(\lambda^2)}.
+    \label{eq:spdt_firstorder_eigenvector}
+\end{align}
+It is a linear combination of all unperturbed states other than $\ket{\varphi_n}$: the perturbation $W$ is said to produce a mixing of the state $\ket{\varphi_n}$ with the other iegenstates 
+of $H_0$. The contribution of a given state $\ket{\varphi_p^i}$ is zero if the perturbation has no matrix element between $\ket{\varphi_n}$ and $\ket{\varphi_p^i}$.
+
+\begin{emphasizer}[First-order correction constraint]
+    The first order correction of the state vector is small only if the non-diagonal matrix elements of $W$ are much smaller than the corresponding unperturbed energy differences.
+\end{emphasizer}
+%
+\subsection{Second-order corrections}
+The process is analogous to the first-order, with the use of the second equation in \eqref{eq:spdt_statement}.
+%
+\subsubsection{Energy correction}
+We project second equation of \eqref{eq:spdt_statement} onto the vector $\ket{\varphi_n}$, using the conditions:
+\begin{align*}
+    \cancelto{0\scriptsize\text{ Orthogonality}}{\braket{\varphi_n|(H_0-E_n^0)|2}}+\braket{\varphi_n|(W-\cancelto{0\scriptsize\text{ Orhtogonality}}{\varepsilon_1})|1}-\varepsilon_2\braket{\varphi_n|\varphi_n}=0\Longrightarrow\varepsilon_2=\braket{\varphi_n|W|1}.
+\end{align*}
+Using the expression for $\ket{1}$ from the first-order section, we have that:
+\begin{align}
+    \varepsilon_2=\sum_{p\neq n}\sum_i\frac{|\braket{\varphi_p^i|W|\varphi_n}|^2}{E_n^0-E_p^0}.
+\end{align}
+This enables us to write the energy $E_n(\lambda)$ to second order in the perturbation in the form:
+\begin{align}
+    \text{Second-order eigenvalue of $H$}\qquad\highlight{E_n(\lambda)=E_n^0+\braket{\varphi_n|W|\varphi_n}+\sum_{p\neq n}\sum_i\frac{|\braket{\varphi_p^i|W|\varphi_n}|^2}{E_n^0-E_p^0}+O(\lambda^3)}.
+    \label{eq:spdt_secondorder_eigenvalue}
+\end{align}
+To second-order, the closer the state $\ket{\varphi_p^i}$ to $\ket{\varphi_n}$, and th estronger the coupling $|\braket{\varphi_p^i|W|\varphi_n}|$, the more 
+these two levels repel each other.
+%
+\subsubsection{Eigenvector correction}
+By projecting the second equation \eqref{eq:spdt_statement} onto the set of basis vectors $\ket{\varphi_p^i}$ different from $\ket{\varphi_n}$, and by using conditions we can obtain the 
+expression for the ket $\ket{2}$ and therefore the eigenvector to second order. It is not present in CT nor FG.
+
+In general, we retain one more term in the energy expansion than in that of the eigenvector. This is because when projecting the second-order equation onto $\ket{\varphi_n}$, one makes
+the first term go to zero, which gives $\varepsilon_q$ in terms of the corrections of order $q-1,q-2,\cdots$ of the eigenvector.
+%
+\subsubsection{Upper limit of $\varepsilon_2$}
+If we limit the energy expansion to first order in $\lambda$, we can obtain an approximate idea of the error involver by evaluating the second-order term.
+We denote by $\Delta E=$ the absolute value of the difference between the energy $E_n^0$ of the level being studied and that of the closest level. We have:
+\begin{align}
+    \Delta E\leq|E_n^0-E_p^0|,\quad\forall n.
+\end{align}
+This gives us an upper limit for the absolute value of $\varepsilon_2$:
+\begin{align*}
+    |\varepsilon_2|\leq&\frac{1}{\Delta E}\sum_{p\neq n}\sum_i|\braket{\varphi_p^i|W|\varphi_n}|^2\\
+    =&\frac{1}{\Delta E}\sum_{p\neq n}\sum_i\braket{\varphi_n|W|\varphi_p^i}\braket{\varphi_p^i|W|\varphi_n}\\
+    =&\frac{1}{\Delta E}\bra{\varphi_n}W\left[\sum_{p\neq n}\sum_i\ket{\varphi_p^i}\bra{\varphi_p^i}\right]W\ket{\varphi_n}\\
+    \stackrel{(a)}{=}&\frac{1}{\Delta E}\bra{\varphi_n}W\bigr[1-\ket{\varphi_n}\bra{\varphi_n}\bigr]W\ket{\varphi_n}\\
+    =&\frac{1}{\Delta E}\left[\braket{\varphi_n|W^2|\varphi_n}-(\braket{\varphi_n|W|\varphi_n})^2\right]
+\end{align*}
+In $(a)$, we have used the fact that inside the brakets, we have the projector onto the basis $\{\ket{\varphi_p^i}\}$ minus a single elements $\ket{\varphi_n}$.
+
+Finally, we multiply both sides by $\lambda^2$ to obtain an upper limit for the second-order term in the expansin of $E_n(\lambda)$, in the form:
+\begin{align}
+    \text{Upper limit for second-order term in $E_n(\lambda)$}\qquad\highlight{|\lambda^2\varepsilon_2|\leq\frac{1}{\Delta E}(\Delta W)^2}.
+\end{align}
+This indicates the order of magnitude of the error on the energy resulting from taking only the first-order correction into account.

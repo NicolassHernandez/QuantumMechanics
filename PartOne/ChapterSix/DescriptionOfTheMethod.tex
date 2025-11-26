@@ -1,0 +1,97 @@
+\section{Description of the method}
+%
+\subsection{Statement of the problem}
+Perturbation theory is applicable when the Hamiltonian $H$ of the system being studied can be put in the form 
+\begin{align}
+    \text{Hamiltonian of the system}\qquad\highlight{H(\lambda)=H_0+\underbrace{\lambda\hat{W}}_{W},\quad\text{with}\quad\lambda\ll1},
+    \label{eq:spdt_hamiltonian}
+\end{align}
+where the spectrum of $H_0$ is known, and where $W$ is \textbf{much smaller} than $H_0$. This means that the matrix elements of $W$ are much 
+smaller than those of $H_0$. 
+The operator $H_0$ is time-independent and is knwon as \bfemph{unperturbed Hamiltonian}, while $W$ is called the \bfemph{perturbation}. When $W$ is time-independent, we 
+say we are dealing a \emph{stationary perturbation}.
+
+The problem then is to find the modifications produced in the enery levels of the system and its stationary states by the 
+influence of $W$. Perturbation theory consists of expanding the eigenpairs of $H$ in power of $\lambda$ with a finite number of terms.
+
+We assume the spectrum of $H_0$ is discrete, where eiganvalue $E_p^0$ and eigenstate $\ket{\varphi_p^i}$. We therefore have:
+\begin{align}
+    \text{Spectrum of $H_0$}\qquad\highlight{H_0\ket{\varphi_p^i}=E_p^0\ket{\varphi_p^i},\quad\text{with}\quad\begin{array}{l}
+        \braket{\varphi_p^i|\varphi_p^i}=\delta_{pp'}\delta_{ii'}\\
+        \displaystyle\sum_p\sum_i\ket{\varphi_p^i}\bra{\varphi_p^i}=1
+    \end{array}}.
+\end{align}
+
+Figure \ref{fig:variationofe} represents possible forms of the variations of the eigenvalues $E(\lambda)$ of \eqref{eq:spdt_hamiltonian} with respect to $\lambda$.
+For a given value of $\lambda$, these vectors form a basis of the state space of $H(\lambda)$. The operator may have several degeneracies, as in $E_3^0$ and $E_4^0$.
+The perturbation is able to remove some degeneracies as for $E_3^0$.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=.3\columnwidth]{PartOne/ChapterSix/spdt_variationofe.png}
+    \caption{Variation of $E(\lambda)$ with respect to $\lambda$. For $\lambda=0$, we obtain the spectrum of $H_0$. We see the two-fold of $E_3^0$ and $E_4^0$ where 
+    perturbation removes the degeneracy of $E_3^0$ but not that of $E_4^0$. Additional two-fold degeneracy appears at $\lambda=\lambda_1$.}
+    \label{fig:variationfofe}
+\end{figure}
+%
+\subsection{Approximate solution of $H(\lambda)$}
+Lets define the eigenequation for the Hermitian operator $H(\lambda)$:
+\begin{align}
+    \text{Eigenequation of $H(\lambda)$}\qquad\highlight{H(\lambda)\ket{\psi(\lambda)}=E(\lambda)\ket{\psi(\lambda)}}.
+    \label{eq:spdt_eigenequation}
+\end{align}
+We assume that $E(\lambda)$ and $\ket{\psi(\lambda)}$ can be expanded in powers of $\lambda$ in the form:
+\begin{align}
+    E(\lambda)=\sum_{q=1}^\infty\lambda^q\varepsilon_q,\quad\text{and}\quad\ket{\psi(\lambda)}=\sum_{q=1}^\infty\lambda^q\ket{q}.
+\end{align}
+Substituting the above along with \eqref{eq:spdt_hamiltonian} in the eigenequation \eqref{eq:spdt_eigenequation} yields 
+\begin{align*}
+    (H_0+\lambda W)\left[\sum_{q=1}^q\lambda^q\ket{q}\right]=\left[\sum_{q'=1}^{q'}\lambda^{q'}\varepsilon_q\right]\left[\sum_{q=1}^\infty\lambda^q\ket{q}\right].
+\end{align*}
+Equating the terms of the same power $q$:
+\begin{align}
+    \text{0th-order}:&\qquad H_0\ket{0}=\varepsilon_0\ket{0}\\
+    \text{1st-order}:&\qquad (H_0-\varepsilon_0)\ket{1}=(W-\varepsilon_1)\ket{0}=0\\
+    \text{2nd-order}:&\qquad (H_0-\varepsilon_0)\ket{2}+(W-\varepsilon_1)\ket{1}-\varepsilon_2\ket{0}=0\\
+    \vdots&\notag\\
+    \text{qth-order}:&\quad (H_0-\varepsilon_0)\ket{q}+(W-\varepsilon_1)\ket{q-1}-\varepsilon_2\ket{q-2}-\cdots-\varepsilon_q\ket{0}=0
+\end{align}
+
+We can choose the norm of $\ket{\psi(\lambda)}$ and its phase: we require it to be normalized, we choose its phase such that the scalar product 
+$\braket{0|\psi(\lambda)}$ is real. To 0th-order, this implies that the vector $\ket{0}$ must be normalized:
+\begin{align}
+    \braket{0|0}=1.
+\end{align}
+Its phase remain arbitrary, we will choose it after. To 1st order, the square of the nomro of $\ket{\psi(\lambda)}$ is written 
+\begin{align}
+    \braket{\psi(\lambda)|\psi(\lambda)}&=[\bra{0}+\lambda\bra{1}][\ket{0}+\lambda\ket{1}]+O(\lambda^2)\\
+    &=\braket{0|0}+\lambda[\braket{1|0}+\braket{0|1}]+O(\lambda^2)\\
+    &=1+\lambda[\braket{1|0}+\braket{0|1}]+O(\lambda^2)=1.
+\end{align}
+The choice of phase indicates that the scalar product $\braket{0|1}$ is real since $\lambda$ is real. Therefore,
+\begin{align}
+    \braket{0|1}=\braket{1|0}=0.
+\end{align}
+Anologously, 
+\begin{align}
+    \braket{0|2}=\braket{2|0}=-\frac{1}{2}\braket{1|1},
+\end{align}
+and in general:
+\begin{align}
+    \braket{0|q}=\braket{q|0}=-\frac{1}{2}[\braket{q-1|1}+\braket{q-2|2}+\cdots+\braket{2|q-2}+\braket{1|q-1}].
+\end{align}
+
+When we confine to second order in $\lambda$, the perturbation equations and the conditions, from above,
+\begin{align}
+    \text{Second-order in $\lambda$}\qquad\highlight{\begin{array}{ll}
+        \text{Equations}&\text{Conditions}\\
+        H_0\ket{0}=\varepsilon_0\ket{0}&\braket{0|0}=1\\
+        (H_0-\varepsilon_0)\ket{1}=(W-\varepsilon_1)\ket{0}=0&\braket{0|1}=\braket{1|0}=0\\
+        (H_0-\varepsilon_0)\ket{2}+(W-\varepsilon_1)\ket{1}-\varepsilon_2\ket{0}=0&\braket{0|2}=\braket{2|0}=-\frac{1}{2}\braket{1|1}
+    \end{array}}.
+    \label{eq:spdt_statement}
+\end{align}
+
+From them, we now that $\ket{0}$ is an eigenvector of $H_0$ with eigenvalue $\varepsilon_0$, with the particular value $E_n^0$.
+Consider the set of eigenstates of $H(\lambda)$ corresponding to the various eigenvalues $E(\lambda)$ that approach $E_n^0$ when $\lambda\to0$. 
+They span a vector subspace whose dimension clearly cannot vary discontinuously when $\lambda$ varies in the vecinity of zero. This dimension is consequently equal 
+to the degeneracy $g_n$ of $E_n^0$. We now consider the case of non-degenerae, and degenerate levels of $H_0$.
