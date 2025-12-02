@@ -1,0 +1,319 @@
+\documentclass[letterpaper,11pt,twoside]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{listings}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{mathrsfs}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usetikzlibrary{arrows.meta}
+\usepackage{enumitem}
+
+\usepackage{tikz}
+\usepackage[siunitx, RPvoltages]{circuitikz}
+\usetikzlibrary{3d}
+\usepackage{comment}
+\usepackage{caption,subcaption}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest} % or a newer version if available
+\usepgfplotslibrary{groupplots}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [->,>=stealth,shorten >=2pt]
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\bra}[1]{\langle#1|}
+\newcommand{\br}{\bm{r}}
+\newcommand{\bR}{\bm{R}}
+\newcommand{\bp}{\bm{p}}
+\newcommand{\bP}{\bm{P}}
+\newcommand{\braket}[1]{\langle#1\rangle}
+\newcommand{\F}{\mathscr{F}}
+\newcommand{\E}{\mathscr{E}}
+\newcommand{\re}[1]{\text{Re}\left(#1\right)}
+\newcommand{\im}[1]{\text{Im}\left(#1\right)}
+\usepackage{dsfont}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.8in,top=1in,bottom=1in]{geometry}
+\newcommand{\hn}{\bm{\hat{n}}}
+\newcommand{\hr}{\bm{\hat{r}}}
+\newcommand{\hx}{\bm{\hat{x}}}
+\newcommand{\hy}{\bm{\hat{y}}}
+\newcommand{\hz}{\bm{\hat{z}}}
+%%%%%
+\begin{filecontents*}{refs.bib}
+@book{bornwolf,
+  author    = {Born, M. and Wolf, E.},
+  title     = {Principles of Optics},
+  publisher = {Pergamon Press},
+  edition   = {7},
+  year      = {1999}
+}
+@book{hecht,
+  author    = {Hecht, E.},
+  title     = {Optics},
+  publisher = {Addison-Wesley},
+  edition   = {5},
+  year      = {2016}
+}
+\end{filecontents*}
+%
+\newcommand{\institution}{University of Arizona}
+\newcommand{\autor}{Nicolás Hernández Alegría}
+\newcommand{\course}{OPTI 570 Quantum Mechanics}
+\newcommand{\assignment}{Assignment 11}
+%
+\title{\textbf{\assignment}\\\course\\{\Large\institution}}
+\author{\autor}
+\date{\today\\Total time: 15 hours}
+%
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancypagestyle{mainstyle}{
+    \fancyhf{} % Clear all header and footer fields
+    \fancyfoot[C]{\thepage}
+    \fancyhead[LE,RO]{\course} % Section name on odd pages
+    \fancyhead[LO,RE]{\assignment}
+    % Optional: Thin rules
+    \renewcommand{\headrulewidth}{0pt} % Header rule
+    \renewcommand{\footrulewidth}{0pt} % No footer rule
+}
+%
+\begin{document}
+
+\pagestyle{mainstyle}
+\maketitle
+%%
+\section*{Problem I}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item Using the information from Complement $G_{II}$, the wave function is:
+  \begin{align*}
+    \psi_{n_x,n_y}(x,y)=\frac{2}{a}\sin\frac{n_x\pi x}{a}\sin\frac{n_y\pi y}{a},\quad\text{with}\quad E_{n_x,n_y}^0=\frac{\hbar^2\pi^2}{2ma^2}(n_x^2+n_y^2).
+  \end{align*}
+  The first-order correction in the eigenvalue of the ground state $\psi_1,1$ depends on the mean value of $W$:
+  \begin{align*}
+    E^1_{1,1}&=\braket{\psi_{1,1}|W|\psi_{1,1}}=\omega_0\int_{0}^{a/2}\int_0^{a/2}|\psi(x,y)|^2\;dxdy=\frac{4\omega_0}{a^2}\int_0^{a/2}\sin^2\frac{\pi x}{a}\;dx\int_0^{a/2}\sin^2\frac{\pi y}{a}\;dy\\
+    E^1_{1,1}&=\frac{4\omega_0}{a^2}\frac{a}{4}\frac{a}{4}=\frac{\omega_0}{4}.
+  \end{align*}
+  The perturber enegy of the ground state is:
+  \begin{align*}
+    E_{11}\approx E_{11}^0+E_{1,1}^1=\frac{\hbar^2\pi^2}{ma^2}+\frac{\omega_0}{4}.
+  \end{align*}
+  \item In this case, we have a two-degenerate eigenvalue with states $\ket{1,2}$ and $\ket{2,1}$. The eigenvalue is:
+  \begin{align*}
+    E_{12}^0=E_{21}^0=\frac{5\hbar^2\pi^2}{2ma^2}.
+  \end{align*} 
+  The mean values are:
+  \begin{align*}
+    \braket{12|W|12}=\braket{21|W|21}=\frac{4\omega_0}{a^2}\int_0^{a/2}\sin^2\frac{\pi x}{a}\;dx\int_0^{a/2}\sin^2\frac{2\pi y}{a}\;dy=\frac{\omega_0}{4}.
+  \end{align*}
+  The off-diagonal elements are:
+  \begin{align*}
+    \braket{12|W|21}=\braket{21|W|12}=\frac{4\omega_0}a^2\left(\int_0^{a/2}\sin\frac{\pi x}{a}\sin\frac{2\pi x}{a}\;dx\right)^2=\frac{16\omega_0}{9\pi^2}.
+  \end{align*}
+  In the $\{\ket{12},\ket{21}\}$ basis, $W$ is represented as:
+  \begin{align*}
+    W=\omega_0\begin{bmatrix}
+      \dfrac{1}{4}&\dfrac{16}{9\pi^2}\\
+      \dfrac{16}{9\pi^2}&\dfrac{1}{4}
+    \end{bmatrix}.
+  \end{align*}
+  The eigenvalues are:
+  \begin{align*}
+    E_\pm^1=\omega_0\left(\frac{1}{4}\pm\frac{16}{9\pi^2}\right).
+  \end{align*}
+  So the two split energies are:
+  \begin{align*}
+    E_\pm\approx\frac{5\hbar^2\pi^2}{2ma^2}+\omega_0\left(\frac{1}{4}\pm\frac{16}{9\pi^2}\right).
+  \end{align*}
+  The corresponding zero-order eigenstates are:
+  \begin{align*}
+    &\psi_+(x,y)=\frac{1}{\sqrt{2}}(\psi_{12}(x,y)+\psi_{21}(x,y))\\
+    &\psi_-(x,y)=\frac{1}{\sqrt{2}}(\psi_{12}(x,y)-\psi_{21}(x,y)).
+  \end{align*}
+\end{enumerate}
+
+%%
+\section*{Problem II}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item Because $H_0$ is purely written in terms of $J_z$, it is diagonal in the $\{\ket{1},\ket{0},\ket{-1}\}$ basis:
+  \begin{align*}
+    J_z\ket{m}=m\hbar\ket{m},\quad m=1,0,-1.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    H_0\ket{m}=(aJ_z=\frac{b}{\hbar}J_z^2)\ket{m}=(am\hbar+\frac{b}{\hbar}m^2\hbar^2)\ket{m}=\hbar(am+bm^2)\ket{m}.
+  \end{align*}
+  The energy eigenvalues are:
+  \begin{align*}
+    &m=1\Longrightarrow E_{+1}=\hbar(a+b)\\
+    &m=0\Longrightarrow E_0=0\\
+    &m=-1\Longrightarrow E_{-1}=\hbar(b-a).
+  \end{align*}
+  Degeneracy occurs when at least two energies are equal. This can happen when $a=b$, which implies that $E_{-1}=E_0$ and therefore, the ratio is:
+  \begin{align*}
+    \frac{b}{a}=1.
+  \end{align*}
+  The states $\ket{0}$ and $\ket{-1}$ are degenerate with energy $E=0$.
+  \item The spin-1 operator are:
+  \begin{align*}
+    J_x=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix},\quad J_y=\frac{\hbar}{\sqrt{2}}\begin{bmatrix}
+      0&-i&0\\i&0&-i\\0&i&0
+    \end{bmatrix},\quad J_z=\hbar\begin{bmatrix}
+      1&0&0\\0&0&0\\0&0&-1
+    \end{bmatrix}.
+  \end{align*}
+  Putting these in the $J_u$ operator and the replacing in $W=\omega_0J_u$ yields:
+  \begin{align*}
+    W=\hbar\omega_0\begin{bmatrix}
+      \cos\theta&\frac{\sin\theta}{\sqrt{2}e^{-i\varphi}}&0\\
+      \frac{\sin\theta}{\sqrt{2}}e^{i\varphi}&0&\frac{\sin\theta}{\sqrt{2}}e^{-i\varphi}\\
+      0&\frac{\sin\theta}{\sqrt{2}}e^{i\varphi}&-\cos\theta
+    \end{bmatrix}
+  \end{align*}
+  \item If $a=b$, then there is a degeneracy with $\ket{0}$ and $\ket{-1}$. Also, oriented to Ox axis means that $\theta=\pi/2$ and $\varphi=0$, so $J_u=J_x$.
+  For $j=1$, we have the following unperturbed Hamiltonian:
+  \begin{align*}
+    H_0=aJ_z+\frac{a}{\hbar}J_z^2=a\hbar\begin{bmatrix}
+      \textcolor{red}{2}&0&0\\0&\textcolor{blue}{0}&\textcolor{blue}{0}\\0&\textcolor{blue}{0}&\textcolor{blue}{0}
+    \end{bmatrix}.
+  \end{align*}
+  We see explictly that $\ket{0}$ and $\ket{-1}$ share the same eigenvalue $0$. We have colored the two subspaces we have.
+  The perturbation is:
+  \begin{align*}
+    W=\omega_0J_x=\hbar\omega_0\frac{1}{\sqrt{2}}\begin{bmatrix}
+      0&1&0\\1&0&1\\0&1&0
+    \end{bmatrix}.
+  \end{align*}
+  For the nondegenerate state $\ket{1}$ we have 
+  \begin{align*}
+    E_1^1=\braket{1|W|1}=\hbar\omega_0\frac{1}{\sqrt{2}}0=0\Longrightarrow E_1\approx 2a\hbar.
+  \end{align*}
+  For the degenerate subpace, 
+  \begin{align*}
+    W=\hbar\omega_0\frac{1}{\sqrt{2}}\begin{bmatrix}
+      0&1\\1&0
+    \end{bmatrix}\Longrightarrow\lambda_\pm=\pm\frac{\hbar\omega_0}{\sqrt{2}}.
+  \end{align*}
+  The corresponding eigenstates are:
+  \begin{align*}
+    \ket{\psi_\pm}=\frac{1}{\sqrt{2}}(\ket{0}\pm\ket{-1}).
+  \end{align*}
+  The energies to first order are:
+  \begin{align*}
+    E_+\approx0+\frac{\hbar\omega_0}{\sqrt{2}},\quad\text{and}\quad E_-\approx0-\frac{\hbar\omega_0}{\sqrt{2}}.
+  \end{align*}
+  These two eigenvalues are linked with the zero-order eigenstates fround from $W$.
+  \item Now th eigenvalues of $H_0$ becomes:
+  \begin{align*}
+    H_{1}^0=\hbar(a+b)=3a\hbar,\quad E_0^0=0,\quad E_{-1}^0=\hbar(b-a)=a\hbar.
+  \end{align*}
+  The matrix $J_u$ for this case is:
+  \begin{align*}
+    J_u=\hbar\begin{bmatrix}
+      \cos\theta&\frac{\sin\theta}{\sqrt{2}}e^{-i\varphi}&0\\\frac{\sin\theta}{\sqrt{2}}e^{i\varphi}&0&\frac{\sin\theta}{\sqrt{2}}e^{-i\varphi}\\
+      0&\frac{\sin\theta}{\sqrt{2}}e^{i\varphi}&-\cos\theta
+    \end{bmatrix}
+  \end{align*}
+  Te only non-zero elements that connects $\ket{0}$ with the other states are:
+  \begin{align*}
+    \braket{1|W|0}=\omega_0\hbar\frac{\sin\theta}{\sqrt{2}}e^{-i\varphi},\quad\braket{-1|W|0}=\omega_0\hbar\frac{\sin\theta}{\sqrt{2}}e^{i\varphi}.
+  \end{align*}
+  The ground state is represented as:
+  \begin{align*}
+    \ket{\psi_0}\approx\ket{0}+\sum_{n\neq0}\frac{\braket{n|W|0}}{E_0^0-E_n^0}\ket{n}=\ket{0}+\frac{\braket{1|W|0}}{E_0^0-E_1^0}+\frac{\braket{-1|W|0}}{E_0^0-E_{-1}^0}=\ket{0}-\frac{\omega_0\sin\theta}{3\sqrt{2}a}e^{-i\varphi}\ket{1}-\frac{\omega_0\sin\theta}{\sqrt{2}a}e^{i\varphi}\ket{-1}.
+  \end{align*}
+  It needs to be normalized by its norm:
+  \begin{align*}
+    \ket{\psi_0'}=\frac{\ket{\psi_0}}{\sqrt{1+\frac{5}{9}\frac{\omega_0^2\sin^2\theta}{a^2}}}.
+  \end{align*}
+\end{enumerate}
+
+%%
+\section*{Problem III}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item For an s state, the angular part is $Y_{00}$ and it integrates to one, so we just need the radial integration:
+  \begin{align*}
+    \braket{n00|W|n00}=2E_1a_0\int_0^br^2|R_{n0}(t)|^2(\frac{1}{r}-\frac{1}{b})\;dr.
+  \end{align*}
+  For $n=1$ and $n=2$, we have:
+  \begin{align*}
+    &\braket{100|W|100}\approx2E_1a_0\frac{4}{a_0^3}\int_0^br^2(\frac{1}{r}-\frac{1}{b})\;dr=\frac{8E_1}{a_0^2}\int_0^b(r-\frac{r^2}{b})\;dr=\frac{4}{3}E_1\left(\frac{b}{a_0}\right)^2\\
+    &\braket{200|W|200}\approx2E_1a_0\frac{1}{8a_0^3}\int_0^br^2(2-\frac{r}{a_0})^2(\frac{1}{r}-\frac{1}{b})\;dr=\frac{1}{6}E_1\left(\frac{b}{a_0}\right)^2.
+  \end{align*}
+  \item The perturbation depends only on $r$, so it is purely radial in posittion representatino. The matrix elements is:
+  \begin{align*}
+    \braket{100|W|21m}=\int_0^\infty dr\;r^2R_{10}(r)W(r)R_{21}(t)\int d\Omega Y_{00}^*(\theta,\phi)Y_{1m}(\theta,\phi).
+  \end{align*}
+  But in the angular part, we have $l=0$ and $l=1$, which are orthogonal each other and therefore its integral is zero. So in both cases we have a zero value.
+  \item The five states with $n=1,2$ are:
+  \begin{align*}
+    \{\ket{100},\ket{200},\ket{21-1},\ket{210},\ket{211}\}.
+  \end{align*}
+  We have the elements we can use to construct the matrix $W$, which is then
+  \begin{align*}
+    W=\begin{bmatrix}
+      \frac{4}{3}E_1(\frac{b}{a_0})^2&\beta E_1(\frac{b}{a_0})^2&0&0&0\\
+      \beta E_1(\frac{b}{a_0})^2&\frac{1}{6}E_1(\frac{b}{a_0})^2&0&0&0\\
+      0&0&\varepsilon&0&0\\
+      0&0&0&\varepsilon&0\\
+      0&0&0&0&\varepsilon
+    \end{bmatrix}
+  \end{align*}
+  \item The energies in the Hydrogen is $E_n^0=-E_1/n^2$. For the five states we have:
+  \begin{align*}
+    E_{100}^0=-E_1,\quad E_{200}^0=E_{21m}^0=-E_1/4.
+  \end{align*}
+  The $n=1$ and $n=2$ levels are not degenerate with each other, so we can use non-degenerate perturbation theory. To first order, the energy shift of each nondegenerate state is just 
+  the diagonal matrix element of $W$. So:
+  \begin{align*}
+    &E_{100}\approx-E_1+\frac{4}{3}E_1(\frac{b}{a_0})^2\\
+    &E_{200}\approx-\frac{E_1}{4}+\frac{E_1}{6}(\frac{b}{a_0})^2\\
+    &E_{21m}\approx-\frac{E_1}{4}
+  \end{align*}
+  Second order involver the off-diagonal which are not considered.
+  \item From d), the shift on $n=2$ is the $2s$ shift:
+  \begin{align*}
+    \Delta E_{2s}=\frac{E_1}{6}(\frac{b}{a_0})^2.
+  \end{align*}
+  For the $2p$ level is $-E_1/4$. The energy difference between $2s$ and $2p$ from the finite proton size is 
+  \begin{align*}
+    \Delta E_{\text{finite proton}}=\frac{1}{6}E_1(\frac{b}{a_0})^2=\frac{E_1}{6}10^{-10}\longrightarrow\Delta f_{\text{finite proton}}=\frac{\Delta E}{\hbar}=\frac{E_1}{6\hbar}10^{-10}=5.5\cdot10^{4}\;Hz.
+  \end{align*}
+  The Lamb shift is $\Delta f_{\text{Lamb}}=10^9\;Hz$, so the ratio is:
+  \begin{align*}
+    \frac{\Delta f_{\text{finite proton}}}{\Delta f_{\text{Lamb}}}=\frac{5.5\cdot10^4}{10^9}=5.5\cdot10^{-5}.
+  \end{align*}
+  Therefore, for accurately determining the hydrogen energy levels, the Lamb shift is far more significant than the finite extent of the proton.
+\end{enumerate}
+
+%%
+\section*{Problem IV}
+\begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
+  \item sgasga
+  \item agas
+  \item safasf
+  \item asfasf (only compute the expansion asked)
+  \item dsgsdg
+  \item sdgsdg
+  \item sdgsdg
+  \item sdgsdg
+  \item sdggs
+  \item asfasf
+\end{enumerate}
+
+
+
+
+
+%\nocite{*}
+%\bibliographystyle{plain}   % or unsrt, alpha, apalike, etc.
+%\bibliography{refs}
+
+\end{document}
