@@ -296,16 +296,112 @@
 %%
 \section*{Problem IV}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
-  \item sgasga
-  \item agas
-  \item safasf
-  \item asfasf (only compute the expansion asked)
-  \item dsgsdg
-  \item sdgsdg
-  \item sdgsdg
-  \item sdgsdg
-  \item sdggs
-  \item asfasf
+  \item The potential must be infinity at $z\leq0$, and at $0^+$ it should be zero because the other tram is being evaluated: $mg(0)=0$. Then, it increases linearly.
+  For the wavefuction, we know that $\psi(z)=0,\;z\leq0$ and it tends to zer oas $z\to\infty$. 
+  The sketch of the potential and the ground state are shown below.
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}{.45\columnwidth}
+      \centering
+      \begin{circuitikz}
+        \draw[arrow](-3,0)--(3,0)node[below]{$z$};
+        \draw[arrow](0,0)--(0,4)node[right]{$V(z)$};
+        \draw[very thick,NavyBlue](0,0)--(0,2)(.2,0)--(.2,2)--(2,3);
+        \draw(.1,2)--(-.1,2)node[left]{$\infty$}(0,.1)--(0,-.1)node[below left]{$0$}(.2,.1)--(.2,-.1)node[below right]{$0^+$};
+        \draw[arrow,thick](2,1)node[below]{$mgh$}--(1,2);
+      \end{circuitikz}
+      \caption{Potential $V(z)$}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{.45\columnwidth}
+      \centering
+      \begin{circuitikz}
+        \draw[arrow](-3,0)--(3,0)node[below]{$z$};
+        \draw[arrow](0,0)--(0,4)node[right]{$\psi(z)$};
+        \draw[very thick,NavyBlue](0,0)--(1,2);
+        \draw[very thick,NavyBlue,domain=1:2.5,samples=100] plot(\x,{ 2*exp( -.2*(\x-1) ) });
+        \draw(0,.1)--(0,-.1)node[below]{$0$};
+      \end{circuitikz}
+      \caption{Wavefunction $\psi(z)$}
+    \end{subfigure}
+  \end{figure}
+  \item The Hamiltonian is:
+  \begin{align*}
+    H=-\frac{\hbar^2}{2m}\partial_z^2+V(z),\quad V(z)=\begin{cases}
+      \infty,&z\leq0\\
+      mgz,&z>0
+    \end{cases}.
+  \end{align*}
+  \item The acoefifcients are found by the normalization condition:
+  \begin{align*}
+    \int_0^\infty|\psi(z)|^2\;dz&=1\\
+    \frac{A^2}{b^2}\int_0^\infty z^2e^{-2z/b}\;dz&=\\
+    \frac{A^2}{b^2}\frac{b^3}{4}&=1\\
+    A&=\sqrt{\frac{4}{b}}=\frac{2}{\sqrt{b}}.
+  \end{align*}
+  So the wavefunction is:
+  \begin{align*}
+    \psi(z)=\frac{2}{\sqrt{b}}\frac{z}{b}e^{-z/b}.
+  \end{align*}
+  The sketch is below.
+  \begin{figure}[h!]
+    \centering
+      \begin{circuitikz}
+        \def\bb{1}
+        \draw[arrow](-3,0)--(3,0)node[below]{$z$};
+        \draw[arrow](0,0)--(0,2)node[right]{$\psi(z)$};
+        %\draw[very thick,NavyBlue](0,0)--(1,2);
+        \draw[very thick,NavyBlue,domain=0:2.5,samples=100] plot(\x,{ (2/sqrt(\bb))*(\x/\bb)*exp( -\x/\bb ) });
+        \draw(0,.1)--(0,-.1)node[below]{$0$};
+      \end{circuitikz}
+  \end{figure}
+  It is similar to my guess but softer.
+  \item The expectation value of $z$ is:
+  \begin{align*}
+    \int_0^\infty z|\psi(z)|^2\;dz=\frac{4}{b^3}\int_0^\infty z^3e^{-2z/b}\;dz=\frac{4}{b^3}\frac{3}{8}b^4=\frac{3}{2}b.
+  \end{align*}
+  \item We do the analogous process for the expectation value of $H$. The potential energy s easy to compute:
+  \begin{align*}
+    \braket{V}=\braket{mgz}=mg\braket{z}=\frac{3}{2}mgb.
+  \end{align*}
+  While, for the kinetic energy, we use direct integration:
+  \begin{align*}
+    \braket{T}&=\int_0^\infty\psi^*(z)\left[-\frac{\hbar^2}{2m}\partial_z^2\right]\psi(z)\;dz\\
+    &=-\frac{\hbar^2}{2m}\int_0^\infty\psi^*(z)[\partial_z^2\psi(z)]\;dz\\
+    &=-\frac{\hbar^2}{2m}\int_0^\infty[\frac{2}{b^{3/2}}ze^{-z/b}][-\frac{2}{b^{1/2}}\frac{1}{b^2}e^{-z/b}(2-z/b)]\;dz\\
+    &=\frac{\hbar^2}{2m}\frac{4}{b^4}\int_0^\infty z(2-z/b)e^{-2z/b}\;dz\\
+    &=\frac{\hbar^2}{2m}\frac{4}{b^4}\left[2\int_0^\infty ze^{-2z/b}\;dz-\frac{1}{b}\int_0^\infty z^2e^{-z/b}\;dz\right]\\
+    &=\frac{\hbar^2}{2m}\frac{4}{b^4}\frac{b^2}{4}\\
+    \braket{T}&=\frac{\hbar^2}{2mb^2}.
+  \end{align*}
+  Therefore,
+  \begin{align*}
+    \braket{H}=\braket{T}+\braket{V}=\frac{\hbar^2}{2mb^2}+\frac{3}{2}mgb.
+  \end{align*}
+  \item Minimize $\braket{H}$ is the same that select the $b_o$ such that $[\partial_b\braket{H}]\bigr|_{b=b_o}=0$.
+  \begin{align*}
+    \partial_b\braket{H}=-\frac{\hbar^2}{mb^3}+\frac{3}{2}mg=0\longrightarrow b_0=\left(\frac{2\hbar^2}{3m^2g}\right)^{1/3}=\left(\frac{h^2}{6\pi^2m^2g}\right)^{1/3}.
+  \end{align*}
+  \item The numberical value is:
+  \begin{align*}
+    b_0=\left(\frac{(6.626\times10^{-34})^2}{6\pi^2(1.5\times10^{-25})^2(9.8)}\right)^{1/3}\approx3.2\times10^{-7}\;m.
+  \end{align*}
+  \item Putting $b_0$ in $\braket{H}$:
+  \begin{align*}
+    \braket{H}=\frac{(1.055\times10^{-34})^2}{2(1.5\times10^{-25})(9.8)}+\frac{3}{2}(1.5\times10^{-25}(9.8)(3.2\times^{-7}))\approx1.1\times10^{-30}\;J.
+  \end{align*}
+  \item 
+  \begin{align*}
+    \frac{\braket{H}}{k_B}=\frac{1.1\times10^{-30}}{1.4\times10^{-23}}=0.8\times10^{-7}\;K.
+  \end{align*}
+  \item For a $100\;kg$ mass, we have 
+  \begin{align*}
+    b=\left(\frac{4.4\times10^{-67}}{5.8\times10^6}\right)^{1/3}\approx1.9\times10^{-25}\;m.
+  \end{align*}
+  The associated $\braket{H}/k_b$ is:
+  \begin{align*}
+    \frac{\braket{H}}{k_b}=\frac{3\times10^{-22}}{1.4\times10^{-23}}\approx21\;K.
+  \end{align*}
 \end{enumerate}
 
 
