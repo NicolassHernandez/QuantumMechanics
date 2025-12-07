@@ -94,18 +94,20 @@
   \begin{align*}
     \psi_{n_x,n_y}(x,y)=\frac{2}{a}\sin\frac{n_x\pi x}{a}\sin\frac{n_y\pi y}{a},\quad\text{with}\quad E_{n_x,n_y}^0=\frac{\hbar^2\pi^2}{2ma^2}(n_x^2+n_y^2).
   \end{align*}
-  The first-order correction in the eigenvalue of the ground state $\psi_1,1$ depends on the mean value of $W$:
+  The first-order correction in the eigenvalue of the ground state $\psi_{1,1}$ depends on the mean value of $W$:
   \begin{align*}
-    E^1_{1,1}&=\braket{\psi_{1,1}|W|\psi_{1,1}}=\omega_0\int_{0}^{a/2}\int_0^{a/2}|\psi(x,y)|^2\;dxdy=\frac{4\omega_0}{a^2}\int_0^{a/2}\sin^2\frac{\pi x}{a}\;dx\int_0^{a/2}\sin^2\frac{\pi y}{a}\;dy\\
-    E^1_{1,1}&=\frac{4\omega_0}{a^2}\frac{a}{4}\frac{a}{4}=\frac{\omega_0}{4}.
+    E^{(1)}_{1,1}&=\braket{\psi_{1,1}|W|\psi_{1,1}}=\omega_0\int_{0}^{a/2}\int_0^{a/2}|\psi(x,y)|^2\;dxdy=\frac{4\omega_0}{a^2}\int_0^{a/2}\sin^2\frac{\pi x}{a}\;dx\int_0^{a/2}\sin^2\frac{\pi y}{a}\;dy\\
+    E^{(1)}_{1,1}&=\frac{4\omega_0}{a^2}\frac{a}{4}\frac{a}{4}=\frac{\omega_0}{4}.
   \end{align*}
-  The perturber enegy of the ground state is:
+  The integration is divided in two simple ones.
+
+  The perturbed enegy of the ground state is then:
   \begin{align*}
-    E_{11}\approx E_{11}^0+E_{1,1}^1=\frac{\hbar^2\pi^2}{ma^2}+\frac{\omega_0}{4}.
+    E_{11}\approx E_{11}^{(0)}+E_{1,1}^{(1)}=\frac{\hbar^2\pi^2}{ma^2}+\frac{\omega_0}{4}.
   \end{align*}
   \item In this case, we have a two-degenerate eigenvalue with states $\ket{1,2}$ and $\ket{2,1}$. The eigenvalue is:
   \begin{align*}
-    E_{12}^0=E_{21}^0=\frac{5\hbar^2\pi^2}{2ma^2}.
+    E_{12}^{(0)}=E_{21}^{(0)}=\frac{5\hbar^2\pi^2}{2ma^2}.
   \end{align*} 
   The mean values are:
   \begin{align*}
@@ -122,9 +124,10 @@
       \dfrac{16}{9\pi^2}&\dfrac{1}{4}
     \end{bmatrix}.
   \end{align*}
+  We obtain the perturbation term by looking the eigenvalues and eigenstates of this matrix which lives in the eigensubspace $\E_{\pm}$.
   The eigenvalues are:
   \begin{align*}
-    E_\pm^1=\omega_0\left(\frac{1}{4}\pm\frac{16}{9\pi^2}\right).
+    E_\pm^{(1)}=\omega_0\left(\frac{1}{4}\pm\frac{16}{9\pi^2}\right).
   \end{align*}
   So the two split energies are:
   \begin{align*}
@@ -132,11 +135,9 @@
   \end{align*}
   The corresponding zero-order eigenstates are:
   \begin{align*}
-    &\psi_+(x,y)=\frac{1}{\sqrt{2}}(\psi_{12}(x,y)+\psi_{21}(x,y))\\
-    &\psi_-(x,y)=\frac{1}{\sqrt{2}}(\psi_{12}(x,y)-\psi_{21}(x,y)).
+    \psi_\pm(x,y)=\frac{1}{\sqrt{2}}[\psi_{12}(x,y)\pm\psi_{21}(x,y)].
   \end{align*}
 \end{enumerate}
-
 %%
 \section*{Problem II}
 \begin{enumerate}[itemsep=0pt,topsep=0pt,label=\alph*)]
@@ -146,7 +147,7 @@
   \end{align*}
   Therefore,
   \begin{align*}
-    H_0\ket{m}=(aJ_z=\frac{b}{\hbar}J_z^2)\ket{m}=(am\hbar+\frac{b}{\hbar}m^2\hbar^2)\ket{m}=\hbar(am+bm^2)\ket{m}.
+    H_0\ket{m}=(aJ_z+\frac{b}{\hbar}J_z^2)\ket{m}=(am\hbar+\frac{b}{\hbar}m^2\hbar^2)\ket{m}=\hbar(am+bm^2)\ket{m}.
   \end{align*}
   The energy eigenvalues are:
   \begin{align*}
@@ -193,7 +194,7 @@
   \end{align*}
   For the nondegenerate state $\ket{1}$ we have 
   \begin{align*}
-    E_1^1=\braket{1|W|1}=\hbar\omega_0\frac{1}{\sqrt{2}}0=0\Longrightarrow E_1\approx 2a\hbar.
+    E_1^{(1)}=\braket{1|W|1}=\hbar\omega_0\frac{1}{\sqrt{2}}0=0\Longrightarrow E_1\approx 2a\hbar.
   \end{align*}
   For the degenerate subpace, 
   \begin{align*}
@@ -209,7 +210,7 @@
   \begin{align*}
     E_+\approx0+\frac{\hbar\omega_0}{\sqrt{2}},\quad\text{and}\quad E_-\approx0-\frac{\hbar\omega_0}{\sqrt{2}}.
   \end{align*}
-  These two eigenvalues are linked with the zero-order eigenstates fround from $W$.
+  These two eigenvalues are linked with the zero-order eigenstates found from $W$.
   \item Now th eigenvalues of $H_0$ becomes:
   \begin{align*}
     H_{1}^0=\hbar(a+b)=3a\hbar,\quad E_0^0=0,\quad E_{-1}^0=\hbar(b-a)=a\hbar.
@@ -268,7 +269,7 @@
   \end{align*}
   \item The energies in the Hydrogen is $E_n^0=-E_1/n^2$. For the five states we have:
   \begin{align*}
-    E_{100}^0=-E_1,\quad E_{200}^0=E_{21m}^0=-E_1/4.
+    E_{100}^{(0)}=-E_1,\quad E_{200}^{(0)}=E_{21m}^{(0)}=-E_1/4.
   \end{align*}
   The $n=1$ and $n=2$ levels are not degenerate with each other, so we can use non-degenerate perturbation theory. To first order, the energy shift of each nondegenerate state is just 
   the diagonal matrix element of $W$. So:
@@ -277,7 +278,7 @@
     &E_{200}\approx-\frac{E_1}{4}+\frac{E_1}{6}(\frac{b}{a_0})^2\\
     &E_{21m}\approx-\frac{E_1}{4}
   \end{align*}
-  Second order involver the off-diagonal which are not considered.
+  Second order involves the off-diagonal which are not considered.
   \item From d), the shift on $n=2$ is the $2s$ shift:
   \begin{align*}
     \Delta E_{2s}=\frac{E_1}{6}(\frac{b}{a_0})^2.
@@ -332,14 +333,14 @@
       mgz,&z>0
     \end{cases}.
   \end{align*}
-  \item The acoefifcients are found by the normalization condition:
+  \item The coefficients are found by the normalization condition:
   \begin{align*}
     \int_0^\infty|\psi(z)|^2\;dz&=1\\
     \frac{A^2}{b^2}\int_0^\infty z^2e^{-2z/b}\;dz&=\\
     \frac{A^2}{b^2}\frac{b^3}{4}&=1\\
     A&=\sqrt{\frac{4}{b}}=\frac{2}{\sqrt{b}}.
   \end{align*}
-  So the wavefunction is:
+  The integral was computed with calculator. The wavefunction is therefore:
   \begin{align*}
     \psi(z)=\frac{2}{\sqrt{b}}\frac{z}{b}e^{-z/b}.
   \end{align*}
@@ -360,7 +361,8 @@
   \begin{align*}
     \int_0^\infty z|\psi(z)|^2\;dz=\frac{4}{b^3}\int_0^\infty z^3e^{-2z/b}\;dz=\frac{4}{b^3}\frac{3}{8}b^4=\frac{3}{2}b.
   \end{align*}
-  \item We do the analogous process for the expectation value of $H$. The potential energy s easy to compute:
+  This integral was computed with calculator.
+  \item We do the analogous process for the expectation value of $H$. The potential energy is easy to compute:
   \begin{align*}
     \braket{V}=\braket{mgz}=mg\braket{z}=\frac{3}{2}mgb.
   \end{align*}
@@ -374,7 +376,7 @@
     &=\frac{\hbar^2}{2m}\frac{4}{b^4}\frac{b^2}{4}\\
     \braket{T}&=\frac{\hbar^2}{2mb^2}.
   \end{align*}
-  Therefore,
+  Therefore, because of linearity we have
   \begin{align*}
     \braket{H}=\braket{T}+\braket{V}=\frac{\hbar^2}{2mb^2}+\frac{3}{2}mgb.
   \end{align*}
@@ -384,7 +386,7 @@
   \end{align*}
   \item The numberical value is:
   \begin{align*}
-    b_0=\left(\frac{(6.626\times10^{-34})^2}{6\pi^2(1.5\times10^{-25})^2(9.8)}\right)^{1/3}\approx3.2\times10^{-7}\;m.
+    b_0=\left[\frac{(6.626\times10^{-34})^2}{6\pi^2(1.5\times10^{-25})^2(9.8)}\right]^{1/3}\approx3.2\times10^{-7}\;m.
   \end{align*}
   \item Putting $b_0$ in $\braket{H}$:
   \begin{align*}
