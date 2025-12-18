@@ -1,4 +1,17 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {xchapter}{Stationary perturbation theory}{8}{chapter.1}%
+\contentsline {xchapter}{Mathematical Formalism}{9}{chapter.1}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Fundamental formulas for discrete and continuous basis.}}{16}{table.caption.7}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Fundamental formulas for calculation in the $\{|u_i\rangle \}$ and $\{|w_\alpha \rangle \}$ representations.}}{21}{table.caption.8}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Transformation of a ket, bra, and matrix elements from one basis to another.}}{24}{table.caption.9}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Postulates of Quantum Mechanics}{39}{chapter.2}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{The quantum harmonic oscillator}{65}{chapter.3}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Theory of angular momentum}{90}{chapter.4}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Spin 1/2 and two-level systems}{100}{chapter.5}%
+\addvspace {10\p@ }
+\contentsline {xchapter}{Stationary perturbation theory}{114}{chapter.6}%
 \contentsfinish 
